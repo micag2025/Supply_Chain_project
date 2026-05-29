@@ -56,7 +56,7 @@ Please follow the repository code style and add tests for major features.
 ## Future Implementations
 
 Feel free to suggest more ideas by opening an issue or starting a discussion! For bug reports or feature requests, 
- [open an issue]().  
+ [open an issue](https://github.com/micag2025/Supply_Chain_project/issues).  
 
  ---
 
@@ -75,7 +75,7 @@ This project is licensed under the MIT License. See the [LICENSE]() file for det
 
 ## Contact
 
-If you encounter bugs, have questions, or want to request a new feature, please [open an issue]() on this repository.  
+If you encounter bugs, have questions, or want to request a new feature, please [open an issue](https://github.com/micag2025/Supply_Chain_project/issues) on this repository.  
 
 
 ---
