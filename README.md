@@ -9,7 +9,26 @@
 
 ---
 
-## Architecture 
+## Architecture   
+The full **Decentralized Application (DApp)** has been built up following the follow workflow: 
+
+```  
+Remix (deploy)
+     ↓
+Ethereum contract
+     ↓
+ethers.js
+     ↓
+React UI
+     ↓
+MetaMask wallet
+```
+
+
+
+
+
+
 
 ---
 
@@ -32,9 +51,22 @@ project/
 ✅ blockchain backend (.sol)
 ✅ frontend dashboard (React UI)
 
-Together they form a:
+Together they form a **Decentralized Application (DApp)**  
 
-Decentralized Application (DApp)
+Remix = smart contract development + quick testing
+React/Web3 frontend = user interface that talks to the deployed contract
+
+
+repo for react 
+```
+src/
+ ├── abi/
+ ├── components/
+ ├── utils/
+ ├── hooks/
+ ├── App.js
+.env
+```
 
 
 
@@ -45,6 +77,11 @@ Decentralized Application (DApp)
 
 ## Getting Started
 
+### Prerequisites
+Install:
+- Node.js (>= 18)
+- MetaMask browser extension
+- Remix IDE (to deploy contract) ? 
 
 ---
 
@@ -52,7 +89,39 @@ Decentralized Application (DApp)
 
 ---
 
-## UI Walkthrough & Example Runs
+## UI Walkthrough & Example Runs  
+
+The  full UI becomes:
+
+🧭 DASHBOARD  
+- Wallet connection  
+- Role detection  
+📦 CREATE SECTION
+- Farmer only  
+📊 OVERVIEW TABLE
+- all batches live  
+🔍 READ BATCH
+- search by ID  
+🚚 ACTIONS (inside table)
+- Ship (Distributor only)  
+- Deliver (Retailer only)  
+
+
+```
+ [ CONNECT WALLET ]
+        ↓
+[ CONTRACT INITIALIZED ]
+        ↓
+────────────────────────
+| READ | CREATE | TABLE |
+────────────────────────
+        ↓
+[ SHIP / DELIVER FLOW ]
+        ↓
+[ LIVE DASHBOARD UPDATE ]
+```
+
+
 
 
 ---
