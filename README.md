@@ -9,11 +9,36 @@
 
 ---
 
-## Architecture (High-Level) 
+## Architecture 
 
 ---
 
 ## Project Structure
+
+```
+project/
+│
+├── contracts/
+│   └── SupplyChainBatch.sol
+│
+├── frontend/
+│   └── SupplyChainDashboard.jsx
+│
+├── package.json
+└── README.md
+```
+
+
+✅ blockchain backend (.sol)
+✅ frontend dashboard (React UI)
+
+Together they form a:
+
+Decentralized Application (DApp)
+
+
+
+
 
 
 ---
@@ -33,6 +58,38 @@
 ---
 
 ## Limitations & Workarounds
+
+- ### Add More Supply Chain States
+Current limitation Only 3 states exist.
+
+```solidity
+enum State {
+    Created,
+    Processed,
+    Packaged,
+    InTransit,
+    Shipped,
+    Delivered,
+    Rejected
+}
+```
+Benefits
+✔ More granular tracking  
+✔ Better simulation of real supply chains  
+
+- ### QR Code / Traceability Integration
+Upgrade idea
+
+Store: QR hash, metadata link, IPFS CID
+
+```solidity
+string public ipfsHash;
+```
+
+Benefits
+✔ Consumers can scan products  
+✔ Real-world traceability  
+✔ Connects blockchain + frontend  
 
 
 ---
@@ -58,18 +115,26 @@ Please follow the repository code style and add tests for major features.
 Feel free to suggest more ideas by opening an issue or starting a discussion! For bug reports or feature requests, 
  [open an issue](https://github.com/micag2025/Supply_Chain_project/issues).  
 
+-  ### Add Batch Expiration  
+Benefits  
+✔ Practical business value  
+✔ Better inventory management  
+
+ 
+
  ---
 
 ## References 
--
-
----
+- [Remix IDE](https://remix.live/)
+- [Web3 Faucet](https://cloud.google.com/application/web3/faucet)
+- [MetaMask](https://metamask.io/)
+- 
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE]() file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/micag2025/Supply_Chain_project/blob/main/LICENSE) file for details.
 
 ---
 
