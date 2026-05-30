@@ -1,7 +1,29 @@
-# Supply_Chain_project / Title to be enclsoed 
+# Supply_Chain_project 
+
+## Option titles  
+Blockchain-Based Supply Chain Tracking System  
+Decentralized Supply Chain Management Using Ethereum  
+Smart Contract-Based Product Traceability Platform  
+**Blockchain Supply Chain Monitoring and Tracking System**  
+Ethereum-Powered Supply Chain Traceability Solution  
+**Design and Implementation of a Decentralized Supply Chain dApp**  
+ChainTrack: Blockchain-Based Supply Chain Traceability Platform  
+TraceChain: Ethereum-Powered Product Tracking System  
+**SupplyChain Dashboard: Smart Contract-Based Logistics Tracking**  
+**Decentralized Supply Chain Management System Using Solidity and React**  
+CoffeeChain: Farm-to-Retail Product Traceability dApp  
+**Blockchain Supply Chain Tracker with React, Solidity, and MetaMask**  
+End-to-End Product Tracking Platform on Ethereum  
+Smart Contract Supply Chain Management Dashboard  
+
+
+## Tags   
+`Blockchain`, `Supply Chain Management`, `Solidity`, `Smart Contract`, `Sepolia`, `React`, `MetaMask`, `Ethereum` 
+
+
 
 ## Overview
-
+The blockchain-based supply chain tracking project built with Solidity, MetaMask, React, Ethers.js, and Sepolia.
 
 ---
 
@@ -9,76 +31,99 @@
 
 ---
 
+## Workflows  
+
+There are actually two different workflows:
+
+### 1️⃣ Deployment workflow (Remix)
+
+```
+Solidity contract
+   ↓
+Remix deploy
+   ↓
+Ethereum blockchain
+```
+
+## 2️⃣ Runtime user workflow (the dApp)  / Application flow   
+
+```
+React UI
+   ↓
+ethers.js
+   ↓
+MetaMask
+   ↓
+Smart Contract
+   ↓
+Blockchain
+```
+---
+
 ## Architecture   
 The full **Decentralized Application (DApp)** has been built up following the follow workflow: 
 
-```  
-Remix (deploy)
-     ↓
-Ethereum contract
-     ↓
-ethers.js
-     ↓
-React UI
-     ↓
-MetaMask wallet
+The full system architecture is shown in the following workflow diagram. Briefly, the system is a decentralized supply chain system where each role interacts with a smart contract through MetaMask, and all state changes are permanently recorded on the Ethereum blockchain
+
+```
+                    ┌──────────────────────────┐
+                    │        USER (UI)         │
+                    │  React Dashboard (Web)   │
+                    │                          │
+                    │  - Connect Wallet        │
+                    │  - Create Batch          │
+                    │  - Read Batch            │
+                    │  - Ship / Deliver        │
+                    └─────────────┬────────────┘
+                                  │
+                                  │ ethers.js
+                                  ▼
+                    ┌──────────────────────────┐
+                    │       MetaMask Wallet    │
+                    │                          │
+                    │ - Account 1 (Farmer)     │
+                    │ - Account 2 (Distributor)│
+                    │ - Account 3 (Retailer)   │
+                    └─────────────┬────────────┘
+                                  │
+                                  │ JSON-RPC
+                                  ▼
+                    ┌──────────────────────────┐
+                    │     Ethereum Network     │
+                    │     (Sepolia Testnet)    │
+                    └─────────────┬────────────┘
+                                  │
+                                  │ Smart Contract Calls
+                                  ▼
+        ┌──────────────────────────────────────────────┐
+        │         SupplyChainBatch Smart Contract      │
+        │                                              │
+        │  - createBatch()                             │
+        │  - shipBatch()                               │
+        │  - deliverBatch()                            │
+        │  - getBatchReadable()                        │
+        │                                              │
+        │  Storage:                                    │
+        │  mapping(batchId → Batch struct)             │
+        └───────────────┬──────────────────────────────┘
+                        │
+                        ▼
+        ┌──────────────────────────────────────────────┐
+        │               Blockchain State               │
+        │                                              │
+        │  Batch #1 → Created → Shipped → Delivered    │
+        │  Batch #2 → Created → ...                    │
+        └──────────────────────────────────────────────┘
 ```
 
-
-
-
-
-
+### Why this architecture is good  
+✔ Clear separation of layers  
+✔ Shows Web3 flow (UI → Wallet → Blockchain)  
+✔ Demonstrates real decentralized architecture  
 
 ---
 
 ## Project Structure
-
-```
-project/
-│
-├── contracts/
-│   └── SupplyChainBatch.sol
-│
-├── frontend/
-│   └── SupplyChainDashboard.jsx
-│
-├── package.json
-└── README.md
-```
-
-
-✅ blockchain backend (.sol)
-✅ frontend dashboard (React UI)
-
-Together they form a **Decentralized Application (DApp)**  
-
-Remix = smart contract development + quick testing
-React/Web3 frontend = user interface that talks to the deployed contract
-
-
-repo for react 
-```
-src/
- ├── abi/
- ├── components/
- ├── utils/
- ├── hooks/
- ├── App.js
-.env
-```
-```
-smart-contract/
-│
-├── SupplyChainBatch.sol
-│
-├── deployment/
-│   ├── contract-address.txt
-│   └── deployed-contract-info.md
-│
-└── abi/
-    └── SupplyChain.json
-```
 
 ```
 supply-chain-dapp/
@@ -131,6 +176,30 @@ supply-chain-dapp/
 ├── .gitignore
 └── LICENSE
 ``` 
+
+```
+project/
+│
+├── contracts/
+│   └── SupplyChainBatch.sol
+│
+├── frontend/
+│   └── SupplyChainDashboard.jsx
+│
+├── package.json
+└── README.md
+```
+
+
+✅ blockchain backend (.sol)
+✅ frontend dashboard (React UI)
+
+Together they form a **Decentralized Application (DApp)**  
+
+Remix = smart contract development + quick testing
+React/Web3 frontend = user interface that talks to the deployed contract
+
+
 
 
 ---
@@ -202,9 +271,9 @@ enum State {
     Rejected
 }
 ```
-Benefits
-✔ More granular tracking  
-✔ Better simulation of real supply chains  
+Benefits  
+✔ More granular tracking    
+✔ Better simulation of real supply chains    
 
 - ### QR Code / Traceability Integration
 Upgrade idea
@@ -215,10 +284,10 @@ Store: QR hash, metadata link, IPFS CID
 string public ipfsHash;
 ```
 
-Benefits
-✔ Consumers can scan products  
-✔ Real-world traceability  
-✔ Connects blockchain + frontend  
+Benefits  
+✔ Consumers can scan products    
+✔ Real-world traceability    
+✔ Connects blockchain + frontend    
 
 
 ---
@@ -257,7 +326,7 @@ Benefits
 - [Remix IDE](https://remix.live/)
 - [Web3 Faucet](https://cloud.google.com/application/web3/faucet)
 - [MetaMask](https://metamask.io/)
-- 
+- [React](https://react.dev/)
 
 ---
 
