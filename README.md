@@ -29,6 +29,15 @@ The blockchain-based supply chain tracking project built with Solidity, MetaMask
 
 ## Key Highlights   
 
+REAL production architecture
+no scanning loop
+event-driven UI (BatchCreated listener)
+instant table updates
+scalable indexing system
+✔ New batch ALWAYS appears
+✔ ReadBatch works immediately
+✔ Table updates correctly
+
 ---
 
 ## Workflows  
@@ -210,6 +219,85 @@ Install:
 - MetaMask browser extension
 - Remix IDE (to deploy contract) ? 
 
+
+Remix = smart contract development + quick testing
+React/Web3 frontend = user interface that talks to the deployed contract
+
+They work together
+
+### How Remix + React work together
+
+Even if you deploy from Remix, your React frontend can still connect.
+
+Step-by-step:
+#### 1. Deploy from Remix
+Go to Deploy & Run Transactions  
+Select:  
+Environment: Injected Provider - MetaMask  
+Deploy contract  
+Copy the contract address  
+
+2. Copy ABI from Remix
+
+In Remix:
+
+Go to Compilation Details
+Copy ABI
+
+Paste into:
+```bash
+src/abi/SupplyChainBatch.json
+```
+
+3. Use that address in React
+``` javascript
+const CONTRACT_ADDRESS = "0xYourRemixDeployedAddress";
+```
+
+🧱 STEP 1 — Deploy in Remix (2–3 min)
+1. Open Remix
+
+👉 https://remix.ethereum.org
+
+2. Compile your contract
+Paste SupplyChainBatch.sol
+Go to Solidity Compiler
+Click Compile
+3. Deploy
+
+Go to:
+👉 Deploy & Run Transactions
+
+Set:
+
+Environment: Injected Provider - MetaMask
+Make sure MetaMask is on the correct network (e.g. Sepolia or local)
+
+Click:
+👉 Deploy
+
+4. Copy 2 things
+📍 Contract address
+
+Example:
+
+0xA1b2C3...
+📦 ABI
+
+Go to:
+
+Compilation Details → ABI → copy JSON
+⚛️ STEP 2 — Create React App
+```bash
+npm create vite@latest supplychain-ui -- --template react
+cd supplychain-ui
+npm install
+npm install ethers
+npm run dev
+```
+
+
+
 ---
 
 ## Use Cases and Example
@@ -236,7 +324,36 @@ The  full UI becomes:
 
  ![Interface UI](Screenshots_UI/Screenshot_UI_interface.jpeg)
 
+As it can been seen, the dashboard is characterised by: 
 
+✔ 1. Read Batch (manual lookup)
+user enters an ID
+fetches one batch directly from blockchain
+useful for verification/debugging
+
+✔ 2. Overview Table (batch history)
+shows ALL batches
+comes from scanning or events
+displays:
+id
+name
+quantity
+state
+addresses
+
+
+✔ 3. Create Batch (Farmer)
+creates new batch on-chain
+triggers BatchCreated event
+automatically updates table
+✔ 4. Ship Batch (Distributor)
+visible only if:
+wallet = distributor
+state = Created
+✔ 5. Deliver Batch (Retailer)
+visible only if:
+wallet = retailer
+state = Shipped
 
 ```
  [ CONNECT WALLET ]
