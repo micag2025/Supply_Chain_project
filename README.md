@@ -67,10 +67,70 @@ src/
  ├── App.js
 .env
 ```
+```
+smart-contract/
+│
+├── SupplyChainBatch.sol
+│
+├── deployment/
+│   ├── contract-address.txt
+│   └── deployed-contract-info.md
+│
+└── abi/
+    └── SupplyChain.json
+```
 
-
-
-
+```
+supply-chain-dapp/
+│
+├── smart-contract/
+│   │
+│   ├── SupplyChainBatch.sol
+│   │
+│   ├── deployment/
+│   │   ├── contract-address.txt
+│   │   └── deployed-contract-info.md
+│   │
+│   └── abi/
+│       └── SupplyChain.json
+│
+├── frontend/
+│   │
+│   ├── public/
+│   │   ├── favicon.ico
+│   │   └── index.html
+│   │
+│   ├── src/
+│   │   │
+│   │   ├── abi/
+│   │   │   └── SupplyChain.json
+│   │   │
+│   │   ├── services/
+│   │   │   └── contract.js
+│   │   │
+│   │   ├── utils/
+│   │   │   └── address.js
+│   │   │
+│   │   ├── components/
+│   │   │   ├── WalletSection.jsx
+│   │   │   ├── ReadBatchSection.jsx
+│   │   │   ├── CreateBatchSection.jsx
+│   │   │   ├── BatchTable.jsx
+│   │   │   └── RoleBadge.jsx
+│   │   │
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   ├── index.js
+│   │   └── index.css
+│   │
+│   ├── .env
+│   ├── package.json
+│   └── package-lock.json
+│
+├── README.md
+├── .gitignore
+└── LICENSE
+``` 
 
 
 ---
