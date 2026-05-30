@@ -236,6 +236,10 @@ The  full UI becomes:
 - Deliver (Retailer only)  
 
 
+ ![Interface UI](Screenshots_UI/Screenshot_UI_interface.jpeg)
+
+
+
 ```
  [ CONNECT WALLET ]
         ↓
