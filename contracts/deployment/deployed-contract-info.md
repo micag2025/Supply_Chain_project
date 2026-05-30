@@ -14,23 +14,23 @@ Sepolia Testnet
 
 ## Contract Address
 
-0xbffD9f4657a9655670dC66f9470b013bb127073b   TO BE MASKED
+0xbffD...073b   
 
 ## Deployer Account (Farmer)
 
-0x15d00fC26FB222aF2Cf1647Ee572da478b359759   TO BE MASKED
+0x15d00...9759   
 
 ## Distributor Account
 
-0xD934BC3d56679b190577Ce018b43BE4645b852dB   TO BE MASKED
+0xD934...52dB  
 
 ## Retailer Account
 
-0x10D860Ed59a10AAf064154c0FCA024234c7CeB1C   TO BE MASKED
+0x10D8...eB1C   
 
 ## Frontend Environment Variable
 
-REACT_APP_CONTRACT_ADDRESS=0xbffD9f4657a9655670dC66f9470b013bb127073b  TO BE MASKED
+REACT_APP_CONTRACT_ADDRESS=0xbffD...073b  
 
 ## ABI Version
 
