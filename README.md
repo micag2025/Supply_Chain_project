@@ -1,6 +1,5 @@
-# Supply_Chain_project 
+# Option title  
 
-## Option titles  
 Blockchain-Based Supply Chain Tracking System  
 Decentralized Supply Chain Management Using Ethereum  
 Smart Contract-Based Product Traceability Platform  
@@ -22,7 +21,8 @@ Smart Contract Supply Chain Management Dashboard
 
 
 
-## Overview
+## Overview  
+
 The blockchain-based supply chain tracking project built with Solidity, MetaMask, React, Ethers.js, and Sepolia.
 
 ---
@@ -33,9 +33,9 @@ The blockchain-based supply chain tracking project built with Solidity, MetaMask
 
 ## Workflows  
 
-There are actually two different workflows:
+In the full **Decentralized Application (DApp)** there are actually two different workflows:
 
-### 1️⃣ Deployment workflow (Remix)
+### 1. Deployment workflow (Remix)
 
 ```
 Solidity contract
@@ -45,7 +45,7 @@ Remix deploy
 Ethereum blockchain
 ```
 
-## 2️⃣ Runtime user workflow (the dApp)  / Application flow   
+## 2. Runtime user workflow (the dApp)  / Application flow   
 
 ```
 React UI
@@ -60,10 +60,9 @@ Blockchain
 ```
 ---
 
-## Architecture   
-The full **Decentralized Application (DApp)** has been built up following the follow workflow: 
+## Architecture  
 
-The full system architecture is shown in the following workflow diagram. Briefly, the system is a decentralized supply chain system where each role interacts with a smart contract through MetaMask, and all state changes are permanently recorded on the Ethereum blockchain
+The system is a decentralized supply chain system where each role interacts with a smart contract through MetaMask, and all state changes are permanently recorded on the Ethereum blockchain.
 
 ```
                     ┌──────────────────────────┐
@@ -117,7 +116,6 @@ The full system architecture is shown in the following workflow diagram. Briefly
 ```
 
 ### Why this architecture is good  
-✔ Clear separation of layers  
 ✔ Shows Web3 flow (UI → Wallet → Blockchain)  
 ✔ Demonstrates real decentralized architecture  
 
