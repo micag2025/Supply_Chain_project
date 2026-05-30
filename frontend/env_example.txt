@@ -1,2 +1,0 @@
-
-REACT_APP_CONTRACT= "deployed_contract_address"
