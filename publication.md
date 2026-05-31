@@ -66,7 +66,7 @@ TO BE DRAFTED
 
 ## Installation Instructions
 
-This publication has a [GitHub code repository](LINK TO BE ADDED) that is attached also under the Code section.  
+This publication has a [GitHub code repository](https://github.com/micag2025/Supply_Chain_project.git) that is attached also under the Code section.  
 
 ### Prerequisites  
 
@@ -78,7 +78,7 @@ Install:
 ### Clone and install  
 
 ```bash   
-git clone https://github.com/micag2025/Toolkit_Google_ADK.git  (LINK REPO TO BE ENCLOSED)
+git clone https://github.com/micag2025/Supply_Chain_project.git
 cd Supply_Chain_project
 ```
 
@@ -110,9 +110,9 @@ DApp will provide a local URL. Open it in your browser. You can now interact wit
 
 The dashboard is characterised by (This enhanced instruction pattern includes)    
 
-✔ 1. **Dashboard (Selection role account?)**       
-    - `Wallet connection`    
-    - `Role detection`         
+✔ 1. **Dashboard (Selection role account?)**         
+   - `Wallet connection`      
+   - `Role detection`           
 
 ✔ 2. **Read Batch (manual lookup)**     
    - user enters an `ID (of the batch?)`      
@@ -129,18 +129,13 @@ The dashboard is characterised by (This enhanced instruction pattern includes)
    - triggers `BatchCreated` event  
    - automatically updates table  
 
-✔ 5. **Ship Batch (Distributor)**  
-    - visible only if:  
-     `wallet = distributor`  
-     `state = Created`  
+✔ 5. **Ship Batch (Distributor)**    
+   - visible only if `wallet = distributor` and  `state = Created`  
 
-✔ 6. **Deliver Batch (Retailer)**  
-    visible only if:  
-    `wallet = retailer`  
-    `state = Shipped`  
+✔ 6. **Deliver Batch (Retailer)**    
+   - visible only if `wallet = retailer` and  `state = Shipped`  
 
-> IMP Other option to describe the dashboard  
-  The  full UI becomes:
+> IMP Other option to describe the dashboard The  full UI becomes:
 
 🧭 DASHBOARD  
 - Wallet connection  
