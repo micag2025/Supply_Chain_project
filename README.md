@@ -18,14 +18,14 @@ The blockchain-based supply chain tracking project built with Solidity, MetaMask
 
 ## Key Highlights   
 
-REAL production architecture
-no scanning loop
-event-driven UI (BatchCreated listener)
-instant table updates
-scalable indexing system
-✔ New batch ALWAYS appears
-✔ ReadBatch works immediately
-✔ Table updates correctly
+- REAL production architecture  
+- no scanning loop  
+- event-driven UI (BatchCreated listener)  
+- instant table updates  
+- scalable indexing system  
+- New batch ALWAYS appears  
+- ReadBatch works immediately
+- Table updates correctly
 
 ---
 
@@ -195,9 +195,6 @@ Together they form a **Decentralized Application (DApp)**
 Remix = smart contract development + quick testing
 React/Web3 frontend = user interface that talks to the deployed contract
 
-
-
-
 ---
 
 ## Getting Started
@@ -209,74 +206,67 @@ Install:
 - Remix IDE (to deploy contract) ? 
 
 
-Remix = smart contract development + quick testing
-React/Web3 frontend = user interface that talks to the deployed contract
+**Remix** : smart contract development + quick testing
+**React/Web3 frontend** : user interface that talks to the deployed contract
 
-They work together
+> _Note_: Remix and React/Web3 frontend work together  
 
 ### How Remix + React work together
 
 Even if you deploy from Remix, your React frontend can still connect.
 
-Step-by-step:
-#### 1. Deploy from Remix
-Go to Deploy & Run Transactions  
-Select:  
-Environment: Injected Provider - MetaMask  
-Deploy contract  
-Copy the contract address  
+Step-by-step:  
 
-2. Copy ABI from Remix
+#### 1. Deploy from Remix  
 
-In Remix:
+- Go to Deploy & Run Transactions    
+- Select:    
+  Environment: Injected Provider - MetaMask    
+  Deploy contract    
+  Copy the contract address    
 
-Go to Compilation Details
-Copy ABI
+#### 2. Copy ABI from Remix
 
-Paste into:
+In Remix:  
+- Go to Compilation Details
+- Copy `ABI`  
+- Paste into:  
+
 ```bash
 src/abi/SupplyChainBatch.json
 ```
 
-3. Use that address in React
+#### 3. Use that address in React  
+
 ``` javascript
 const CONTRACT_ADDRESS = "0xYourRemixDeployedAddress";
 ```
 
-🧱 STEP 1 — Deploy in Remix (2–3 min)
-1. Open Remix
+#### 🧱 STEP 1 — Deploy in Remix   
 
-👉 https://remix.ethereum.org
+1. Open [Remix](https://remix.ethereum.org)  
 
-2. Compile your contract
-Paste SupplyChainBatch.sol
-Go to Solidity Compiler
-Click Compile
-3. Deploy
+2. Compile the (smart?) contract     
+   - Paste `SupplyChainBatch.sol`    
+   - Go to `Solidity Compiler`  
+   - Click Compile  
 
-Go to:
-👉 Deploy & Run Transactions
+3. Deploy  
+  - Go to `Deploy & Run Transactions`  
+  - Set `Environment: Injected Provider - MetaMask`
 
-Set:
+_Note_: Make sure MetaMask is on the correct network (e.g. `Sepolia` or local)
 
-Environment: Injected Provider - MetaMask
-Make sure MetaMask is on the correct network (e.g. Sepolia or local)
+  - Click: Deploy
 
-Click:
-👉 Deploy
+4. Copy  
+📍 `Contract address`
+Example: 0xA1b2C3... 
+📦 `ABI`  
+    - Go to Compilation Details → ABI → copy JSON  
 
-4. Copy 2 things
-📍 Contract address
+#### STEP 2 — Create React App  
 
-Example:
-
-0xA1b2C3...
-📦 ABI
-
-Go to:
-
-Compilation Details → ABI → copy JSON
-⚛️ STEP 2 — Create React App
 ```bash
 npm create vite@latest supplychain-ui -- --template react
 cd supplychain-ui
@@ -294,23 +284,6 @@ npm run dev
 ---
 
 ## UI Walkthrough & Example Runs  
-
-The  full UI becomes:
-
-🧭 DASHBOARD  
-- Wallet connection  
-- Role detection  
-📦 CREATE SECTION
-- Farmer only  
-📊 OVERVIEW TABLE
-- all batches live  
-🔍 READ BATCH
-- search by ID  
-🚚 ACTIONS (inside table)
-- Ship (Distributor only)  
-- Deliver (Retailer only)  
-
-
 
 ### UI Web DApp
 
@@ -339,7 +312,9 @@ The  full UI becomes:
 ## Limitations & Workarounds
 
 - ### Add More Supply Chain States
-Current limitation Only 3 states exist.
+
+A current limitation of the application is that only 3 states exist (created, shipped, delivered, respectively). Adding more supply
+chain states could allow a more granular traking and a better si,mulation of the real supply chains. 
 
 ```solidity
 enum State {
@@ -352,25 +327,15 @@ enum State {
     Rejected
 }
 ```
-Benefits  
-✔ More granular tracking    
-✔ Better simulation of real supply chains    
+  
+- ### QR Code / Traceability Integration  
 
-- ### QR Code / Traceability Integration
-Upgrade idea
-
-Store: QR hash, metadata link, IPFS CID
+Store QR hash, metadata link, and IPFS CID could allow several benefits such as consumers can scan products, real-world traceability    
+and connection blockchain + frontend  
 
 ```solidity
 string public ipfsHash;
 ```
-
-Benefits  
-✔ Consumers can scan products    
-✔ Real-world traceability    
-✔ Connects blockchain + frontend    
-
-
 ---
 
 ## Contributing
@@ -394,7 +359,8 @@ Please follow the repository code style and add tests for major features.
 Feel free to suggest more ideas by opening an issue or starting a discussion! For bug reports or feature requests, 
  [open an issue](https://github.com/micag2025/Supply_Chain_project/issues).  
 
--  ### Add Batch Expiration  
+-  ### Add Batch Expiration   
+
 Benefits  
 ✔ Practical business value  
 ✔ Better inventory management  
@@ -425,3 +391,4 @@ If you encounter bugs, have questions, or want to request a new feature, please 
 ## Acknowledgements
 
 
+--- 
