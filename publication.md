@@ -158,9 +158,9 @@ The dashboard is characterised by (This enhanced instruction pattern includes)
 
  ![Interface UI](Screenshots_UI/Screenshot_UI_interface.jpeg)
 
-### Example 1 
+### Example 1 : Create and Read Batch 
 
-SCRENNSHOT TO BE ENCLOSED 
+ ![Create_Read_Batch]
 
 ### Example 2 
 
