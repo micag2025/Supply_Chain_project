@@ -102,9 +102,7 @@ npm start
 
 ### Open in browser  
 
-DApp will provide a local URL. Open it in your browser. From the UI Web DAapp user interface, You can now interact with the ADK AI Developer
-
-DApp will provide a local URL. Open it in your browser. You can now interact with the Supply Chain Dashboard, from the UI Web DApp.  
+DApp will provide a local URL. Open it in your browser. The user can now interact with the Supply Chain Dashboard, from the UI Web DApp.  
 
 ### Understanding Advanced Instructions  
 
@@ -154,25 +152,27 @@ The dashboard is characterised by (This enhanced instruction pattern includes)
 
 ## Examples Usage UI  
 
-### UI Web DApp
+### UI Web DApp  
 
- ![Interface UI](Screenshots_UI/Screenshot_UI_interface.jpeg)
+ ![Interface UI](Screenshots_UI/Screenshot_UI_interface.jpeg)  
 
-### Example 1 : Create and Read Batch 
+ ---
 
- ![Create_Read_Batch]
+### Example 1: Read Batch and Create Batch (Farmer only)    
 
-### Example 2 
+ ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)  
 
-SCRENNSHOT TO BE ENCLOSED 
+ ---  
 
-### Example 3 
+### Example 2: Action inside the overview table : Ship (Distributor only)       
 
-SCRENNSHOT TO BE ENCLOSED
+![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
 
-### Example 4 
+---  
 
-SCRENNSHOT TO BE ENCLOSED  
+### Example 3: Action inside the overview table : Deliver (Retailer only)       
+
+![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)    
 
 ---  
 
