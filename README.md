@@ -1,25 +1,14 @@
 # Option title  
 
 Blockchain-Based Supply Chain Tracking System  
-Decentralized Supply Chain Management Using Ethereum  
-Smart Contract-Based Product Traceability Platform  
-**Blockchain Supply Chain Monitoring and Tracking System**  
-Ethereum-Powered Supply Chain Traceability Solution  
+**Blockchain Supply Chain Monitoring and Tracking System** 
 **Design and Implementation of a Decentralized Supply Chain dApp**  
-ChainTrack: Blockchain-Based Supply Chain Traceability Platform  
-TraceChain: Ethereum-Powered Product Tracking System  
 **SupplyChain Dashboard: Smart Contract-Based Logistics Tracking**  
 **Decentralized Supply Chain Management System Using Solidity and React**  
 CoffeeChain: Farm-to-Retail Product Traceability dApp  
 **Blockchain Supply Chain Tracker with React, Solidity, and MetaMask**  
-End-to-End Product Tracking Platform on Ethereum  
-Smart Contract Supply Chain Management Dashboard  
 
-
-## Tags   
-`Blockchain`, `Supply Chain Management`, `Solidity`, `Smart Contract`, `Sepolia`, `React`, `MetaMask`, `Ethereum` 
-
-
+---
 
 ## Overview  
 
@@ -54,7 +43,7 @@ Remix deploy
 Ethereum blockchain
 ```
 
-## 2. Runtime user workflow (the dApp)  / Application flow   
+### 2. Runtime user workflow (the dApp)  / Application flow   
 
 ```
 React UI
@@ -322,38 +311,11 @@ The  full UI becomes:
 - Deliver (Retailer only)  
 
 
+
+### UI Web DApp
+
  ![Interface UI](Screenshots_UI/Screenshot_UI_interface.jpeg)
 
-As it can been seen, the dashboard is characterised by: 
-
-✔ 1. Read Batch (manual lookup)
-user enters an ID
-fetches one batch directly from blockchain
-useful for verification/debugging
-
-✔ 2. Overview Table (batch history)
-shows ALL batches
-comes from scanning or events
-displays:
-id
-name
-quantity
-state
-addresses
-
-
-✔ 3. Create Batch (Farmer)
-creates new batch on-chain
-triggers BatchCreated event
-automatically updates table
-✔ 4. Ship Batch (Distributor)
-visible only if:
-wallet = distributor
-state = Created
-✔ 5. Deliver Batch (Retailer)
-visible only if:
-wallet = retailer
-state = Shipped
 
 ```
  [ CONNECT WALLET ]
@@ -436,8 +398,6 @@ Feel free to suggest more ideas by opening an issue or starting a discussion! Fo
 Benefits  
 ✔ Practical business value  
 ✔ Better inventory management  
-
- 
 
  ---
 

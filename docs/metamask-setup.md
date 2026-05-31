@@ -2,16 +2,16 @@
 
 ## Install MetaMask
 
-1. Visit the MetaMask website.
+1. Visit the [MetaMask website](https://metamask.io/).
 2. Install the browser extension.
 3. Create a new wallet or import an existing wallet.
-4. Securely store your Secret Recovery Phrase.
+4. Securely store your Secret Recovery Phrase. (THIS COULD BE EVENTUALLY DROP OUT)
 
 ---
 
 ## Add the Sepolia Test Network
 
-1. Open MetaMask.
+1. Open [MetaMask](https://metamask.io/).
 2. Click the network selector at the top.
 3. Enable "Show test networks" if necessary.
 4. Select Sepolia Test Network.
@@ -47,21 +47,21 @@ Repeat until you have three accounts.
 
 ## How to Get Your MetaMask Address
 
-1. Open MetaMask.
+1. Open [MetaMask](https://metamask.io/).
 2. Select the desired account.
 3. Click the account name.
 4. The address is automatically copied to the clipboard.
 
 Example:
 
-0x15d00fC26FB222aF2Cf1647Ee572da478b359759
+0x15d0...9759
 
 ---
 
 ## Fund Accounts with Sepolia ETH
 
 1. Copy the account address.
-2. Use a Sepolia faucet.
+2. Use a Sepolia faucet using [Web3 Faucet](https://cloud.google.com/application/web3/faucet)
 3. Request test ETH.
 4. Wait for the transaction confirmation.
 
