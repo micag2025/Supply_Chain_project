@@ -12,7 +12,7 @@ CoffeeChain: Farm-to-Retail Product Traceability dApp
 
 ## Tags 
 
-`Blockchain`, `Supply Chain Management`, `Solidity`, `Smart Contract`, `Sepolia`, `React`, `MetaMask`, `Ethereum` 
+`Blockchain`, `Supply Chain Management`, `Solidity`, `Smart Contract`, `Sepolia`, `React`, `MetaMask`, `Ethereum` ,  `*Decentralized Application (DApp)`
 
 ---
 
@@ -97,27 +97,21 @@ To sum up, React never runs inside Remix. Instead:
 
 STEP 1 — Remix
 The user do:  
+- Write Solidity
+- Compile
+- Deploy
+- Copy ABI
+- Copy contract address  
 
-```
-Write Solidity
-Compile
-Deploy
-Copy ABI
-Copy contract address  
-```  
 
 STEP 2 — React
 The user do:  
-
-```
-Create React app
-Install ethers.js
-Paste ABI
-Paste contract address
-Connect MetaMask  
-```  
-
-
+- Create React app  
+- Install ethers.js  
+- Paste ABI  
+- Paste contract address  
+- Connect MetaMask  
+  
 **Visual architecture** 
 
 ```
@@ -306,7 +300,7 @@ Remix is mainly for “Write → Deploy → Test quickly” and is not ideal for
 ###  Limitation CRA
 
 Nerverless CRA is fine for this project (Web3 dApp), it slower than `Vite` and older architecture
-Upgraded to Upgrade Node.js and use : 
+Upgraded  Node.js and use : 
 
 ```bash
 npm create vite@latest supplychain-ui -- --template react
@@ -359,8 +353,16 @@ Connect MetaMask
 Build UI
 Call contract functions
 
+### Overcome the limitiation of CRA   
+Upgraded  Node.js and use : 
 
-
+```bash
+npm create vite@latest supplychain-ui -- --template react
+cd supplychain-ui
+npm install
+npm install ethers
+npm run dev
+```  
 
 ---  
 
@@ -382,7 +384,7 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 ## Contact
 
-TO BE ENCLOSED 
+michelaagostini73@gmail.com
 
 ---
 
