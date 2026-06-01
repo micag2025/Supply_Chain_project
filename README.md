@@ -353,7 +353,7 @@ Open MetaMask, making sure that:
 - MetaMask unlocked  
 - Network = Sepolia  
 
-> _Note_ : See [MetaMask Setup Guide](micag2025/Supply_Chain_project/docs/metamask-setup.md) for more details how to: 
+> _Note_ : See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md)) for more details how to: 
           >- install MetaMask  
           >- Add the Sepolia Test Network  
           >- Create multiple accounts  
@@ -362,19 +362,11 @@ Open MetaMask, making sure that:
           >- Switching Roles 
 
 
-In browser console or add button MetaMask will automatically prompt when:
-- The user click `Create Batch`  
+The browser console will automatically prompt when:
+- The user click `Create Batch`    
 - The user click `Read Batch` (read needs provider access)  
-
-
-> _Note_ : See [MetaMask Setup Guide](micag2025/Supply_Chain_project/docs/metamask-setup.md) for more details how to: 
-          >- install MetaMask  
-          >- Add the Sepolia Test Network  
-          >- Create multiple accounts  
-          >- How to Get Your MetaMask Address  
-          >- Fund Accounts with Sepolia ETH  
-          >- Switching Roles  
-   
+- The user click  `Ship` button within the table overview  
+- The user click `Deliver` button within the table overview  
 
 The above step by step guide can be diplayed as follow: 
 
@@ -398,16 +390,17 @@ You now have:
 ✔ Read batch function working
 ✔ MetaMask integration
 
-Open MetaMask
 
-Make sure:
+#### STEP 7 — Test it / Testing Instructions
 
-MetaMask installed
-MetaMask unlocked
-Network = Sepolia
+You can test the enhanced multi-agent system using both valid and invalid prompts. A full set of reproducible test prompts and expected behaviors is provided in the accompanying 
+GitHub repository
 
 
-#### STEP 7 — Test it (without Create Batch button, Ship button and Deliver button)  
+
+
+
+(without Create Batch button, Ship button and Deliver button)  
 
 - Open `http://localhost:3000` or launch the application using `npm start`    
 - Enter a batch ID that exists  
