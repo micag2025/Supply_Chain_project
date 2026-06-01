@@ -236,11 +236,11 @@ In Remix:
 src/abi/SupplyChainBatch.json
 ```
 
-#### 3. Use that address in React  
+#### 3. Use that address (address of the compiled contract) in React  
 
 ``` javascript
-const CONTRACT_ADDRESS = "0xYourRemixDeployedAddress";
-```
+const CONTRACT_ADDRESS = "YOUR_REMIX_DEPLOYED_CONTRACT_ADDRESS";
+```  
 
 #### 🧱 STEP 1 — Deploy in Remix   
 
@@ -254,16 +254,12 @@ const CONTRACT_ADDRESS = "0xYourRemixDeployedAddress";
 3. Deploy  
   - Go to `Deploy & Run Transactions`  
   - Set `Environment: Injected Provider - MetaMask`
-
+  - Click: Deploy  
 _Note_: Make sure MetaMask is on the correct network (e.g. `Sepolia` or local)
 
-  - Click: Deploy
-
 4. Copy  
-📍 `Contract address`
-Example: 0xA1b2C3... 
-📦 `ABI`  
-    - Go to Compilation Details → ABI → copy JSON  
+  - `Contract (deployed) address` : Example: 0xA1b2C3...   
+  - `ABI` : Go to Compilation Details → ABI → copy JSON  
 
 #### STEP 2 — Create React App  
 
@@ -275,37 +271,37 @@ npm install ethers
 npm run dev
 ```
 
+---
 
+## Use Cases and Example  
+
+TO BE DRAFTED 
 
 ---
 
-## Use Cases and Example
+## UI Walkthrough & Examples Usage UI  
 
----
+### UI Web DApp  
 
-## UI Walkthrough & Example Runs  
+ ![Interface UI]([Screenshots_UI](https://github.com/micag2025/Supply_Chain_project/blob/c5307e39eb7c51ea98d939242a2308f948819f76/Screenshots_UI/Screenshot_UI_interface.jpeg))  
 
-### UI Web DApp
+ ---
 
- ![Interface UI](Screenshots_UI/Screenshot_UI_interface.jpeg)
+### Example 1: Read Batch and Create Batch (Farmer only)    
 
+ ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)  
 
-```
- [ CONNECT WALLET ]
-        ↓
-[ CONTRACT INITIALIZED ]
-        ↓
-────────────────────────
-| READ | CREATE | TABLE |
-────────────────────────
-        ↓
-[ SHIP / DELIVER FLOW ]
-        ↓
-[ LIVE DASHBOARD UPDATE ]
-```
+ ---  
 
+### Example 2: Action inside the overview table : Ship (Distributor only)       
 
+![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
 
+---  
+
+### Example 3: Action inside the overview table : Deliver (Retailer only)       
+
+![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)      
 
 ---
 

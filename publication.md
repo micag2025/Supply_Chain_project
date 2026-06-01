@@ -208,4 +208,30 @@ TO BE DRAFTED
 
 ---  
 
-## 
+## ## References  
+
+- [Remix IDE](https://remix.live/)
+- [Web3 Faucet](https://cloud.google.com/application/web3/faucet)
+- [MetaMask](https://metamask.io/)
+- [React](https://react.dev/)
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/micag2025/Supply_Chain_project/blob/main/LICENSE) file for details.
+
+---
+
+## Contact
+
+TO BE ENCLOSED 
+
+---
+
+## Acknowledgements  
+
+TO BE DRAFTED
+
+
+--- 
