@@ -154,7 +154,7 @@ The dashboard is characterised by (This enhanced instruction pattern includes)
 
 ### UI Web DApp  
 
- ![Interface UI](Screenshots_UI/Screenshot_UI_interface.jpeg)  
+ ![Interface UI]([Screenshots_UI](https://github.com/micag2025/Supply_Chain_project/blob/c5307e39eb7c51ea98d939242a2308f948819f76/Screenshots_UI/Screenshot_UI_interface.jpeg))  
 
  ---
 
@@ -177,3 +177,35 @@ The dashboard is characterised by (This enhanced instruction pattern includes)
 ---  
 
 ## Limitations & Workarounds  
+
+### UI Web dApp Restrictions  
+
+TO BE DRAFTED   
+
+---  
+
+## Contributing  
+
+Contributions are welcomed to improve the UI Web dApp. Suggested workflow:  
+
+1. Fork the GitHub repository  
+2. Create a feature branch:    
+
+```bash
+git checkout -b feat/your-feature
+```
+3. Commit and push your changes  
+4. Submit a Pull Request and describe your contribution  
+5. Please follow the repository code style and add tests for major features
+
+---  
+
+## Future Implementations  
+
+Contributors are welcomed to elp extend the system without compromising its architectural guarantees. The following items represent suggested and validated directions for future work.  
+
+TO BE DRAFTED   
+
+---  
+
+## 
