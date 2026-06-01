@@ -208,7 +208,7 @@ TO BE DRAFTED
 
 ---  
 
-## ## References  
+## References  
 
 - [Remix IDE](https://remix.live/)
 - [Web3 Faucet](https://cloud.google.com/application/web3/faucet)
