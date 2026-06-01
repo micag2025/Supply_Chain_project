@@ -140,7 +140,13 @@ The user do:
 
 ## Core Capabilities  
 
-TO BE DRAFTED 
+Testing demonstrates that the following features have been verified:  
+- Contract logic
+- Role permissions
+- State transitions 
+- Dashboard rendering 
+- Batch History Table updates 
+- Blockchain-to-UI synchronization   
 
 ---
 
@@ -258,6 +264,28 @@ The dashboard is characterised by (This enhanced instruction pattern includes)
 - Ship (Distributor only)  
 - Deliver (Retailer only)  
  
+
+### Testing Instructions  
+
+The application was tested on the Sepolia Ethereum Testnet using three MetaMask accounts (account1, account2, and account 3, respectively) representing the different supply chain participants/roles (Farmer, Distributor, and Retailer, respectively).
+
+The smart contract and React frontend were successfully tested for:
+
+✓ Batch creation
+✓ Batch shipment
+✓ Batch delivery
+✓ Role-based access control
+✓ Wallet-based authentication
+✓ Duplicate ID prevention
+✓ Invalid state transition rejection
+✓ Unauthorized user rejection
+✓ Read operations
+✓ Blockchain state persistence
+
+All tests were executed on the Sepolia Ethereum Test Network using MetaMask and Ethers.js. A full set of reproducible `Valid Tests Cases`
+and `Invalid Tests Cases` is provided in the accompanying [GitHub repository](https://github.com/micag2025/Supply_Chain_project.git)   
+
+
 ---
 
 ## Examples Usage UI  
@@ -268,23 +296,38 @@ The dashboard is characterised by (This enhanced instruction pattern includes)
 
  ---
 
-### Example 1: Read Batch and Create Batch (Farmer only)    
+### Example 1: Valid Test Case: Read Batch and Create Batch (Farmer only)    
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)  
 
  ---  
 
-### Example 2: Action inside the overview table : Ship (Distributor only)       
+### Example 2: Valid Test Case: Action inside the overview table : Ship (Distributor only)       
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
 
 ---  
 
-### Example 3: Action inside the overview table : Deliver (Retailer only)       
+### Example 3: Valid Test Case: Action inside the overview table : Deliver (Retailer only)       
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)    
 
 ---  
+
+### Example 4: Invalid Test Case: Unauthorized Shipment
+
+Scenario
+
+Farmer attempts to ship a batch.
+
+Expected Result
+
+Transaction reverted with role validation error.
+
+Result ✓ Passed
+
+
+
 
 ## Limitations & Workarounds  
 

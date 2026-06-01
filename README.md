@@ -205,6 +205,14 @@ Install:
 - Remix IDE (to deploy contract)  
 
 
+**Environment**  
+* Network: Sepolia Testnet
+* Wallet: MetaMask
+* Frontend: React + Ethers.js
+* Smart Contract: Solidity
+* Deployment: Remix IDE
+
+
 **Remix** : smart contract development + quick testing
 **React/Web3 frontend** : user interface that talks to the deployed contract
 
@@ -268,9 +276,7 @@ Since you're doing:
 Remix → React frontend → ethers.js
 ```
 
-👉 Use: `Browser Extension`:
-
-After selecting Browser Extension make sure MetaMask is set to `Sepolia testnet` 
+👉 Use: `Browser Extension`: After selecting Browser Extension make sure MetaMask is set to `Sepolia testnet` 
 
 ```
 Remix (Browser Extension)
@@ -390,25 +396,86 @@ You now have:
 ✔ Read batch function working
 ✔ MetaMask integration
 
+#### Testing (Instructions()
 
-#### STEP 7 — Test it / Testing Instructions
+The smart contract and React frontend were successfully tested for:
 
-You can test the enhanced multi-agent system using both valid and invalid prompts. A full set of reproducible test prompts and expected behaviors is provided in the accompanying 
-GitHub repository
+✓ Batch creation
+✓ Batch shipment
+✓ Batch delivery
+✓ Role-based access control
+✓ Wallet-based authentication
+✓ Duplicate ID prevention
+✓ Invalid state transition rejection
+✓ Unauthorized user rejection
+✓ Read operations
+✓ Blockchain state persistence
+
+All tests were executed on the Sepolia Ethereum Test Network using MetaMask and Ethers.js.
 
 
+## Testing
+
+The application was tested on the Sepolia Ethereum Testnet using three MetaMask accounts representing the supply chain participants:
+
+| Role        | Account   |
+| ----------- | --------- |
+| Farmer      | Account 1 |
+| Distributor | Account 2 |
+| Retailer    | Account 3 |
+
+---
+The smart contract and React frontend were successfully tested for:
+
+✓ Batch creation
+✓ Batch shipment
+✓ Batch delivery
+✓ Role-based access control
+✓ Wallet-based authentication
+✓ Duplicate ID prevention
+✓ Invalid state transition rejection
+✓ Unauthorized user rejection
+✓ Read operations
+✓ Blockchain state persistence
 
 
+All valid and invalid tests were executed on the Sepolia Ethereum Test Network using MetaMask and Ethers.js.
 
-(without Create Batch button, Ship button and Deliver button)  
+### Valid Test Cases
 
-- Open `http://localhost:3000` or launch the application using `npm start`    
-- Enter a batch ID that exists  
-- Click `Read Batch`  
-- MetaMask asks to connect wallet  
-- Approve  
+| Test Case      | Description                         | Expected Result                                        | Status |
+| -------------- | ----------------------------------- | ------------------------------------------------------ | ------ |
+| Create Batch   | Farmer creates a new batch          | Batch created successfully and state set to Created    | ✅ Pass |
+| Read Batch     | Retrieve an existing batch          | Batch details returned correctly                       | ✅ Pass |
+| Ship Batch     | Distributor ships a created batch   | State changes from Created to Shipped                  | ✅ Pass |
+| Deliver Batch  | Retailer delivers a shipped batch   | State changes from Shipped to Delivered                | ✅ Pass |
+| Batch History Table Loading | Load all existing batches from blockchain | All batches displayed in the overview table | ✅ Pass |
+| Batch History Refresh| Refresh dashboard after a transaction     | Table updated with latest blockchain state         | ✅ Pass |
+| Newly Created Batch Visibility | Create a new batch from the dashboard| New batch appears in the table after refresh  | ✅ Pass |
+| Shipment Status Update| Ship a batch | Table status changes from Created to Shipped              | ✅ Pass |
+| Delivery Status Update| Deliver a batch| Table status changes from Shipped to Delivered            | ✅ Pass |
+| Address Masking  | Display participant addresses             | Addresses shown in shortened format (e.g., 0x15d0...9759) | ✅ Pass |
+| Role Detection | Connect different MetaMask accounts | Correct role displayed (Farmer, Distributor, Retailer) | ✅ Pass |
+| Event Emission | Execute contract actions            | Corresponding blockchain event emitted                 | ✅ Pass |
 
-You should now see blockchain data in React.
+---
+
+### Invalid Test Cases
+
+| Test Case               | Description                             | Expected Result                           | Status |
+| ----------------------- | --------------------------------------- | ----------------------------------------- | ------ |
+| Read Non-Existing Batch | Read batch with invalid ID              | Error message displayed                   | ✅ Pass |
+| Empty Batch Table Entry | Scan non-existing batch IDs             | Invalid entries ignored and not displayed | ✅ Pass |
+| Unauthorized Shipment   | Farmer attempts to ship a batch         | Transaction reverted                      | ✅ Pass |
+| Unauthorized Delivery   | Distributor attempts to deliver a batch | Transaction reverted                      | ✅ Pass |
+| Deliver Before Shipment | Retailer attempts to deliver a Created batch | Transaction reverted                 | ✅ Pass |
+| Ship Non-Existing Batch | Ship batch with invalid ID                   | Transaction reverted                 | ✅ Pass |
+| Duplicate Batch ID      | Create a batch with an existing ID      | Transaction reverted                      | ✅ Pass |
+| Deliver Before Shipment | Deliver a batch still in Created state  | Transaction reverted                      | ✅ Pass |
+| Ship Non-Existing Batch | Ship batch with invalid ID              | Transaction reverted                      | ✅ Pass |
+| Invalid Wallet Role     | Unknown account attempts restricted action | Access denied                          | ✅ Pass |
+
+---
 
 You now have:
 
@@ -451,10 +518,6 @@ In browser console or add button MetaMask will automatically prompt when:
 - The user click `Read Batch` (read needs provider access)  
 
 
-
-
-
-
 ---
 
 ## UI Walkthrough & Examples Usage UI  
@@ -465,25 +528,64 @@ In browser console or add button MetaMask will automatically prompt when:
 
  ---
 
-### Example 1: Read Batch and Create Batch (Farmer only)    
+### Example 1: Valid Test Case: Read Batch and Create Batch (Farmer only) 
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)  
 
  ---  
 
-### Example 2: Action inside the overview table : Ship (Distributor only)       
+### Example 2: Valid Test Case: Action inside the overview table : Ship (Distributor only)      
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
 
 ---  
 
-### Example 3: Action inside the overview table : Deliver (Retailer only)       
+### Example 3: Valid Test Case: Action inside the overview table : Deliver (Retailer only)   
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)      
+
+---  
+
+### Example 4: Invalid Test Case: Unauthorized Shipment
+
+Scenario
+
+Farmer attempts to ship a batch.
+
+Expected Result
+
+Transaction reverted with role validation error.
+
+Result ✓ Passed
+
+###  Example 4: Invalid Test Case:
+TO BE CHOOSEN 
 
 ---
 
 ## Limitations & Workarounds
+
+- ### Limitation of Remix
+
+Remix is mainly for “Write → Deploy → Test quickly” and is not ideal for:  
+- Full project structure
+- Frontend integration testing
+- Automated deployment pipelines
+- Event indexing workflows
+
+
+- ###  Limitation CRA
+
+Nerverless CRA is fine for this project (Web3 dApp), it slower than `Vite` and older architecture.
+Upgraded  Node.js and use : 
+
+```bash
+npm create vite@latest supplychain-ui -- --template react
+cd supplychain-ui
+npm install
+npm install ethers
+npm run dev
+```  
 
 - ### Add More Supply Chain States
 
