@@ -4,8 +4,7 @@
 
 1. Visit the [MetaMask website](https://metamask.io/).
 2. Install the browser extension.
-3. Create a new wallet or import an existing wallet.
-4. Securely store your Secret Recovery Phrase. (THIS COULD BE EVENTUALLY DROP OUT)
+3. Create a new wallet or import an existing wallet.  
 
 ---
 
@@ -14,11 +13,11 @@
 1. Open [MetaMask](https://metamask.io/).
 2. Click the network selector at the top.
 3. Enable "Show test networks" if necessary.
-4. Select Sepolia Test Network.
+4. Select `Sepolia Test Network`.
 
 ---
 
-## Create Multiple Accounts
+## Create multiple accounts
 
 For this project, create three accounts:
 

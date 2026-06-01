@@ -18,13 +18,129 @@ CoffeeChain: Farm-to-Retail Product Traceability dApp
 
 ## TL;DR
 
-TO BE DRAFTED 
+A step-by-step guide to build a simple React + Web3 frontend for a SupplyChainBatch smart contract will be given.  
 
 ---
 
-## Key Highlights  
+## Key Highlights    
 
-TO BE DRAFTED 
+A simple **Decentralized Application (DApp)**  is built up that can:
+
+- Connect MetaMask  
+- Read batch data (`getBatchReadable`)  
+- Create a batch (`createBatch`)  
+- Ship batch (`shipBatch`)  
+- Deliver batch (`deliverBatch`)  
+- Show batch state in UI  
+
+
+step-by-step guide to build a simple React + Web3 frontend for your SupplyChainBatch smart contract. The path `Remix → React Web3 frontend` has been used for the SupplyChainBatch smart contract. 
+
+- **Remix** : smart contract development + quick testing
+- **React/Web3 frontend** : user interface that talks to the deployed contract
+
+> _Note_ : Remix and React/Web3 frontend work together. 
+
+Briefly, the objective is to:  
+- Deploy contract in Remix  
+- Copy ABI + address  
+- Paste into React app  
+- Read/write blockchain from UI    
+
+```
+Remix (deploy)
+     ↓
+Ethereum contract
+     ↓
+ethers.js
+     ↓
+React UI
+     ↓
+MetaMask wallet  
+```
+
+🟦 Remix IDE
+
+Remix can be considered as a `Smart Contract Laboratory`  and is used for:    
+- writing Solidity    
+- compiling contracts    
+- deploying contracts    
+- testing blockchain logic  
+
+⚛️ React
+
+React can be considered as `Website / App Interface` and is used for:  
+- frontend UI  
+- buttons/forms/tables  
+- user interaction  
+- MetaMask connection  
+
+
+**How they connect**
+
+```
+Remix
+   ↓ deploys contract
+Ethereum / Sepolia blockchain
+   ↑
+React frontend connects here  
+```  
+
+To sum up, React never runs inside Remix. Instead:
+- Remix deploys contract  
+- Blockchain stores contract  
+- React connects to that contract using:  
+  - ABI   
+  - contract address  
+
+**The actual workflow** is: 
+
+STEP 1 — Remix
+The user do:  
+
+```
+Write Solidity
+Compile
+Deploy
+Copy ABI
+Copy contract address  
+```  
+
+STEP 2 — React
+The user do:  
+
+```
+Create React app
+Install ethers.js
+Paste ABI
+Paste contract address
+Connect MetaMask  
+```  
+
+
+**Visual architecture** 
+
+```
+┌─────────────────┐
+│     Remix IDE   │
+│ Solidity Deploy │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Sepolia Network │
+│ Smart Contract  │
+└────────┬────────┘
+         ▲
+         │ ethers.js
+┌────────┴────────┐
+│   React App     │
+│ Frontend UI     │
+└─────────────────┘
+```
+
+
+
 
 ---
 
@@ -178,6 +294,28 @@ The dashboard is characterised by (This enhanced instruction pattern includes)
 
 ## Limitations & Workarounds  
 
+### Limitation of Remix
+
+Remix is mainly for “Write → Deploy → Test quickly” and is not ideal for:  
+- Full project structure
+- Frontend integration testing
+- Automated deployment pipelines
+- Event indexing workflows
+
+
+###  Limitation CRA
+
+Nerverless CRA is fine for this project (Web3 dApp), it slower than `Vite` and older architecture
+Upgraded to Upgrade Node.js and use : 
+
+```bash
+npm create vite@latest supplychain-ui -- --template react
+cd supplychain-ui
+npm install
+npm install ethers
+npm run dev
+```  
+
 ### UI Web dApp Restrictions  
 
 TO BE DRAFTED   
@@ -204,7 +342,25 @@ git checkout -b feat/your-feature
 
 Contributors are welcomed to elp extend the system without compromising its architectural guarantees. The following items represent suggested and validated directions for future work.  
 
-TO BE DRAFTED   
+### Overcome the limitation of Remix: 
+🧱 Production setup
+Hardhat migration> Switch to `Hardhat`. The dApp can build up following the workflow: 
+
+🔹 Phase 1 (use Remix)
+Write contract
+Test functions manually
+Debug logic
+🔹 Phase 2 (switch to Hardhat)
+Deploy scripts
+Local blockchain testing
+Repeatable deployments
+🔹 Phase 3 (React frontend)
+Connect MetaMask
+Build UI
+Call contract functions
+
+
+
 
 ---  
 
@@ -214,6 +370,7 @@ TO BE DRAFTED
 - [Web3 Faucet](https://cloud.google.com/application/web3/faucet)
 - [MetaMask](https://metamask.io/)
 - [React](https://react.dev/)
+- [Hardhat](https://hardhat.org/)  
 
 ---
 
