@@ -299,7 +299,7 @@ Remix is mainly for “Write → Deploy → Test quickly” and is not ideal for
 
 ###  Limitation CRA
 
-Nerverless CRA is fine for this project (Web3 dApp), it slower than `Vite` and older architecture
+Nerverless CRA is fine for this project (Web3 dApp), it slower than `Vite` and older architecture.
 Upgraded  Node.js and use : 
 
 ```bash

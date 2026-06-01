@@ -25,6 +25,7 @@ The blockchain-based supply chain tracking project built with Solidity, MetaMask
 - Scalable indexing system  
 - New batch always appears  
 - ReadBatch works immediately
+
 ---
 
 ## Workflows  
@@ -211,10 +212,6 @@ Install:
 
 ### How Remix + React work together
 
-Even if you deploy from Remix, your React frontend can still connect.
-
-Step-by-step:  
-
 #### 1. Deploy from Remix  
 
 - Go to Deploy & Run Transactions    
@@ -287,29 +284,18 @@ React app uses contract address + ABI
 
 The `SupplyChainBatch contract` is deployed to `Sepolia testnet` (Ethereum test network)
 
-
 4. Copy  
   - `Contract (deployed) address` : Example: 0xA1b2C3...   
   - `ABI` : Go to Compilation Details → ABI → copy JSON  
 
-#### STEP 2 — Create React App   (to be updated)
-
-```bash
-npm create vite@latest supplychain-ui -- --template react
-cd supplychain-ui
-npm install
-npm install ethers
-npm run dev
-```  
-
-Step 1 — Create React app (using CRA (Create React App))
+#### STEP 2 — Create React App (CRA)
 
 Run:
 ```bash  
  npx create-react-app supplychain-ui  
  ```  
 
- Step 2 — Go into project  
+Go into project  
  ```bash  
  cd supplychain-ui  
  ```  
@@ -319,21 +305,20 @@ Run:
  npm start  
  ```  
 
-You’ll get 'http://localhost:3000`
+> _Note_ : The user will get 'http://localhost:3000`
 
 Step 4 — Install ethers.js (Web3)  
 ```bash  
 npm install ethers  
 ```  
 
-
-
-
-
-
-
-
-
+```bash
+npx create-react-app supplychain-ui  
+cd supplychain-ui
+npm install
+npm install ethers
+npm start
+```  
 
 #### STEP 3 — Add ABI  
 
@@ -345,7 +330,7 @@ npm install ethers
 }  
 ```  
 
-The **ABI** is basically a translation sheet between JavaScript and your Solidity contract. It tells `ethers.js`:  
+The **ABI** is basically a translation sheet between JavaScript and the Solidity contract. It tells `ethers.js`:  
 - what functions exist  
 - what inputs they take  
 - what outputs they return  
@@ -358,15 +343,26 @@ Create `src/contract.js`  (`frontend/src/contract.js`)
 
 #### STEP 5 — Minimal UI  
 
-Replace ?  `src/App.jsx` (`frontend/src/App.jsx`)
+Replace `src/App.jsx` (`frontend/src/App.jsx`)
 
 
 #### STEP 6 — Connect MetaMask
 
-In browser console or add button:
+Open MetaMask, making sure that:
+- MetaMask installed  
+- MetaMask unlocked  
+- Network = Sepolia  
 
-MetaMask will automatically prompt when:
+> _Note_ : See [MetaMask Setup Guide](micag2025/Supply_Chain_project/docs/metamask-setup.md) for more details how to: 
+          >- install MetaMask  
+          >- Add the Sepolia Test Network  
+          >- Create multiple accounts  
+          >- How to Get Your MetaMask Address  
+          >- Fund Accounts with Sepolia ETH  
+          >- Switching Roles 
 
+
+In browser console or add button MetaMask will automatically prompt when:
 - The user click `Create Batch`  
 - The user click `Read Batch` (read needs provider access)  
 
@@ -377,7 +373,7 @@ MetaMask will automatically prompt when:
           >- Create multiple accounts  
           >- How to Get Your MetaMask Address  
           >- Fund Accounts with Sepolia ETH  
-         >- Switching Roles  
+          >- Switching Roles  
    
 
 The above step by step guide can be diplayed as follow: 
@@ -445,7 +441,7 @@ Your Remix deployed contract
 
 ## Use Cases and Example  
 
-#### Example 1 : (screenshot 1)
+#### Example 0 : (UI Web DApp)
 Test it
 - Open `http://localhost:3000` or launch the application using `npm start`    
 - Enter a batch ID that exists  
@@ -454,6 +450,12 @@ Test it
 - Approve  
 
 You should now see blockchain data in React
+
+### Example 1: Read Batch and Create Batch (Farmer only)  
+
+In browser console or add button MetaMask will automatically prompt when:
+- The user click `Create Batch`  
+- The user click `Read Batch` (read needs provider access)  
 
 
 
