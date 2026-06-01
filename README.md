@@ -28,35 +28,6 @@ The blockchain-based supply chain tracking project built with Solidity, MetaMask
 
 ---
 
-## Workflows  
-
-In the full **Decentralized Application (DApp)** there are actually two different workflows:
-
-### 1. Deployment workflow (Remix)
-
-```
-Solidity contract
-   ↓
-Remix deploy
-   ↓
-Ethereum blockchain
-```
-
-### 2. Runtime user workflow (the dApp)  / Application flow   
-
-```
-React UI
-   ↓
-ethers.js
-   ↓
-MetaMask
-   ↓
-Smart Contract
-   ↓
-Blockchain
-```
----
-
 ## Architecture  
 
 The system is a decentralized supply chain system where each role interacts with a smart contract through MetaMask, and all state changes are permanently recorded on the Ethereum blockchain.
@@ -443,37 +414,37 @@ All valid and invalid tests were executed on the Sepolia Ethereum Test Network u
 
 ### Valid Test Cases
 
-| Test Case      | Description                         | Expected Result                                        | Status |
-| -------------- | ----------------------------------- | ------------------------------------------------------ | ------ |
-| Create Batch   | Farmer creates a new batch          | Batch created successfully and state set to Created    | ✅ Pass |
-| Read Batch     | Retrieve an existing batch          | Batch details returned correctly                       | ✅ Pass |
-| Ship Batch     | Distributor ships a created batch   | State changes from Created to Shipped                  | ✅ Pass |
-| Deliver Batch  | Retailer delivers a shipped batch   | State changes from Shipped to Delivered                | ✅ Pass |
-| Batch History Table Loading | Load all existing batches from blockchain | All batches displayed in the overview table | ✅ Pass |
-| Batch History Refresh| Refresh dashboard after a transaction     | Table updated with latest blockchain state         | ✅ Pass |
-| Newly Created Batch Visibility | Create a new batch from the dashboard| New batch appears in the table after refresh  | ✅ Pass |
-| Shipment Status Update| Ship a batch | Table status changes from Created to Shipped              | ✅ Pass |
-| Delivery Status Update| Deliver a batch| Table status changes from Shipped to Delivered            | ✅ Pass |
-| Address Masking  | Display participant addresses             | Addresses shown in shortened format (e.g., 0x15d0...9759) | ✅ Pass |
-| Role Detection | Connect different MetaMask accounts | Correct role displayed (Farmer, Distributor, Retailer) | ✅ Pass |
-| Event Emission | Execute contract actions            | Corresponding blockchain event emitted                 | ✅ Pass |
+| Test Case      | Description                         | Expected Result                                        | 
+| -------------- | ----------------------------------- | ------------------------------------------------------ | 
+| Create Batch   | Farmer creates a new batch          | Batch created successfully and state set to Created    | 
+| Read Batch     | Retrieve an existing batch          | Batch details returned correctly                       | 
+| Ship Batch     | Distributor ships a created batch   | State changes from Created to Shipped                  | 
+| Deliver Batch  | Retailer delivers a shipped batch   | State changes from Shipped to Delivered                | 
+| Batch History Table Loading | Load all existing batches from blockchain | All batches displayed in the overview table | 
+| Batch History Refresh| Refresh dashboard after a transaction     | Table updated with latest blockchain state         | 
+| Newly Created Batch Visibility | Create a new batch from the dashboard| New batch appears in the table after refresh  | 
+| Shipment Status Update| Ship a batch | Table status changes from Created to Shipped              | 
+| Delivery Status Update| Deliver a batch| Table status changes from Shipped to Delivered            | 
+| Address Masking  | Display participant addresses             | Addresses shown in shortened format (e.g., 0x15d0...9759) | 
+| Role Detection | Connect different MetaMask accounts | Correct role displayed (Farmer, Distributor, Retailer) | 
+| Event Emission | Execute contract actions            | Corresponding blockchain event emitted                 | 
 
 ---
 
 ### Invalid Test Cases
 
-| Test Case               | Description                             | Expected Result                           | Status |
-| ----------------------- | --------------------------------------- | ----------------------------------------- | ------ |
-| Read Non-Existing Batch | Read batch with invalid ID              | Error message displayed                   | ✅ Pass |
-| Empty Batch Table Entry | Scan non-existing batch IDs             | Invalid entries ignored and not displayed | ✅ Pass |
-| Unauthorized Shipment   | Farmer attempts to ship a batch         | Transaction reverted                      | ✅ Pass |
-| Unauthorized Delivery   | Distributor attempts to deliver a batch | Transaction reverted                      | ✅ Pass |
-| Deliver Before Shipment | Retailer attempts to deliver a Created batch | Transaction reverted                 | ✅ Pass |
-| Ship Non-Existing Batch | Ship batch with invalid ID                   | Transaction reverted                 | ✅ Pass |
-| Duplicate Batch ID      | Create a batch with an existing ID      | Transaction reverted                      | ✅ Pass |
-| Deliver Before Shipment | Deliver a batch still in Created state  | Transaction reverted                      | ✅ Pass |
-| Ship Non-Existing Batch | Ship batch with invalid ID              | Transaction reverted                      | ✅ Pass |
-| Invalid Wallet Role     | Unknown account attempts restricted action | Access denied                          | ✅ Pass |
+| Test Case               | Description                             | Expected Result                           | 
+| ----------------------- | --------------------------------------- | ----------------------------------------- | 
+| Read Non-Existing Batch | Read batch with invalid ID              | Error message displayed                   | 
+| Empty Batch Table Entry | Scan non-existing batch IDs             | Invalid entries ignored and not displayed | 
+| Unauthorized Shipment   | Farmer attempts to ship a batch         | Transaction reverted                      | 
+| Unauthorized Delivery   | Distributor attempts to deliver a batch | Transaction reverted                      | 
+| Deliver Before Shipment | Retailer attempts to deliver a Created batch | Transaction reverted                 | 
+| Ship Non-Existing Batch | Ship batch with invalid ID                   | Transaction reverted                 | 
+| Duplicate Batch ID      | Create a batch with an existing ID      | Transaction reverted                      | 
+| Deliver Before Shipment | Deliver a batch still in Created state  | Transaction reverted                      | 
+| Ship Non-Existing Batch | Ship batch with invalid ID              | Transaction reverted                      | 
+| Invalid Wallet Role     | Unknown account attempts restricted action | Access denied                          | 
 
 ---
 

@@ -158,19 +158,93 @@ TO BE DRAFTED
 
 ## Architecture (High-Level)  
 
-TO BE DRAFTED 
+The system is a decentralized supply chain system where each role interacts with a smart contract through MetaMask, and all state changes are permanently recorded on the Ethereum blockchain.
+
+```
+                    ┌──────────────────────────┐
+                    │        USER (UI)         │
+                    │  React Dashboard (Web)   │
+                    │                          │
+                    │  - Connect Wallet        │
+                    │  - Create Batch          │
+                    │  - Read Batch            │
+                    │  - Ship / Deliver        │
+                    └─────────────┬────────────┘
+                                  │
+                                  │ ethers.js
+                                  ▼
+                    ┌──────────────────────────┐
+                    │       MetaMask Wallet    │
+                    │                          │
+                    │ - Account 1 (Farmer)     │
+                    │ - Account 2 (Distributor)│
+                    │ - Account 3 (Retailer)   │
+                    └─────────────┬────────────┘
+                                  │
+                                  │ JSON-RPC
+                                  ▼
+                    ┌──────────────────────────┐
+                    │     Ethereum Network     │
+                    │     (Sepolia Testnet)    │
+                    └─────────────┬────────────┘
+                                  │
+                                  │ Smart Contract Calls
+                                  ▼
+        ┌──────────────────────────────────────────────┐
+        │         SupplyChainBatch Smart Contract      │
+        │                                              │
+        │  - createBatch()                             │
+        │  - shipBatch()                               │
+        │  - deliverBatch()                            │
+        │  - getBatchReadable()                        │
+        │                                              │
+        │  Storage:                                    │
+        │  mapping(batchId → Batch struct)             │
+        └───────────────┬──────────────────────────────┘
+                        │
+                        ▼
+        ┌──────────────────────────────────────────────┐
+        │               Blockchain State               │
+        │                                              │
+        │  Batch #1 → Created → Shipped → Delivered    │
+        │  Batch #2 → Created → ...                    │
+        └──────────────────────────────────────────────┘
+```
+
+### Why this architecture is good  
+✔ Shows Web3 flow (UI → Wallet → Blockchain)  
+✔ Demonstrates real decentralized architecture  
 
 ---
 
-## Architecture Diagram (Deployment workflow and Application flow)
+## Architecture Diagram (Deployment workflow and Application flow)  
 
-### Deployment workflow  
+In the full **Decentralized Application (DApp)** there are actually two different workflows:
 
-TO BE DRAFTED   
+
+### Deployment workflow  (Remix)
+
+```
+Solidity contract
+   ↓
+Remix deploy
+   ↓
+Ethereum blockchain
+``` 
 
 ###  Runtime user workflow (the dApp)  / Application flow  
 
-TO BE DRAFTED  
+```
+React UI
+   ↓
+ethers.js
+   ↓
+MetaMask
+   ↓
+Smart Contract
+   ↓
+Blockchain
+```
 
 ---
 
