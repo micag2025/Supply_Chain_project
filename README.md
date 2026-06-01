@@ -18,15 +18,13 @@ The blockchain-based supply chain tracking project built with Solidity, MetaMask
 
 ## Key Highlights   
 
-- REAL production architecture  
-- no scanning loop  
-- event-driven UI (BatchCreated listener)  
-- instant table updates  
-- scalable indexing system  
-- New batch ALWAYS appears  
+- Real production architecture  
+- No scanning loop  
+- Event-driven UI (BatchCreated listener)  
+- Instant table updates  
+- Scalable indexing system  
+- New batch always appears  
 - ReadBatch works immediately
-- Table updates correctly
-
 ---
 
 ## Workflows  
