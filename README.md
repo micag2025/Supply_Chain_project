@@ -283,7 +283,7 @@ TO BE DRAFTED
 
 ### UI Web DApp  
 
- ![Interface UI]([Screenshots_UI](https://github.com/micag2025/Supply_Chain_project/blob/c5307e39eb7c51ea98d939242a2308f948819f76/Screenshots_UI/Screenshot_UI_interface.jpeg))  
+  ![Interface UI](https://github.com/micag2025/Supply_Chain_project/blob/c5307e39eb7c51ea98d939242a2308f948819f76/Screenshots_UI/Screenshot_UI_interface.jpeg)   
 
  ---
 
