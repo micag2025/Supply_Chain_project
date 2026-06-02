@@ -12,7 +12,7 @@ CoffeeChain: Farm-to-Retail Product Traceability dApp
 
 ## Tags 
 
-`Blockchain`, `Supply Chain Management`, `Solidity`, `Smart Contract`, `Sepolia`, `React`, `MetaMask`, `Ethereum` ,  `*Decentralized Application (DApp)`
+`Blockchain`, `Supply Chain Management`, `Solidity`, `Smart Contract`, `Sepolia`, `React`, `MetaMask`, `Ethereum` , `Decentralized Application (DApp)`
 
 ---
 
@@ -34,7 +34,7 @@ A simple **Decentralized Application (DApp)**  is built up that can:
 - Show batch state in UI  
 
 
-step-by-step guide to build a simple React + Web3 frontend for your SupplyChainBatch smart contract. The path `Remix → React Web3 frontend` has been used for the SupplyChainBatch smart contract. 
+The path `Remix → React Web3 frontend` has been used for the SupplyChainBatch smart contract. 
 
 - **Remix** : smart contract development + quick testing
 - **React/Web3 frontend** : user interface that talks to the deployed contract
@@ -59,7 +59,7 @@ React UI
 MetaMask wallet  
 ```
 
-🟦 Remix IDE
+### Remix IDE
 
 Remix can be considered as a `Smart Contract Laboratory`  and is used for:    
 - writing Solidity    
@@ -67,7 +67,7 @@ Remix can be considered as a `Smart Contract Laboratory`  and is used for:
 - deploying contracts    
 - testing blockchain logic  
 
-⚛️ React
+### React  
 
 React can be considered as `Website / App Interface` and is used for:  
 - frontend UI  
@@ -76,7 +76,13 @@ React can be considered as `Website / App Interface` and is used for:
 - MetaMask connection  
 
 
-**How they connect**
+**How Remix IDE and Reach connect**  
+
+- Remix deploys contract  
+- Blockchain stores contract  
+- React connects to that contract using:  
+  - ABI   
+  - contract address  
 
 ```
 Remix
@@ -86,12 +92,7 @@ Ethereum / Sepolia blockchain
 React frontend connects here  
 ```  
 
-To sum up, React never runs inside Remix. Instead:
-- Remix deploys contract  
-- Blockchain stores contract  
-- React connects to that contract using:  
-  - ABI   
-  - contract address  
+
 
 **The actual workflow** is: 
 
@@ -158,7 +159,7 @@ TO BE DRAFTED
 
 ## Architecture (High-Level)  
 
-The system is a decentralized supply chain system where each role interacts with a smart contract through MetaMask, and all state changes are permanently recorded on the Ethereum blockchain.
+The system is a **decentralized supply chain system** where each role interacts with a smart contract through MetaMask, and all state changes are permanently recorded on the Ethereum blockchain.
 
 ```
                     ┌──────────────────────────┐
@@ -298,67 +299,50 @@ DApp will provide a local URL. Open it in your browser. The user can now interac
 
 The dashboard is characterised by (This enhanced instruction pattern includes)    
 
-✔ 1. **Dashboard (Selection role account?)**         
+- **1. Dashboard (Selection role account?)**         
    - `Wallet connection`      
    - `Role detection`           
 
-✔ 2. **Read Batch (manual lookup)**     
+- **2. Read Batch (manual lookup)**     
    - user enters an `ID (of the batch?)`      
    - fetches one batch directly from blockchain  
    - useful for `verification/debugging`  
 
-✔ 3. **Overview Table (batch history)**    
+- **3. Overview Table (batch history)**    
    - `shows ALL batches`    
    - comes from scanning or events  
    - displays: `id`, `name`, `quantity`, `state`, `addresses`  
 
-✔ 4. **Create Batch (Farmer)**  
+- **4. Create Batch (Farmer)**  
    - creates `new batch on-chain`  
    - triggers `BatchCreated` event  
    - automatically updates table  
 
-✔ 5. **Ship Batch (Distributor)**    
+- **5. Ship Batch (Distributor)**    
    - visible only if `wallet = distributor` and  `state = Created`  
 
-✔ 6. **Deliver Batch (Retailer)**    
+- **6. Deliver Batch (Retailer)**    
    - visible only if `wallet = retailer` and  `state = Shipped`  
 
-> IMP Other option to describe the dashboard The  full UI becomes:
-
-🧭 DASHBOARD  
-- Wallet connection  
-- Role detection  
-📦 CREATE SECTION
-- Farmer only  
-📊 OVERVIEW TABLE
-- all batches live  
-🔍 READ BATCH
-- search by ID  
-🚚 ACTIONS (inside table)
-- Ship (Distributor only)  
-- Deliver (Retailer only)  
- 
 
 ### Testing Instructions  
 
 The application was tested on the Sepolia Ethereum Testnet using three MetaMask accounts (account1, account2, and account 3, respectively) representing the different supply chain participants/roles (Farmer, Distributor, and Retailer, respectively).
 
-The smart contract and React frontend were successfully tested for:
-
-✓ Batch creation
-✓ Batch shipment
-✓ Batch delivery
-✓ Role-based access control
-✓ Wallet-based authentication
-✓ Duplicate ID prevention
-✓ Invalid state transition rejection
-✓ Unauthorized user rejection
-✓ Read operations
-✓ Blockchain state persistence
+The smart contract and React frontend were successfully tested for:  
+✓ Batch creation  
+✓ Batch shipment  
+✓ Batch delivery  
+✓ Role-based access control  
+✓ Wallet-based authentication  
+✓ Duplicate ID prevention  
+✓ Invalid state transition rejection  
+✓ Unauthorized user rejection  
+✓ Read operations  
+✓ Blockchain state persistence  
 
 All tests were executed on the Sepolia Ethereum Test Network using MetaMask and Ethers.js. A full set of reproducible `Valid Tests Cases`
 and `Invalid Tests Cases` is provided in the accompanying [GitHub repository](https://github.com/micag2025/Supply_Chain_project.git)   
-
 
 ---
 
@@ -400,8 +384,7 @@ Transaction reverted with role validation error.
 
 Result ✓ Passed
 
-
-
+---  
 
 ## Limitations & Workarounds  
 
