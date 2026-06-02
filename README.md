@@ -231,18 +231,16 @@ const CONTRACT_ADDRESS = "YOUR_REMIX_DEPLOYED_CONTRACT_ADDRESS";
   - Click: Deploy  
 
 _Note_: Make sure MetaMask is on the correct network (e.g. `Sepolia` or local)  
-`Browser Extension (MetaMask)` is the option that works cleanly with the React frontend setup. Briefly:
+`Browser Extension (MetaMask)` is the option that works cleanly with the React frontend setup. Briefly, `Browser Extension` allows :
 - Remix connects directly to the MetaMask wallet  
 - The user deploy to Ethereum testnet (Sepolia, etc.) or local network (if MetaMask is set up that way)  
 - The contract address the user get is real and usable in React  
-
-`Browser Extension`:
 - Uses MetaMask  
 - Best for real dApp development  
 - Works with React + ethers.js  
 - Deploys to real networks (Sepolia, Polygon, etc.)  
 
-Since you're doing:  
+
 ```
 Remix → React frontend → ethers.js
 ```
@@ -330,8 +328,8 @@ Open MetaMask, making sure that:
 - MetaMask unlocked  
 - Network = Sepolia  
 
-> _Note_ : See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md)) for more details how to: 
-          >- install MetaMask  
+> _Note_ : See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md)) for more details how to:   
+          >- Install MetaMask  
           >- Add the Sepolia Test Network  
           >- Create multiple accounts  
           >- How to Get Your MetaMask Address  
@@ -367,24 +365,6 @@ You now have:
 ✔ Read batch function working
 ✔ MetaMask integration
 
-#### Testing (Instructions()
-
-The smart contract and React frontend were successfully tested for:
-
-✓ Batch creation
-✓ Batch shipment
-✓ Batch delivery
-✓ Role-based access control
-✓ Wallet-based authentication
-✓ Duplicate ID prevention
-✓ Invalid state transition rejection
-✓ Unauthorized user rejection
-✓ Read operations
-✓ Blockchain state persistence
-
-All tests were executed on the Sepolia Ethereum Test Network using MetaMask and Ethers.js.
-
-
 ## Testing
 
 The application was tested on the Sepolia Ethereum Testnet using three MetaMask accounts representing the supply chain participants:
@@ -396,19 +376,17 @@ The application was tested on the Sepolia Ethereum Testnet using three MetaMask 
 | Retailer    | Account 3 |
 
 ---
-The smart contract and React frontend were successfully tested for:
-
-✓ Batch creation
-✓ Batch shipment
-✓ Batch delivery
-✓ Role-based access control
-✓ Wallet-based authentication
-✓ Duplicate ID prevention
-✓ Invalid state transition rejection
-✓ Unauthorized user rejection
-✓ Read operations
-✓ Blockchain state persistence
-
+The smart contract and React frontend were successfully tested for:  
+✓ Batch creation  
+✓ Batch shipment  
+✓ Batch delivery  
+✓ Role-based access control  
+✓ Wallet-based authentication  
+✓ Duplicate ID prevention  
+✓ Invalid state transition rejection  
+✓ Unauthorized user rejection  
+✓ Read operations  
+✓ Blockchain state persistence  
 
 All valid and invalid tests were executed on the Sepolia Ethereum Test Network using MetaMask and Ethers.js.
 
@@ -470,27 +448,6 @@ Your Remix deployed contract
 
 ---
 
-## Use Cases and Example  
-
-#### Example 0 : (UI Web DApp)
-Test it
-- Open `http://localhost:3000` or launch the application using `npm start`    
-- Enter a batch ID that exists  
-- Click `Read Batch`  
-- MetaMask asks to connect wallet  
-- Approve  
-
-You should now see blockchain data in React
-
-### Example 1: Read Batch and Create Batch (Farmer only)  
-
-In browser console or add button MetaMask will automatically prompt when:
-- The user click `Create Batch`  
-- The user click `Read Batch` (read needs provider access)  
-
-
----
-
 ## UI Walkthrough & Examples Usage UI  
 
 ### UI Web DApp  
@@ -502,6 +459,21 @@ In browser console or add button MetaMask will automatically prompt when:
 ### Example 1: Valid Test Case: Read Batch and Create Batch (Farmer only) 
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)  
+
+
+Test it
+- Open `http://localhost:3000` or launch the application using `npm start`    
+- Enter a batch ID that exists  
+- Click `Read Batch`  
+- MetaMask asks to connect wallet  
+- Approve  
+
+Read Batch and Create Batch (Farmer only)  
+
+In browser console or add button MetaMask will automatically prompt when:
+- The user click `Create Batch`  
+- The user click `Read Batch` (read needs provider access)  
+
 
  ---  
 
@@ -632,7 +604,6 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 ## Contact
 
 If you encounter bugs, have questions, or want to request a new feature, please [open an issue](https://github.com/micag2025/Supply_Chain_project/issues) on this repository.  
-
 
 ---
 
