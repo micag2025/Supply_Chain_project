@@ -212,10 +212,6 @@ The system is a **decentralized supply chain system** where each role interacts 
         └──────────────────────────────────────────────┘
 ```
 
-### Why this architecture is good  
-✔ Shows Web3 flow (UI → Wallet → Blockchain)  
-✔ Demonstrates real decentralized architecture  
-
 ---
 
 ## Architecture Diagram (Deployment workflow and Application flow)  
@@ -293,7 +289,7 @@ npm start
 
 ### Open in browser  
 
-DApp will provide a local URL. Open it in your browser. The user can now interact with the Supply Chain Dashboard, from the UI Web DApp.  
+DApp will provide a local URL. After having opened it in the browser, the user can now interact with the Supply Chain Dashboard from the UI Web DApp.  
 
 ### Understanding Advanced Instructions  
 
@@ -374,15 +370,9 @@ and `Invalid Tests Cases` is provided in the accompanying [GitHub repository](ht
 
 ### Example 4: Invalid Test Case: Unauthorized Shipment
 
-Scenario
+Scenario Farmer attempts to ship a batch.
 
-Farmer attempts to ship a batch.
-
-Expected Result
-
-Transaction reverted with role validation error.
-
-Result ✓ Passed
+Expected Result Transaction reverted with role validation error.
 
 ---  
 
