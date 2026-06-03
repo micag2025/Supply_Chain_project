@@ -1,14 +1,15 @@
 # Option title  
 
-Blockchain-Based Supply Chain Tracking System  
-**Blockchain Supply Chain Monitoring and Tracking System** 
-**Design and Implementation of a Decentralized Supply Chain dApp**  
-**SupplyChain Dashboard: Smart Contract-Based Logistics Tracking**  
-**Decentralized Supply Chain Management System Using Solidity and React**  
-CoffeeChain: Farm-to-Retail Product Traceability dApp  
-**Blockchain Supply Chain Tracker with React, Solidity, and MetaMask**  
+**Blockchain Supply Chain Monitoring and Tracking System**     
+**Design and Implementation of a Decentralized Supply Chain dApp**    
+**SupplyChain Dashboard: Smart Contract-Based Logistics Tracking**    
+**Decentralized Supply Chain Management System Using Solidity and React**    
+**Blockchain Supply Chain Tracker with React, Solidity, and MetaMask**    
 
----
+Blockchain-Based Supply Chain Tracking System
+CoffeeChain: Farm-to-Retail Product Traceability dApp
+
+---  
 
 ## Overview  
 
@@ -30,7 +31,7 @@ The blockchain-based supply chain tracking project built with Solidity, MetaMask
 
 ## Architecture  
 
-The system is a decentralized supply chain system where each role interacts with a smart contract through MetaMask, and all state changes are permanently recorded on the Ethereum blockchain.
+The system is a **decentralized supply chain system** where each role interacts with a **smart contract** through **MetaMask**, and all state changes are permanently recorded on the **Ethereum blockchain**. The architecture od the system is displayed in the below workflow that shows Web3 flow (UI → Wallet → Blockchain) and demonstrates real decentralized architecture.  
 
 ```
                     ┌──────────────────────────┐
@@ -82,11 +83,6 @@ The system is a decentralized supply chain system where each role interacts with
         │  Batch #2 → Created → ...                    │
         └──────────────────────────────────────────────┘
 ```
-
-### Why this architecture is good  
-✔ Shows Web3 flow (UI → Wallet → Blockchain)  
-✔ Demonstrates real decentralized architecture  
-
 ---
 
 ## Project Structure
@@ -191,101 +187,57 @@ Install:
 
 ### How Remix + React work together
 
-#### 1. Deploy from Remix  
-
-- Go to Deploy & Run Transactions    
-- Select:    
-  Environment: Injected Provider - MetaMask    
-  Deploy contract    
-  Copy the contract address    
-
-#### 2. Copy ABI from Remix
-
-In Remix:  
-- Go to Compilation Details
-- Copy `ABI`  
-- Paste into:  
-
-```bash
-src/abi/SupplyChainBatch.json
-```
-
-#### 3. Use that address (address of the compiled contract) in React  
-
-``` javascript
-const CONTRACT_ADDRESS = "YOUR_REMIX_DEPLOYED_CONTRACT_ADDRESS";
-```  
-
-#### 🧱 STEP 1 — Deploy in Remix   
+####  Deploy in (from?) Remix   
 
 1. Open [Remix](https://remix.ethereum.org)  
 
 2. Compile the (smart?) contract     
    - Paste `SupplyChainBatch.sol`    
-   - Go to `Solidity Compiler`  
+   - Go to Solidity Compiler  
    - Click Compile  
 
 3. Deploy  
-  - Go to `Deploy & Run Transactions`  
-  - Set `Environment: Injected Provider - MetaMask`
-  - Click: Deploy  
+   - Go to Deploy & Run Transactions
+   - Select Environment: `Injected Provider - MetaMask` > `Browser Extension`: After selecting Browser Extension make sure `MetaMask` is on the correct network `Sepolia Testnet-Metamask`
+   - Click: Deploy  (Deploy contract) > The `SupplyChainBatch contract` is deployed to `Sepolia testnet` (Ethereum test network)
 
-_Note_: Make sure MetaMask is on the correct network (e.g. `Sepolia` or local)  
-`Browser Extension (MetaMask)` is the option that works cleanly with the React frontend setup. Briefly, `Browser Extension` allows :
-- Remix connects directly to the MetaMask wallet  
-- The user deploy to Ethereum testnet (Sepolia, etc.) or local network (if MetaMask is set up that way)  
-- The contract address the user get is real and usable in React  
-- Uses MetaMask  
-- Best for real dApp development  
-- Works with React + ethers.js  
-- Deploys to real networks (Sepolia, Polygon, etc.)  
-
-
-```
-Remix → React frontend → ethers.js
-```
-
-👉 Use: `Browser Extension`: After selecting Browser Extension make sure MetaMask is set to `Sepolia testnet` 
-
-```
-Remix (Browser Extension)
-        ↓
-MetaMask signs deployment
-        ↓
-Contract deployed on blockchain
-        ↓
-React app uses contract address + ABI
-```  
-
-The `SupplyChainBatch contract` is deployed to `Sepolia testnet` (Ethereum test network)
+> _Note_: `Browser Extension (MetaMask)` is the option that works cleanly with the React frontend setup. Briefly, `Browser Extension (MetaMask)` allows:  
+      - Remix connects directly to the MetaMask wallet  (Uses MetaMask)    
+      - The user deploys to Ethereum testnet (Sepolia, etc.) (Deploys to real networks (Sepolia, Polygon, etc.))  
+      - The contract address the user get is real and usable in React  (Works with React + ethers.js)    
+      - Best for real dApp development   
 
 4. Copy  
-  - `Contract (deployed) address` : Example: 0xA1b2C3...   
-  - `ABI` : Go to Compilation Details → ABI → copy JSON  
+   - `Contract (deployed) address` : Example: 0xA1b2C3...   
+   - `ABI` : Go to Compilation Details → ABI → copy JSON  
+
+#### Copy ABI from Remix and use the ABI in React
+
+In Remix:  
+- Go to Compilation Details
+- Copy `ABI`  
+- Paste into React:  
+
+```bash
+src/abi/SupplyChainBatch.json
+```
+
+#### Coppy `Contract (deployed) address` in Remix and  use this in React  
+
+In Remix:  
+- Go to Deployed Contract Details
+- Copy `Contract (deployed) address` : Example: 0xA1b2C3...   
+- Paste into React
+
+
+``` javascript
+const CONTRACT_ADDRESS = "YOUR_REMIX_DEPLOYED_CONTRACT_ADDRESS";
+```  
+
 
 #### STEP 2 — Create React App (CRA)
 
 Run:
-```bash  
- npx create-react-app supplychain-ui  
- ```  
-
-Go into project  
- ```bash  
- cd supplychain-ui  
- ```  
-
- Step 3 — Start app  
- ```bash  
- npm start  
- ```  
-
-> _Note_ : The user will get 'http://localhost:3000`
-
-Step 4 — Install ethers.js (Web3)  
-```bash  
-npm install ethers  
-```  
 
 ```bash
 npx create-react-app supplychain-ui  
@@ -305,7 +257,7 @@ npm start
 }  
 ```  
 
-The **ABI** is basically a translation sheet between JavaScript and the Solidity contract. It tells `ethers.js`:  
+_Note_: The **ABI** is basically a translation sheet between JavaScript and the Solidity contract. It tells `ethers.js`:  
 - what functions exist  
 - what inputs they take  
 - what outputs they return  
@@ -323,18 +275,7 @@ Replace `src/App.jsx` (`frontend/src/App.jsx`)
 
 #### STEP 6 — Connect MetaMask
 
-Open MetaMask, making sure that:
-- MetaMask installed  
-- MetaMask unlocked  
-- Network = Sepolia  
-
-> _Note_ : See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md)) for more details how to:   
-          >- Install MetaMask  
-          >- Add the Sepolia Test Network  
-          >- Create multiple accounts  
-          >- How to Get Your MetaMask Address  
-          >- Fund Accounts with Sepolia ETH  
-          >- Switching Roles 
+Open [MetaMask](https://metamask.io/), making sure that MetaMask is installed, unlocked and its Network is set up on Sepolia. See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md)) for more details. 
 
 
 The browser console will automatically prompt when:
@@ -491,18 +432,12 @@ In browser console or add button MetaMask will automatically prompt when:
 
 ### Example 4: Invalid Test Case: Unauthorized Shipment
 
-Scenario
+Scenario: Farmer attempts to ship a batch.
 
-Farmer attempts to ship a batch.
+Expected Result: Transaction reverted with role validation error.
 
-Expected Result
 
-Transaction reverted with role validation error.
-
-Result ✓ Passed
-
-###  Example 4: Invalid Test Case:
-TO BE CHOOSEN 
+###  Example 5: Invalid Test Case: TO BE CHOOSEN 
 
 ---
 
