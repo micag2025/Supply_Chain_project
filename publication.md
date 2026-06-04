@@ -337,7 +337,9 @@ Signed transaction sent to Sepolia RPC endpoint
    ↓
 Smart contract executes function logic
    ↓
-Blockchain state updates ↓ Event emitted (BatchCreated/Shipped/Delivered)
+Blockchain state updates
+  ↓
+Event emitted (BatchCreated/Shipped/Delivered)
    ↓
 React listens to event and updates UI
    ↓
@@ -537,10 +539,6 @@ The application has been thoroughly tested on the Sepolia Ethereum Testnet using
 - **Test Data**: Multiple batches created across different test sessions
 - **Tools**: MetaMask, Ethers.js, Sepolia Faucet
 
-
-
-
-
 ### Testing Instructions  
 
 The application was tested on the Sepolia Ethereum Testnet using three MetaMask accounts (account1, account2, and account 3, respectively) representing the different supply chain participants/roles (Farmer, Distributor, and Retailer, respectively).
@@ -591,105 +589,98 @@ TO BE MOVED INTO THE GITHUB
 - Retailer address recorded
 - Complete batch journey visible in table
 
-**✓ TC-005: Batch Lookup**  
-User enters batch ID in search field
-Clicks "Search"
-Full batch details displayed:
-Product name and quantity
-Current state
-Farmer, Distributor, and Retailer addresses
-Transaction hashes for each state change
+**✓ TC-005: Batch Lookup**    
+- User enters batch ID in search field
+- Clicks "Search"
+- Full batch details displayed:
+  - Product name and quantity
+  - Current state
+  - Farmer, Distributor, and Retailer addresses
+  - Transaction hashes for each state change
 
-**✓ TC-006: Role-Based Visibility**  
-
-Farmer dashboard shows only "Create Batch" section
-Distributor dashboard shows "Ship" buttons only for "Created" batches
-Retailer dashboard shows "Deliver" buttons only for "Shipped" batches
-Role-specific sections hidden for unauthorized users
+**✓ TC-006: Role-Based Visibility**    
+- Farmer dashboard shows only "Create Batch" section
+- Distributor dashboard shows "Ship" buttons only for "Created" batches
+- Retailer dashboard shows "Deliver" buttons only for "Shipped" batches
+- Role-specific sections hidden for unauthorized users
 
 **✓ TC-007: Blockchain State Persistence**  
-
-Create batch as Farmer
-Refresh browser page
-Batch data still visible in table
-Verifies data stored on-chain, not just local state
+- Create batch as Farmer
+- Refresh browser page
+- Batch data still visible in table
+- Verifies data stored on-chain, not just local state
 
 #### Invalid Test Cases (Error Handling)
 
 **✓ TC-008: Duplicate Batch ID Prevention**
+- Farmer attempts to create batch with existing ID
+- Transaction reverted with error: "Batch ID already exists"
+- No state change on blockchain
 
-Farmer attempts to create batch with existing ID
-Transaction reverted with error: "Batch ID already exists"
-No state change on blockchain
 **✓ TC-009: Invalid State Transitions**  
+- Farmer attempts to ship batch (requires Distributor role)
+- Transaction reverted with error: "Only Distributor can ship"
+- Batch state unchanged
+  
+**✓ TC-010: Unauthorized Role Actions**    
+- Retailer attempts to create batch
+- Transaction reverted with error: "Only Farmer can create"
+- Action blocked by smart contract logic
+  
+**✓ TC-011: Empty Input Fields**   
+- Farmer submits create form with missing fields
+- React form validation prevents submission
+- Error message displayed: "Please fill all fields"
 
-Farmer attempts to ship batch (requires Distributor role)
-Transaction reverted with error: "Only Distributor can ship"
-Batch state unchanged
-**✓ TC-010: Unauthorized Role Actions**  
+**✓ TC-012: MetaMask Connection Loss**    
+- User disconnects MetaMask account
+- Dashboard shows "Not connected" message
+- All action buttons disabled
+- "Connect Wallet" button re-enabled
 
-Retailer attempts to create batch
-Transaction reverted with error: "Only Farmer can create"
-Action blocked by smart contract logic
-**✓ TC-011: Empty Input Fields**  
-
-Farmer submits create form with missing fields
-React form validation prevents submission
-Error message displayed: "Please fill all fields"
-**✓ TC-012: MetaMask Connection Loss**  
-
-User disconnects MetaMask account
-Dashboard shows "Not connected" message
-All action buttons disabled
-"Connect Wallet" button re-enabled
-**✓ TC-013: Network Switch Detection**  
-
-User switches MetaMask network from Sepolia to Ethereum Mainnet
-Dashboard displays warning: "Please switch to Sepolia network"
-Transaction buttons disabled until correct network selected
-**✓ TC-014: Insufficient Gas Fee**  
-
-User attempts transaction with MetaMask set to very low gas
-MetaMask shows transaction will likely fail
-User can adjust gas price before confirming
-
+**✓ TC-013: Network Switch Detection**    
+- User switches MetaMask network from Sepolia to Ethereum Mainnet
+- Dashboard displays warning: "Please switch to Sepolia network"
+- Transaction buttons disabled until correct network selected
+  
+**✓ TC-014: Insufficient Gas Fee**    
+- User attempts transaction with MetaMask set to very low gas
+- MetaMask shows transaction will likely fail
+- User can adjust gas price before confirming
 
 #### Full Workflow Test Scenario
 
 ##### Scenario: Complete Coffee Supply Chain Journey
 
-**Day 1 - Farmer Creates Batch** 
+**Day 1 - Farmer Creates Batch**   
+- Farmer logs in (Account 1)
+- Creates batch: ID="1", Name="Coff", Qty=1000kg
+- Batch state recorded as "Created"
+- Timestamp: 2026-06-04 10:00 UTC
 
-Farmer logs in (Account 1)
-Creates batch: ID="1", Name="Coff", Qty=1000kg
-Batch state recorded as "Created"
-Timestamp: 2026-06-04 10:00 UTC
+**Day 2 - Distributor Ships Batch**
+- Distributor logs in (Account 2)
+- Views batch in Overview Table
+- Clicks "Ship"
+- Batch state recorded as "Shipped"
+- Distributor address recorded on-chain
+- Timestamp: 2026-06-05 14:30 UTC
 
-Day 2 - Distributor Ships Batch
-Distributor logs in (Account 2)
-Views batch in Overview Table
-Clicks "Ship"
-Batch state recorded as "Shipped"
-Distributor address recorded on-chain
-Timestamp: 2026-06-05 14:30 UTC
+**Day 5 - Retailer Delivers Batch**  
+- Retailer logs in (Account 3)
+- Views batch in Overview Table
+- Clicks "Deliver"
+- Batch state recorded as "Delivered"
+- Retailer address recorded on-chain
+- Timestamp: 2026-06-08 09:15 UTC
 
-Day 5 - Retailer Delivers Batch
-Retailer logs in (Account 3)
-Views batch in Overview Table
-Clicks "Deliver"
-Batch state recorded as "Delivered"
-Retailer address recorded on-chain
-Timestamp: 2026-06-08 09:15 UTC
-
-Batch Lookup Verification
-Any user can search batch ID "COFFEE-001"
-Complete journey visible:
-Created by: Farmer address
-Shipped by: Distributor address
-Delivered by: Retailer address
-Total time: 8 days
-
-
+**Batch Lookup Verification**  
+- Any user can search batch ID "COFFEE-001"
+- Complete journey visible:  
+  - Created by: Farmer address  
+  - Shipped by: Distributor address  
+  - Delivered by: Retailer address  
+- Total time: 8 days  
 
 ---
 
@@ -882,14 +873,14 @@ Contributors are encouraged to extend the system while maintaining its core arch
 
 #### Overcome Remix Limitations via Hardhat Migration
 
-🔹 **Phase 2A: Set up Hardhat environment**  
+**Phase 2A: Set up Hardhat environment**    
 ```bash
 npm install --save-dev hardhat
 npx hardhat init
 # Creates hardhat.config.js and test files
 ```
 
-🔹 **Phase 2B: Write automated tests**  
+**Phase 2B: Write automated tests**    
 - Unit tests for each smart contract function
 - Integration tests for role-based workflows
 - Gas optimization analysis
@@ -907,21 +898,21 @@ describe("SupplyChainBatch", () => {
 });
 ```
 
-🔹 **Phase 2C: Deploy scripts**  
+**Phase 2C: Deploy scripts**    
 
 ```
 npx hardhat run scripts/deploy.js --network sepolia
 # Automates contract deployment
 ```
 
-🔹 **Phase 2D: Local testing**  
+**Phase 2D: Local testing**    
 ```
 npx hardhat node
 # Runs local blockchain for rapid testing
 ```
 #### Overcome CRA Limitations via Vite Migration
 
-🔹 **Phase 2E: Create Vite project**  
+**Phase 2E: Create Vite project**    
 ```
 npm create vite@latest supplychain-ui -- --template react
 cd supplychain-ui
@@ -1005,16 +996,15 @@ npm run dev
 Official documentation and resources for technologies used in this project:  
 
 - [Remix IDE](https://remix.live/) - Remix IDE – Browser-based smart contract development environment
-- Ethereum Sepolia Faucet – Obtain free Sepolia ETH for testing
+- [Ethereum Sepolia Faucet](https://cloud.google.com/application/web3/faucet) – Obtain free Sepolia ETH for testing
 - [MetaMask](https://metamask.io/)– Wallet integration guide and API reference
 - [React](https://react.dev/)– Official React library documentation
-- ethers.js Documentation – Complete ethers.js API reference
-- Solidity Documentation – Solidity language reference
+- [ethers.js Documentation](https://docs.ethers.org/v5/) – Complete ethers.js API reference
+- [Solidity Documentation](https://docs.soliditylang.org/en/v0.8.35/) – Solidity language reference
 - [Hardhat](https://hardhat.org/)  – Ethereum development environment setup
 - [Web3 Faucet](https://cloud.google.com/application/web3/faucet)– Google Cloud Web3 testnet faucet
 - [nodejs.org](https://nodejs.org/)
-- Vite Documentation – Next generation frontend tooling
-- The Graph – Decentralized protocol for indexing blockchain data  ??? 
+- [Vite Documentation](https://devdocs.io/vite/) – Next generation frontend tooling
 
 ---
 
@@ -1033,15 +1023,7 @@ michelaagostini73@gmail.com
 ## Acknowledgements  
 
 TO BE CHANGED   
-This project was built with contributions and inspiration from:
-
-Ethereum Community – For creating the ecosystem and documentation
-Remix Team – For providing an accessible smart contract IDE
-MetaMask Team – For building the wallet that powers Web3 interaction
-React Community – For building a powerful UI framework
-ethers.js Contributors – For creating a robust Web3 library
-Open Source Contributors – Who have reviewed, tested, and improved this project
+This project was built with contributions and inspiration from ...........................who have reviewed, tested, and improved this project
 Special thanks to all developers and supply chain professionals who provided feedback during development and testing phases.
-
 
 --- 
