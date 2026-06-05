@@ -198,8 +198,8 @@ Install the following on your system:
    - Switch to **Deploy & Run Transactions** tab
    - Select **Environment**: `Injected Provider - MetaMask`
    - Ensure MetaMask is:
-     - ✓ Unlocked
-     - ✓ Connected to **Sepolia Testnet**
+     - Unlocked  
+     - Connected to **Sepolia Testnet**  
    - Click **Deploy** button
    - Approve the transaction in MetaMask
 
@@ -272,14 +272,12 @@ Open [MetaMask](https://metamask.io/), making sure that MetaMask is installed, u
 
 #### MetaMask Interaction Flow:
 
-MetaMask will automatically prompt the user when:
-
-✓ Clicking "Connect Wallet"
-✓ Clicking "Create Batch" (state-changing transaction)
-✓ Clicking "Read Batch" (if provider access is needed)
-✓ Clicking "Ship" button in the table
-✓ Clicking "Deliver" button in the table
-Setup Summary:
+MetaMask will automatically prompt the user when:  
+✓ Clicking "Connect Wallet"  
+✓ Clicking "Create Batch" (state-changing transaction)  
+✓ Clicking "Read Batch" (if provider access is needed)  
+✓ Clicking "Ship" button in the table  
+✓ Clicking "Deliver" button in the table  
 
 #### Setup Summary:
 ```
@@ -296,13 +294,13 @@ MetaMask (User Wallet)
 
 **Success Checklist:**
 
-✔ Contract deployed via Remix on Sepolia
-✔ React frontend created and running locally
-✔ ethers.js properly configured with contract address and ABI
-✔ MetaMask connected to React application
-✔ Create batch function working end-to-end
-✔ Read batch function retrieving data
-✔ Ship and Deliver functions updating state
+✔ Contract deployed via Remix on Sepolia  
+✔ React frontend created and running locally  
+✔ ethers.js properly configured with contract address and ABI  
+✔ MetaMask connected to React application  
+✔ Create batch function working end-to-end  
+✔ Read batch function retrieving data  
+✔ Ship and Deliver functions updating state  
 
 ---
 
@@ -353,8 +351,8 @@ All (valid and invalid) tests were executed on the **Sepolia Ethereum Test Netwo
 | Address Masking  | Display participant addresses             | Addresses shown in shortened format (e.g., 0x15d0...9759) | 
 | Role Detection | Connect different MetaMask accounts | Correct role displayed (Farmer, Distributor, Retailer) | 
 | Event Emission | Execute contract actions            | Corresponding blockchain event emitted                 | 
+| Read-Only Access| Read batch data without gas fee	Provider access works| no transaction required| 
 
-Read-Only Access	Read batch data without gas fee	Provider access works; no transaction required
 
 ---
 
@@ -395,28 +393,28 @@ The main dashboard features:
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)  
 
-How to Test:
-
+**How to Test:**  
 1 Open http://localhost:3000 (or run npm start)  
 2 Ensure MetaMask is connected with Farmer account  
 3 In the Create Batch Section:  
   - Enter a unique Batch ID (e.g., "BATCH001")  
   - Enter Product Name (e.g., "Ethiopian Coffee")
-  - Click Create Batch  
-4 MetaMask popup appears - approve the transaction  
-5 Wait for confirmation  
-6 New batch appears in the Batch History Table  
-7 In the Read Batch Section:  
-  - Enter the Batch ID you just created
-  - Click Read Batch
-  - Batch details display below
+  - Click Create Batch
+    
+4 MetaMask popup appears - approve the transaction    
+5 Wait for confirmation    
+6 New batch appears in the Batch History Table    
+7 In the Read Batch Section:    
+  - Enter the Batch ID you just created  
+  - Click Read Batch  
+  - Batch details display below  
 
 **Expected Outcome:**
 
-- ✓ Batch created with state "Created"
-- ✓ Batch readable immediately after creation
-- ✓ Batch ID, product name, farmer address, and state visible
-- ✓ Creation timestamp recorded on blockchain
+- Batch created with state "Created"
+- Batch readable immediately after creation
+- Batch ID, product name, farmer address, and state visible
+- Creation timestamp recorded on blockchain
 
  ---  
 
@@ -424,22 +422,21 @@ How to Test:
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
 
-How to Test:
+**How to Test:**    
+1 Switch MetaMask to Distributor account  
+2 In the Batch History Table, locate a batch with state "Created"  
+3 Click the Ship button next to the batch  
+4 MetaMask popup appears - review and approve the transaction  
+5 Wait for confirmation  
+6 Table updates automatically  
+7 Batch state changes from "Created" → "Shipped"  
 
-Switch MetaMask to Distributor account
-In the Batch History Table, locate a batch with state "Created"
-Click the Ship button next to the batch
-MetaMask popup appears - review and approve the transaction
-Wait for confirmation
-Table updates automatically
-Batch state changes from "Created" → "Shipped"
-Expected Outcome:
-
-✓ Only Distributor can ship batches
-✓ State transitions correctly
-✓ Distributor address recorded in blockchain
-✓ Table updates in real-time
-✓ Farmer account cannot ship (transaction would be rejected)
+**Expected Outcome:**    
+✓ Only Distributor can ship batches  
+✓ State transitions correctly  
+✓ Distributor address recorded in blockchain  
+✓ Table updates in real-time  
+✓ Farmer account cannot ship (transaction would be rejected)  
 
 ---  
 
@@ -447,22 +444,21 @@ Expected Outcome:
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)      
 
-How to Test:
+**How to Test:**    
+1 Switch MetaMask to Retailer account    
+2 In the Batch History Table, locate a batch with state "Shipped"    
+3 Click the Deliver button next to the batch    
+4 MetaMask popup appears - review and approve the transaction    
+5 Wait for confirmation    
+6 Table updates automatically    
+7 Batch state changes from "Shipped" → "Delivered"    
 
-Switch MetaMask to Retailer account
-In the Batch History Table, locate a batch with state "Shipped"
-Click the Deliver button next to the batch
-MetaMask popup appears - review and approve the transaction
-Wait for confirmation
-Table updates automatically
-Batch state changes from "Shipped" → "Delivered"
-Expected Outcome:
-
-✓ Only Retailer can deliver batches
-✓ State transitions correctly from "Shipped" to "Delivered"
-✓ Retailer address recorded on blockchain
-✓ Table reflects state change instantly
-✓ Distributor account cannot deliver (transaction rejected)
+**Expected Outcome:**    
+✓ Only Retailer can deliver batches  
+✓ State transitions correctly from "Shipped" to "Delivered"   
+✓ Retailer address recorded on blockchain  
+✓ Table reflects state change instantly  
+✓ Distributor account cannot deliver (transaction rejected)  
 
 ---  
 
@@ -472,45 +468,45 @@ SCREENSHOT TO BE ENCLOSED
 
 Scenario: Farmer attempts to ship a batch without authorization.
 
-How to Test:
+**How to Test:**  
+1 Connect with Farmer account  
+2 In the Batch History Table, click Ship button on any "Created" batch  
+3 MetaMask popup appears  
+4 Approve the transaction  
+5 Transaction fails and reverts  
 
-Connect with Farmer account
-In the Batch History Table, click Ship button on any "Created" batch
-MetaMask popup appears
-Approve the transaction
-Transaction fails and reverts
-Expected Result:
+**Expected Result:**  
+✗ Transaction reverted with error message  
+✗ "Unauthorized: Only Distributor can ship batches"  
+✓ No state change occurs  
+✓ Gas consumed for failed transaction validation  
+✓ Error displayed in UI  
 
-✗ Transaction reverted with error message
-✗ "Unauthorized: Only Distributor can ship batches"
-✓ No state change occurs
-✓ Gas consumed for failed transaction validation
-✓ Error displayed in UI
-Why This Happens: The smart contract enforces role-based access control. Only the Distributor role can call shipBatch(). When the Farmer's account tries to invoke this function, the contract's modifier validation fails before any state changes occur.
+**Why This Happens:** The smart contract enforces role-based access control. Only the Distributor role can call shipBatch(). When the Farmer's account tries to invoke this function, the contract's modifier validation fails before any state changes occur.
 
+---
 
 ###  Example 5: (Invalid Test Case:) Invalid State Transition (Error Case)  
 |SCREENSHOT TO BE ENCLOSED 
 
 Scenario: Retailer attempts to deliver a batch that hasn't been shipped yet.
 
-How to Test:
+**How to Test:**  
+1 Connect with Retailer account  
+2 In the Batch History Table, locate a batch with state "Created"  
+3 Click Deliver button on this batch (should only work on "Shipped" batches)  
+4 MetaMask popup appears  
+5 Approve the transaction  
+6 Transaction fails and reverts  
 
-Connect with Retailer account
-In the Batch History Table, locate a batch with state "Created"
-Click Deliver button on this batch (should only work on "Shipped" batches)
-MetaMask popup appears
-Approve the transaction
-Transaction fails and reverts
-Expected Result:
+**Expected Result:**  
+✗ Transaction reverted with error message  
+✗ "Invalid state transition: Batch must be Shipped before Delivery"  
+✓ Batch state remains "Created"  
+✓ No gas consumed (reverted before execution)  
+✓ Error displayed in user-friendly format  
 
-✗ Transaction reverted with error message
-✗ "Invalid state transition: Batch must be Shipped before Delivery"
-✓ Batch state remains "Created"
-✓ No gas consumed (reverted before execution)
-✓ Error displayed in user-friendly format
-Why This Happens: The smart contract enforces state machine rules. A batch must follow the sequence: Created → Shipped → Delivered. Attempting to skip steps violates this rule and the transaction reverts.
-
+**Why This Happens:** The smart contract enforces state machine rules. A batch must follow the sequence: Created → Shipped → Delivered. Attempting to skip steps violates this rule and the transaction reverts.  
 
 ---
 
@@ -522,7 +518,7 @@ Why This Happens: The smart contract enforces state machine rules. A batch must 
 - Full-scale project management
 - Integrated frontend testing
 - Automated deployment pipelines
-- Complex development workflows
+- Complex development workflows  
 **Workaround:** For production environments, consider migrating to Hardhat or Truffle:
 
 ```bash
@@ -532,20 +528,21 @@ npx hardhat init
 
 **Benefits of Hardhat:** 
 
-✓ Local development network
-✓ Automated testing framework
-✓ Gas optimization analysis
-✓ Network deployment scripting
-✓ Contract verification on block explorers
+✓ Local development network  
+✓ Automated testing framework  
+✓ Gas optimization analysis  
+✓ Network deployment scripting  
+✓ Contract verification on block explorers  
 
-### Limitation 2: Create React App Performance
-Current Limitation: While CRA is functional for this project, it has:
+### Limitation 2: Create React App Performance  
 
-Slower build times
-Larger bundle size
-Older tooling architecture
-Less modern development experience
-Recommendation: Upgrade to Vite for better performance:
+**Current Limitation:** While CRA is functional for this project, it has:
+- Slower build times
+- Larger bundle size
+- Older tooling architecture
+- Less modern development experience
+
+**Recommendation:** Upgrade to Vite for better performance:  
 
 ```bash
 npm create vite@latest supplychain-ui -- --template react
@@ -554,18 +551,19 @@ npm install
 npm install ethers
 npm run dev
 ```  
-**Vite Advantages:**
+**Vite Advantages:**  
 
-✓ 10-100x faster build times
-✓ Instant HMR (Hot Module Replacement)
-✓ Smaller bundle size
-✓ Modern ES modules by default
-✓ Better developer experience
+✓ 10-100x faster build times  
+✓ Instant HMR (Hot Module Replacement)  
+✓ Smaller bundle size  
+✓ Modern ES modules by default  
+✓ Better developer experience  
 
-### Future Enhancement 1: Expanded Supply Chain States
-Current Implementation: Only 3 states exist: Created → Shipped → Delivered
+### Future Enhancement 1: Expanded Supply Chain States  
 
-Proposed Enhancement: Add granular tracking for better real-world simulation:
+**Current Implementation:** Only 3 states exist: Created → Shipped → Delivered  
+
+**Proposed Enhancement:** Add granular tracking for better real-world simulation:  
 
 ```solidity
 enum State {
@@ -578,25 +576,26 @@ enum State {
     Rejected
 }
 ```
-Benefits:
+**Benefits:**  
+✓ More realistic supply chain modeling  
+✓ Better inventory management  
+✓ Enhanced traceability  
+✓ Support for quality control workflows  
+✓ Ability to handle returns and rejections  
 
-✓ More realistic supply chain modeling
-✓ Better inventory management
-✓ Enhanced traceability
-✓ Support for quality control workflows
-✓ Ability to handle returns and rejections
-Implementation Steps:
+**Implementation Steps:**  
+1 Update the `enum` State in Solidity contract
+2 Add corresponding role permissions for each state  
+3 Update React UI to handle new states  
+4 Add new action buttons for quality checks, warehousing, etc.  
+5 Extend test cases for new transitions    
 
-Update the enum State in Solidity contract
-Add corresponding role permissions for each state
-Update React UI to handle new states
-Add new action buttons for quality checks, warehousing, etc.
-Extend test cases for new transitions  
 
-### Future Enhancement 2: QR Code & IPFS Integration
-Current Limitation: Blockchain stores only metadata; no product documentation or images
+### Future Enhancement 2: QR Code & IPFS Integration  
 
-Proposed Enhancement: Integrate QR codes and IPFS for complete traceability:
+**Current Limitation:** Blockchain stores only metadata; no product documentation or images
+
+**Proposed Enhancement:** Integrate QR codes and IPFS for complete traceability:
 
 ```solidity
 struct Batch {
@@ -609,24 +608,24 @@ struct Batch {
     State state;
 }
 ```
-Benefits:
+**Benefits:**  
+✓ Consumers can scan QR codes to verify authenticity  
+✓ Immutable product documentation stored on IPFS  
+✓ Real-world traceability (blockchain + off-chain data)  
+✓ Certificate of authenticity  
+✓ Supply chain transparency for end consumers  
 
-✓ Consumers can scan QR codes to verify authenticity
-✓ Immutable product documentation stored on IPFS
-✓ Real-world traceability (blockchain + off-chain data)
-✓ Certificate of authenticity
-✓ Supply chain transparency for end consumers
-Integration Steps:
-
-Set up IPFS node or use Pinata/NFT.storage
-Upload product images, certificates, and metadata to IPFS
-Store IPFS hash in smart contract
-Generate QR codes linking to IPFS content
-Add QR scanner to React UI
-Display product details and certificates when scanned  
+**Integration Steps:**  
+1 Set up IPFS node or use Pinata/NFT.storage  
+2 Upload product images, certificates, and metadata to IPFS  
+3 Store IPFS hash in smart contract  
+4 Generate QR codes linking to IPFS content  
+5 Add QR scanner to React UI  
+6 Display product details and certificates when scanned    
 
 ### Future Enhancement 3: Batch Expiration & Inventory Management  
-Proposed Feature: Add expiration date tracking for perishable goods and inventory lifecycle management  
+
+**Proposed Feature:** Add expiration date tracking for perishable goods and inventory lifecycle management    
 
 ```solidity
 struct Batch {
@@ -645,14 +644,12 @@ function updateInventory(uint256 _batchId, uint256 _quantityUsed) external {
     batches[_batchId].warehouseQuantity -= _quantityUsed;
 }
 ```
-
-Benefits:
-
-✓ Practical business value for perishables (coffee, produce, pharmaceuticals)
-✓ Automated expiration alerts
-✓ Better inventory management
-✓ Waste reduction
-✓ Regulatory compliance tracking
+**Benefits:**  
+✓ Practical business value for perishables (coffee, produce, pharmaceuticals)  
+✓ Automated expiration alerts  
+✓ Better inventory management  
+✓ Waste reduction  
+✓ Regulatory compliance tracking  
 
 ---
 
@@ -677,26 +674,17 @@ Please follow the repository code style and add tests for major features.
 The Supply Chain project has exciting opportunities for expansion:
 
 Planned Features
-🔜 Multi-Signature Transactions - Require consensus from multiple parties
-🔜 Advanced Analytics Dashboard - Real-time metrics and reporting
-🔜 Automated Order Processing - Integration with logistics APIs
-🔜 Supply Chain Marketplace - Peer-to-peer trading platform
-🔜 Predictive Analytics - ML-based demand forecasting
-🔜 Integration with IoT Devices - Real-time temperature and location tracking
-🔜 Sustainability Tracking - Carbon footprint and environmental impact
-🔜 Multi-Chain Support - Deploy on Polygon, Arbitrum, and Optimism  ? 
-🔜 DAO Governance - Community-driven decision making  ? 
+- **Multi-Signature Transactions** - Require consensus from multiple parties
+- **Advanced Analytics Dashboard** - Real-time metrics and reporting
+- **Automated Order Processing** - Integration with logistics APIs
+- **Supply Chain Marketplace** - Peer-to-peer trading platform
+- **Predictive Analytics** - ML-based demand forecasting
+- **Integration with IoT Devices** - Real-time temperature and location tracking
+- **Sustainability Tracking** - Carbon footprint and environmental impact
+- **Multi-Chain Support** - Deploy on Polygon, Arbitrum, and Optimism  ?
+- **DAO Governance** - Community-driven decision making  ? 
 
-How to Suggest Features
-
-Feel free to suggest more ideas by:
-
-Opening an issue with detailed feature description
-Starting a GitHub Discussion for open-ended ideas
-Submitting a pull request with implementation
-
-
-Feel free to suggest more ideas by opening an issue or starting a discussion! For bug reports or feature requests, 
+Feel free to suggest features by opening an issue or starting a discussion! For bug reports or feature requests, 
  [open an issue](https://github.com/micag2025/Supply_Chain_project/issues).  
 
  ---
@@ -724,6 +712,7 @@ If you encounter bugs, have questions, or want to request a new feature, please 
 
 ## Acknowledgements
 
+TO BE DRAFTED   
 This project would not have been possible without:
 
 Special thanks to all contributors who have:
