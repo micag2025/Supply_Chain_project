@@ -1022,7 +1022,7 @@ michelaagostini73@gmail.com
 
 ## Acknowledgements  
 
-TO BE CHANGED   
+TO BE CHANGED AND DRAFTED  
 This project was built with contributions and inspiration from ...........................who have reviewed, tested, and improved this project
 Special thanks to all developers and supply chain professionals who provided feedback during development and testing phases.
 

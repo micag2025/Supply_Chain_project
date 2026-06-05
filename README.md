@@ -6,11 +6,11 @@
 
 ## Overview
 
+This repository contains the full implementation for the publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**, published on the Ready Tensor platform.
+
 A blockchain-based supply chain tracking system built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from farm to retail, leveraging smart contracts to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.
 
 **CoffeeChain: Farm-to-Retail Product Traceability dApp** - A practical implementation demonstrating real-world supply chain use cases.
-
-LINK TO PUBLICATION TO BE ENCLOSED 
 
 ---
 
@@ -689,12 +689,18 @@ Feel free to suggest features by opening an issue or starting a discussion! For 
 
  ---
 
-## References 
-- [Remix IDE](https://remix.live/)
-- [Web3 Faucet](https://cloud.google.com/application/web3/faucet)
-- [MetaMask](https://metamask.io/)
-- [React](https://react.dev/)
-- [Hardhat](https://hardhat.org/)    
+## References  
+
+- [Remix IDE](https://remix.live/) - Remix IDE – Browser-based smart contract development environment
+- [Ethereum Sepolia Faucet](https://cloud.google.com/application/web3/faucet) – Obtain free Sepolia ETH for testing
+- [MetaMask](https://metamask.io/)– Wallet integration guide and API reference
+- [React](https://react.dev/)– Official React library documentation
+- [ethers.js Documentation](https://docs.ethers.org/v5/) – Complete ethers.js API reference
+- [Solidity Documentation](https://docs.soliditylang.org/en/v0.8.35/) – Solidity language reference
+- [Hardhat](https://hardhat.org/)  – Ethereum development environment setup
+- [Web3 Faucet](https://cloud.google.com/application/web3/faucet)– Google Cloud Web3 testnet faucet
+- [nodejs.org](https://nodejs.org/)
+- [Vite Documentation](https://devdocs.io/vite/) – Next generation frontend tooling
 
 ---
 
