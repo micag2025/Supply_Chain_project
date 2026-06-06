@@ -315,6 +315,17 @@ The application was tested on the Sepolia Ethereum Testnet using three MetaMask 
 | Distributor | Account 2 |Ship batches   |
 | Retailer    | Account 3 |Deliver batches|
 
+Each account that sends transactions DOES need Sepolia ETH later because blockchain transactions cost gas.  
+
+In the cof supply-chain example (Workflow Test Scenario, representing a Complete Coffee Supply Chain Journey (CoffeeChain: Farm-to-Retail Product Traceability dApp): 
+
+| Account     | Needs ETH? | Why                  |Suggested Sepolia ETH|
+| ----------- | ---------- | -------------------- |---------------------|
+| Farmer      | ✅          | deploy + createBatch | 0.05|
+| Distributor | ✅          | shipBatch            | 0.01 |
+| Retailer    | ✅          | deliverBatch         | 0.01 |
+
+>_Note_ See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for more details. 
 
 ### Comprehensive Test Coverage
 The smart contract and React frontend were successfully tested for:
