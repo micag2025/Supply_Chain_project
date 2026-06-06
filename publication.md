@@ -439,6 +439,7 @@ REACT_APP_NETWORK_NAME=Sepolia
 2. After successful deployment, copy the contract address from the deployment receipt
 3. Paste into .env file  
 
+>_Note_: contract address in Remix “Deployed Contracts” panel. NOT farmer/distributor/retailer addresses.
 ---  
 
 ## Running the Application  
