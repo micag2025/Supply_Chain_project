@@ -413,7 +413,7 @@ The main dashboard features:
 2.  Ensure MetaMask is connected with Farmer account  
 3. In the Create Batch Section:  
   - Enter a unique Batch ID (e.g., "BATCH001")  
-  - Enter Product Name (e.g., "Ethiopian Coffee")
+  - Enter Product Name (e.g., "Cof")
   - Click Create Batch
     
 4. MetaMask popup appears - approve the transaction    

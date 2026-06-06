@@ -778,7 +778,7 @@ The main dashboard displays the connected wallet information at the top, role de
 
 ### Example 4: (Invalid Test Case -) Unauthorized Shipment Attempt  
 
-SCREENSHOT TO BE ENCLOSED   
+SCREENSHOT TO BE ENCLOSED  > see README.MD  
 
 
 **Scenario**: Farmer attempts to ship a batch (role mismatch)
@@ -790,6 +790,54 @@ SCREENSHOT TO BE ENCLOSED
 - Error message: "Only Distributor can perform shipment"  / Transaction reverted with role validation error.
 - No state change on blockchain
 - User notified of authorization failure
+
+
+###  Example 5: (Invalid Test Case:) Invalid Wallet Role
+
+![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
+
+Scenario: Distributor attempts to create a batch.
+
+**How to Test:**   
+
+1. Connect with  Distributor account
+2. In the Create Batch Section:  
+  - Enter a unique Batch ID (e.g., "BATCH001")  
+  - Enter Product Name (e.g., "Cof")
+  - Click Create Batch
+3.  Transaction fails (buttom create is blocked)
+
+
+**Expected Result:**  
+- Access denied
+- ✗ "Unauthorized: Only Farmer can create batches"  
+- ✓ No state change occurs
+- ✗ Unknown account attempts restricted action.     
+
+---  
+
+###  Example 6: (Invalid Test Case:) Read Non-Existing Batch  
+
+![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
+
+Scenario: Read Non-Existing Batch
+
+**How to Test:**   
+
+1. Connect with Farmer account
+2. In the Read Batch Section:    
+  - Enter the Non-Existing Batch ID (e.g. ID = 8)
+  - Click Read Batch  
+
+**Expected Result:**  
+- Access denied
+- ✗ Error message displayed   
+- ✓ No state change occurs
+- ✓ Error displayed in user-friendly format      
+
+
+
+
 
 ---  
 
