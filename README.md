@@ -383,6 +383,9 @@ All (valid and invalid) tests were executed on the **Sepolia Ethereum Test Netwo
 | Ship Non-Existing Batch | Ship batch with invalid ID              | Transaction reverted                      | 
 | Invalid Wallet Role     | Unknown account attempts restricted action | Access denied                          | 
 
+>_Note_ The application is built up in order to create in automatic new batch ID > no way to have duplicate batch ID
+>_Note_ With regards the transaction reverted, the interface is built up in order that the different bottoms are not
+working if the exact conditions are not set up. 
 ---
 
 
