@@ -478,7 +478,8 @@ The main dashboard features:
 
 ### Example 4: (Invalid Test Case:) Unauthorized Shipment (Error Case)
 
-SCREENSHOT TO BE ENCLOSED 
+SCREENSHOT TO BE ENCLOSED > With regards the transaction reverted, the interface is built up in order that the different bottoms are not
+working if the exact conditions are not set up. 
 
 Scenario: Farmer attempts to ship a batch without authorization.
 
@@ -501,17 +502,18 @@ Scenario: Farmer attempts to ship a batch without authorization.
 ---
 
 ###  Example 5: (Invalid Test Case:) Invalid State Transition (Error Case)  
-|SCREENSHOT TO BE ENCLOSED 
+|SCREENSHOT TO BE ENCLOSED > With regards the transaction reverted, the interface is built up in order that the different bottoms are not
+working if the exact conditions are not set up. 
 
 Scenario: Retailer attempts to deliver a batch that hasn't been shipped yet.
 
 **How to Test:**  
 1. Connect with Retailer account  
 2. In the Batch History Table, locate a batch with state "Created"  
-3. Click Deliver button on this batch (should only work on "Shipped" batches)  
-4. MetaMask popup appears  
-5. Approve the transaction  
-6. Transaction fails and reverts  
+3. Click Deliver button on this batch (should only work on "Shipped" batches)   > due to the structure of the interface deliver buttom is blocked
+4. MetaMask popup appears  > due to the structure of the interface the metamask is not appear 
+5. Approve the transaction  > to be eventually changed> this to be deleted 
+6. Transaction fails and reverts  > to be eventually changed> this to be deleted 
 
 **Expected Result:**  
 ✗ Transaction reverted with error message  
@@ -523,6 +525,54 @@ Scenario: Retailer attempts to deliver a batch that hasn't been shipped yet.
 **Why This Happens:** The smart contract enforces state machine rules. A batch must follow the sequence: Created → Shipped → Delivered. Attempting to skip steps violates this rule and the transaction reverts.  
 
 ---
+
+###  Example 6: (Invalid Test Case:) Invalid Wallet Role
+
+![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
+
+  
+ 
+Scenario: Distributor attempts to create a batch.
+
+**How to Test:**   
+
+1. Connect with Retailer account
+2. In the Create Batch Section:  
+  - Enter a unique Batch ID (e.g., "BATCH001")  
+  - Enter Product Name (e.g., "Cof")
+  - Click Create Batch
+3.  Transaction fails (buttom create is blocked)
+
+
+**Expected Result:**  
+- Access denied
+- ✗ "Unauthorized: Only Farmer can create batches"  
+- ✓ No state change occurs
+- ✗ Unknown account attempts restricted action.     
+
+---  
+
+###  Example 7: (Invalid Test Case:) Read Non-Existing Batch  
+
+![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
+
+Scenario: Read Non-Existing Batch
+
+**How to Test:**   
+
+1. Connect with Farmer account
+2. In the Read Batch Section:    
+  - Enter the Non-Existing Batch ID (e.g. ID = 8)
+  - Click Read Batch  
+
+
+**Expected Result:**  
+- Access denied
+- ✗ Error message displayed   
+- ✓ No state change occurs
+- ✓ Error displayed in user-friendly format      
+
+---  
 
 ## Limitations & Future Improvements  
 
