@@ -833,11 +833,7 @@ Scenario: Read Non-Existing Batch
 - Access denied
 - ✗ Error message displayed   
 - ✓ No state change occurs
-- ✓ Error displayed in user-friendly format      
-
-
-
-
+- ✓ Error displayed in user-friendly format :`Batch not found`     
 
 ---  
 
