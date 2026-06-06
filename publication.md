@@ -559,9 +559,9 @@ The smart contract and React frontend were successfully tested for:
 All tests were executed on the Sepolia Ethereum Test Network using MetaMask and Ethers.js. A full set of reproducible `Valid Tests Cases`
 and `Invalid Tests Cases` is provided in the accompanying [GitHub repository](https://github.com/micag2025/Supply_Chain_project.git)   
 
-TO BE MOVED INTO THE GITHUB  
+- > STILL IN PROGRESS: TO BE MOVED INTO THE GITHUB ? Which format table to be choosen?  
 
-### Valid Test Cases Executed
+### Valid Test Cases (TC) Executed
 
 | Test ID | Test Case                    | Test Steps                                                                                                     | Expected Result                                                                                            | Status |
 | ------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------ |
@@ -577,7 +577,7 @@ TO BE MOVED INTO THE GITHUB
 | TC-010  | Address Masking              | Display participant addresses in dashboard                                                                     | Addresses shown in shortened format (e.g., 0x15d0...9759) while preserving identity                        | ✅ Pass |
 
 
-### Invalid Test Cases (Error Handling)
+### Invalid Test Cases (TC) (Error Handling) Executed
 
 | Test ID | Test Case                     | Test Steps                                                           | Expected Result                                                                                                                                | Status |
 | ------- | ----------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
