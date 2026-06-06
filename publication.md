@@ -561,9 +561,46 @@ and `Invalid Tests Cases` is provided in the accompanying [GitHub repository](ht
 
 TO BE MOVED INTO THE GITHUB  
 
-| Test Case      | Description                         | Expected Result                                        | 
-| -------------- | ----------------------------------- | ------------------------------------------------------ | 
-| Create Batch   | Farmer creates a new batch          | Batch created successfully and state set to "Created"    | 
+### Valid Test Cases Executed
+
+| Test ID | Test Case                    | Test Steps                                                                                                     | Expected Result                                                                                            | Status |
+| ------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------ |
+| TC-001  | MetaMask Connection          | Click **Connect Wallet** → MetaMask popup appears → Select account → Confirm connection                        | Wallet successfully connected and displayed in dashboard                                                   | ✅ Pass |
+| TC-002  | Batch Creation (Farmer)      | Farmer enters Batch ID, Product Name, Quantity, Distributor Address, Retailer Address → Click **Create Batch** | Transaction confirmed, batch stored on blockchain, state = **Created**, batch appears in Overview Table    | ✅ Pass |
+| TC-003  | Batch Shipment (Distributor) | Distributor selects a batch in **Created** state → Click **Ship**                                              | Transaction confirmed, state changes to **Shipped**, distributor address recorded                          | ✅ Pass |
+| TC-004  | Batch Delivery (Retailer)    | Retailer selects a batch in **Shipped** state → Click **Deliver**                                              | Transaction confirmed, state changes to **Delivered**, retailer address recorded, complete journey visible | ✅ Pass |
+| TC-005  | Batch Lookup                 | User enters Batch ID → Click **Search / Read Batch**                                                           | Full batch information displayed including product details, current state, and participant addresses       | ✅ Pass |
+| TC-006  | Role-Based Visibility        | Login as Farmer, Distributor, and Retailer using different MetaMask accounts                                   | Dashboard displays only authorized actions and hides unauthorized sections                                 | ✅ Pass |
+| TC-007  | Blockchain State Persistence | Create batch → Refresh browser page → Reload dashboard                                                         | Batch data remains available because it is stored on-chain                                                 | ✅ Pass |
+| TC-008  | Batch History Table Loading  | Load dashboard after connecting wallet                                                                         | Existing batches retrieved from blockchain and displayed in table                                          | ✅ Pass |
+| TC-009  | Batch State Update in Table  | Ship and Deliver a batch                                                                                       | Table automatically reflects the latest batch state                                                        | ✅ Pass |
+| TC-010  | Address Masking              | Display participant addresses in dashboard                                                                     | Addresses shown in shortened format (e.g., 0x15d0...9759) while preserving identity                        | ✅ Pass |
+
+
+### Invalid Test Cases (Error Handling)
+
+| Test ID | Test Case                     | Test Steps                                                           | Expected Result                                                                                                                                | Status |
+| ------- | ----------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| TC-011  | Duplicate Batch ID Prevention | Farmer attempts to create a batch using an existing ID               | Transaction reverted with error: **"Batch ID already exists"**. No blockchain state changes occur.                                             | ✅ Pass |
+| TC-012  | Invalid State Transitions     | Farmer attempts to ship a batch that requires Distributor privileges | Transaction reverted with error: **"Only Distributor can ship"**. Batch state remains unchanged.                                               | ✅ Pass |
+| TC-013  | Unauthorized Role Actions     | Retailer attempts to create a new batch                              | Transaction reverted with error: **"Only Farmer can create"**. Action blocked by smart contract logic.                                         | ✅ Pass |
+| TC-014  | Empty Input Fields            | Farmer submits the Create Batch form with missing required fields    | React form validation prevents submission and displays **"Please fill all fields"**.                                                           | ✅ Pass |
+| TC-015  | MetaMask Connection Loss      | User disconnects MetaMask while using the dashboard                  | Dashboard displays **"Not Connected"** status. Action buttons are disabled and **Connect Wallet** becomes available.                           | ✅ Pass |
+| TC-016  | Network Switch Detection      | User changes network from Sepolia to Ethereum Mainnet                | Dashboard displays warning: **"Please switch to Sepolia network"**. Transaction buttons remain disabled until the correct network is selected. | ✅ Pass |
+| TC-017  | Insufficient Gas Fee          | User attempts to submit a transaction with insufficient gas settings | MetaMask warns that the transaction may fail. User can adjust gas parameters before confirming.                                                | ✅ Pass |
+
+### Error Handling Coverage
+
+| Feature                        | Covered |
+| ------------------------------ | ------- |
+| Duplicate ID Prevention        | ✅       |
+| Role-Based Authorization       | ✅       |
+| Invalid State Protection       | ✅       |
+| Frontend Form Validation       | ✅       |
+| Wallet Connection Handling     | ✅       |
+| Network Validation             | ✅       |
+| Transaction Failure Detection  | ✅       |
+| Smart Contract Revert Messages | ✅       |
 
 
 #### Valid Test Cases Executed  
