@@ -7,9 +7,9 @@ const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
 // =========================
 // ROLE ADDRESSES
 // =========================
-const FARMER = "0x15d00fC26FB222aF2Cf1647Ee572da478b359759";
-const DISTRIBUTOR = "0xD934BC3d56679b190577Ce018b43BE4645b852dB";
-const RETAILER = "0x10D860Ed59a10AAf064154c0FCA024234c7CeB1C";
+const FARMER = process.env.REACT_APP_FARMER;
+const DISTRIBUTOR = process.env.REACT_APP_DISTRIBUTOR;
+const RETAILER = process.env.REACT_APP_RETAILER;
 
 function App() {
   const [contract, setContract] = useState(null);
