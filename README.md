@@ -1,16 +1,16 @@
 # Blockchain-Based Supply Chain Tracking System  
 
-### Design and Implementation of a Decentralized Supply Chain dApp
+**Design and Implementation of a Decentralized Supply Chain dApp**
 
 ---  
 
 ## Overview
 
-This repository contains the full implementation for the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), published on the [Ready Tensor](https://www.readytensor.ai/) platform.
+This repository contains the full implementation for the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), (TO BE CHANGED WITH READY TENSOR LINK) published on the [Ready Tensor](https://www.readytensor.ai/) platform.
 
-A blockchain-based supply chain tracking system is built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from farm to retail, leveraging smart contracts to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.
+A blockchain-based supply chain tracking system is built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from farm to retail, leveraging smart contracts to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.  
 
-**CoffeeChain: Farm-to-Retail Product Traceability dApp** - A practical implementation demonstrating real-world supply chain use cases.
+A practical implementation of a Full Workflow Test Scenario, representing a **Complete Coffee Supply Chain Journey** (**CoffeeChain: Farm-to-Retail Product Traceability dApp**) is used to demonstrate real-world supply chain use cases.
 
 ---
 
@@ -209,11 +209,11 @@ Install the following on your system:
    - Copy the entire **ABI** (JSON format)
    - Save both for the React frontend setup
 
-> **Note**: Using "Injected Provider - MetaMask" is the recommended approach because it:
-> - Connects Remix directly to your MetaMask wallet
-> - Deploys to real networks (Sepolia, Polygon, etc.)
-> - Generates real contract addresses usable in React
-> - Best practice for professional dApp development
+> _**Note**_: Using `Injected Provider - MetaMask` is the recommended approach because it:  
+   > - Connects Remix directly to your MetaMask wallet
+   > - Deploys to real networks (Sepolia, Polygon, etc.)
+   > - Generates real contract addresses usable in React
+   > - Best practice for professional dApp development
 
 ---
 
@@ -233,7 +233,7 @@ npm start
 
 **1. Create ABI File**
 
-- Inside your React project, create: `src/abi/SupplyChain.json`  
+- Inside the React project, create: `src/abi/SupplyChain.json`  
 
 **2. Paste ABI from Remix**  
 
@@ -268,7 +268,8 @@ const CONTRACT_ADDRESS = "YOUR_REMIX_DEPLOYED_CONTRACT_ADDRESS";
 #### STEP 6 — Connect MetaMask
 Add wallet connection logic to your App
 
-Open [MetaMask](https://metamask.io/), making sure that MetaMask is installed, unlocked and its Network is set up on Sepolia. See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md)) for more details. 
+- Open [MetaMask](https://metamask.io/), making sure that MetaMask is installed, unlocked and its Network is set up on Sepolia. 
+- See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for more details. 
 
 #### MetaMask Interaction Flow:
 
@@ -394,23 +395,22 @@ The main dashboard features:
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)  
 
 **How to Test:**  
-1 Open http://localhost:3000 (or run npm start)  
-2 Ensure MetaMask is connected with Farmer account  
-3 In the Create Batch Section:  
+1. Open http://localhost:3000 (or run npm start)  
+2.  Ensure MetaMask is connected with Farmer account  
+3. In the Create Batch Section:  
   - Enter a unique Batch ID (e.g., "BATCH001")  
   - Enter Product Name (e.g., "Ethiopian Coffee")
   - Click Create Batch
     
-4 MetaMask popup appears - approve the transaction    
-5 Wait for confirmation    
-6 New batch appears in the Batch History Table    
-7 In the Read Batch Section:    
+4. MetaMask popup appears - approve the transaction    
+5. Wait for confirmation    
+6. New batch appears in the Batch History Table    
+7. In the Read Batch Section:    
   - Enter the Batch ID you just created  
   - Click Read Batch  
   - Batch details display below  
 
-**Expected Outcome:**
-
+**Expected Outcome:**  
 - Batch created with state "Created"
 - Batch readable immediately after creation
 - Batch ID, product name, farmer address, and state visible
@@ -423,13 +423,13 @@ The main dashboard features:
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
 
 **How to Test:**    
-1 Switch MetaMask to Distributor account  
-2 In the Batch History Table, locate a batch with state "Created"  
-3 Click the Ship button next to the batch  
-4 MetaMask popup appears - review and approve the transaction  
-5 Wait for confirmation  
-6 Table updates automatically  
-7 Batch state changes from "Created" → "Shipped"  
+1. Switch MetaMask to Distributor account  
+2. In the Batch History Table, locate a batch with state "Created"  
+3. Click the Ship button next to the batch  
+4. MetaMask popup appears - review and approve the transaction  
+5. Wait for confirmation  
+6. Table updates automatically  
+7. Batch state changes from "Created" → "Shipped"  
 
 **Expected Outcome:**    
 ✓ Only Distributor can ship batches  
@@ -445,13 +445,13 @@ The main dashboard features:
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)      
 
 **How to Test:**    
-1 Switch MetaMask to Retailer account    
-2 In the Batch History Table, locate a batch with state "Shipped"    
-3 Click the Deliver button next to the batch    
-4 MetaMask popup appears - review and approve the transaction    
-5 Wait for confirmation    
-6 Table updates automatically    
-7 Batch state changes from "Shipped" → "Delivered"    
+1. Switch MetaMask to Retailer account    
+2. In the Batch History Table, locate a batch with state "Shipped"    
+3. Click the Deliver button next to the batch    
+4. MetaMask popup appears - review and approve the transaction    
+5. Wait for confirmation    
+6. Table updates automatically    
+7. Batch state changes from "Shipped" → "Delivered"    
 
 **Expected Outcome:**    
 ✓ Only Retailer can deliver batches  
@@ -469,11 +469,11 @@ SCREENSHOT TO BE ENCLOSED
 Scenario: Farmer attempts to ship a batch without authorization.
 
 **How to Test:**  
-1 Connect with Farmer account  
-2 In the Batch History Table, click Ship button on any "Created" batch  
-3 MetaMask popup appears  
-4 Approve the transaction  
-5 Transaction fails and reverts  
+1. Connect with Farmer account  
+2. In the Batch History Table, click Ship button on any "Created" batch  
+3. MetaMask popup appears  
+4. Approve the transaction  
+5. Transaction fails and reverts  
 
 **Expected Result:**  
 ✗ Transaction reverted with error message  
@@ -492,12 +492,12 @@ Scenario: Farmer attempts to ship a batch without authorization.
 Scenario: Retailer attempts to deliver a batch that hasn't been shipped yet.
 
 **How to Test:**  
-1 Connect with Retailer account  
-2 In the Batch History Table, locate a batch with state "Created"  
-3 Click Deliver button on this batch (should only work on "Shipped" batches)  
-4 MetaMask popup appears  
-5 Approve the transaction  
-6 Transaction fails and reverts  
+1. Connect with Retailer account  
+2. In the Batch History Table, locate a batch with state "Created"  
+3. Click Deliver button on this batch (should only work on "Shipped" batches)  
+4. MetaMask popup appears  
+5. Approve the transaction  
+6. Transaction fails and reverts  
 
 **Expected Result:**  
 ✗ Transaction reverted with error message  
@@ -616,12 +616,12 @@ struct Batch {
 ✓ Supply chain transparency for end consumers  
 
 **Integration Steps:**  
-1 Set up IPFS node or use Pinata/NFT.storage  
-2 Upload product images, certificates, and metadata to IPFS  
-3 Store IPFS hash in smart contract  
-4 Generate QR codes linking to IPFS content  
-5 Add QR scanner to React UI  
-6 Display product details and certificates when scanned    
+1. Set up IPFS node or use Pinata/NFT.storage  
+2. Upload product images, certificates, and metadata to IPFS  
+3. Store IPFS hash in smart contract  
+4. Generate QR codes linking to IPFS content  
+5. Add QR scanner to React UI  
+6. Display product details and certificates when scanned    
 
 ### Future Enhancement 3: Batch Expiration & Inventory Management  
 

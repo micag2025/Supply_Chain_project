@@ -12,7 +12,8 @@
 
 ## TL;DR  
 
-This publication provides a step-by-step guide to build a decentralized supply chain management system using React and Web3 technologies. The application integrates a Solidity smart contract deployed on the Sepolia Ethereum testnet with a React frontend, enabling users to create, track, and manage supply chain batches through role-based interactions (Farmer, Distributor, Retailer) with complete transparency and immutability.
+This publication provides a step-by-step guide to build a decentralized supply chain management system using **React** and **Web3** technologies. The application integrates a **Solidity smart contract** deployed on the **Sepolia Ethereum testnet** with a **React frontend**, enabling users to create, track, and manage supply chain batches through role-based interactions (Farmer, Distributor, Retailer) with complete transparency and immutability.   
+This **decentralized application (dApp)** is designed not only for AI developers, since it supports a wide range of technical and non-technical users such as  Supply Chain Managers & Logistics Companies, Farmers & Agricultural Producers, Distributors & Warehousing Providers, Retailers & End-Consumers and Regulatory & Compliance Officers. 
 
 ---
 
@@ -353,37 +354,37 @@ User sees confirmation message and updated table
 
 The SupplyChain dApp was designed around the following core principles:
 
-### 1. **Immutability & Transparency**
+### 1. Immutability & Transparency
 - All supply chain events recorded permanently on blockchain
 - No data can be altered or deleted once committed
 - Complete audit trail visible to all authorized parties
 - Cryptographic proof of each transaction
 
-### 2. **Role-Based Access Control**
+### 2. Role-Based Access Control
 - Each participant has a specific, predefined role (Farmer, Distributor, Retailer)
 - Smart contract enforces that only authorized roles can perform specific actions
 - Prevents unauthorized state transitions
 - Decentralized verification without centralized authority
 
-### 3. **User-Centric Interface**
+### 3. User-Centric Interface
 - Intuitive dashboard showing only relevant actions for the user's role
 - Real-time synchronization with blockchain state
 - Clear visual indicators of batch status and history
 - Error messages guide users toward valid actions
 
-### 4. **Blockchain Minimalism**
+### 4. Blockchain Minimalism
 - Smart contract stores only essential data (batch ID, name, quantity, state, addresses)
 - Off-chain computation handled by React frontend
 - Reduces gas costs and network congestion
 - Separates concerns: contract = state, UI = presentation
 
-### 5. **Testnet-First Development**
+### 5. Testnet-First Development
 - Development and testing on Sepolia testnet (not mainnet)
 - Free testnet ETH via faucets eliminates deployment barriers
 - MetaMask integration enables one-click wallet switching
 - Allows rapid iteration without financial risk
 
-### 6. **Web3 Best Practices**
+### 6. Web3 Best Practices
 - ethers.js library provides secure, modern blockchain interaction
 - MetaMask as industry-standard wallet provider
 - No private keys stored in React application
@@ -559,6 +560,12 @@ All tests were executed on the Sepolia Ethereum Test Network using MetaMask and 
 and `Invalid Tests Cases` is provided in the accompanying [GitHub repository](https://github.com/micag2025/Supply_Chain_project.git)   
 
 TO BE MOVED INTO THE GITHUB  
+
+| Test Case      | Description                         | Expected Result                                        | 
+| -------------- | ----------------------------------- | ------------------------------------------------------ | 
+| Create Batch   | Farmer creates a new batch          | Batch created successfully and state set to "Created"    | 
+
+
 #### Valid Test Cases Executed  
 
 **✓ TC-001: MetaMask Connection**  
@@ -694,7 +701,7 @@ The main dashboard displays the connected wallet information at the top, role de
 
  ---
 
-### Example 1: Valid Test Case - Read Batch and Create Batch (Farmer Role)  
+### Example 1: (Valid Test Case -) Read Batch and Create Batch (Farmer Role)  
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)    
 
@@ -706,7 +713,7 @@ The main dashboard displays the connected wallet information at the top, role de
 
  ---  
 
-### Example 2: Valid Test Case - Ship Batch Action (Distributor Role)  
+### Example 2: (Valid Test Case -) Ship Batch Action (Distributor Role)  
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
 
@@ -718,7 +725,7 @@ The main dashboard displays the connected wallet information at the top, role de
 
 ---  
 
-### Example 3: Valid Test Case - Deliver Batch Action (Retailer Role)    
+### Example 3: (Valid Test Case -) Deliver Batch Action (Retailer Role)    
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)    
 
@@ -731,7 +738,7 @@ The main dashboard displays the connected wallet information at the top, role de
 
 ---  
 
-### Example 4: Invalid Test Case - Unauthorized Shipment Attempt  
+### Example 4: (Invalid Test Case -) Unauthorized Shipment Attempt  
 
 SCREENSHOT TO BE ENCLOSED   
 
