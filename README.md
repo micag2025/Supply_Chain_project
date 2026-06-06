@@ -6,9 +6,9 @@
 
 ## Overview
 
-This repository contains the full implementation for the publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**, published on the Ready Tensor platform.
+This repository contains the full implementation for the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), published on the [Ready Tensor](https://www.readytensor.ai/) platform.
 
-A blockchain-based supply chain tracking system built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from farm to retail, leveraging smart contracts to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.
+A blockchain-based supply chain tracking system is built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from farm to retail, leveraging smart contracts to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.
 
 **CoffeeChain: Farm-to-Retail Product Traceability dApp** - A practical implementation demonstrating real-world supply chain use cases.
 
