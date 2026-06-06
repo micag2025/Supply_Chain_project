@@ -530,13 +530,11 @@ Scenario: Retailer attempts to deliver a batch that hasn't been shipped yet.
 
 ![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
 
-  
- 
 Scenario: Distributor attempts to create a batch.
 
 **How to Test:**   
 
-1. Connect with Retailer account
+1. Connect with  Distributor account
 2. In the Create Batch Section:  
   - Enter a unique Batch ID (e.g., "BATCH001")  
   - Enter Product Name (e.g., "Cof")
@@ -564,7 +562,6 @@ Scenario: Read Non-Existing Batch
 2. In the Read Batch Section:    
   - Enter the Non-Existing Batch ID (e.g. ID = 8)
   - Click Read Batch  
-
 
 **Expected Result:**  
 - Access denied
