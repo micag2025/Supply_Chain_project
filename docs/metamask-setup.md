@@ -68,6 +68,45 @@ Repeat for all accounts.
 
 ---
 
+## How much ETH do you actually need?
+
+The contract deployment cost depends on:  
+
+- contract size  
+- gas price on Sepolia (varies)  
+- current network congestion
+
+  Typical ranges:  
+🧾 Simple contracts: 0.001 – 0.01 ETH  
+🧱 Your contract (medium size): 0.002 – 0.02 ETH  
+🔁 Multiple test transactions: maybe 0.05 ETH total  
+
+Briefly, 0.1 ETH is absolutely enough. With 0.1 ETH you can:  
+
+✔ Deploy your contract multiple times  
+✔ Test all functions (create/ship/deliver)  
+✔ Interact with React frontend  
+✔ Redeploy after changes  
+✔ Experiment freely     
+
+**Gas usage breakdown (realistic)**
+
+| Action          | Cost            |
+| --------------- | --------------- |
+| Deploy contract | ~0.005–0.02 ETH |
+| createBatch     | ~0.0005 ETH     |
+| shipBatch       | ~0.0003 ETH     |
+| deliverBatch    | ~0.0003 ETH     |
+
+**Practical recommendation**
+
+If you are building + testing the dApp:
+
+- Request at least 0.05 ETH  
+- 0.1 ETH = comfortable buffer (ideal)  
+
+---  
+
 ## Switching Roles
 
 Farmer:
@@ -95,4 +134,8 @@ The dashboard displays:
 Wallet: 0x15d0...9759
 Role: FARMER
 
-Ensure the displayed role matches the selected MetaMask account.
+Ensure the displayed role matches the selected MetaMask account.  
+
+---  
+
+
