@@ -8,9 +8,10 @@
 
 This repository contains the full implementation for the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), (TO BE CHANGED WITH READY TENSOR LINK) published on the [Ready Tensor](https://www.readytensor.ai/) platform.
 
-A blockchain-based supply chain tracking system is built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from farm to retail, leveraging smart contracts to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.  
+A blockchain-based supply chain tracking system is built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from farm to retail, leveraging **smart contracts** to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.  
 
-A practical implementation of a Full Workflow Test Scenario, representing a **Complete Coffee Supply Chain Journey** (**CoffeeChain: Farm-to-Retail Product Traceability dApp**) is used to demonstrate real-world supply chain use cases.
+A practical implementation of a full workflow, representing a **Complete Coffee Supply Chain Journey**, has been used as 
+Test Scenario to build up the  **CoffeeChain: Farm-to-Retail Product Traceability dApp** and further to demonstrate real-world supply chain use cases.
 
 ---
 
@@ -88,7 +89,7 @@ The system is a **decentralized supply chain system** where each role interacts 
 ```
 supply-chain-dapp/
 │
-├── smart-contract/
+├── smart-contract/                   # contracts
 │   │
 │   ├── SupplyChainBatch.sol
 │   │
@@ -101,7 +102,7 @@ supply-chain-dapp/
 │
 ├── frontend/
 │   │
-│   ├── public/
+│   ├── public/                  
 │   │   ├── favicon.ico
 │   │   └── index.html
 │   │
@@ -110,13 +111,13 @@ supply-chain-dapp/
 │   │   ├── abi/
 │   │   │   └── SupplyChain.json
 │   │   │
-│   │   ├── services/
+│   │   ├── services/          # folder not used
 │   │   │   └── contract.js
 │   │   │
-│   │   ├── utils/
+│   │   ├── utils/            # folder and file not used
 │   │   │   └── address.js
 │   │   │
-│   │   ├── components/
+│   │   ├── components/        # folder not used
 │   │   │   ├── WalletSection.jsx
 │   │   │   ├── ReadBatchSection.jsx
 │   │   │   ├── CreateBatchSection.jsx
@@ -128,12 +129,21 @@ supply-chain-dapp/
 │   │   ├── index.js
 │   │   └── index.css
 │   │
-│   ├── .env
+│   ├── .env_example
 │   ├── package.json
 │   └── package-lock.json
 │
 ├── README.md
 ├── .gitignore
+├── Screenshots_UI/
+│   ├── Screenshot_Create_and_ReadBatch.jpeg
+│   ├── Screenshot_invalid_wallet_role.jpeg
+│   ├── Screenshot_read_non_existing_batch.jpg
+│   ├── Screenshot_UI_interface.jpeg
+│   ├── Screenshot1_Retailer.jpeg
+│   ├── Screenshot3_Distributor.jpeg
+├── docs/
+│   ├── metamask-setup.md
 └── LICENSE
 ``` 
 
@@ -378,6 +388,18 @@ All (valid and invalid) tests were executed on the **Sepolia Ethereum Test Netwo
 >_Note_ The application is built up in order to create in automatic new batch ID > no way to have duplicate batch ID
 >_Note_ With regards the transaction reverted, the interface is built up in order that the different bottoms are not
 working if the exact conditions are not set up. 
+scan IDs" from 1 → N Stop when a batch does not exist.  
+
+dApp becomes much more production-like:
+
+✔ no duplicate ID problem
+✔ no manual tracking
+✔ safer UX
+✔ works with existing Remix batches
+✔ works after refresh
+✔ works across accounts
+
+
 ---
 
 
