@@ -489,7 +489,7 @@ The main dashboard features:
 
 ---  
 
-### Example 4: (Invalid Test Case:) Unauthorized Shipment (Error Case)
+### Example ....: (Invalid Test Case:) Unauthorized Shipment (Error Case) TO BE EXCLUDED? 
 
 SCREENSHOT TO BE ENCLOSED > With regards the transaction reverted, the interface is built up in order that the different bottoms are not
 working if the exact conditions are not set up. 
@@ -514,9 +514,12 @@ Scenario: Farmer attempts to ship a batch without authorization.
 
 ---
 
-###  Example 5: (Invalid Test Case:) Invalid State Transition (Error Case)  
-|SCREENSHOT TO BE ENCLOSED > With regards the transaction reverted, the interface is built up in order that the different bottoms are not
-working if the exact conditions are not set up. 
+###  Example 5: (Invalid Test Case:) Invalid State Transition (Error Case)  TO BE EXCLUDED? 
+ With regards the transaction reverted, the interface is built up in order that the different bottoms are not
+working if the exact conditions are not set up.   
+
+![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
+
 
 Scenario: Retailer attempts to deliver a batch that hasn't been shipped yet.
 
@@ -539,7 +542,7 @@ Scenario: Retailer attempts to deliver a batch that hasn't been shipped yet.
 
 ---
 
-###  Example 6: (Invalid Test Case:) Invalid Wallet Role
+###  Example 5: (Invalid Test Case:) Invalid Wallet Role
 
 ![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
 
@@ -563,7 +566,7 @@ Scenario: Distributor attempts to create a batch.
 
 ---  
 
-###  Example 7: (Invalid Test Case:) Read Non-Existing Batch  
+###  Example 6: (Invalid Test Case:) Read Non-Existing Batch  
 
 ![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
 
