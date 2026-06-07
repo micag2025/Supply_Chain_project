@@ -307,8 +307,10 @@ MetaMask (User Wallet)
 
 ## Testing
 
-The application was tested on the **Sepolia Ethereum Testnet** using three MetaMask accounts representing different supply chain participants. Each account that sends transactions does need **Sepolia ETH** later because blockchain transactions cost gas.  
-In the cof supply-chain example (Workflow Test Scenario, representing a Complete Coffee Supply Chain Journey (CoffeeChain: Farm-to-Retail Product Traceability dApp): 
+### Test Scenario: Complete Coffee Supply Chain Journey  
+
+The Test Scenario, representing a Complete Coffee Supply Chain Journey (CoffeeChain: Farm-to-Retail Product Traceability dApp),  the application was tested on the **Sepolia Ethereum Testnet** using three MetaMask accounts representing different supply chain participants. Each account that sends transactions does need **Sepolia ETH** later because blockchain transactions cost gas.  
+
 
 | Role        | Account   |Permissions    |  Needs ETH?   |    Why              | Suggested Sepolia ETH  |
 | ----------- | --------- |---------------|---------------|---------------------|------------------------|
