@@ -548,18 +548,16 @@ Scenario: Retailer attempts to deliver a batch that hasn't been shipped yet.
 
 Scenario: Distributor attempts to create a batch.
 
-**How to Test:**   
-
+**How to Test:**     
 1. Connect with  Distributor account
 2. In the Create Batch Section:  
-  - Enter a unique Batch ID (e.g., "BATCH001")  
-  - Enter Product Name (e.g., "Cof")
-  - Click Create Batch
+   - Enter a unique Batch ID > it appears in automatic 
+   - Enter Product Name (e.g., "Cof_batch"), quatity, account Distributor, account Retailer
+   - Click Create Batch
 3.  Transaction fails (buttom create is blocked)
 
-
 **Expected Result:**  
-- Access denied
+- ✗ Access denied
 - ✗ "Unauthorized: Only Farmer can create batches"  
 - ✓ No state change occurs
 - ✗ Unknown account attempts restricted action.     
@@ -573,17 +571,16 @@ Scenario: Distributor attempts to create a batch.
 Scenario: Read Non-Existing Batch
 
 **How to Test:**   
-
 1. Connect with Farmer account
 2. In the Read Batch Section:    
-  - Enter the Non-Existing Batch ID (e.g. ID = 8)
-  - Click Read Batch  
+   - Enter the Non-Existing Batch ID (e.g. ID = 8)
+   - Click Read Batch  
 
 **Expected Result:**  
-- Access denied
+- ✗ Access denied
 - ✗ Error message displayed   
 - ✓ No state change occurs
-- ✓ Error displayed in user-friendly format      
+- ✓ Error displayed in user-friendly format (e.g. Batch not found)    
 
 ---  
 
