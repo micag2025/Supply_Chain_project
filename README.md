@@ -451,11 +451,11 @@ The main dashboard features:
 
 **How to Test:**    
 1. Switch MetaMask to Distributor account  
-2. In the Batch History Table, locate a batch with state "Created"  
+2. In the Batch History Table, locate a batch with state "Created"  (e.g.Batch ID = 3) 
 3. Click the Ship button next to the batch  
 4. MetaMask popup appears - review and approve the transaction  
 5. Wait for confirmation  
-6. Table updates automatically  
+6. Table updates automatically  (eventually give screens of updated table overview)
 7. Batch state changes from "Created" → "Shipped"  
 
 **Expected Outcome:**    
@@ -473,11 +473,11 @@ The main dashboard features:
 
 **How to Test:**    
 1. Switch MetaMask to Retailer account    
-2. In the Batch History Table, locate a batch with state "Shipped"    
+2. In the Batch History Table, locate a batch with state "Shipped"  (e.g.Batch ID = 2) 
 3. Click the Deliver button next to the batch    
 4. MetaMask popup appears - review and approve the transaction    
 5. Wait for confirmation    
-6. Table updates automatically    
+6. Table updates automatically    (eventually give screens of updated table overview)
 7. Batch state changes from "Shipped" → "Delivered"    
 
 **Expected Outcome:**    
