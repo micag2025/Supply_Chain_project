@@ -391,7 +391,6 @@ working if the exact conditions are not set up.
 scan IDs" from 1 → N Stop when a batch does not exist.  
 
 dApp becomes much more production-like:
-
 ✔ no duplicate ID problem
 ✔ no manual tracking
 ✔ safer UX
@@ -422,27 +421,27 @@ The main dashboard features:
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)  
 
-**How to Test:**  
+**How to Test:**    
 1. Open http://localhost:3000 (or run npm start)  
 2.  Ensure MetaMask is connected with Farmer account  
 3. In the Create Batch Section:  
-  - Enter a unique Batch ID (e.g., "BATCH001")  
-  - Enter Product Name (e.g., "Cof")
-  - Click Create Batch
-    
+   - Enter a unique Batch ID (e.g., "3")  > The ID comes in automatic 
+   - Enter Product Name (e.g., "cof_batch")
+   - Enter account 2 (Distributor account) and account 3 (Retailer account)
+   - Click Create Batch    
 4. MetaMask popup appears - approve the transaction    
 5. Wait for confirmation    
 6. New batch appears in the Batch History Table    
 7. In the Read Batch Section:    
-  - Enter the Batch ID you just created  
-  - Click Read Batch  
-  - Batch details display below  
+   - Enter the Batch ID you just created  
+   - Click Read Batch  
+   - Batch details display below  
 
 **Expected Outcome:**  
 - Batch created with state "Created"
 - Batch readable immediately after creation
 - Batch ID, product name, farmer address, and state visible
-- Creation timestamp recorded on blockchain
+- Creation timestamp recorded on blockchain (TO BE VERIFIED)
 
  ---  
 
