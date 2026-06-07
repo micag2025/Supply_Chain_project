@@ -490,7 +490,6 @@ The main dashboard features:
 ---  
 
 ### Example ....: (Invalid Test Case:) Unauthorized Shipment (Error Case) TO BE EXCLUDED? 
-
 SCREENSHOT TO BE ENCLOSED > With regards the transaction reverted, the interface is built up in order that the different bottoms are not
 working if the exact conditions are not set up. 
 
@@ -514,12 +513,9 @@ Scenario: Farmer attempts to ship a batch without authorization.
 
 ---
 
-###  Example 5: (Invalid Test Case:) Invalid State Transition (Error Case)  TO BE EXCLUDED? 
+###  Example ......: (Invalid Test Case:) Invalid State Transition (Error Case)  TO BE EXCLUDED? 
  With regards the transaction reverted, the interface is built up in order that the different bottoms are not
 working if the exact conditions are not set up.   
-
-![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
-
 
 Scenario: Retailer attempts to deliver a batch that hasn't been shipped yet.
 
@@ -564,19 +560,19 @@ Scenario: Distributor attempts to create a batch.
 
 ---  
 
-###  Example 6: (Invalid Test Case:) Read Non-Existing Batch  
-
+###  Example 6: (Invalid Test Case:) Read Non-Existing Batch    
+  
 ![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
 
 Scenario: Read Non-Existing Batch
 
-**How to Test:**   
+**How to Test:**     
 1. Connect with Farmer account
 2. In the Read Batch Section:    
    - Enter the Non-Existing Batch ID (e.g. ID = 8)
    - Click Read Batch  
 
-**Expected Result:**  
+**Expected Result:**    
 - ✗ Access denied
 - ✗ Error message displayed   
 - ✓ No state change occurs
