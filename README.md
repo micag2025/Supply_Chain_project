@@ -8,10 +8,10 @@
 
 This repository contains the full implementation for the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), (TO BE CHANGED WITH READY TENSOR LINK) published on the [Ready Tensor](https://www.readytensor.ai/) platform.
 
-A blockchain-based supply chain tracking system is built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from farm to retail, leveraging **smart contracts** to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.  
+A blockchain-based supply chain tracking system is built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from creation to delivery (from the point of origin to the final destination, and to verify the authenticity of products), leveraging **smart contracts** to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.  
 
-A practical implementation of a full workflow, representing a **Complete Coffee Supply Chain Journey**, has been used as 
-Test Scenario to build up the  **CoffeeChain: Farm-to-Retail Product Traceability dApp** and further to demonstrate real-world supply chain use cases.
+A practical implementation of a full workflow, representing a **Complete Coffee Supply Chain Tracking System**, has been used as 
+Test Scenario to build up the  **CoffeeChain: Farm-to-Retail Product Traceability dApp** that can be used to track batches from farm to retail and further to demonstrate real-world supply chain use cases.  
 
 ---
 
@@ -19,18 +19,18 @@ Test Scenario to build up the  **CoffeeChain: Farm-to-Retail Product Traceabilit
 
 - **Real production architecture** - Enterprise-ready dApp structure
 - **Event-driven UI** - BatchCreated event listeners for real-time updates
-- **Instant table updates** - No polling loops; blockchain events trigger UI changes
+- **Instant table updates** - Blockchain events trigger UI changes
 - **Scalable indexing system** - Efficient batch retrieval and state management
 - **Immediate batch visibility** - New batches appear instantly in the dashboard
 - **Real-time operations** - ReadBatch and contract interactions work immediately
 - **Gas-optimized** - Efficient smart contract design for cost reduction
-- **Role-based access control** - Farmer, Distributor, and Retailer roles with enforced permissions
+- **Role-based access control** -  3 roles, thus states (Farmer, Distributor, and Retailer in the test scenario) with enforced permissions  
 
 ---
 
 ## Architecture    
 
-The system is a **decentralized supply chain system** where each role interacts with a **smart contract** through **MetaMask**, and all state changes are permanently recorded on the **Ethereum blockchain**.  
+The system is a **decentralized supply chain system, (dApp)** where each role interacts with a **smart contract** through **MetaMask**, and all state changes are permanently recorded on the **Ethereum blockchain**.  
 
 ```
                     ┌──────────────────────────┐
@@ -89,68 +89,60 @@ The system is a **decentralized supply chain system** where each role interacts 
 ```
 supply-chain-dapp/
 │
-├── smart-contract/                   # contracts
+├── smart-contract/                  # Solidity smart contract project
 │   │
-│   ├── SupplyChainBatch.sol
+│   ├── SupplyChainBatch.sol         # Main supply chain smart contract
 │   │
 │   ├── deployment/
-│   │   ├── contract-address.txt
-│   │   └── deployed-contract-info.md
+│   │   ├── contract-address.txt     # Deployed contract address (Sepolia)
+│   │   └── deployed-contract-info.md # Deployment details and metadata
 │   │
 │   └── abi/
-│       └── SupplyChain.json
+│       └── SupplyChain.json         # Contract ABI generated from compilation
 │
-├── frontend/
+├── frontend/                        # React Web3 frontend
 │   │
-│   ├── public/                  
-│   │   ├── favicon.ico
-│   │   └── index.html
+│   ├── public/
+│   │   ├── favicon.ico              # Application icon
+│   │   └── index.html               # Root HTML page
 │   │
 │   ├── src/
 │   │   │
 │   │   ├── abi/
-│   │   │   └── SupplyChain.json
+│   │   │   └── SupplyChain.json     # ABI used by React frontend
 │   │   │
-│   │   ├── services/          # folder not used
-│   │   │   └── contract.js
+│   │   ├── contract.js              # Blockchain connection utilities
 │   │   │
-│   │   ├── utils/            # folder and file not used
-│   │   │   └── address.js
-│   │   │
-│   │   ├── components/        # folder not used
-│   │   │   ├── WalletSection.jsx
-│   │   │   ├── ReadBatchSection.jsx
-│   │   │   ├── CreateBatchSection.jsx
-│   │   │   ├── BatchTable.jsx
-│   │   │   └── RoleBadge.jsx
-│   │   │
-│   │   ├── App.js
-│   │   ├── App.css
-│   │   ├── index.js
-│   │   └── index.css
+│   │   ├── App.js                   # Main dashboard component
+│   │   ├── App.css                  # Dashboard styling
+│   │   ├── index.js                 # React application entry point
+│   │   └── index.css                # Global CSS styles
 │   │
-│   ├── .env_example
-│   ├── package.json
-│   └── package-lock.json
+│   ├── .env_example                 # Environment variables template
+│   ├── package.json                 # Project dependencies and scripts
+│   └── package-lock.json            # Locked dependency versions
 │
-├── README.md
-├── .gitignore
-├── Screenshots_UI/
+├── README.md                        # Project documentation
+├── .gitignore                       # Git ignored files and folders
+│
+├── Screenshots_UI/                  # Application screenshots
 │   ├── Screenshot_Create_and_ReadBatch.jpeg
 │   ├── Screenshot_invalid_wallet_role.jpeg
 │   ├── Screenshot_read_non_existing_batch.jpg
 │   ├── Screenshot_UI_interface.jpeg
 │   ├── Screenshot1_Retailer.jpeg
-│   ├── Screenshot3_Distributor.jpeg
-├── docs/
-│   ├── metamask-setup.md
-└── LICENSE
-``` 
+│   └── Screenshot3_Distributor.jpeg
+│
+├── docs/                            # Additional documentation
+│   └── metamask-setup.md            # MetaMask setup guide
+│
+└── LICENSE                          # Project license
+```
 
 ```
 project/
 │
-├── contracts/
+├── smart contracts/
 │   └── SupplyChainBatch.sol
 │
 ├── frontend/
