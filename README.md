@@ -440,7 +440,7 @@ The main dashboard features:
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
 
 
-![Updated_Table_Overview](https://github.com/micag2025/Supply_Chain_project/blob/1afa4071114c6f2b55e4176ee1c447c2e5ce57a0/Screenshots_UI/Screenshot_distributor_after.jpg)
+![Updated_table](https://github.com/micag2025/Supply_Chain_project/blob/bb90c6ad7a3caaa0dbf1206274fb9e25b471ab78/Screenshots_UI/Screenshot3_distributor_after.jpg)
 
 **How to Test:**    
 1. Switch MetaMask to Distributor account  
@@ -448,7 +448,7 @@ The main dashboard features:
 3. Click the Ship button next to the batch  
 4. MetaMask popup appears - review and approve the transaction  
 5. Wait for confirmation  
-6. Table updates automatically  (eventually give screens of updated table overview)
+6. Table updates automatically  (see above updated table overview)
 7. Batch state changes from "Created" → "Shipped"  
 
 **Expected Outcome:**    
