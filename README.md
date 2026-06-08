@@ -465,15 +465,15 @@ The main dashboard features:
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)  
 
-![Updated_table2](
+![Updated_table2](https://github.com/micag2025/Supply_Chain_project/blob/1c2af8767725888cff953dfe8555bf92185d9e0d/Screenshots_UI/Updated_table2_retailer.jpeg)
 
 **How to Test:**    
 1. Switch MetaMask to Retailer account    
 2. In the Batch History Table, locate a batch with state "Shipped"  (e.g.Batch ID = 2) 
 3. Click the Deliver button next to the batch    
 4. MetaMask popup appears - review and approve the transaction    
-5. Wait for confirmation    
-6. Table updates automatically    (eventually give screens of updated table overview)
+5. Wait for confirmation  - "batch delivered"  
+6. Table updates automatically    (see above updated table overview)
 7. Batch state changes from "Shipped" → "Delivered"    
 
 **Expected Outcome:**    
