@@ -89,7 +89,7 @@ The system is a **decentralized supply chain system, (dApp)** where each role in
 ```
 supply-chain-dapp/
 │
-├── smart-contract/                  # Solidity smart contract project
+├── contracts/                  # Solidity smart contract project
 │   │
 │   ├── SupplyChainBatch.sol         # Main supply chain smart contract
 │   │
@@ -142,7 +142,7 @@ supply-chain-dapp/
 ```
 project/
 │
-├── smart contracts/
+├── contracts/
 │   └── SupplyChainBatch.sol
 │
 ├── frontend/
