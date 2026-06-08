@@ -217,6 +217,12 @@ Install the following on your system:
    > - Generates real contract addresses usable in React
    > - Best practice for professional dApp development
 
+**What is the ABI?** The ABI (Application Binary Interface) is a translation layer between JavaScript and Solidity:  
+- Defines all available smart contract functions
+- Specifies function inputs and outputs
+- Indicates which functions cost gas and which are read-only
+- Enables ethers.js to properly encode/decode contract calls
+
 ---
 
 #### STEP 2 — Create React App (CRA)
@@ -244,11 +250,6 @@ npm start
   "abi": [ ...PASTE_FROM_REMIX_HERE... ]
 }
 ```
-**What is the ABI?** The ABI (Application Binary Interface) is a translation layer between JavaScript and Solidity:  
-- Defines all available smart contract functions
-- Specifies function inputs and outputs
-- Indicates which functions cost gas and which are read-only
-- Enables ethers.js to properly encode/decode contract calls
 
 ####  STEP 4 — Create Contract Service  
 Create `src/services/contract.js` to handle contract interactions  
@@ -462,7 +463,9 @@ The main dashboard features:
 
 ### Example 3: (Valid Test Case: Action inside the overview table:) Deliver Batch (Retailer only)   
 
-![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)      
+![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)  
+
+![Updated_table2](
 
 **How to Test:**    
 1. Switch MetaMask to Retailer account    
