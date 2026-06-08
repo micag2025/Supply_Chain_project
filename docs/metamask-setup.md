@@ -105,6 +105,13 @@ If you are building + testing the dApp:
 - Request at least 0.05 ETH  
 - 0.1 ETH = comfortable buffer (ideal)  
 
+
+| Type  | Solidity       | Gas?  | MetaMask popup? |
+| ----- | -------------- | ----- | --------------- |
+| READ  | `view`         | ❌ No  | ❌ No            |
+| WRITE | state-changing | ✅ Yes | ✅ Yes           |
+
+
 ---  
 
 ## Switching Roles

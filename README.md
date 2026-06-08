@@ -340,15 +340,6 @@ Test Scenario to build up the  **CoffeeChain: Farm-to-Retail Product Traceabilit
 | Retailer    | Account 3 |Deliver batches|    ✅        |deliverBatch          |   0.01                |
 
 
-| Type  | Solidity       | Gas?  | MetaMask popup? |
-| ----- | -------------- | ----- | --------------- |
-| READ  | `view`         | ❌ No  | ❌ No            |
-| WRITE | state-changing | ✅ Yes | ✅ Yes           |
-
-
-
-
-
 
 >_Note_ See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for more details. 
 

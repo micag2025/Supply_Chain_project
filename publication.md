@@ -18,6 +18,17 @@ To test this **decentralized application (dApp)**  a test scenario, characterise
 
 This **decentralized application (dApp)** is designed not only for AI developers, since it supports a wide range of technical and non-technical users such as  Supply Chain Managers & Logistics Companies, Farmers & Agricultural Producers, Distributors & Warehousing Providers, Retailers & End-Consumers and Regulatory & Compliance Officers. 
 
+
+| Action           | Who does it    |
+| ---------------- | -------------- |
+| Enter ID         | User           |
+| Send request     | React          |
+| Query blockchain | Smart contract |
+| Return data      | Blockchain     |
+| Display UI       | React          |
+
+
+
 ---
 
 ## Key Highlights  
