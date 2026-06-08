@@ -390,9 +390,7 @@ dApp becomes much more production-like:
 ✔ works after refresh
 ✔ works across accounts
 
-
 ---
-
 
 ## UI Walkthrough & Examples Usage UI  
 
@@ -440,6 +438,9 @@ The main dashboard features:
 ### Example 2: (Valid Test Case: Action inside the overview table:) Ship Batch (Distributor only)      
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
+
+
+![Updated_Table_Overview](https://github.com/micag2025/Supply_Chain_project/blob/1afa4071114c6f2b55e4176ee1c447c2e5ce57a0/Screenshots_UI/Screenshot_distributor_after.jpg)
 
 **How to Test:**    
 1. Switch MetaMask to Distributor account  
