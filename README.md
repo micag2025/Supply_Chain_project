@@ -252,7 +252,24 @@ npm start
 ```
 
 ####  STEP 4 — Create Contract Service  
-Create `src/services/contract.js` to handle contract interactions  
+Create `src/contract.js` to handle contract interactions
+
+```
+import { ethers } from "ethers";
+import abi from "./abi/SupplyChain.json";
+
+const CONTRACT_ADDRESS = "PASTE_YOUR_REMX_ADDRESS_HERE";
+
+export async function getContract() {
+  if (!window.ethereum) throw new Error("MetaMask not found");
+
+  const provider = new ethers.BrowserProvider(window.ethereum);
+  const signer = await provider.getSigner();
+
+  return new ethers.Contract(CONTRACT_ADDRESS, abi.abi, signer);
+}
+```
+
 
 #### STEP 5 — Build Minimal UI
 Replace `src/App.jsx` with your React components. Key components needed:
@@ -312,7 +329,8 @@ MetaMask (User Wallet)
 
 ### Test Scenario: Complete Coffee Supply Chain Journey  
 
-The Test Scenario, representing a Complete Coffee Supply Chain Journey (CoffeeChain: Farm-to-Retail Product Traceability dApp),  the application was tested on the **Sepolia Ethereum Testnet** using three MetaMask accounts representing different supply chain participants. Each account that sends transactions does need **Sepolia ETH** later because blockchain transactions cost gas.  
+A practical implementation of a full workflow, representing a **Complete Coffee Supply Chain Tracking System**, has been used as 
+Test Scenario to build up the  **CoffeeChain: Farm-to-Retail Product Traceability dApp**.  This dApp was tested on the **Sepolia Ethereum Testnet** using three MetaMask accounts representing different supply chain participants. Each account that sends transactions does need **Sepolia ETH** later because blockchain transactions cost gas.  
 
 
 | Role        | Account   |Permissions    |  Needs ETH?   |    Why              | Suggested Sepolia ETH  |
