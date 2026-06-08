@@ -298,13 +298,13 @@ MetaMask (User Wallet)
 
 **Success Checklist:**
 
-✔ Contract deployed via Remix on Sepolia  
-✔ React frontend created and running locally  
-✔ ethers.js properly configured with contract address and ABI  
-✔ MetaMask connected to React application  
-✔ Create batch function working end-to-end  
-✔ Read batch function retrieving data  
-✔ Ship and Deliver functions updating state  
+✓ Contract deployed via Remix on Sepolia  
+✓ React frontend created and running locally  
+✓ ethers.js properly configured with contract address and ABI  
+✓ MetaMask connected to React application  
+✓ Create batch function working end-to-end  
+✓ Read batch function retrieving data  
+✓ Ship and Deliver functions updating state  
 
 ---
 
@@ -438,10 +438,9 @@ The main dashboard features:
 
 ### Example 2: (Valid Test Case: Action inside the overview table:) Ship Batch (Distributor only)      
 
-![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
+![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg) 
 
-
-![Updated_table](https://github.com/micag2025/Supply_Chain_project/blob/bb90c6ad7a3caaa0dbf1206274fb9e25b471ab78/Screenshots_UI/Screenshot3_distributor_after.jpg)
+![Table_overview_distributor](https://github.com/micag2025/Supply_Chain_project/blob/f8c24ec757ba11fd7fa719b683bdf777bb1651d6/Screenshots_UI/Table_overview_distributor.jpeg)
 
 **How to Test:**    
 1. Switch MetaMask to Distributor account  
