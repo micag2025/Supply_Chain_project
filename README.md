@@ -327,7 +327,7 @@ MetaMask (User Wallet)
 
 ## Testing
 
-### Test Scenario: Complete Coffee Supply Chain Journey  
+### Test Scenario: Complete Coffee Supply Chain Tracking System
 
 A practical implementation of a full workflow, representing a **Complete Coffee Supply Chain Tracking System**, has been used as 
 Test Scenario to build up the  **CoffeeChain: Farm-to-Retail Product Traceability dApp**.  This dApp was tested on the **Sepolia Ethereum Testnet** using three MetaMask accounts representing different supply chain participants. Each account that sends transactions does need **Sepolia ETH** later because blockchain transactions cost gas.  
