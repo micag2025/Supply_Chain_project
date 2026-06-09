@@ -258,15 +258,16 @@ Create `src/contract.js` to handle contract interactions
 import { ethers } from "ethers";
 import abi from "./abi/SupplyChain.json";
 
-const CONTRACT_ADDRESS = "PASTE_YOUR_REMX_ADDRESS_HERE";
+const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
 
 export async function getContract() {
   if (!window.ethereum) throw new Error("MetaMask not found");
 
-  const provider = new ethers.BrowserProvider(window.ethereum);
-  const signer = await provider.getSigner();
+  await window.ethereum.request({ method: "eth_requestAccounts" });
 
-  return new ethers.Contract(CONTRACT_ADDRESS, abi.abi, signer);
+  const provider = new ethers.BrowserProvider(window.ethereum);
+
+  return new ethers.Contract(CONTRACT_ADDRESS, abi, provider);
 }
 ```
 
