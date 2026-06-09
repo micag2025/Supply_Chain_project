@@ -360,7 +360,9 @@ Contract Address:
 0xbffD9f4657a9655670dC66f9470b013bb127073b
 ```
 
-Create a small file: > 
+See [contract-address.txt](https://github.com/micag2025/Supply_Chain_project/blob/1f8fa8e832f894f4a14ac4ede755ec79347d2d93/contracts/deployment/contract-address.txt)
+
+
 
 ### Runtime User Workflow (dApp Usage)
 
