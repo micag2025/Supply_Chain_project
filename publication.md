@@ -14,7 +14,7 @@
 
 This publication provides a step-by-step guide to build a decentralized supply chain management system using **React** and **Web3** technologies. The application integrates a **Solidity smart contract** deployed on the **Sepolia Ethereum testnet** with a **React frontend**, enabling users to create, track, and manage supply chain batches through role-based interactions (e.g.: Farmer, Distributor, Retailer) with complete transparency and immutability. 
 
-To test this **decentralized application (dApp)**  a test scenario, characterised by a practical implementation of a full workflow Test Scenario, representing a **Complete Coffee Supply Chain Journey**, has been used, to demonstrate real-world supply chain use cases of the **CoffeeChain: Farm-to-Retail Product Traceability dApp**.
+To test this **decentralized application (dApp)**  a test scenario, characterised by a practical implementation of a full workflow Test Scenario, representing a **Complete Coffee Supply Chain Tracking System**, has been used, to demonstrate real-world supply chain use cases of the **CoffeeChain: Farm-to-Retail Product Traceability dApp**.
 
 This **decentralized application (dApp)** is designed not only for AI developers, since it supports a wide range of technical and non-technical users such as  Supply Chain Managers & Logistics Companies, Farmers & Agricultural Producers, Distributors & Warehousing Providers, Retailers & End-Consumers and Regulatory & Compliance Officers. 
 
