@@ -323,20 +323,15 @@ Launch frontend on localhost
 ```
 **Time to Deploy:** ~5-10 minutes (excluding compilation time)  
 
-> _Note_ Enclose a shot note about the option to re-opne remix and interact with the deployed smart contract, knowing its address.
-> In Remix IDE the contract deployment itself is permanent on Sepolia, but Remix’s local UI state is not always persistent. Deploying with MetaMask + Sepolia
-
-If you deploy using: `Injected Provider - MetaMask` and MetaMask is on: `Sepolia Testnet`then:
-
-✅ contract is permanently stored on Sepolia
-✅ batches remain forever
-✅ createBatch data persists
-✅ ship/deliver persists
-
+> _Note_: In Remix IDE the contract deployment itself is permanent on Sepolia, but Remix’s local UI state is not always persistent. Deploying with (using) `Injected Provider - MetaMask -Sepolia Testnet` then:    
+- contract is permanently stored on Sepolia  
+- batches remain forever  
+- createBatch data persists  
+- ship/deliver persists  
 Even if you close Remix. In the current case, since it is used MetaMask, funded Sepolia ETH, and used multiple accounts, the contract is ALREADY permanently stored on Sepolia. Thus, the data is safe.  
 
-When you reopen Remix later: `Deployed Contracts panel may be EMPTY`. This does NOT mean your contract disappeared. It only means:
-`Remix forgot the local UI session`.  The blockchain contract still exists. 
+When you reopen Remix later: `Deployed Contracts panel may be EMPTY`. This does NOT mean the contract disappeared. It only means that 
+`Remix forgot the local UI session`. Thus, the blockchain contract still exists. 
 HOW TO RECONNECT OLD CONTRACT IN REMIX > Open Remix, Select deployment environment, `Injected Provider - MetaMask - Sepolia`, 
 Open "Deploy and Run Transations", at address paste your remix adrees contract , and finally the old deployed contract reappears 
 in Remix and getBatchReadable(1) will still return the batch , with ID equal to 1, that has been for instace created previously.  
@@ -356,8 +351,7 @@ temporary UI session
 BEST PRACTICE > crea file `deployment.txt` that encloses 
 ```
 Network: Sepolia
-Contract Address:
-0xbffD9f4657a9655670dC66f9470b013bb127073b
+Contract Address:0xbffD9f4657a9655670dC66f9470b013bb127073b
 ```
 
 See [contract-address.txt](https://github.com/micag2025/Supply_Chain_project/blob/1f8fa8e832f894f4a14ac4ede755ec79347d2d93/contracts/deployment/contract-address.txt)
@@ -582,8 +576,9 @@ The dashboard includes the following sections:
 - Confirms retailer address recorded on blockchain
 - Shows transaction confirmation and completion message
 
-### Testing Instructions  
-The application has been thoroughly tested on the Sepolia Ethereum Testnet using a defined test matrix covering both valid and invalid scenarios.
+### Testing & Evaluation
+
+The application was thoroughly tested on the Sepolia Ethereum Testnet using a defined test matrix covering both valid and invalid scenarios.  
 
 #### Test Environment Setup
 - **Network**: Sepolia Testnet (Chain ID: 11155111)  
@@ -594,102 +589,25 @@ The application has been thoroughly tested on the Sepolia Ethereum Testnet using
 - **Test Data**: Multiple batches created across different test sessions
 - **Tools**: MetaMask, Ethers.js, Sepolia Faucet
 
-### Testing Instructions  
+#### Test Scope  
+The smart contract and React frontend were validated across the following core functionalities:  
+✓ Batch creation
+✓ Batch shipment
+✓ Batch delivery
+✓ Role-based access control
+✓ Wallet-based authentication
+✓ Duplicate ID prevention
+✓ Invalid state transition handling
+✓ Unauthorized access prevention
+✓ Read operations
+✓ Blockchain state persistence
 
-The application was tested on the Sepolia Ethereum Testnet using three MetaMask accounts (account1, account2, and account 3, respectively) representing the different supply chain participants/roles (Farmer, Distributor, and Retailer, respectively).
+The system was evaluated (extensively tested) using both **valid workflows** and **validation/error-handling scenarios**, covering end-to-end interactions between the React frontend, Ethereum smart contract, and MetaMask wallet integration. (including batch creation, shipment, delivery, role-based access control, blockchain persistence, and frontend safeguards.)
 
-The smart contract and React frontend were successfully tested for:  
-✓ Batch creation  
-✓ Batch shipment  
-✓ Batch delivery  
-✓ Role-based access control  
-✓ Wallet-based authentication  
-✓ Duplicate ID prevention  
-✓ Invalid state transition rejection  
-✓ Unauthorized user rejection  
-✓ Read operations  
-✓ Blockchain state persistence  
+#### Results of Testing  
+All test cases were executed successfully on the Sepolia Ethereum network using MetaMask and Ethers.js, confirming correct system behavior across all functional layers.
 
-All tests were executed on the Sepolia Ethereum Test Network using MetaMask and Ethers.js. A full set of reproducible `Valid Tests Cases`
-and `Invalid Tests Cases` is provided in the accompanying [GitHub repository](https://github.com/micag2025/Supply_Chain_project.git)   
-
-- > STILL IN PROGRESS: TO BE MOVED INTO THE GITHUB ? Which format table to be choosen?  
-
-### Valid Test Cases (TC) Executed
-
-| Test ID | Test Case                    | Test Steps                                                                                                     | Expected Result                                                                                            | Status |
-| ------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------ |
-| TC-001  | MetaMask Connection          | Click **Connect Wallet** → MetaMask popup appears → Select account → Confirm connection                        | Wallet successfully connected and displayed in dashboard                                                   | ✅ Pass |
-| TC-002  | Batch Creation (Farmer)      | Farmer enters Batch ID, Product Name, Quantity, Distributor Address, Retailer Address → Click **Create Batch** | Transaction confirmed, batch stored on blockchain, state = **Created**, batch appears in Overview Table    | ✅ Pass |
-| TC-003  | Batch Shipment (Distributor) | Distributor selects a batch in **Created** state → Click **Ship**                                              | Transaction confirmed, state changes to **Shipped**, distributor address recorded                          | ✅ Pass |
-| TC-004  | Batch Delivery (Retailer)    | Retailer selects a batch in **Shipped** state → Click **Deliver**                                              | Transaction confirmed, state changes to **Delivered**, retailer address recorded, complete journey visible | ✅ Pass |
-| TC-005  | Batch Lookup                 | User enters Batch ID → Click **Search / Read Batch**                                                           | Full batch information displayed including product details, current state, and participant addresses       | ✅ Pass |
-| TC-006  | Role-Based Visibility        | Login as Farmer, Distributor, and Retailer using different MetaMask accounts                                   | Dashboard displays only authorized actions and hides unauthorized sections                                 | ✅ Pass |
-| TC-007  | Blockchain State Persistence | Create batch → Refresh browser page → Reload dashboard                                                         | Batch data remains available because it is stored on-chain                                                 | ✅ Pass |
-| TC-008  | Batch History Table Loading  | Load dashboard after connecting wallet                                                                         | Existing batches retrieved from blockchain and displayed in table                                          | ✅ Pass |
-| TC-009  | Batch State Update in Table  | Ship and Deliver a batch                                                                                       | Table automatically reflects the latest batch state                                                        | ✅ Pass |
-| TC-010  | Address Masking              | Display participant addresses in dashboard                                                                     | Addresses shown in shortened format (e.g., 0x15d0...9759) while preserving identity                        | ✅ Pass |
-
-
-### Invalid Test Cases (TC) (Error Handling) Executed
-
-| Test ID | Test Case                     | Test Steps                                                           | Expected Result                                                                                                                                | Status |
-| ------- | ----------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| TC-011  | Duplicate Batch ID Prevention | Farmer attempts to create a batch using an existing ID               | Transaction reverted with error: **"Batch ID already exists"**. No blockchain state changes occur.                                             | ✅ Pass |
-| TC-012  | Invalid State Transitions     | Farmer attempts to ship a batch that requires Distributor privileges | Transaction reverted with error: **"Only Distributor can ship"**. Batch state remains unchanged.                                               | ✅ Pass |
-| TC-013  | Unauthorized Role Actions     | Retailer attempts to create a new batch                              | Transaction reverted with error: **"Only Farmer can create"**. Action blocked by smart contract logic.                                         | ✅ Pass |
-| TC-014  | Empty Input Fields            | Farmer submits the Create Batch form with missing required fields    | React form validation prevents submission and displays **"Please fill all fields"**.                                                           | ✅ Pass |
-| TC-015  | MetaMask Connection Loss      | User disconnects MetaMask while using the dashboard                  | Dashboard displays **"Not Connected"** status. Action buttons are disabled and **Connect Wallet** becomes available.                           | ✅ Pass |
-| TC-016  | Network Switch Detection      | User changes network from Sepolia to Ethereum Mainnet                | Dashboard displays warning: **"Please switch to Sepolia network"**. Transaction buttons remain disabled until the correct network is selected. | ✅ Pass |
-| TC-017  | Insufficient Gas Fee          | User attempts to submit a transaction with insufficient gas settings | MetaMask warns that the transaction may fail. User can adjust gas parameters before confirming.                                                | ✅ Pass |
-
-### Error Handling Coverage
-
-| Feature                        | Covered |
-| ------------------------------ | ------- |
-| Duplicate ID Prevention        | ✅       |
-| Role-Based Authorization       | ✅       |
-| Invalid State Protection       | ✅       |
-| Frontend Form Validation       | ✅       |
-| Wallet Connection Handling     | ✅       |
-| Network Validation             | ✅       |
-| Transaction Failure Detection  | ✅       |
-| Smart Contract Revert Messages | ✅       |
-
-
-#### Full Workflow Test Scenario
-
-##### Scenario: Complete Coffee Supply Chain Journey
-
-**Day 1 - Farmer Creates Batch**   
-- Farmer logs in (Account 1)
-- Creates batch: ID="1", Name="Coff", Qty=1000kg
-- Batch state recorded as "Created"
-- Timestamp: 2026-06-04 10:00 UTC
-
-**Day 2 - Distributor Ships Batch**
-- Distributor logs in (Account 2)
-- Views batch in Overview Table
-- Clicks "Ship"
-- Batch state recorded as "Shipped"
-- Distributor address recorded on-chain
-- Timestamp: 2026-06-05 14:30 UTC
-
-**Day 5 - Retailer Delivers Batch**  
-- Retailer logs in (Account 3)
-- Views batch in Overview Table
-- Clicks "Deliver"
-- Batch state recorded as "Delivered"
-- Retailer address recorded on-chain
-- Timestamp: 2026-06-08 09:15 UTC
-
-**Batch Lookup Verification**  
-- Any user can search batch ID "COFFEE-001"
-- Complete journey visible:  
-  - Created by: Farmer address  
-  - Shipped by: Distributor address  
-  - Delivered by: Retailer address  
-- Total time: 8 days  
+Detailed test results and execution scenarios are available in the [GitHub repository](https://github.com/micag2025/Supply_Chain_project.git).  
 
 ---
 

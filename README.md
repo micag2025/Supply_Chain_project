@@ -326,7 +326,7 @@ MetaMask (User Wallet)
 
 ---
 
-## Testing
+## Testing & Evaluation  
 
 ### Test Scenario: Complete Coffee Supply Chain Tracking System
 
@@ -362,54 +362,116 @@ The smart contract and React frontend were successfully tested for:
 
 All (valid and invalid) tests were executed on the **Sepolia Ethereum Test Network** using **MetaMask** and **Ethers.js**.
 
-### Valid Test Cases
 
-| Test Case      | Description                         | Expected Result                                        | 
-| -------------- | ----------------------------------- | ------------------------------------------------------ | 
-| Create Batch   | Farmer creates a new batch          | Batch created successfully and state set to "Created"    | 
-| Read Batch     | Retrieve an existing batch          | Batch details returned correctly                       | 
-| Ship Batch     | Distributor ships a created batch   | State changes from "Created" to "Shipped"                  | 
-| Deliver Batch  | Retailer delivers a shipped batch   | State changes from "Shipped" to "Delivered"                | 
-| Batch History Table Loading | Load all existing batches from blockchain | All batches displayed in the overview table | 
-| Batch History Refresh| Refresh dashboard after a transaction     | Table updated with latest blockchain state         | 
-| Newly Created Batch Visibility | Create a new batch from the dashboard| New batch appears in the table after refresh  | 
-| Shipment Status Update| Ship a batch | Table status changes from Created to Shipped              | 
-| Delivery Status Update| Deliver a batch| Table status changes from Shipped to Delivered            | 
-| Address Masking  | Display participant addresses             | Addresses shown in shortened format (e.g., 0x15d0...9759) | 
-| Role Detection | Connect different MetaMask accounts | Correct role displayed (Farmer, Distributor, Retailer) | 
-| Event Emission | Execute contract actions            | Corresponding blockchain event emitted                 | 
-| Read-Only Access| Read batch data without gas fee	Provider access works| no transaction required| 
+### Valid Test Cases Executed
+
+| Test ID | Test Case                      | Description                                 | Expected Result                                        | Status |
+| ------- | ------------------------------ | ------------------------------------------- | ------------------------------------------------------ | ------ |
+| TC-001  | MetaMask Connection            | Connect wallet through MetaMask             | Wallet connected and displayed in dashboard            | ✅ Pass |
+| TC-002  | Batch Creation                 | Farmer creates a new batch                  | Batch created successfully with state = Created        | ✅ Pass |
+| TC-003  | Read Batch                     | Retrieve an existing batch                  | Batch details returned correctly                       | ✅ Pass |
+| TC-004  | Batch Shipment                 | Distributor ships a created batch           | State changes from Created to Shipped                  | ✅ Pass |
+| TC-005  | Batch Delivery                 | Retailer delivers a shipped batch           | State changes from Shipped to Delivered                | ✅ Pass |
+| TC-006  | Batch History Table Loading    | Load existing batches from blockchain       | All batches displayed in overview table                | ✅ Pass |
+| TC-007  | Batch History Refresh          | Refresh dashboard after transaction         | Table updated with latest blockchain state             | ✅ Pass |
+| TC-008  | Newly Created Batch Visibility | Create a new batch from dashboard           | New batch appears in table                             | ✅ Pass |
+| TC-009  | Shipment Status Update         | Ship an existing batch                      | Table reflects Shipped status                          | ✅ Pass |
+| TC-010  | Delivery Status Update         | Deliver a shipped batch                     | Table reflects Delivered status                        | ✅ Pass |
+| TC-011  | Batch Lookup                   | Search using batch ID                       | Full batch details displayed                           | ✅ Pass |
+| TC-012  | Role Detection                 | Connect different MetaMask accounts         | Correct role displayed (Farmer, Distributor, Retailer) | ✅ Pass |
+| TC-013  | Role-Based Visibility          | Login using different roles                 | Only authorized actions available                      | ✅ Pass |
+| TC-014  | Blockchain State Persistence   | Refresh browser after transactions          | Data remains available on-chain                        | ✅ Pass |
+| TC-015  | Address Masking                | Display participant addresses               | Addresses shown in shortened format                    | ✅ Pass |
+| TC-016  | Event Emission                 | Execute contract actions                    | Corresponding blockchain event emitted                 | ✅ Pass |
+| TC-017  | Read-Only Access               | Read batch information using view functions | Data retrieved without gas fee or transaction          | ✅ Pass |
 
 
 ---
 
-### Invalid Test Cases
+### Validation and Error Handling Tests Executed  
 
-| Test Case               | Description                             | Expected Result                           | 
-| ----------------------- | --------------------------------------- | ----------------------------------------- | 
-| Read Non-Existing Batch | Read batch with invalid ID              | Error message displayed                   | 
-| Empty Batch Table Entry | Scan non-existing batch IDs             | Invalid entries ignored and not displayed | 
-| Unauthorized Shipment   | Farmer attempts to ship a batch         | Transaction reverted                      | 
-| Unauthorized Delivery   | Distributor attempts to deliver a batch | Transaction reverted                      | 
-| Deliver Before Shipment | Retailer attempts to deliver a Created batch | Transaction reverted                 | 
-| Ship Non-Existing Batch | Ship batch with invalid ID                   | Transaction reverted                 | 
-| Duplicate Batch ID      | Create a batch with an existing ID      | Transaction reverted                      | 
-| Deliver Before Shipment | Deliver a batch still in Created state  | Transaction reverted                      | 
-| Ship Non-Existing Batch | Ship batch with invalid ID              | Transaction reverted                      | 
-| Invalid Wallet Role     | Unknown account attempts restricted action | Access denied                          | 
+This reflects that many invalid actions are prevented by the React UI before a blockchain transaction is attempted.
 
->_Note_ The application is built up in order to create in automatic new batch ID > no way to have duplicate batch ID
->_Note_ With regards the transaction reverted, the interface is built up in order that the different bottoms are not
-working if the exact conditions are not set up. 
-scan IDs" from 1 → N Stop when a batch does not exist.  
+| Test ID | Test Case                              | Description                                                    | Expected Result                                                                    | Status |
+| ------- | -------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------ |
+| TC-018  | Automatic Batch ID Generation          | User creates multiple batches from the dashboard               | System automatically assigns the next available batch ID and prevents duplicates   | ✅ Pass |
+| TC-019  | Unauthorized Shipment Prevention       | Farmer views a batch in Created state                          | Ship button remains disabled and shipment cannot be initiated                      | ✅ Pass |
+| TC-020  | Unauthorized Delivery Prevention       | Distributor views a batch in Shipped state                     | Deliver button remains disabled and delivery cannot be initiated                   | ✅ Pass |
+| TC-021  | Unauthorized Batch Creation Prevention | Retailer or Distributor accesses the dashboard                 | Create Batch functionality unavailable for unauthorized roles                      | ✅ Pass |
+| TC-022  | Invalid State Transition Prevention    | Retailer attempts to deliver a batch still in Created state    | Deliver action unavailable until batch reaches Shipped state                       | ✅ Pass |
+| TC-023  | Read Non-Existing Batch                | User searches for a batch ID that does not exist               | Error message displayed and no batch data returned                                 | ✅ Pass |
+| TC-024  | Empty Batch Table Entries              | Dashboard scans unused batch IDs during table loading          | Invalid entries ignored and not displayed in the overview table                    | ✅ Pass |
+| TC-025  | Invalid Wallet Role Detection          | Wallet address does not match Farmer, Distributor, or Retailer | Role displayed as UNKNOWN and restricted actions unavailable                       | ✅ Pass |
+| TC-026  | Empty Input Validation                 | User submits Create Batch form with missing required fields    | Form validation prevents submission and displays an error message                  | ✅ Pass |
+| TC-027  | MetaMask Connection Loss               | User disconnects MetaMask while using the dashboard            | Dashboard displays "Not Connected" status and disables actions                     | ✅ Pass |
+| TC-028  | Network Validation                     | User switches from Sepolia to an unsupported network           | Warning displayed and transaction buttons disabled                                 | ✅ Pass |
+| TC-029  | Transaction Confirmation Handling      | User initiates a blockchain transaction                        | Application waits for confirmation and updates the UI only after successful mining | ✅ Pass |
+| TC-030  | Read-Only Access Without Transaction   | User reads batch information from blockchain                   | Data retrieved successfully without requiring gas fees or transaction submission   | ✅ Pass |
 
-dApp becomes much more production-like:
-✔ no duplicate ID problem
-✔ no manual tracking
-✔ safer UX
-✔ works with existing Remix batches
-✔ works after refresh
-✔ works across accounts
+### Validation Coverage
+
+| Feature                     | Covered |
+| --------------------------- | ------- |
+| Automatic ID Management     | ✅       |
+| Frontend Role Enforcement   | ✅       |
+| State Transition Validation | ✅       |
+| Form Validation             | ✅       |
+| Wallet Validation           | ✅       |
+| Network Validation          | ✅       |
+| Batch Lookup Validation     | ✅       |
+| Dashboard Data Integrity    | ✅       |
+| Transaction Handling        | ✅       |
+| Read-Only Blockchain Access | ✅       |
+
+
+Many invalid actions are stopped at the React UI layer, which is preferable to letting them reach the blockchain and revert. This demonstrates a better user experience and avoids unnecessary gas consumption.
+
+```  
+React UI Validation
+        ↓
+MetaMask
+        ↓
+ethers.js
+        ↓
+Smart Contract  
+```  
+---  
+
+#### Full Workflow Test Scenario
+
+##### Scenario: End-to-End Coffee Supply Chain Tracking System    
+This scenario simulates a complete lifecycle of a batch across the supply chain, demonstrating role-based actions and blockchain state transitions.  
+
+**Day 1 - Farmer Creates Batch**     
+- Farmer logs in (Account 1)  
+- Creates batch:**ID=1**, Name="Coff", Quantity=1000kg  
+- Batch state recorded as **Created**  
+- Timestamp: 2026-06-04 10:00 UTC    
+
+**Day 2 - Distributor Ships Batch**
+- Distributor logs in (Account 2)
+- Views batch in Overview Table
+- Clicks **Ship**
+- Batch state recorded as **Shipped**
+- Distributor address recorded on-chain
+- Timestamp: 2026-06-05 14:30 UTC
+
+**Day 5 - Retailer Delivers Batch**  
+- Retailer logs in (Account 3)
+- Views batch in Overview Table
+- Clicks **Deliver**
+- Batch state recorded as **Delivered**
+- Retailer address recorded on-chain
+- Timestamp: 2026-06-08 09:15 UTC  
+
+**Batch Lookup Verification**  
+- Any user can search **batch ID:1**
+- Full lifecycle is displayed:    
+  - Created by Farmer address    
+  - Shipped by Distributor address    
+  - Delivered by Retailer address    
+- Total traking duration: **8 days**  
+- Full transparency ensured via blockchain immutability
 
 ---
 
