@@ -323,7 +323,44 @@ Launch frontend on localhost
 ```
 **Time to Deploy:** ~5-10 minutes (excluding compilation time)  
 
-> _Note_ Enclose a shot note about the option to re-opne remix and interact with the deployed smart contract, knowing its address. 
+> _Note_ Enclose a shot note about the option to re-opne remix and interact with the deployed smart contract, knowing its address.
+> In Remix IDE the contract deployment itself is permanent on Sepolia, but Remix’s local UI state is not always persistent. Deploying with MetaMask + Sepolia
+
+If you deploy using: `Injected Provider - MetaMask` and MetaMask is on: `Sepolia Testnet`then:
+
+✅ contract is permanently stored on Sepolia
+✅ batches remain forever
+✅ createBatch data persists
+✅ ship/deliver persists
+
+Even if you close Remix. In the current case, since it is used MetaMask, funded Sepolia ETH, and used multiple accounts, the contract is ALREADY permanently stored on Sepolia. Thus, the data is safe.  
+
+When you reopen Remix later: `Deployed Contracts panel may be EMPTY`. This does NOT mean your contract disappeared. It only means:
+`Remix forgot the local UI session`.  The blockchain contract still exists. 
+HOW TO RECONNECT OLD CONTRACT IN REMIX > Open Remix, Select deployment environment, `Injected Provider - MetaMask - Sepolia`, 
+Open "Deploy and Run Transations", at address paste your remix adrees contract , and finally the old deployed contract reappears 
+in Remix and getBatchReadable(1) will still return the batch , with ID equal to 1, that has been for instace created previously.  
+
+BLOCKCHAIN KEY CONCEPT
+
+The blockchain stores:
+
+contract code
+contract state
+all batches
+
+Remix stores only:
+
+temporary UI session  
+
+BEST PRACTICE > crea file `deployment.txt` that encloses 
+```
+Network: Sepolia
+Contract Address:
+0xbffD9f4657a9655670dC66f9470b013bb127073b
+```
+
+Create a small file: > 
 
 ### Runtime User Workflow (dApp Usage)
 
