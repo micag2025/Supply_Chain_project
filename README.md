@@ -24,7 +24,7 @@ Test Scenario to build up the  **CoffeeChain: Farm-to-Retail Product Traceabilit
 - **Immediate batch visibility** - New batches appear instantly in the dashboard
 - **Real-time operations** - ReadBatch and contract interactions work immediately
 - **Gas-optimized** - Efficient smart contract design for cost reduction
-- **Role-based access control** -  3 roles, thus states (Farmer, Distributor, and Retailer in the test scenario) with enforced permissions  
+- **Role-based access control** -  3 roles (Farmer, Distributor, and Retailer in the test scenario) with enforced permissions  
 
 ---
 
