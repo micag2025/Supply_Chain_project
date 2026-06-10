@@ -598,7 +598,9 @@ The dashboard features a **wallet connection panel** showing the connected accou
 
  ---
 
-### Example 1: Create and Read Batch (Farmer Only)
+### Example 1: Create and Read Batch (Farmer Only)  
+
+The figure shows the farmer batch creation process, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. Each batch is expected to be created in “Created” state and recorded on-chain with all fields and timestamp correctly stored.
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)    
 
@@ -617,6 +619,8 @@ The dashboard features a **wallet connection panel** showing the connected accou
  ---  
 
 ### Example 2: Ship Batch Action (Distributor only)  
+
+The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg) 
 
@@ -639,6 +643,8 @@ The dashboard features a **wallet connection panel** showing the connected accou
 
 ### Example 3: Deliver Batch Action (Retailer only)    
 
+The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.
+
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)  
 
 ![Updated_table2](https://github.com/micag2025/Supply_Chain_project/blob/1c2af8767725888cff953dfe8555bf92185d9e0d/Screenshots_UI/Updated_table2_retailer.jpeg)
@@ -658,7 +664,9 @@ The dashboard features a **wallet connection panel** showing the connected accou
 
 ---  
 
-###  Example 4: Invalid Wallet Role
+###  Example 4: Invalid Wallet Role  
+
+The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing any transaction from being sent or state changes from occurring. The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.
 
 ![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
 
@@ -673,6 +681,8 @@ The dashboard features a **wallet connection panel** showing the connected accou
 ---  
 
 ###  Example 5: Read Non-Existing Batch  
+
+The figure shows the **behavior when a user searches for a non-existing batch**. It displays a **clear “Batch not found” error message with user-friendly formatting**, ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.  
 
 ![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
 
