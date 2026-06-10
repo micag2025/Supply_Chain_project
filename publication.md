@@ -592,18 +592,11 @@ All test cases executed successfully on the Sepolia testnet using MetaMask and E
 
 ## Examples Usage UI  (UI Examples)
 
-### (UI Web DApp) Main Interface
+### (UI Web DApp) Main Interface  
+
+The dashboard features a **wallet connection panel** showing the connected account and role, a **batch management section** with create and lookup forms, and a **real-time overview table** displaying batch details with role-based action buttons for authorized users.
 
  ![Interface UI](https://github.com/micag2025/Supply_Chain_project/blob/c5307e39eb7c51ea98d939242a2308f948819f76/Screenshots_UI/Screenshot_UI_interface.jpeg)  
-
-The main dashboard displays the connected wallet information, role detection, and all available actions based on the user permissions.
-
-**Dashboard Components:**   
-- **Wallet Connection Panel** - Shows connected account and detected role
-- **Create Batch Section** - Form for creating new batches (Farmer only)
-- **Read Batch Section** - Query existing batch details by ID
-- **Batch History Table** - Complete batch list with status and action buttons
-- **Status Indicators** - Real-time batch state display
 
  ---
 
