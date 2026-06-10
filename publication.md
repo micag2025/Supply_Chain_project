@@ -2,11 +2,9 @@
 
 **Design and Implementation of a Decentralized Supply Chain dApp**
 
-
 ---  
 
-![Cover_Image](https://github.com/micag2025/Supply_Chain_project/blob/866b8f4a491d47f3c3df3bd349881db47d4a66ba/Cover_Image.png)
-
+![Image_Cover](https://github.com/micag2025/Supply_Chain_project/blob/b226e8ab29790783edfece4c67a021871a6ff032/Image_Cover.png)
 
 ---
 
