@@ -569,16 +569,16 @@ The dashboard includes the following features:
 ### Test Coverage   
 
 The smart contract and React frontend were validated across the following core functionalities:      
-- ✓ Batch creation  
-- ✓ Batch shipment  
-- ✓ Batch delivery  
-- ✓ Role-based access control  
-- ✓ Wallet-based authentication  
-- ✓ Duplicate ID prevention  
-- ✓ Invalid state transition handling  
-- ✓ Unauthorized access prevention  
-- ✓ Read operations  
-- ✓ Blockchain state persistence  
+✓ Batch creation  
+✓ Batch shipment  
+✓ Batch delivery  
+✓ Role-based access control  
+✓ Wallet-based authentication  
+✓ Duplicate ID prevention  
+✓ Invalid state transition handling  
+✓ Unauthorized access prevention  
+✓ Read operations  
+✓ Blockchain state persistence  
 
 The system was evaluated (extensively tested) using both **valid workflows** and **validation/error-handling scenarios**, covering end-to-end interactions between the React frontend, Ethereum smart contract, and MetaMask wallet integration. (including batch creation, shipment, delivery, role-based access control, blockchain persistence, and frontend safeguards.)  
 
