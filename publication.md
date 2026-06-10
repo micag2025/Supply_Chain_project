@@ -12,20 +12,16 @@
 
 ## TL;DR  
 
-This publication provides a step-by-step guide to build a decentralized supply chain management system using **React** and **Web3** technologies. The application integrates a **Solidity smart contract** deployed on the **Sepolia Ethereum testnet** with a **React frontend**, enabling users to create, track, and manage supply chain batches through role-based interactions (e.g.: Farmer, Distributor, Retailer) with complete transparency and immutability. 
+This publication provides a **step-by-step guide** to build a **decentralized supply chain management system** using **React** and **Web3** technologies. The application integrates a **Solidity smart contract** with a **React frontend**, enabling authorized users to create, track, and manage supply chain batches on the **Sepolia Ethereum testnet**.
 
-To test this **decentralized application (dApp)**  a test scenario, characterised by a practical implementation of a full workflow Test Scenario, representing a **Complete Coffee Supply Chain Tracking System**, has been used, to demonstrate real-world supply chain use cases of the **CoffeeChain: Farm-to-Retail Product Traceability dApp**.
+To demostrate a real-world supply chain use case of the **decentralized application (dApp)**  a complete Coffee Supply Chain Tracking workflow test scenario has been used to extensively test the **CoffeeChain: Farm-to-Distributor-to-Retail Product Traceability dApp**, using both **valid workflows** and **validation/error-handling scenarios**, covering end-to-end interactions between the React frontend, Ethereum smart contract, and MetaMask wallet integration (including batch creation, shipment, delivery, role-based access control, blockchain persistence, and frontend safeguards). 
 
-
-
-This **decentralized application (dApp)** is designed not only for AI developers, since it supports a wide range of technical and non-technical users such as  Supply Chain Managers & Logistics Companies, Farmers & Agricultural Producers, Distributors & Warehousing Providers, Retailers & End-Consumers and Regulatory & Compliance Officers. 
-
-This publication provides a **step-by-step guide** to build a decentralized supply chain management system using **React** and **Web3** technologies. The application integrates a **Solidity smart contract** with a **React frontend**, enabling authorized participants to create, track, and manage supply chain batches on the **Sepolia Ethereum testnet**.
+This dApp is designed for technical and non-technical users (Developers, Supply Chain Managers, Logistics Companies, etc.)  
 
 **Key Features:**
+- Complete Coffee Supply Chain Tracking workflow test scenario
 - Real-time batch tracking from farmer → distributor → retailer
 - Role-based access control (Farmer, Distributor, Retailer)
-- Complete Coffee Supply Chain Tracking workflow test scenario
 - Designed for technical and non-technical users (Supply Chain Managers, Logistics Companies, etc.)
 
 **Architecture Overview:**
@@ -67,23 +63,21 @@ The development path follows **Remix → React Web3 frontend** architecture:
   
 >_Note_ : Remix and React/Web3 frontend are complementary tools that work together seamlessly in the dApp development workflow.
 
-**Remix IDE- Smart Contract Laboratory** 
-(Remix serves as a **Smart Contract Laboratory** for: )   
+**Remix IDE- Smart Contract Laboratory**   
 - Write and test Solidity code
 - Compile and validate contracts
 - Deploy to testnets/mainnets
 - Extract ABI for frontend integration  
 
 **React Frontend – User Interface Layer**  
-(The React Layer** responsible for:)  
-- Building responsive, interactive U
+- Building responsive, interactive UI
 - Responsive, interactive UI components
 - Forms and tables for batch management
 - MetaMask wallet integration
 - Real-time blockchain state display
 
 
-### How Remix IDE and React Connect**  
+### How Remix IDE and React Connect  
 
 The integration follows a three-step model:
 
@@ -106,7 +100,7 @@ React Frontend (connects via ABI + address)
 
 ### Step 1: Smart Contract Deployment (Remix)
 
-(The user performs:)
+The user can:
 - Write Solidity smart contract code
 - Compile the contract to check for syntax errors
 - Deploy to Sepolia testnet via Remix IDE
@@ -116,7 +110,7 @@ React Frontend (connects via ABI + address)
 
 ### Step 2: React Frontend Setup  
 
-(The developer performs)
+The user can:
 - Create new React application
 - Install ethers.js library: `npm install ethers`
 - Create configuration file with ABI and contract address
@@ -337,7 +331,7 @@ See [contract-address.txt](https://github.com/micag2025/Supply_Chain_project/blo
 
 ### Runtime User Workflow (Repeated Usage)
 
-(This workflow is) executed **repeatedly** when users interact with dApp (~10-30 seconds per transaction):
+This workflow is executed **repeatedly** when users interact with dApp (~10-30 seconds per transaction):
 
 ```
 User opens dApp in browser
@@ -456,11 +450,10 @@ This installs all required packages: `ethers.js`,` react-dom`, and other depende
 
 ### Environment Configuration  
 
-Create a `.env` file`= in the project root (copy from `.env.example`):
+Create a `.env` file in the project root (see `.env.example`):
 
 ```bash  
 REACT_APP_CONTRACT= YOUR_DEPLOYED_CONTRACT_ADDRESS
-REACT_APP_NETWORK_ID=11155111  (?????)
 REACT_APP_NETWORK_NAME=Sepolia  
 ```  
 
@@ -517,7 +510,7 @@ To test the full workflow, open multiple browser windows/tabs with different Met
 
 ### Dashboard Features  
 
-(The dashboard includes the following sections: ) 
+The dashboard includes the following features:   
 
 #### 1. Wallet Connection Panel  
 - Currently connected MetaMask account
@@ -554,7 +547,7 @@ To test the full workflow, open multiple browser windows/tabs with different Met
 - Records retailer address on-chain
 - Completes batch journey
 
-===  
+---    
 
 ## Testing & Evaluation
 
@@ -569,27 +562,25 @@ To test the full workflow, open multiple browser windows/tabs with different Met
      - Account 3 (`0x...`): Retailer role
 - **Tools**: MetaMask, Ethers.js, Sepolia Faucet
 
-### Test Coverage (Scope)  
+### Test Coverage   
 
-(The smart contract and React frontend were validated across the following core functionalities:)    
-✓ Batch creation
-✓ Batch shipment
-✓ Batch delivery
-✓ Role-based access control
-✓ Wallet-based authentication
-✓ Duplicate ID prevention
-✓ Invalid state transition handling
-✓ Unauthorized access prevention
-✓ Read operations
-✓ Blockchain state persistence
+The smart contract and React frontend were validated across the following core functionalities:      
+✓ Batch creation  
+✓ Batch shipment  
+✓ Batch delivery  
+✓ Role-based access control  
+✓ Wallet-based authentication  
+✓ Duplicate ID prevention  
+✓ Invalid state transition handling  
+✓ Unauthorized access prevention  
+✓ Read operations  
+✓ Blockchain state persistence  
 
-(The system was evaluated (extensively tested) using both **valid workflows** and **validation/error-handling scenarios**, covering end-to-end interactions between the React frontend, Ethereum smart contract, and MetaMask wallet integration. (including batch creation, shipment, delivery, role-based access control, blockchain persistence, and frontend safeguards.))
+The system was evaluated (extensively tested) using both **valid workflows** and **validation/error-handling scenarios**, covering end-to-end interactions between the React frontend, Ethereum smart contract, and MetaMask wallet integration. (including batch creation, shipment, delivery, role-based access control, blockchain persistence, and frontend safeguards.)  
 
 ### Test Results 
 
-All test cases executed successfully on the Sepolia testnet using MetaMask and Ethers.js, confirming correct behavior across all functional layers.
-
-Detailed test results and execution scenarios are available in the [GitHub repository](https://github.com/micag2025/Supply_Chain_project.git).  
+All test cases executed successfully on the Sepolia testnet using MetaMask and Ethers.js, confirming correct behavior across all functional layers. Detailed test results and execution scenarios are available in the [GitHub repository](https://github.com/micag2025/Supply_Chain_project.git).  
 
 ---
 
