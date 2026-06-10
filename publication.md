@@ -18,17 +18,6 @@ To test this **decentralized application (dApp)**  a test scenario, characterise
 
 This **decentralized application (dApp)** is designed not only for AI developers, since it supports a wide range of technical and non-technical users such as  Supply Chain Managers & Logistics Companies, Farmers & Agricultural Producers, Distributors & Warehousing Providers, Retailers & End-Consumers and Regulatory & Compliance Officers. 
 
-
-| Action           | Who does it    |
-| ---------------- | -------------- |
-| Enter ID         | User           |
-| Send request     | React          |
-| Query blockchain | Smart contract |
-| Return data      | Blockchain     |
-| Display UI       | React          |
-
-
-
 ---
 
 ## Key Highlights  
@@ -339,19 +328,17 @@ in Remix and getBatchReadable(1) will still return the batch , with ID equal to 
 BLOCKCHAIN KEY CONCEPT
 
 The blockchain stores:
-
 contract code
 contract state
 all batches
 
 Remix stores only:
-
 temporary UI session  
 
 BEST PRACTICE > crea file `deployment.txt` that encloses 
 ```
 Network: Sepolia
-Contract Address:0xbffD9f4657a9655670dC66f9470b013bb127073b
+Contract Address:0x....
 ```
 
 See [contract-address.txt](https://github.com/micag2025/Supply_Chain_project/blob/1f8fa8e832f894f4a14ac4ede755ec79347d2d93/contracts/deployment/contract-address.txt)
@@ -394,6 +381,16 @@ React listens to event and updates UI
 User sees confirmation message and updated table
 ```
 **Time per Transaction:** ~10-30 seconds (including Sepolia block time)
+
+---  
+
+| Action           | Who does it    |
+| ---------------- | -------------- |
+| Enter ID         | User           |
+| Send request     | React          |
+| Query blockchain | Smart contract |
+| Return data      | Blockchain     |
+| Display UI       | React          |  
 
 ---
 
@@ -590,6 +587,7 @@ The application was thoroughly tested on the Sepolia Ethereum Testnet using a de
 - **Tools**: MetaMask, Ethers.js, Sepolia Faucet
 
 #### Test Scope  
+
 The smart contract and React frontend were validated across the following core functionalities:  
 ✓ Batch creation
 ✓ Batch shipment
@@ -619,23 +617,41 @@ Detailed test results and execution scenarios are available in the [GitHub repos
 
 The main dashboard displays the connected wallet information at the top, role detection, and all available actions based on the user's permissions.
 
+**Dashboard Components:**  
+
+- **Wallet Connection Panel** - Shows connected account and detected role
+- **Create Batch Section** - Form for creating new batches (Farmer only)
+- **Read Batch Section** - Query existing batch details by ID
+- **Batch History Table** - Complete batch list with status and action buttons
+- **Status Indicators** - Real-time batch state display
+
  ---
 
-### Example 1: (Valid Test Case -) Read Batch and Create Batch (Farmer Role)  
+### Example 1: Create and Read Batch (Farmer Only)
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)    
 
-**Farmer Actions:**
-- Batch lookup showing product details (ID, name, quantity, current state)
-- Create Batch form with input validation
+**Farmer Actions:**  
+
+- **Create Batch Section** with input validation
 - Successfully created batches appearing in Overview Table immediately
 - Transaction confirmation with blockchain explorer link 
+- Batch lookup showing product details (ID, name, quantity, current state)  
+- **Read Batch**
+
+
+- Batch created with state "Created"
+- Batch readable immediately after creation
+- All fields display correctly (ID, name, farmer, state)
+- Creation timestamp recorded on blockchain 
 
  ---  
 
-### Example 2: (Valid Test Case -) Ship Batch Action (Distributor Role)  
+### Example 2: Ship Batch Action (Distributor only)  
 
-![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg)  
+![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg) 
+
+![Table_overview_distributor](https://github.com/micag2025/Supply_Chain_project/blob/f8c24ec757ba11fd7fa719b683bdf777bb1651d6/Screenshots_UI/Table_overview_distributor.jpeg)
 
 **Distributor Actions:**  
 - Overview Table showing only "Created" batches eligible for shipment
@@ -645,77 +661,56 @@ The main dashboard displays the connected wallet information at the top, role de
 
 ---  
 
-### Example 3: (Valid Test Case -) Deliver Batch Action (Retailer Role)    
+### Example 3: Deliver Batch Action (Retailer only)    
 
-![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)    
+![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)  
+
+![Updated_table2](https://github.com/micag2025/Supply_Chain_project/blob/1c2af8767725888cff953dfe8555bf92185d9e0d/Screenshots_UI/Updated_table2_retailer.jpeg)
 
 **Retailer Actions:**  
-- Overview Table showing batches in "Shipped" state ready for delivery
+-  Overview Table showing batches in "Shipped" state ready for delivery
 - "Deliver" action buttons visible for final handoff
 - Transaction completion shows batch state changed to "Delivered"
 - Retailer address recorded on blockchain
 - Full batch journey chain complete
 
+**Expected Outcome:**  
+
+- ✓ Only Retailer can deliver batches  
+- ✓ State transitions correctly from "Shipped" to "Delivered"   
+- ✓ Retailer address recorded on-chain  
+- ✓ Table reflects state change instantly  
+- ✓ Distributor account cannot deliver (buttom disabled)  
+
 ---  
 
-### Example ....: (Invalid Test Case -) Unauthorized Shipment Attempt  TO BE EXCLUDED? 
-
-SCREENSHOT TO BE ENCLOSED  > see README.MD  
-
-
-**Scenario**: Farmer attempts to ship a batch (role mismatch)
-
-**Expected Behavior**:  
-- Farmer clicks "Ship" button on batch in "Created" state
-- "Ship" button is not visible in UI (role-based filtering)
-- If attempted directly via contract call, transaction reverts
-- Error message: "Only Distributor can perform shipment"  / Transaction reverted with role validation error.
-- No state change on blockchain
-- User notified of authorization failure
-
-
-###  Example 5: (Invalid Test Case:) Invalid Wallet Role
+###  Example 4: Invalid Wallet Role
 
 ![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
 
-Scenario: Distributor attempts to create a batch.
-
-**How to Test:**   
-
-1. Connect with  Distributor account
-2. In the Create Batch Section:  
-  - Enter a unique Batch ID (e.g., "BATCH001")  
-  - Enter Product Name (e.g., "Cof")
-  - Click Create Batch
-3.  Transaction fails (buttom create is blocked)
-
+**Scenario:** Distributor attempts to create a batch  
 
 **Expected Result:**  
-- Access denied
-- ✗ "Unauthorized: Only Farmer can create batches"  
-- ✓ No state change occurs
-- ✗ Unknown account attempts restricted action.     
+
+- ✓ "Create Batch" action unavailable for non-Farmers
+- ✓ UI prevents unauthorized action (no transaction sent)  
+- ✓  No state change occurs (Clear role indication in interface)
+- ✓  No gas consumed (prevented at UI layer)    
 
 ---  
 
-###  Example 6: (Invalid Test Case:) Read Non-Existing Batch  
+###  Example 5: Read Non-Existing Batch  
 
 ![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
 
-Scenario: Read Non-Existing Batch
+**Scenario:** User searches for non-Existing batch
 
-**How to Test:**   
+**Expected Result:**
 
-1. Connect with Farmer account
-2. In the Read Batch Section:    
-  - Enter the Non-Existing Batch ID (e.g. ID = 8)
-  - Click Read Batch  
-
-**Expected Result:**  
-- Access denied
-- ✗ Error message displayed   
-- ✓ No state change occurs
-- ✓ Error displayed in user-friendly format :`Batch not found`     
+- ✓ Error message displayed (e.g., "Batch not found")
+- ✓ No invalid data returned
+- ✓ User-friendly error formatting
+- ✓ No gas consumed (read-only call)
 
 ---  
 
@@ -964,24 +959,32 @@ npm run dev
 
 ## References    
 
-Official documentation and resources for technologies used in this project:  
+Official documentation and resources for technologies used in this project  
 
-- [Remix IDE](https://remix.live/) - Remix IDE – Browser-based smart contract development environment
-- [Ethereum Sepolia Faucet](https://cloud.google.com/application/web3/faucet) – Obtain free Sepolia ETH for testing
-- [MetaMask](https://metamask.io/)– Wallet integration guide and API reference
-- [React](https://react.dev/)– Official React library documentation
-- [ethers.js Documentation](https://docs.ethers.org/v5/) – Complete ethers.js API reference
-- [Solidity Documentation](https://docs.soliditylang.org/en/v0.8.35/) – Solidity language reference
-- [Hardhat](https://hardhat.org/)  – Ethereum development environment setup
-- [Web3 Faucet](https://cloud.google.com/application/web3/faucet)– Google Cloud Web3 testnet faucet
-- [nodejs.org](https://nodejs.org/)
-- [Vite Documentation](https://devdocs.io/vite/) – Next generation frontend tooling
+### Blockchain & Web3
+
+- [Remix IDE](https://remix.live/) - Browser-based smart contract development
+- [Solidity Documentation](https://docs.soliditylang.org/en/v0.8.35/) - Smart contract language
+- [Hardhat](https://hardhat.org/) - Ethereum development environment
+- [ethers.js Documentation](https://docs.ethers.org/v5/) - Web3 JavaScript library
+
+### Ethereum Networks
+
+- [Ethereum Sepolia Faucet](https://cloud.google.com/application/web3/faucet) - Free testnet ETH
+- [Ethereum Documentation](https://ethereum.org/developers) - Protocol reference
+
+### Development Tools
+
+- [MetaMask](https://metamask.io/) - Wallet integration guide
+- [React](https://react.dev/) - UI framework documentation
+- [Node.js](https://nodejs.org/) - JavaScript runtime
+- [Vite](https://devdocs.io/vite/) - Frontend build tool
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/micag2025/Supply_Chain_project/blob/main/LICENSE) file for details.
+This project is licensed under the **MIT License**. See the [LICENSE](https://github.com/micag2025/Supply_Chain_project/blob/main/LICENSE) file for details.
 
 ---
 
@@ -993,8 +996,6 @@ michelaagostini73@gmail.com
 
 ## Acknowledgements  
 
-TO BE CHANGED AND DRAFTED  
-This project was built with contributions and inspiration from ...........................who have reviewed, tested, and improved this project
-Special thanks to all developers and supply chain professionals who provided feedback during development and testing phases.
+This project was built with contributions and inspiration from ...........................who have reviewed, tested, and improved this project. Special thanks to all developers and supply chain professionals who provided feedback during development and testing phases.
 
 --- 
