@@ -2,6 +2,12 @@
 
 **Design and Implementation of a Decentralized Supply Chain dApp**
 
+
+---  
+
+![Cover_Image]
+
+
 ---
 
 ## Tags 
@@ -632,7 +638,11 @@ The main dashboard displays the connected wallet information, role detection, an
 - Distributor address recorded and visible in batch details
 
 **Expected Results:**  
-- TO BE ENCLOSED > see README.MD
+- ✓ Only Distributor can ship batches  
+- ✓ State transitions correctly     
+- ✓ Distributor address recorded on chain
+- ✓ Table updates in real-time    
+- ✓ Farmer account cannot ship (buttom disabled)    
 
 ---  
 
