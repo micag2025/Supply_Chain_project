@@ -784,21 +784,6 @@ npm run dev
 
 ---  
 
-## Contributing  
-
-Contributions are welcome (to enhance the Supply Chain dApp!) Follows these steps:
-
-1. Fork the GitHub repository  
-2. Create a feature branch:    
-```bash
-git checkout -b feat/your-feature
-```
-3. Commit and push your changes  
-4. Submit a Pull Request with descriptions
-5. Follow the repository code style and add tests for major features
-
----  
-
 ## Future Implementations  
 
 Contributors are encouraged to extend the system while maintaining its core architectural principles.   
@@ -950,6 +935,21 @@ npm run dev
 - Environmental impact tracking  
 
 ---  
+
+## Contributing  
+
+Contributions are welcome (to enhance the Supply Chain dApp!) Follows these steps:
+
+1. Fork the GitHub repository  
+2. Create a feature branch:    
+```bash
+git checkout -b feat/your-feature
+```
+3. Commit and push your changes  
+4. Submit a Pull Request with descriptions
+5. Follow the repository code style and add tests for major features
+
+---     
 
 ## References    
 
