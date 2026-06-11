@@ -168,8 +168,10 @@ supply-chain-dapp/
 │   ├── Screenshot_invalid_wallet_role.jpeg
 │   ├── Screenshot_read_non_existing_batch.jpg
 │   ├── Screenshot_UI_interface.jpeg
-│   ├── Screenshot1_Retailer.jpeg
-│   └── Screenshot3_Distributor.jpeg
+│   ├── Screenshot_Deliver_Batch_Retailer.jpg
+│   └── Screenshot_Ship_Batch_Distributor.jpg  
+│   ├── Screenshot_updated_table_Deliver_Batch_Retailer.jpg
+│   └── Screenshot_updated_table_Ship_Batch_Distributor.jpg
 │
 ├── docs/                            # Additional documentation
 │   └── metamask-setup.md            # MetaMask setup guide
@@ -603,9 +605,9 @@ This scenario demonstrates a complete batch lifecycle:
 
 ### Example 2: Ship Batch (Distributor only)      
 
-![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg) 
+![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Ship_Batch_Distributor.jpg)
 
-![Table_overview_distributor](https://github.com/micag2025/Supply_Chain_project/blob/f8c24ec757ba11fd7fa719b683bdf777bb1651d6/Screenshots_UI/Table_overview_distributor.jpeg)
+![Table_overview_distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_updated_table_Ship_Batch_Distributor.jpg)
 
 **How to Test:**  
 
@@ -629,9 +631,9 @@ This scenario demonstrates a complete batch lifecycle:
 
 ### Example 3: Deliver Batch (Retailer only)   
 
-![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)  
+![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Deliver_Batch_Retailer.jpg)  
 
-![Updated_table2](https://github.com/micag2025/Supply_Chain_project/blob/1c2af8767725888cff953dfe8555bf92185d9e0d/Screenshots_UI/Updated_table2_retailer.jpeg)
+![Updated_table2](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_updated_table_Deliver_Batch_Retailer.jpg)
 
 **How to Test:**  
 
