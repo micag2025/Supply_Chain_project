@@ -622,9 +622,9 @@ The figure shows the farmer batch creation process, including validated **batch 
 
 The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.
 
-![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot3_Distributor.jpeg) 
+![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Ship_Batch_Distributor.jpg)
 
-![Table_overview_distributor](https://github.com/micag2025/Supply_Chain_project/blob/f8c24ec757ba11fd7fa719b683bdf777bb1651d6/Screenshots_UI/Table_overview_distributor.jpeg)
+![Table_overview_distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_updated_table_Ship_Batch_Distributor.jpg)  
 
 **Distributor Actions:**  
 - Overview Table showing only "Created" batches eligible for shipment
@@ -645,9 +645,9 @@ The figures show the **distributor shipment process**, including **viewing only 
 
 The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.
 
-![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot1_Retailer.jpeg)  
+![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Deliver_Batch_Retailer.jpg)  
 
-![Updated_table2](https://github.com/micag2025/Supply_Chain_project/blob/1c2af8767725888cff953dfe8555bf92185d9e0d/Screenshots_UI/Updated_table2_retailer.jpeg)
+![Updated_table2](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_updated_table_Deliver_Batch_Retailer.jpg)  
 
 **Retailer Actions:**  
 - Overview Table shows "Shipped" batches ready for delivery
