@@ -414,7 +414,6 @@ The smart contract and React frontend have been tested for:
 - ✓ **Batch creation** - Farmer can create new batches  
 - ✓ **Batch shipment** - Distributor can ship created batches  
 - ✓ **Batch delivery** - Retailer can deliver shipped batches
-- to be added  
 -  ✓ **Event emission** - All contract events properly emitted     
 - ✓ **Read- only operations** - All view functions return correct data
 
