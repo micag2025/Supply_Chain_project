@@ -16,9 +16,9 @@
 
 ## TL;DR  
 
-This publication provides a **step-by-step guide** to build a **decentralized supply chain management system** using **React** and **Web3** technologies. The application integrates a **Solidity smart contract** with a **React frontend**, enabling authorized users to create, track, and manage supply chain batches on the **Sepolia Ethereum testnet**.
+This publication provides a **step-by-step guide** to build a **decentralized supply chain management system** using **React** and **Web3** technologies. The application integrates a **Solidity smart contract** with a responsive React frontend powered by ethers.js for seamless Web3 integration, (enabling authorized users to create, track, and manage supply chain batches on the **Sepolia Ethereum testnet**.)   
 
-To demostrate a real-world supply chain use case of the **decentralized application (dApp)**  a complete Coffee Supply Chain Tracking workflow test scenario has been used to extensively test the **CoffeeChain: Farm-to-Distributor-to-Retail Product Traceability dApp**, using both **valid workflows** and **validation/error-handling scenarios**, covering end-to-end interactions between the React frontend, Ethereum smart contract, and MetaMask wallet integration (including batch creation, shipment, delivery, role-based access control, blockchain persistence, and frontend safeguards). 
+To demonstrate a real-world supply chain use case of the **decentralized application (dApp)**, a complete **Coffee Supply Chain Tracking workflow test scenario** has been used to extensively test the system across all functional layers.
 
 This dApp is designed for technical and non-technical users (Developers, Supply Chain Managers, Logistics Companies, etc.)  
 
@@ -241,9 +241,9 @@ Testing demonstrates that the following features have been **verified and produc
 
 ## Architecture  
 
-### High-Level System Design
+### High-Level System Design  
 
-The system is a **decentralized supply chain platform** where authorized participants (users) interact with an immutable smart contract through **MetaMask wallet integration**. All state changes are recorded permanently on the **Sepolia Ethereum blockchain**.
+The system is a **decentralized supply chain platform** where authorized participants (users) interact with an immutable smart contract through **MetaMask wallet integration**. All state changes are recorded immutably on the blockchain.
 
 ```
                     ┌──────────────────────────┐
@@ -555,7 +555,7 @@ The dashboard includes the following features:
 
 ## Testing & Evaluation
 
-(The application was thoroughly tested on the Sepolia Ethereum Testnet using a defined test matrix covering both valid and invalid scenarios. ) 
+The application was thoroughly tested on the Sepolia Ethereum Testnet using a defined test matrix covering both valid and invalid scenarios.
 
 ### Test Environment Setup  
 
@@ -580,11 +580,12 @@ The smart contract and React frontend were validated across the following core f
 ✓ Read operations  
 ✓ Blockchain state persistence  
 
-The system was evaluated (extensively tested) using both **valid workflows** and **validation/error-handling scenarios**, covering end-to-end interactions between the React frontend, Ethereum smart contract, and MetaMask wallet integration. (including batch creation, shipment, delivery, role-based access control, blockchain persistence, and frontend safeguards.)  
+The system was evaluated using both **valid workflows** and **validation/error-handling scenarios**, covering end-to-end interactions between the React frontend, and Ethereum smart contract (and MetaMask wallet integration).  
 
 ### Test Results 
 
-All test cases executed successfully on the Sepolia testnet using MetaMask and Ethers.js, confirming correct behavior across all functional layers. Detailed test results and execution scenarios are available in the [GitHub repository](https://github.com/micag2025/Supply_Chain_project.git).  
+All test cases executed successfully on the Sepolia testnet using MetaMask and Ethers.js, confirming correct behavior across all functional layers.  
+Detailed test results and execution scenarios are available in the [GitHub repository (https://github.com/micag2025/Supply_Chain_project.git).  
 
 ---
 
@@ -592,7 +593,7 @@ All test cases executed successfully on the Sepolia testnet using MetaMask and E
 
 ### (UI Web DApp) Main Interface  
 
-The dashboard features a **wallet connection panel** showing the connected account and role, a **batch management section** with create and lookup forms, and a **real-time overview table** displaying batch details with role-based action buttons for authorized users.
+The dashboard features a **wallet connection panel** showing the connected account and role, a **batch management section** with create and lookup forms, and a **real-time overview table** displaying all batches. 
 
  ![Interface UI](https://github.com/micag2025/Supply_Chain_project/blob/c5307e39eb7c51ea98d939242a2308f948819f76/Screenshots_UI/Screenshot_UI_interface.jpeg)  
 
@@ -600,7 +601,7 @@ The dashboard features a **wallet connection panel** showing the connected accou
 
 ### Example 1: Create and Read Batch (Farmer Only)  
 
-The figure shows the farmer batch creation process, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. Each batch is expected to be created in “Created” state and recorded on-chain with all fields and timestamp correctly stored.
+The figure shows the farmer batch creation process, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. 
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)    
 
@@ -620,7 +621,7 @@ The figure shows the farmer batch creation process, including validated **batch 
 
 ### Example 2: Ship Batch Action (Distributor only)  
 
-The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.
+The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** (They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.)
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Ship_Batch_Distributor.jpg)
 
@@ -643,7 +644,7 @@ The figures show the **distributor shipment process**, including **viewing only 
 
 ### Example 3: Deliver Batch Action (Retailer only)    
 
-The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.
+The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** (They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.)
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Deliver_Batch_Retailer.jpg)  
 
@@ -666,7 +667,7 @@ The figures show the **retailer delivery process**, including **viewing “Shipp
 
 ###  Example 4: Invalid Wallet Role  
 
-The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing any transaction from being sent or state changes from occurring. The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.
+The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. (The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.)
 
 ![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
 
@@ -682,7 +683,7 @@ The figure demonstrates an **access control scenario where a distributor attempt
 
 ###  Example 5: Read Non-Existing Batch  
 
-The figure shows the **behavior when a user searches for a non-existing batch**. It displays a **clear “Batch not found” error message with user-friendly formatting**, ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.  
+The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. (, ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.)  
 
 ![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
 
@@ -698,51 +699,74 @@ The figure shows the **behavior when a user searches for a non-existing batch**.
 
 ## Limitations & Workarounds  
 
+This section addresses key limitations of the current implementation and provides practical solutions to overcome them.
+
 ### Limitation 1: Remix IDE Constraints  
 
 **Problem**: Remix is designed for rapid smart contract development, not production deployment.  
 
-**Limitations**:  
+**Current Limitations**:  
 - No version control integration or collaborative editing  
 - No automated deployment pipelines  
 - Limited environment management  
-- Event indexing not possible (requires The Graph)  
 - Slow cmpilation for large projects
 - No built-in security audit tools
+- Event indexing not possible (requires The Graph)  
 
-**Workaround: Migration to Hardhat**  
+**Recommended Workaround: Migrate to Hardhat**  
 
-Hardhat provides a complete development framework:  
+Hardhat provides a professional development framework with comprehansive tooling:  
 
 ```bash
 npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox
 npx hardhat init
 ```
+**Hardhat Setup and Capabilities:**
 
-**Benefits**:  
-- Network configuration management
-- Automated deployment scripts
-- Local blockchain simulation
-- Built-in debugging and testing
-- Gas optimization tools
-- Security analysis plugins
+- **Network Configuration Management** – Define and manage multiple network configurations (Sepolia, mainnet, localhost)
+
+- **Automated Deployment Scripts**
+```bash
+npx hardhat run scripts/deploy.js --network sepolia
+```
+
+- **Comprehensive Testing Framework** – Write automated tests for smart contracts:
+```javascript
+describe("SupplyChainBatch", () => {
+  it("should prevent duplicate batch IDs", async () => {
+    await contract.createBatch("BATCH001", "Coffee", 100);
+    await expect(
+      contract.createBatch("BATCH001", "Coffee", 100)
+    ).to.be.revertedWith("Batch ID already exists");
+  });
+});
+```
+
+- **Local Blockchain Simulation**
+```bash
+npx hardhat node
+```
+
+- **Gas Optimization & Analysis** – Analyze and optimize gas consumption
+
+- **Security Plugins** – Integrate security analysis tools for vulnerability detection
 
 ---  
 
 ### Limitation 2: Create React App (CRA) Performance  
 
-**Problem**: CRA uses an older build system (Webpack) that can be slower than modern alternatives.
+**Problem**: CRA uses an older build system (Webpack) that is slower than modern alternatives.
 
-**Limitations:**
+**Current Limitations:**
 - Slower development server startup (~10-30 seconds)
 - Slower hot module reloading  
 - Larger production bundle sizes
 - High memory consumption  
 - Limited customization without ejecting
 
-**Workaround:Migrate to Vite**   
+**Recommended Workaround: Migrate to Vite**   
 
-Vite provides a modern, faster development experience:
+Vite provides a modern, significantely faster development experience:
 
 ```bash
 npm create vite@latest supplychain-ui -- --template react
@@ -755,190 +779,151 @@ npm run dev
 **Benefits:**  
 - Instant server start (< 1 second)  
 - Lightning-fast HMR (hot module replacement)  
-- Smaller production bundles  
+- 40-50% smaller production bundles  
 - Native ES modules support  
 - Better TypeScript support  
 
 ---  
 
-### Limitation 3: UI Web dApp Restrictions  
+### Limitation 3: UI Web dApp Functional Restrictions
 
-**Current Limitations**:
-- **Single-Network Support** – Only works on Sepolia testnet  
-- **Fixed Role Mapping** – Roles hardcoded to specific addresses  
-- **No Event History Storage** – Events displayed only during current session  
-- **No Data Export** – Batch data cannot be exported to CSV
-- **Limited Search** – Only searches by exact batch ID  
-- **No Notifications** – Users not notified of state changes >TO BE VERIFIED  
-- **Single Contract Only** – Cannot manage multiple contracts simultaneously
-- **No Batch Filtering**– Cannot filter by date range, state, or handler address
+**Current Limitations:**
+- **Single-Network Support** – Operates exclusively on Sepolia testnet
+- **Fixed Role Mapping** – Roles are hardcoded to specific wallet addresses; no dynamic role assignment
+- **No Event History Persistence** – Historical batch events are not stored; data only displays during the current session
+- **Limited Search Functionality** – Batch lookup only supports exact batch ID matching; no advanced filtering
+- **No Data Export** – Batch history cannot be exported to CSV or PDF formats
+- **No Real-Time Notifications** – Users are not automatically notified of batch state changes
+- **Single Contract Management** – Cannot manage or track multiple smart contracts simultaneously
 
-**Potential Improvements**:    
-- Implement The Graph for event indexing  
-- Add backend database to store batch metadata and search  
-- Create batch timeline visualization  
-- Add real-time notifications via WebSocket
-- Implement multi-contract support  
-- Add advanced filtering and sorting  
-- Implement batch data export functionality
+**Potential Improvements:**
+- Integrate **The Graph** for robust event indexing and historical data persistence
+- Add a backend database (PostgreSQL) for advanced search, filtering, and analytics
+- Implement **WebSocket** connections for real-time notifications
+- Create batch timeline visualization dashboard
+- Enable multi-contract support with contract switching
+- Add data export functionality (CSV, PDF)
+- Implement dynamic role assignment via smart contract
 
 ---  
 
 ## Future Implementations  
 
-Contributors are encouraged to extend the system while maintaining its core architectural principles.   
+The system architecture supports extensibility while maintaining core principles. Contributors are encouraged to extend the system with the following enhancements.  
 
 ### Phase 1: Smart Contract Enhancements  
 
-**1. Batch Metadata Expansion**  
-- Add additional product attributes (weight, temperature, humidity)  
-- Implement batch expiration tracking
-- Support batch splitting and merging
-- Add quality inspection documentation
+**1. Expand Batch Attributes**
+- Add product metadata: weight, temperature, humidity tracking
+- Implement batch expiration date management
+- Support batch splitting and merging operations
+- Store quality inspection documentation on-chain
 
-**2. Batch Variants** (Currently only supports single batch type. Expand to:)  
-- **FreshProduce**: Expiration date, storage temperature
-- **Electronics**: Serial numbers, warranty info
-- **Pharmaceuticals**: Lot numbers, manufacturing dates, compliance
+**2. Support Multiple Product Types**
+- **FreshProduce**: Storage temperature requirements, expiration tracking
+- **Electronics**: Serial numbers, warranty information, compliance certifications
+- **Pharmaceuticals**: Lot numbers, manufacturing dates, safety compliance
 
-**3. Advanced Access Control**  
-- Temporary access permissions
-- Multi-signature approval requirements
-- Rate limiting for API calls
-- Permit-based model (following EIP-2612 standard)
+**3. Advanced Access Control**
+- Temporary permission grants with automatic expiration
+- Multi-signature approval for critical operations
+- Rate limiting for API calls and contract interactions
+- Implement EIP-2612 permit-based authorization model
 
 ---  
 
-### Phase 2: Infrastructure & Tools  
+### Phase 2: Advanced Testing & Automation
 
-(#### Overcome Remix Limitations via Hardhat Migration)
-
-**Phase 2A: Hardhat Setup**    
-```bash
-npm install --save-dev hardhat
-npx hardhat init
-```
-
-**Phase 2B: Write Automated Tests**    
-- Unit tests for smart contract function
+**2A. Comprehensive Test Suite**
+- Unit tests for all smart contract functions
 - Integration tests for role-based workflows
-- Gas optimization analysis
-- Security vulnerability scanning  
+- Gas optimization analysis and reporting
+- Security vulnerability scanning
 
-```javascript  
-// Example test
-describe("SupplyChainBatch", () => {
-  it("should prevent duplicate batch IDs", async () => {
-    await contract.createBatch("BATCH001", "Coffee", 100);
-    await expect(
-      contract.createBatch("BATCH001", "Coffee", 100)
-    ).to.be.revertedWith("Batch ID already exists");
-  });
-});
-```
+**2B. Automated Deployment Pipeline**
+- Scripts for contract deployment to Sepolia and mainnet
+- Automated ABI extraction and frontend configuration
+- Environment-specific deployment parameters
 
-**Phase 2C: Deploy scripts**    
-
-```
-npx hardhat run scripts/deploy.js --network sepolia
-# Automates contract deployment
-```
-
-**Phase 2D: Local testing**    
-```
-npx hardhat node
-# Runs local blockchain for rapid testing
-```
-#### Overcome CRA Limitations via Vite Migration
-
-**Phase 2E: Create Vite project**    
-```
-npm create vite@latest supplychain-ui -- --template react
-cd supplychain-ui
-npm install ethers
-npm run dev
-```
-
-**Benefits:**  
-- 10x faster development server startup  
-- Near-instant HMR updates
-- 40-50% smaller production bundles
-- Better development performance  
-
----  
-
-### Phase 3: Frontend Enhancements
-
-#### 1. Event Indexing & History Persistence 
-- Integrate The Graph to event indexing
-- Store historical batch data in PostgreSQL  
-- Implement GraphQL API  
-- Build batch timeline visualization
-
-#### 2. Advanced UI Components 
-- Batch status timeline with dates and parties
-- Interactive supply chain map showing batch locations
-- Real-time batch tracking dashboard
-- Analytics dashboard with KPIs (average shipment time)
-
-#### 3. Export & Reporting  
-- Export batch history to PDF  
-- Generate compliance reports  
-- CSV export for data analysis
-- Email notifications  
-
-#### 4. Mobile Application  
-- React Native mobile app
-- QR code scanning  
-- Offline functionality  
-- Push notifications   
-
----  
-
-### Phase 4: Production Deployment  
-
-#### 1. Smart Contract Deployment to Mainnet  
-- Security audit by professional firm
-- Gas optimization via Foundry  
-- Multi-signature wallet for owner functions
-- Timelock for upgrades
-  
-#### 2. Scalability Solutions    
-- Layer 2 deployment (Polygon, Arbitrum, Optimism)
-- Side-chain implementations for high-frequency transactions
-- State channels for batch-to-batch transfers
-  
-#### 3. Enterprise Features  
-- Multi-organization support
-- Role hierarchy (admin, manager, operator)
-- Batch templates for common products
-- ERP system integration
+**2C. Local Development Blockchain**
+- Fast local blockchain simulation for rapid testing
+- Deterministic test scenarios
+- Quick iteration without testnet delays
 
 ---
 
-### Phase 5: Ecosystem Integration  
+### Phase 3: Frontend & Analytics
 
-#### 1. API & Webhook System  
-- REST API for external batch queries  
-- Webhooks for batch state change 
-- Third-party integrations  
+**3A. Event Indexing & Data Persistence**
+- Integrate The Graph for decentralized event indexing
+- Store historical batch data in PostgreSQL
+- Implement GraphQL API for efficient queries
+- Build interactive batch timeline visualization
 
-#### 2. Interoperability  
-- Cross-chain bridge for multi-blockchain tracking  
-- W3C Verifiable Credentials
-- Supply chain standards compliance
-  
-#### 3. Analytics & Insights  
-- Machine learning (ML) anomaly detection  
-- Predictive delivery time analyses  
-- Supplier performance scoring  
-- Environmental impact tracking  
+**3B. Enhanced UI Components**
+- Batch status timeline showing dates, parties, and events
+- Interactive supply chain map with real-time batch locations
+- Comprehensive analytics dashboard with KPIs (average shipment time, bottleneck analysis)
+- Supplier performance metrics and scoring
 
----  
+**3C. Export & Reporting**
+- Generate compliance reports in PDF format
+- Export batch history to CSV for data analysis
+- Create automated email notifications for state changes
+- Supply chain audit trail reports
+
+**3D. Mobile Experience**
+- React Native mobile application
+- QR code scanning for batch verification
+- Offline functionality with sync capability
+- Push notifications for batch updates
+
+---
+
+### Phase 4: Production Deployment
+
+**4A. Smart Contract Hardening**
+- Professional security audit by reputable third-party firm
+- Gas optimization via Foundry
+- Multi-signature wallet for owner functions
+- Timelock mechanism for contract upgrades
+
+**4B. Scalability Solutions**
+- Layer 2 deployment (Polygon, Arbitrum, Optimism)
+- Side-chain implementations for high-frequency transactions
+- State channels for batch-to-batch transfers
+
+**4C. Enterprise Features**
+- Multi-organization support with namespace isolation
+- Role hierarchy (admin, manager, operator, viewer)
+- Batch templates for common product types
+- ERP system integration via REST API
+
+---
+
+### Phase 5: Ecosystem Integration
+
+**5A. API & Integration Layer**
+- REST API for external batch queries and integration
+- Webhooks for batch state change events
+- SDKs for programmatic contract interaction
+
+**5B. Cross-Chain & Standards**
+- Cross-chain bridge for multi-blockchain product tracking
+- W3C Verifiable Credentials for supply chain provenance
+- Compliance with industry standards (GS1, ISO 8859)
+
+**5C. Advanced Analytics & Intelligence**
+- Machine learning for anomaly detection in supply chains
+- Predictive delivery time analysis with ML models
+- Supplier performance scoring and risk assessment
+- Environmental impact tracking and carbon footprint calculation
+
+---
 
 ## Contributing  
 
-Contributions are welcome (to enhance the Supply Chain dApp!) Follows these steps:
+Contributions are welcome to enhance the Supply Chain dApp. Follows these steps:
 
 1. Fork the GitHub repository  
 2. Create a feature branch:    
