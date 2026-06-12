@@ -696,6 +696,31 @@ The figure shows the **behavior when a user searches for a non-existing batch**.
 - ✓ No gas consumed (read-only call)
 
 ---  
+NEW VERSION  
+
+### Limitations and Future Work
+
+The proposed blockchain-based supply chain tracking system successfully demonstrates decentralized batch creation, shipment tracking, delivery verification, and role-based access control using Ethereum smart contracts and a React-based user interface. However, the current implementation is intended as a proof-of-concept and therefore presents several limitations.   
+- **Smart contract development and deployment were performed using Remix IDE**, which is suitable for rapid prototyping but lacks advanced development, testing, and deployment capabilities required for large-scale production environments.   
+- Additionally, **the frontend was developed using Create React App**, which provides a stable development environment but offers lower performance and slower build times compared with more modern alternatives.
+
+Future work will focus on improving scalability, usability, and traceability. Planned enhancements include:  
+ - migration to Hardhat for professional smart contract development,   
+ - adoption of Vite for frontend optimization,   
+ - integration of IPFS and QR-code technologies for product provenance,   
+ - expansion of supply chain states beyond the current Created–Shipped–Delivered workflow,   
+ - inventory and expiration management capabilities,   
+ - advanced analytics dashboards,   
+ - IoT integration for real-time monitoring,  
+  - and deployment on Layer-2 networks such as Polygon and Arbitrum.   
+ 
+ Additional technical details, implementation considerations, and the complete development roadmap are available in the [GitHub repository](https://github.com/micag2025/Supply_Chain_project)  
+
+
+
+
+---
+OLD VERSION 
 
 ## Limitations & Workarounds  
 

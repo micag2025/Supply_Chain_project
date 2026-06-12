@@ -695,6 +695,247 @@ This scenario demonstrates a complete batch lifecycle:
 
 ---  
 
+NEW VERSION   
+
+## Limitations & Workarounds  
+
+The current implementation demonstrates a functional blockchain-based supply chain tracking system; however, several technical limitations remain due to the project's educational and proof-of-concept scope.
+
+### Limitation 1: Remix IDE Constraints
+
+**Current Limitation**
+
+The project was developed and deployed using Remix IDE, which is ideal for rapid prototyping and educational projects but presents several challenges for production environments:
+
+* Limited project management capabilities
+* Manual deployment workflows
+* No automated testing pipeline
+* Limited support for collaborative development
+* No integrated gas analysis or security tooling
+
+**Recommended Workaround: Migrate to Hardhat**
+
+```bash
+npm install --save-dev hardhat
+npx hardhat init
+```
+
+**Benefits**
+
+* Local blockchain simulation
+* Automated smart contract testing
+* Gas usage analysis
+* Deployment scripting
+* Contract verification support
+* Improved CI/CD integration
+
+---
+
+### Limitation 2: Create React App Performance
+
+**Current Limitation**
+
+The frontend currently uses Create React App (CRA), which provides a stable development environment but suffers from:
+
+* Slower startup and build times
+* Larger production bundles
+* Higher memory consumption
+* Older tooling architecture
+
+**Recommended Workaround: Migrate to Vite**
+
+```bash
+npm create vite@latest supplychain-ui -- --template react
+cd supplychain-ui
+npm install
+npm install ethers
+npm run dev
+```
+
+**Benefits**
+
+* Faster development server startup
+* Smaller production bundles
+* Improved developer experience
+* Modern ES module support
+* Better scalability for larger applications
+
+---
+
+### Limitation 3: Functional Scope
+
+**Current Limitation**
+
+The current implementation focuses on the core supply chain workflow:
+
+Created → Shipped → Delivered
+
+Additional limitations include:
+
+* Fixed wallet-role mapping
+* Single-network support (Sepolia)
+* Limited historical analytics
+* No QR code verification
+* No inventory management
+* No export or reporting features
+
+**Recommended Workaround**
+
+Future versions should integrate decentralized indexing solutions (The Graph), advanced analytics dashboards, and enhanced supply chain management features.
+
+---  
+
+# Future Implementations  
+
+The project architecture was intentionally designed to support future expansion. Planned improvements are grouped into five development phases.
+
+## Phase 1 — Smart Contract Enhancements
+
+### Expanded Supply Chain States
+
+Current workflow:
+
+```text
+Created → Shipped → Delivered
+```
+
+Proposed workflow:
+
+```text
+Created
+   ↓
+Processed
+   ↓
+Packaged
+   ↓
+InTransit
+   ↓
+Shipped
+   ↓
+Delivered
+```
+
+Benefits:
+
+* More realistic supply chain modeling
+* Improved traceability
+* Enhanced inventory management
+* Support for quality-control workflows
+
+### Advanced Access Control
+
+* Dynamic role assignment
+* Multi-signature approvals
+* Temporary permissions
+* Enhanced authorization models
+
+---
+
+## Phase 2 — Product Traceability
+
+### QR Code Integration
+
+Enable consumers and auditors to verify product provenance through QR-code scanning.
+
+### IPFS Integration
+
+Store supporting documentation such as:
+
+* Product certificates
+* Images
+* Inspection reports
+* Compliance documentation
+
+Benefits:
+
+* Immutable documentation
+* End-to-end transparency
+* Consumer trust
+
+---
+
+## Phase 3 — Inventory & Analytics
+
+### Inventory Management
+
+* Batch expiration tracking
+* Warehouse inventory monitoring
+* Automated expiration alerts
+* Regulatory compliance support
+
+### Analytics Dashboard
+
+* Batch lifecycle metrics
+* Shipment performance analysis
+* Supplier statistics
+* Supply chain KPIs
+
+---
+
+## Phase 4 — Production Readiness
+
+### Development Infrastructure
+
+* Migration from Remix to Hardhat
+* Automated testing suite
+* Deployment automation
+* Security auditing
+
+### Frontend Modernization
+
+* Migration from CRA to Vite
+* Improved performance
+* Better scalability
+
+### Multi-Network Support
+
+* Ethereum Mainnet
+* Polygon
+* Arbitrum
+* Optimism
+
+---
+
+## Phase 5 — Enterprise & Ecosystem Integration
+
+### External Integrations
+
+* REST APIs
+* Webhooks
+* ERP systems
+* Logistics providers
+
+### IoT & Real-Time Monitoring
+
+* Temperature sensors
+* Location tracking
+* Environmental monitoring
+
+### Advanced Features
+
+* Predictive analytics
+* Sustainability tracking
+* Carbon footprint analysis
+* DAO governance
+* Multi-organization support
+
+These enhancements would evolve the project from a proof-of-concept decentralized application into a production-grade blockchain supply chain management platform.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+OLD VERSION
 ## Limitations & Future Improvements  
 
 ### Limitation 1: Remix IDE Constraints
