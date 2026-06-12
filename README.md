@@ -174,6 +174,7 @@ supply-chain-dapp/
 │
 ├── docs/                            # Additional documentation
 │   └── metamask-setup.md            # MetaMask setup guide
+│   └── testing.md                   # Testinge 
 │
 └── LICENSE                          # Project license
 ```
@@ -435,52 +436,16 @@ The smart contract and React frontend have been tested for:
 
 ---  
 
-TO BE ENCLOSED? All (valid and invalid) tests were executed on the **Sepolia Ethereum Test Network** using **MetaMask** and **Ethers.js**.
+The application was tested on the **Ethereum Sepolia Testnet** (using **MetaMask** and **Ethers.js**) to validate functional behavior, security controls, and complete end-to-end supply chain workflows. Detailed test cases and results are available in `docs/testing.md`.
+
+Testing covered three areas: **Functional Testing**, **Security & Validation Testing**, and **End-to-End Workflow Validation**. See `docs/testing.md` for detailed results.
 
 
 ### Valid Test Cases (Executed)
 
-| Test ID | Test Case                      | Description                                 | Expected Result                                        | Status |
-| ------- | ------------------------------ | ------------------------------------------- | ------------------------------------------------------ | ------ |
-| TC-001  | MetaMask Connection            | Connect wallet through MetaMask             | Wallet connected and displayed in dashboard            | ✅ Pass |
-| TC-002  | Batch Creation                 | Farmer creates a new batch                  | Batch created successfully with state = Created        | ✅ Pass |
-| TC-003  | Read Batch                     | Retrieve an existing batch                  | Batch details returned correctly                       | ✅ Pass |
-| TC-004  | Batch Shipment                 | Distributor ships a created batch           | State changes from Created to Shipped                  | ✅ Pass |
-| TC-005  | Batch Delivery                 | Retailer delivers a shipped batch           | State changes from Shipped to Delivered                | ✅ Pass |
-| TC-006  | Batch History Table Loading    | Load existing batches from blockchain       | All batches displayed in overview table                | ✅ Pass |
-| TC-007  | Batch History Refresh          | Refresh dashboard after transaction         | Table updated with latest blockchain state             | ✅ Pass |
-| TC-008  | Newly Created Batch Visibility | Create a new batch from dashboard           | New batch appears in table                             | ✅ Pass |
-| TC-009  | Shipment Status Update         | Ship an existing batch                      | Table reflects Shipped status                          | ✅ Pass |
-| TC-010  | Delivery Status Update         | Deliver a shipped batch                     | Table reflects Delivered status                        | ✅ Pass |
-| TC-011  | Batch Lookup                   | Search using batch ID                       | Full batch details displayed                           | ✅ Pass |
-| TC-012  | Role Detection                 | Connect different MetaMask accounts         | Correct role displayed (Farmer, Distributor, Retailer) | ✅ Pass |
-| TC-013  | Role-Based Visibility          | Login using different roles                 | Only authorized actions available                      | ✅ Pass |
-| TC-014  | Blockchain State Persistence   | Refresh browser after transactions          | Data remains available on-chain                        | ✅ Pass |
-| TC-015  | Address Masking                | Display participant addresses               | Addresses shown in shortened format                    | ✅ Pass |
-| TC-016  | Event Emission                 | Execute contract actions                    | Corresponding blockchain event emitted                 | ✅ Pass |
-| TC-017  | Read-Only Access               | Read batch information using view functions | Data retrieved without gas fee or transaction          | ✅ Pass |
-
----
-
 ### Validation and Error Handling Tests (Executed)  
 
 TO BE EXCLUDED > This reflects that many invalid actions are prevented by the React UI before a blockchain transaction is attempted.
-
-| Test ID | Test Case                              | Description                                                    | Expected Result                                                                    | Status |
-| ------- | -------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------ |
-| TC-018  | Automatic Batch ID Generation          | User creates multiple batches from the dashboard               | System automatically assigns the next available batch ID and prevents duplicates   | ✅ Pass |
-| TC-019  | Unauthorized Shipment Prevention       | Farmer views a batch in Created state                          | Ship button remains disabled and shipment cannot be initiated                      | ✅ Pass |
-| TC-020  | Unauthorized Delivery Prevention       | Distributor views a batch in Shipped state                     | Deliver button remains disabled and delivery cannot be initiated                   | ✅ Pass |
-| TC-021  | Unauthorized Batch Creation Prevention | Retailer or Distributor accesses the dashboard                 | Create Batch functionality unavailable for unauthorized roles                      | ✅ Pass |
-| TC-022  | Invalid State Transition Prevention    | Retailer attempts to deliver a batch still in Created state    | Deliver action unavailable until batch reaches Shipped state                       | ✅ Pass |
-| TC-023  | Read Non-Existing Batch                | User searches for a batch ID that does not exist               | Error message displayed and no batch data returned                                 | ✅ Pass |
-| TC-024  | Empty Batch Table Entries              | Dashboard scans unused batch IDs during table loading          | Invalid entries ignored and not displayed in the overview table                    | ✅ Pass |
-| TC-025  | Invalid Wallet Role Detection          | Wallet address does not match Farmer, Distributor, or Retailer | Role displayed as UNKNOWN and restricted actions unavailable                       | ✅ Pass |
-| TC-026  | Empty Input Validation                 | User submits Create Batch form with missing required fields    | Form validation prevents submission and displays an error message                  | ✅ Pass |
-| TC-027  | MetaMask Connection Loss               | User disconnects MetaMask while using the dashboard            | Dashboard displays "Not Connected" status and disables actions                     | ✅ Pass |
-| TC-028  | Network Validation                     | User switches from Sepolia to an unsupported network           | Warning displayed and transaction buttons disabled                                 | ✅ Pass |
-| TC-029  | Transaction Confirmation Handling      | User initiates a blockchain transaction                        | Application waits for confirmation and updates the UI only after successful mining | ✅ Pass |
-| TC-030  | Read-Only Access Without Transaction   | User reads batch information from blockchain                   | Data retrieved successfully without requiring gas fees or transaction submission   | ✅ Pass |
 
 ---  
 

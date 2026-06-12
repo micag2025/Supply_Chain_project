@@ -16,11 +16,53 @@
 
 ## TL;DR  
 
-This publication provides a **step-by-step guide** to build a **decentralized supply chain management system** using **React** and **Web3** technologies. The application integrates a **Solidity smart contract** with a responsive React frontend powered by ethers.js for seamless Web3 integration, (enabling authorized users to create, track, and manage supply chain batches on the **Sepolia Ethereum testnet**.)   
+This project (publication) presents the design and implementation of a blockchain-based supply chain tracking system built on the Ethereum Sepolia testnet ((enabling authorized users to create, track, and manage supply chain batches).
 
-To demonstrate a real-world supply chain use case of the **decentralized application (dApp)**, a complete **Coffee Supply Chain Tracking workflow test scenario** has been used to extensively test the system across all functional layers.
+The solution (application) combines a Solidity smart contract, MetaMask wallet integration, React frontend components, and ethers.js to create a decentralized application (dApp) capable of tracking products through a simplified supply chain lifecycle:  
+
+``` 
+Created → Shipped → Delivered  
+```  
+
+A coffee supply chain scenario (Coffee Supply Chain Tracking workflow scenario) was used to validate role-based operations involving farmers, distributors, and retailers.
 
 This dApp is designed for technical and non-technical users (Developers, Supply Chain Managers, Logistics Companies, etc.)  
+
+The complete source code is available in the accompanying GitHub repository.  
+
+---
+
+## Introduction
+
+Supply chains often rely on centralized databases that can suffer from limited transparency, fragmented data ownership, and challenges in auditing product provenance.
+
+Blockchain technology offers an alternative approach by providing:
+
+- Immutable transaction records  
+- Transparent audit trails 
+- Decentralized trust  
+- Cryptographic verification  
+
+This project explores how Ethereum smart contracts can be used to manage product batches across multiple supply chain participants while maintaining a transparent and tamper-resistant history.
+
+---  
+
+## Problem Statement
+
+Traditional supply chain systems face several challenges:
+
+Difficulty verifying product authenticity
+Limited visibility across organizational boundaries
+Centralized control of records
+Manual reconciliation between stakeholders
+
+The goal of this project was to develop a decentralized proof-of-concept that demonstrates:
+
+- Product traceability  
+- Role-based permissions  
+- Blockchain persistence  
+- End-to-end lifecycle tracking    
+
 
 **Key Features:**
 - Complete Coffee Supply Chain Tracking workflow test scenario
@@ -585,7 +627,12 @@ The system was evaluated using both **valid workflows** and **validation/error-h
 ### Test Results 
 
 All test cases executed successfully on the Sepolia testnet using MetaMask and Ethers.js, confirming correct behavior across all functional layers.  
-Detailed test results and execution scenarios are available in the [GitHub repository (https://github.com/micag2025/Supply_Chain_project.git).  
+Detailed test results and execution scenarios are available in the [GitHub repository] (https://github.com/micag2025/Supply_Chain_project.git).    
+
+
+Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations. Detailed test cases and execution results are provided in the accompanying GitHub repository.  
+
+The evaluation framework consisted of three complementary testing categories: Functional Testing, Security & Validation Testing, and End-to-End Workflow Validation, providing coverage of both technical correctness and real-world operational scenarios.
 
 ---
 
