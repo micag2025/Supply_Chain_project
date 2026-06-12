@@ -8,8 +8,7 @@
 
 This repository contains the full implementation for the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), (TO BE CHANGED WITH READY TENSOR LINK) published on the [Ready Tensor](https://www.readytensor.ai/) platform.
 
-This repository contains a full-stack implementation of a **blockchain-based supply chain tracking system** built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and the **Sepolia Testnet**.
-
+This repository contains a full-stack implementation of a **blockchain-based supply chain tracking system** built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and the **Sepolia Testnet**.    
 
 A blockchain-based supply chain tracking system is built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from creation to delivery (from the point of origin to the final destination, and to verify the authenticity of products), leveraging **smart contracts** to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.  
 
@@ -702,8 +701,7 @@ This scenario demonstrates a complete batch lifecycle:
 
 **Current Limitation**:  
 
-Remix is designed for quick development and testing but has limitations for production:  
-
+Remix IDE has constraints for production development:  
 - Limited project management capabilities  
 - No integrated frontend testing  
 - Manual deployment workflows  
@@ -716,9 +714,8 @@ npm install --save-dev hardhat
 npx hardhat init
 ```
 
-**Hardhat Benefit:** 
-
-- ✓ Local development network  
+**Hardhat Benefit:**   
+- ✓ Local development network  for testing
 - ✓ Automated testing framework  
 - ✓ Gas optimization analysis  
 - ✓ Network deployment scripting  
@@ -769,21 +766,19 @@ enum State {
     Rejected
 }
 ```
-**Benefits:**  
+**Benefits:**
+- ✓ More realistic supply chain modeling
+- ✓ Better inventory management
+- ✓ Enhanced traceability
+- ✓ Quality control workflows
+- ✓ Support for returns/rejections
 
-- ✓ More realistic supply chain modeling  
-- ✓ Better inventory management  
-- ✓ Enhanced traceability  
-- ✓ Quality control workflows  
-- ✓ Support for returns/rejections  
-
-**Implementation Steps:**   
-
-1 Update the `enum State` in Solidity contract
-2 Add role permissions for each state  
-3 Update React UI for new states  
-4 Add action buttons for quality checks    
-5 Extend test cases     
+**Implementation Steps:**
+1. Update the `enum State` in Solidity contract
+2. Add role permissions for each state
+3. Update React UI for new states
+4. Add action buttons for quality checks
+5. Extend test cases 
 
 ---
 
@@ -791,7 +786,7 @@ enum State {
 
 **Current Limitation:** Blockchain stores only metadata
 
-**Proposed Enhancement:** QR codes + IPFS for complete traceability
+**Proposed Enhancement:**  Add QR codes + IPFS for complete traceability
 
 ```solidity
 struct Batch {
@@ -804,21 +799,19 @@ struct Batch {
     State state;
 }
 ```
-**Benefits:**  
+**Benefits:**
+- ✓ Consumers can scan QR to verify authenticity
+- ✓ Immutable documentation on IPFS
+- ✓ Real-world traceability (blockchain + off-chain)
+- ✓ Certificate of authenticity
+- ✓ End-consumer transparency
 
-- ✓ Consumers can scan QR to verify authenticity    
-- ✓ Immutable documentation on IPFS    
-- ✓ Real-world traceability (blockchain + off-chain)    
-- ✓ Certificate of authenticity    
-- ✓ End-consumer transparency  
-
-**Integration Steps:**  
-
-1. Set up IPFS (use Pinata/NFT.storage)  
-2. Upload product images, certificates, and metadata to IPFS  
-3. Store IPFS hash in smart contract  
-4. Generate QR codes linking to IPFS content  
-5. Add QR scanner to React UI  
+**Integration Steps:**
+1. Set up IPFS (use Pinata/NFT.storage)
+2. Upload product images, certificates, and metadata to IPFS
+3. Store IPFS hash in smart contract
+4. Generate QR codes linking to IPFS content
+5. Add QR scanner to React UI
 6. Display product details when scanned
 
 ---
@@ -844,12 +837,12 @@ function updateInventory(uint256 _batchId, uint256 _quantityUsed) external {
     batches[_batchId].warehouseQuantity -= _quantityUsed;
 }
 ```
-**Benefits:**  
-- ✓ Practical business value for perishables (coffee, produce, pharmaceuticals)  
-- ✓ Automated expiration alerts  
-- ✓ Better inventory management  
-- ✓ Waste reduction  
-- ✓ Regulatory compliance tracking  
+**Benefits:**
+- ✓ Practical business value for perishables (coffee, produce, pharmaceuticals)
+- ✓ Automated expiration alerts
+- ✓ Better inventory management
+- ✓ Waste reduction
+- ✓ Regulatory compliance tracking
 
 ---
 
