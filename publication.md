@@ -24,7 +24,7 @@ The solution (application) combines a Solidity smart contract, MetaMask wallet i
 Created → Shipped → Delivered  
 ```  
 
-A coffee supply chain scenario (coffee supply chain tracking workflow) was used to validate role-based operations involving farmers, distributors, and retailers.
+A coffee supply chain scenario (coffee supply chain tracking workflow) was used to validate role-based operations involving farmers, distributors, and retailers. (Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations.?)
 
 The dApp is designed for technical and non-technical users (Developers, Supply Chain Managers, Logistics Companies, etc.)  
 
@@ -571,53 +571,69 @@ The dashboard includes the following features:
 - Records retailer address on-chain
 - Completes batch journey
 
----
 ## Testing & Evaluation
 
-Testing was performed on the Ethereum Sepolia testnet using MetaMask accounts representing each supply chain actor.
+Testing was performed on the Ethereum Sepolia Testnet using MetaMask accounts representing each supply chain participant.
 
-### Test Environment Setup  TO BE DELETED? 
+### Test Environment Setup
 
-- **Network**: Sepolia Testnet     
-- **Test Accounts**: Three MetaMask accounts:
-     - Account 1 (`0x...`): Farmer role
-     - Account 2 `(0x...`): Distributor role
-     - Account 3 (`0x...`): Retailer role
-- **Tools**: MetaMask, Ethers.js, Sepolia Faucet
+- **Network:** Ethereum Sepolia Testnet
+- **Test Accounts:** Three MetaMask accounts representing:
+  - Farmer role
+  - Distributor role
+  - Retailer role
+- **Tools:** MetaMask, ethers.js, Sepolia Faucet
 
-### Test Coverage   
+### Test Coverage
 
-(The following areas were validated:) The smart contract and React frontend were validated across the following core functionalities:     
+To provide coverage of both technical correctness and real-world operational scenarios, the evaluation framework consisted of three complementary testing categories:
 
-✓ Batch creation    
-✓ Batch shipment    
-✓ Batch delivery    
-✓ Wallet-based authentication   
-✓ Role-based access control   
-✓ Invalid state transition   
-✓ Duplicate batch prevention  
-✓ Unauthorized access prevention  (to be checked whether it has been enclosed)  
-✓ Blockchain state persistence      
+- **Functional Testing**, which verified core application features and blockchain interactions.
+- **Security & Validation Testing**, which evaluated access controls and business-rule enforcement.
+- **End-to-End Workflow Validation**, which confirmed successful execution of the complete supply chain lifecycle across all participant roles.
 
+The following areas were validated:
 
-### Test Results   
+#### Functional Testing
 
-Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations.   
-The evaluation framework consisted of three complementary testing categories: **Functional Testing**, **Security & Validation Testing**, and **End-to-End Workflow Validation**, providing coverage of both technical correctness and real-world operational scenarios.    
+- ✓ Batch creation
+- ✓ Batch shipment
+- ✓ Batch delivery
+- ✓ Wallet-based authentication
+- ✓ Blockchain state persistence
 
-Detailed test cases and execution results are provided in the accompanying [GitHub code repository](https://github.com/micag2025/Supply_Chain_project).  
+#### Security & Validation Testing
 
-| Metric             | Value/Result |
-| ------------------ | ------ |
-| Total Test Cases   | 20     |
-| Passed             | 20     |
-| Failed             | 0      |
-| Roles Tested       | 3      |
-| End-to-End Scenarios | 5      |
-| Success Rate       | 100%   |
+- ✓ Role-based access control
+- ✓ Invalid state transition prevention
+- ✓ Duplicate batch prevention
+- ✓ Unauthorized access prevention*
 
+#### End-to-End Workflow Validation
 
-All test cases passed (executed) successfully, confirming correct behavior across all functional layers.     
+- ✓ Complete batch lifecycle execution
+- ✓ Correct role-based workflow progression
+- ✓ Frontend-to-blockchain synchronization
+- ✓ Batch traceability from creation to delivery
+
+\* Unauthorized access prevention was validated by attempting restricted actions from accounts assigned to incorrect roles.
+
+### Test Results
+
+Detailed test cases and execution results are available in the accompanying GitHub repository.
+
+| Metric | Value |
+|----------|----------|
+| Total Test Cases | 20 |
+| Passed | 20 |
+| Failed | 0 |
+| Roles Tested | 3 |
+| End-to-End Scenarios | 5 |
+| Success Rate | 100% |
+
+All test cases passed successfully, confirming correct behavior of the smart contract, frontend application, wallet integration, and role-based workflow management across the entire supply chain lifecycle.  
+
+These results demonstrate that the proposed blockchain-based supply chain system can reliably enforce role-based operations while maintaining transparent and persistent product traceability throughout the supply chain lifecycle.
 
 ---
 

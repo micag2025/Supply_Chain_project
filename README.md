@@ -212,7 +212,95 @@ project/
 
 ---
 
-## Getting Started
+## Getting Started  
+
+### Prerequisites  
+
+Ensure the following are installed:  
+
+- **Node.js** (v18+) – [nodejs.org](https://nodejs.org/)
+- **npm** (included with Node.js) – Check: `npm --version`
+- **MetaMask** browser extension – [metamask.io](https://metamask.io/)
+- **Remix IDE** (optional) – [remix.ethereum.org](https://remix.ethereum.org/)
+- **Git** – For cloning repository
+
+### Clone Repository
+
+```bash   
+git clone https://github.com/micag2025/Supply_Chain_project.git
+cd Supply_Chain_project
+```
+
+### Install Dependencies  
+
+```bash
+npm install
+```
+This installs all required packages: `ethers.js`,` react-dom`, and other dependencies listed in `package.json`.    
+
+### Environment Configuration  
+
+Create a `.env` file in the project root (see `.env.example`):
+
+```bash  
+REACT_APP_CONTRACT= YOUR_DEPLOYED_CONTRACT_ADDRESS
+REACT_APP_NETWORK_NAME=Sepolia  
+```  
+
+***How to obtain contract address:***
+
+1. Deploy the smart contract via Remix IDE
+2. Copy contract address from the deployment receipt
+3. Paste into `.env `file    
+
+> **Note:** Use the **contract address** from Remix "Deployed Contracts" panel, NOT farmer/distributor/retailer wallet addresses.
+
+### Start Application  
+
+### Start the React Development Server  
+
+Launch the React development server:
+
+```bash  
+npm start
+```
+The server will start and automatically open your browser.  
+
+### Expected Output  
+
+```
+Compiled successfully!
+
+You can now view supplychain-ui in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://[YOUR_IP]:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+```  
+
+Open: http://localhost:3000
+
+FOLLOW PUBLICATION ? 
+
+## Deployment
+Deploy Smart Contract
+Open Remix IDE
+Compile SupplyChainBatch.sol
+Deploy to Sepolia
+Copy:
+Contract Address
+ABI
+Configure Frontend
+
+Update:
+```bash  
+src/abi/SupplyChain.json  
+```  
+
+and  `.env` with deployment information.
+
 
 ### Prerequisites  
 
@@ -387,98 +475,122 @@ Step 6: Configure MetaMask & Connect
 - ✓ Read batch function retrieving data  
 - ✓ Ship and Deliver functions updating state  
 
+
+---  
+
+## Usage  
+
+### Farmer  
+- Create batches
+- View batch information  
+
+### Distributor    
+- Ship batches  
+
+### Retailer  
+- Deliver batches    
+
+### Batch Lookup  
+
+Any user can:  
+- Search by batch ID  
+- View lifecycle status  
+- Verify product history  
+
 ---
 
-## Testing (& Evaluation ) 
+## Testing 
 
-Testing was performed on the Ethereum Sepolia testnet.
+Testing was performed on the Ethereum Sepolia Testnet.
 
-### Test Accounts Setup
+### Test Account Setup
 
-Three MetaMask accounts simulate the supply chain actors:
+Three MetaMask accounts simulate the supply chain participants:
 
-| Role | Account | Permissions | Required ETH | Purpose |
-|------|---------|-------------|--------------|---------|
-| **Farmer** | Account 1 | Create batches | 0.05 | Deploy + Create batches |
-| **Distributor** | Account 2 | Ship batches | 0.01 | Execute shipment transactions |
-| **Retailer** | Account 3 | Deliver batches | 0.01 | Execute delivery transactions |
+### Test Account Setup
+
+Three MetaMask accounts simulate the supply chain participants.
+
+| Role | Account | Purpose | Recommended Testnet ETH* |
+|--------|---------|---------|---------|
+| Farmer | Account 1 | Deploy contract and create batches | ~0.05 ETH |
+| Distributor | Account 2 | Execute shipment transactions | ~0.01 ETH |
+| Retailer | Account 3 | Execute delivery transactions | ~0.01 ETH |
+
+\* These values are approximate amounts used during development and testing on the Sepolia Testnet. Actual gas consumption may vary depending on network conditions, gas prices, and the number of transactions performed.
+
 
 > Get free Sepolia ETH from [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet)
 
->_Note_ See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for more details. 
+> See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for more details.   
 
-### Comprehensive Test Coverage  
+### Test Coverage
 
-The smart contract and React frontend have been tested for:  
+The application was tested on the Ethereum Sepolia Testnet using MetaMask and ethers.js to validate functional behavior, security controls, and complete end-to-end supply chain workflows.
 
-#### Core Functionality  
+Testing covered three areas:
 
-- ✓ **Batch creation** - Farmer can create new batches  
-- ✓ **Batch shipment** - Distributor can ship created batches  
-- ✓ **Batch delivery** - Retailer can deliver shipped batches
-- ✓ **Event emission** - All contract events properly emitted     
-- ✓ **Read only operations** - All view functions return correct data
+- Functional Testing
+- Security & Validation Testing
+- End-to-End Workflow Validation
 
- ####  Security & Validation    
+Detailed test cases and results are available in `docs/testing.md`.
 
-- ✓ **Role-based access control** - Only authorized roles can perform actions  
-- ✓ **Wallet-based authentication** - Connected MetaMask account determines role  
-- ✓ **Duplicate ID prevention** - Cannot create batch with existing ID  
-- ✓ **Invalid state transition rejection** - Cannot skip states (e.g., deliver without shipping)  
-- ✓ **Unauthorized user rejection** - Wrong role cannot perform action
-- ✓ **Form validation** - Missing fields prevented at UI layer
-- ✓ **Network validation** - Wrong network prevented before transaction  
+#### Functional Testing
 
-#### Data & Persistence
+- ✓ Batch creation
+- ✓ Batch shipment
+- ✓ Batch delivery
+- ✓ Wallet-based authentication
+- ✓ Blockchain state persistence
 
-- ✓ **Blockchain state persistence** - Data remains after page refresh
-- ✓ **Dashboard data integrity** - UI reflects blockchain state accurately
-- ✓ **Transaction handling** - UI waits for confirmation before updating
-- ✓ **Gas optimization** - Transactions execute efficiently 
- 
- TO BE DIVIDED FOLLOWING THE THREE CATEGORIES  
-- Batch creation  
-- Shipment workflow  
-- Delivery workflow  
-- Role validation  
-- Wallet authentication  
-- State transition validation  
-- Data persistence  
+#### Security & Validation Testing
 
-The application was tested on the **Ethereum Sepolia Testnet** (using **MetaMask** and **Ethers.js**) to validate functional behavior, security controls, and complete end-to-end supply chain workflows. Detailed test cases and results are available in `docs/testing.md`.
+- ✓ Role-based access control
+- ✓ Invalid state transition prevention
+- ✓ Duplicate batch prevention
+- ✓ Unauthorized access prevention*
 
-Testing covered three areas: **Functional Testing**, **Security & Validation Testing**, and **End-to-End Workflow Validation**. See `docs/testing.md` for detailed results.
+#### End-to-End Workflow Validation
 
+- ✓ Complete batch lifecycle execution
+- ✓ Correct role-based workflow progression
+- ✓ Frontend-to-blockchain synchronization
+- ✓ Batch traceability from creation to delivery
 
-### Test (Validation) Coverage Summary
+\* Unauthorized access prevention was validated by attempting restricted actions from accounts assigned to incorrect roles.
 
-| Category           | Status |
-| ------------------ | ------ |
-| Batch Creation     | ✅      |
-| Shipment           | ✅      |
-| Delivery           | ✅      |
-| Lookup             | ✅      |
-| Access Control     | ✅      |
-| Validation         | ✅      |
-| Persistence        | ✅      |
-| Wallet Integration | ✅      |
-| Network Validation | ✅      |
+### Coverage Summary
 
-> _Note_ Many invalid actions are stopped at the React UI layer, which is preferable to letting them reach the blockchain and revert. This demonstrates a better user experience and avoids unnecessary gas consumption.
+| Category | Status |
+|----------|----------|
+| Batch Creation | ✅ |
+| Shipment | ✅ |
+| Delivery | ✅ |
+| Lookup | ✅ |
+| Access Control | ✅ |
+| Validation | ✅ |
+| Persistence | ✅ |
+| Wallet Integration | ✅ |
+| Network Validation | ✅ |
+
+> Many invalid actions are prevented at the React UI layer before reaching the blockchain. This improves user experience and avoids unnecessary gas consumption.
+
+### Results
+
+| Metric | Result |
+|----------|----------|
+| Total Test Cases | 20 |
+| Passed | 20 |
+| Failed | 0 |
+| Success Rate | 100% |
+
+All planned test cases passed successfully, confirming correct behavior of the smart contract, frontend application, wallet integration, and role-based workflow management.
+
+Detailed test results are available in `docs/testing.md`.
 
 ---
-
-###  Results  
-
-| Metric      | Result |
-| ----------- | ------ |
-| Total Tests | 20     |
-| Passed      | 20     |
-| Failed      | 0      |
-
-Detailed test results are available in:`docs/testing.md`
-
----  
+ 
 
 ```  
 React UI Validation
