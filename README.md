@@ -389,25 +389,7 @@ Step 6: Configure MetaMask & Connect
 
 ---
 
-Testing
-
-Testing was performed on the Ethereum Sepolia testnet.
-
-Coverage
-Batch creation
-Shipment workflow
-Delivery workflow
-Role validation
-Wallet authentication
-State transition validation
-Data persistence
-
-
-
-
-
-
-## Testing & Evaluation  
+## Testing (& Evaluation ) 
 
 Testing was performed on the Ethereum Sepolia testnet.
 
@@ -454,14 +436,14 @@ The smart contract and React frontend have been tested for:
 - ✓ **Transaction handling** - UI waits for confirmation before updating
 - ✓ **Gas optimization** - Transactions execute efficiently 
  
- TO BE DIVIDED FOLLOWING THE THREE CATEGORIES
-Batch creation
-Shipment workflow
-Delivery workflow
-Role validation
-Wallet authentication
-State transition validation
-Data persistence
+ TO BE DIVIDED FOLLOWING THE THREE CATEGORIES  
+- Batch creation  
+- Shipment workflow  
+- Delivery workflow  
+- Role validation  
+- Wallet authentication  
+- State transition validation  
+- Data persistence  
 
 The application was tested on the **Ethereum Sepolia Testnet** (using **MetaMask** and **Ethers.js**) to validate functional behavior, security controls, and complete end-to-end supply chain workflows. Detailed test cases and results are available in `docs/testing.md`.
 
