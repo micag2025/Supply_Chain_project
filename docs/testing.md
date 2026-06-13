@@ -99,8 +99,6 @@ This scenario validates the complete lifecycle of a product batch across all sup
 
 ---
 
-## Results Summary  
-
 ## Results Summary
 
 | Metric | Value/Result |

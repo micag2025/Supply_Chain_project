@@ -389,7 +389,27 @@ Step 6: Configure MetaMask & Connect
 
 ---
 
+Testing
+
+Testing was performed on the Ethereum Sepolia testnet.
+
+Coverage
+Batch creation
+Shipment workflow
+Delivery workflow
+Role validation
+Wallet authentication
+State transition validation
+Data persistence
+
+
+
+
+
+
 ## Testing & Evaluation  
+
+Testing was performed on the Ethereum Sepolia testnet.
 
 ### Test Accounts Setup
 
@@ -414,8 +434,8 @@ The smart contract and React frontend have been tested for:
 - ✓ **Batch creation** - Farmer can create new batches  
 - ✓ **Batch shipment** - Distributor can ship created batches  
 - ✓ **Batch delivery** - Retailer can deliver shipped batches
--  ✓ **Event emission** - All contract events properly emitted     
-- ✓ **Read- only operations** - All view functions return correct data
+- ✓ **Event emission** - All contract events properly emitted     
+- ✓ **Read only operations** - All view functions return correct data
 
  ####  Security & Validation    
 
@@ -433,39 +453,50 @@ The smart contract and React frontend have been tested for:
 - ✓ **Dashboard data integrity** - UI reflects blockchain state accurately
 - ✓ **Transaction handling** - UI waits for confirmation before updating
 - ✓ **Gas optimization** - Transactions execute efficiently 
-
----  
+ 
+ TO BE DIVIDED FOLLOWING THE THREE CATEGORIES
+Batch creation
+Shipment workflow
+Delivery workflow
+Role validation
+Wallet authentication
+State transition validation
+Data persistence
 
 The application was tested on the **Ethereum Sepolia Testnet** (using **MetaMask** and **Ethers.js**) to validate functional behavior, security controls, and complete end-to-end supply chain workflows. Detailed test cases and results are available in `docs/testing.md`.
 
 Testing covered three areas: **Functional Testing**, **Security & Validation Testing**, and **End-to-End Workflow Validation**. See `docs/testing.md` for detailed results.
 
 
-### Valid Test Cases (Executed)
+### Test (Validation) Coverage Summary
 
-### Validation and Error Handling Tests (Executed)  
-
-TO BE EXCLUDED > This reflects that many invalid actions are prevented by the React UI before a blockchain transaction is attempted.
-
----  
-
-### Validation Coverage Summary  
-
-| Feature                     | Covered |
-| --------------------------- | ------- |
-| Automatic ID Management     | ✅       |
-| Frontend Role Enforcement   | ✅       |
-| State Transition Validation | ✅       |
-| Form Validation             | ✅       |
-| Wallet Validation           | ✅       |
-| Network Validation          | ✅       |
-| Batch Lookup Validation     | ✅       |
-| Dashboard Data Integrity    | ✅       |
-| Transaction Handling        | ✅       |
-| Read-Only Blockchain Access | ✅       |
-
+| Category           | Status |
+| ------------------ | ------ |
+| Batch Creation     | ✅      |
+| Shipment           | ✅      |
+| Delivery           | ✅      |
+| Lookup             | ✅      |
+| Access Control     | ✅      |
+| Validation         | ✅      |
+| Persistence        | ✅      |
+| Wallet Integration | ✅      |
+| Network Validation | ✅      |
 
 > _Note_ Many invalid actions are stopped at the React UI layer, which is preferable to letting them reach the blockchain and revert. This demonstrates a better user experience and avoids unnecessary gas consumption.
+
+---
+
+###  Results  
+
+| Metric      | Result |
+| ----------- | ------ |
+| Total Tests | 20     |
+| Passed      | 20     |
+| Failed      | 0      |
+
+Detailed test results are available in:`docs/testing.md`
+
+---  
 
 ```  
 React UI Validation
@@ -531,7 +562,7 @@ This scenario demonstrates a complete batch lifecycle:
 
  ---
 
-### Example 1: Create and Read Batch (Farmer Only)
+### Scenario 1: Create and Read Batch (Farmer Only)
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)  
 
@@ -566,7 +597,7 @@ This scenario demonstrates a complete batch lifecycle:
 
  ---  
 
-### Example 2: Ship Batch (Distributor only)      
+### Scenario 2: Ship Batch (Distributor only)      
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Ship_Batch_Distributor.jpg)
 
@@ -592,7 +623,7 @@ This scenario demonstrates a complete batch lifecycle:
 
 ---  
 
-### Example 3: Deliver Batch (Retailer only)   
+### Scenario 3: Deliver Batch (Retailer only)   
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Deliver_Batch_Retailer.jpg)  
 
@@ -618,7 +649,7 @@ This scenario demonstrates a complete batch lifecycle:
 
 ---  
 
-###  Example 4: Invalid Wallet Role Error
+###  Scenario 4: Invalid Wallet Role Error
 
 ![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
 
@@ -639,7 +670,7 @@ This scenario demonstrates a complete batch lifecycle:
 
 ---  
 
-###  Example 5: Read Non-Existing Batch Error   
+###  Scenario 5: Read Non-Existing Batch Error   
   
 ![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
 
@@ -658,11 +689,17 @@ This scenario demonstrates a complete batch lifecycle:
 - ✓ User-friendly error formatting
 - ✓ No gas consumed (read-only call)
 
----  
+---    
 
 ## Limitations & Workarounds  
 
-The current implementation demonstrates a functional blockchain-based supply chain tracking system; however, several technical limitations remain due to the project's educational and proof-of-concept scope.
+The current implementation demonstrates a functional blockchain-based supply chain tracking system; however, several technical limitations remain due to the project's educational and proof-of-concept scope.  Current limitations include:
+
+- Fixed wallet-role mapping  
+- Sepolia-only deployment  
+- Limited supply chain states  
+- No historical event indexing  
+- No analytics dashboard  
 
 ### Limitation 1: Remix IDE Constraints
 
@@ -839,14 +876,14 @@ Benefits:
 
 ### Development Infrastructure
 
-* Migration from Remix to Hardhat
+* Migration from Remix to Hardhat  (already mention in the workaround)
 * Automated testing suite
 * Deployment automation
 * Security auditing
 
 ### Frontend Modernization
 
-* Migration from CRA to Vite
+* Migration from CRA to Vite   (already mention in the workaround)
 * Improved performance
 * Better scalability
 
@@ -887,6 +924,17 @@ These enhancements would evolve the project from a proof-of-concept decentralize
 Feel free to suggest features by opening an issue or starting a discussion! For bug reports or feature requests, 
  [open an issue](https://github.com/micag2025/Supply_Chain_project/issues).  
 
+
+Roadmap
+Hardhat migration
+Vite migration
+IPFS integration
+QR-code verification
+The Graph integration
+Layer-2 deployment
+Analytics dashboard
+
+> IMP > difference between limitations (have immediate solution) and future work (expand functionality)! 
 ---
 
 ## Contributing

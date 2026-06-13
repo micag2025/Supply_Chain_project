@@ -571,13 +571,12 @@ The dashboard includes the following features:
 - Records retailer address on-chain
 - Completes batch journey
 
----    
-
+---
 ## Testing & Evaluation
 
-The application was thoroughly tested on the Sepolia Ethereum Testnet using a defined test matrix covering both valid and invalid scenarios.
+Testing was performed on the Ethereum Sepolia testnet using MetaMask accounts representing each supply chain actor.
 
-### Test Environment Setup  
+### Test Environment Setup  TO BE DELETED? 
 
 - **Network**: Sepolia Testnet     
 - **Test Accounts**: Three MetaMask accounts:
@@ -588,29 +587,37 @@ The application was thoroughly tested on the Sepolia Ethereum Testnet using a de
 
 ### Test Coverage   
 
-The smart contract and React frontend were validated across the following core functionalities:      
-✓ Batch creation  
-✓ Batch shipment  
-✓ Batch delivery  
-✓ Role-based access control  
-✓ Wallet-based authentication  
-✓ Duplicate ID prevention  
-✓ Invalid state transition handling  
-✓ Unauthorized access prevention  
-✓ Read operations  
-✓ Blockchain state persistence  
+(The following areas were validated:) The smart contract and React frontend were validated across the following core functionalities:     
 
-The system was evaluated using both **valid workflows** and **validation/error-handling scenarios**, covering end-to-end interactions between the React frontend, and Ethereum smart contract (and MetaMask wallet integration).  
-
-### Test Results 
-
-All test cases executed successfully on the Sepolia testnet using MetaMask and Ethers.js, confirming correct behavior across all functional layers.  
-Detailed test results and execution scenarios are available in the [GitHub repository] (https://github.com/micag2025/Supply_Chain_project.git).    
+✓ Batch creation    
+✓ Batch shipment    
+✓ Batch delivery    
+✓ Wallet-based authentication   
+✓ Role-based access control   
+✓ Invalid state transition   
+✓ Duplicate batch prevention  
+✓ Unauthorized access prevention  (to be checked whether it has been enclosed)  
+✓ Blockchain state persistence      
 
 
-Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations. Detailed test cases and execution results are provided in the accompanying GitHub repository.  
+### Test Results   
 
-The evaluation framework consisted of three complementary testing categories: Functional Testing, Security & Validation Testing, and End-to-End Workflow Validation, providing coverage of both technical correctness and real-world operational scenarios.
+Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations.   
+The evaluation framework consisted of three complementary testing categories: **Functional Testing**, **Security & Validation Testing**, and **End-to-End Workflow Validation**, providing coverage of both technical correctness and real-world operational scenarios.    
+
+Detailed test cases and execution results are provided in the accompanying [GitHub repository] (https://github.com/micag2025/Supply_Chain_project.git).  
+
+| Metric             | Value/Result |
+| ------------------ | ------ |
+| Total Test Cases   | 20     |
+| Passed             | 20     |
+| Failed             | 0      |
+| Roles Tested       | 3      |
+| End-to-End Scenarios | 5      |
+| Success Rate       | 100%   |
+
+
+All test cases passed (executed) successfully, confirming correct behavior across all functional layers.     
 
 ---
 
@@ -624,7 +631,7 @@ The dashboard features a **wallet connection panel** showing the connected accou
 
  ---
 
-### Example 1: Create and Read Batch (Farmer Only)  
+### Scenario 1: Create and Read Batch (Farmer Only)  
 
 The figure shows the **farmer batch creation process**, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. 
 
@@ -644,7 +651,7 @@ The figure shows the **farmer batch creation process**, including validated **ba
 
  ---  
 
-### Example 2: Ship Batch Action (Distributor only)  
+### Scenario 2: Ship Batch Action (Distributor only)  
 
 The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** (They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.)
 
@@ -667,7 +674,7 @@ The figures show the **distributor shipment process**, including **viewing only 
 
 ---  
 
-### Example 3: Deliver Batch Action (Retailer only)    
+### Scenario 3: Deliver Batch Action (Retailer only)    
 
 The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** (They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.)
 
@@ -690,7 +697,7 @@ The figures show the **retailer delivery process**, including **viewing “Shipp
 
 ---  
 
-###  Example 4: Invalid Wallet Role  
+###  Scenario 4: Invalid Wallet Role  
 
 The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. (The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.)
 
@@ -706,7 +713,7 @@ The figure demonstrates an **access control scenario where a distributor attempt
 
 ---  
 
-###  Example 5: Read Non-Existing Batch  
+###  Scenario 5: Read Non-Existing Batch  
 
 The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. (, ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.)  
 
@@ -724,14 +731,23 @@ The figure shows the **behavior when a user searches for a non-existing batch**.
 
 ## Limitations
 
-The proposed blockchain-based supply chain tracking system successfully demonstrates decentralized batch creation, shipment tracking, delivery verification, and role-based access control using Ethereum smart contracts and a React-based user interface. However, the current implementation is intended as a proof-of-concept and therefore presents several limitations, such as:  
+The proposed blockchain-based supply chain tracking system successfully demonstrates decentralized batch creation, shipment tracking, delivery verification, and role-based access control using Ethereum smart contracts and a React-based user interface. 
 
+(However) The project is a proof-of-concept implementation and has several limitations:
+
+- **Sepolia-only deployment** - (Single-Network Support) – Operates exclusively on Sepolia testnet    
+- **Fixed role assignments** - Roles are hardcoded to specific wallet addresses; no dynamic role assignment
+- **Limited supply chain states** -the current implementation focuses on the core supply chain workflow `Created → Shipped → Delivered` but it does not enclose other supply chain states that could allow a more realistic supply chain modeling,
+improving traceability.
+- **No historical event indexing** - (No Event History Persistence)  Historical batch events are not stored; data only displays during the current session    
+- **No analytics dashboard**
+- **No QR-code integration**
+- **No inventory management**
+
+
+TO BE CHECKED WHETER THESE SHOULD BE ALSO ENCLOSED
 - **Smart contract development and deployment were performed using Remix IDE**, which is suitable for rapid prototyping but lacks advanced development, testing, and deployment capabilities required for large-scale production environments.   
 - Additionally, **the frontend was developed using Create React App**, which provides a stable development environment but offers lower performance and slower build times compared with more modern alternatives.  
-- Finally, taking into account **Functional Scope**, the current implementation focuses on the core supply chain workflow `Created → Shipped → Delivered` but it does not enclose other supply chain states that could allow a more realistic supply chain modeling,
-improving traceability.
-
-
 - **UI Web dApp Functional Restrictions** Current Limitations are related to:  
    - Single-Network Support – Operates exclusively on Sepolia testnet  
    - Fixed Role Mapping – Roles are hardcoded to specific wallet addresses; no dynamic role assignment  
@@ -741,8 +757,34 @@ improving traceability.
    - No Real-Time Notifications – Users are not automatically notified of batch state changes
    - Single Contract Management – Cannot manage or track multiple smart contracts simultaneously
 
+---
+
+## Future Work 
+
+The system architecture supports extensibility while maintaining core principles. Contributors are encouraged to extend the system with the following enhancements. Future work will focus on improving scalability, usability, and traceability.    
+
+Planned improvements include:  
+
+- **Migration from Remix to Hardhat**  for professional smart contract development,   
+- **Migration from CRA to Vite**  for frontend optimization,  
+- **IPFS integration**  technology for product provenance
+- **QR-code traceability**  technology for product provenance
+- **Event indexing via The Graph**  for robust event indexing and historical data persistence
+- **Advanced analytics dashboards**  - Integration with logistics APIs
+- **Layer-2 deployment (Polygon, Arbitrum)**  for multi chain support
+- **IoT sensor integration**   - Real-time temperature and location tracking (for real-time monitoring,)
+
+ Additional technical details, implementation considerations, and the complete development roadmap are available in the [GitHub repository](https://github.com/micag2025/Supply_Chain_project)  
+
+TO BE CHECKED WHETER THESE SHOULD BE ALSO ENCLOSED
+- **Multi-Signature Transactions** - Require consensus from multiple parties
+- **Automated Order Processing** - Integration with logistics APIs
+- **Supply Chain Marketplace** - Peer-to-peer trading platform
+- **Predictive Analytics** - ML-based demand forecasting
+- **Sustainability Tracking** - Carbon footprint and environmental impact
+ - **expansion of supply chain states** beyond the current Created–Shipped–Delivered workflow,   
+ - **inventory and expiration management capabilities**,   
 **Potential Improvements:**
-- Integrate **The Graph** for robust event indexing and historical data persistence
 - Add a backend database (PostgreSQL) for advanced search, filtering, and analytics
 - Implement **WebSocket** connections for real-time notifications
 - Create batch timeline visualization dashboard
@@ -752,32 +794,13 @@ improving traceability.
 
 
 
-## Future Work (Future Implementations / Planned Features for Future Implementations)
+---
 
-The system architecture supports extensibility while maintaining core principles. Contributors are encouraged to extend the system with the following enhancements. Future work will focus on improving scalability, usability, and traceability. Planned enhancements include:  
- - **migration to Hardhat** for professional smart contract development,   
- - **adoption of Vite** for frontend optimization,   
- - **integration of IPFS and QR-code** technologies for product provenance,   
- - **expansion of supply chain states** beyond the current Created–Shipped–Delivered workflow,   
- - **inventory and expiration management capabilities**,   
- - **advanced analytics dashboards**,   
- - **IoT integration** for real-time monitoring,  
-  - and **deployment on Layer-2 networks** such as Polygon and Arbitrum.   
- 
- Additional technical details, implementation considerations, and the complete development roadmap are available in the [GitHub repository](https://github.com/micag2025/Supply_Chain_project)  
+## Conclusion
 
+This project demonstrates how blockchain technology can improve supply chain transparency through immutable product tracking and decentralized verification.
 
-Planned Features for Future Implementations  
-
-- **Multi-Signature Transactions** - Require consensus from multiple parties
-- **Advanced Analytics Dashboard** - Real-time metrics and reporting
-- **Automated Order Processing** - Integration with logistics APIs
-- **Supply Chain Marketplace** - Peer-to-peer trading platform
-- **Predictive Analytics** - ML-based demand forecasting
-- **IoT Integration** - Real-time temperature and location tracking
-- **Sustainability Tracking** - Carbon footprint and environmental impact
-- **Multi-Chain Support** - Deploy on Polygon, Arbitrum, and Optimism  ?
-- **DAO Governance** - Community-driven decision making  ? 
+The implementation successfully validates core supply chain operations while providing a foundation for future enhancements such as analytics, decentralized storage, and multi-chain deployment.
 
 ---
 
