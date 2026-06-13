@@ -605,7 +605,7 @@ Testing was performed on the Ethereum Sepolia testnet using MetaMask accounts re
 Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations.   
 The evaluation framework consisted of three complementary testing categories: **Functional Testing**, **Security & Validation Testing**, and **End-to-End Workflow Validation**, providing coverage of both technical correctness and real-world operational scenarios.    
 
-Detailed test cases and execution results are provided in the accompanying [GitHub repository] (https://github.com/micag2025/Supply_Chain_project.git).  
+Detailed test cases and execution results are provided in the accompanying [GitHub code repository](https://github.com/micag2025/Supply_Chain_project).  
 
 | Metric             | Value/Result |
 | ------------------ | ------ |
