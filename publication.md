@@ -24,11 +24,9 @@ The solution (application) combines a Solidity smart contract, MetaMask wallet i
 Created → Shipped → Delivered  
 ```  
 
-A coffee supply chain scenario (Coffee Supply Chain Tracking workflow scenario) was used to validate role-based operations involving farmers, distributors, and retailers.
+A coffee supply chain scenario (coffee supply chain tracking workflow) was used to validate role-based operations involving farmers, distributors, and retailers.
 
-This dApp is designed for technical and non-technical users (Developers, Supply Chain Managers, Logistics Companies, etc.)  
-
-The complete source code is available in the accompanying GitHub repository.  
+The dApp is designed for technical and non-technical users (Developers, Supply Chain Managers, Logistics Companies, etc.)  
 
 ---
 
@@ -51,37 +49,17 @@ This project explores how Ethereum smart contracts can be used to manage product
 
 Traditional supply chain systems face several challenges:
 
-Difficulty verifying product authenticity
-Limited visibility across organizational boundaries
-Centralized control of records
-Manual reconciliation between stakeholders
+- Difficulty verifying product authenticity  
+- Limited visibility across organizational boundaries  
+- Centralized control of records  
+- Manual reconciliation between stakeholders  
 
-The goal of this project was to develop a decentralized proof-of-concept that demonstrates:
+(Key Features) The goal of this project was to develop a decentralized proof-of-concept that demonstrates:
 
 - Product traceability  
-- Role-based permissions  
-- Blockchain persistence  
-- End-to-end lifecycle tracking    
-
-
-**Key Features:**
-- Complete Coffee Supply Chain Tracking workflow test scenario
-- Real-time batch tracking from farmer → distributor → retailer
-- Role-based access control (Farmer, Distributor, Retailer)
-- Designed for technical and non-technical users (Supply Chain Managers, Logistics Companies, etc.)
-
-**Architecture Overview:**
-```
-Remix IDE (deploy)
-     ↓
-Ethereum Sepolia Contract
-     ↓
-ethers.js
-     ↓
-React UI
-     ↓
-MetaMask Wallet
-```
+- Role-based permissions  (e.g. Role-based access control (Farmer, Distributor, Retailer))
+- Blockchain persistence  (e.g. Real-time batch tracking from farmer → distributor → retailer)
+- End-to-end lifecycle tracking   (e,g,  Complete Coffee Supply Chain Tracking workflow test scenario)
 
 ---
 
