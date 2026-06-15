@@ -653,162 +653,89 @@ The figure shows the **farmer batch creation process**, including validated **ba
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)    
 
-**Farmer Actions:**  
-- Create batch with input validation
-- Successfully created batches appear in Overview Table immediately
-- Transaction confirmation with blockchain explorer link
-- Batch lookup showing product details (ID, name, quantity, state)
-
-**Expected Results:**
-- ✓ Batch created with state "Created"
-- ✓ Batch readable immediately after creation
-- ✓ All fields display correctly
-- ✓ Creation timestamp recorded on blockchain
-
  ---  
 
 ### Scenario 2: Ship Batch Action (Distributor only)  
 
-The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** (They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.)
+The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** (They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.(buttom disabled) )
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Ship_Batch_Distributor.jpg)
 
 ![Table_overview_distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_updated_table_Ship_Batch_Distributor.jpg)  
 
-**Distributor Actions:**  
-- Overview Table showing only "Created" batches eligible for shipment
-- "Ship" action buttons visible for appropriate batches
-- Transaction completion shows updated batch state to "Shipped"
-- Distributor address recorded and visible in batch details
-
-**Expected Results:**  
-- ✓ Only Distributor can ship batches  
-- ✓ State transitions correctly     
-- ✓ Distributor address recorded on chain
-- ✓ Table updates in real-time    
-- ✓ Farmer account cannot ship (buttom disabled)    
-
 ---  
 
 ### Scenario 3: Deliver Batch Action (Retailer only)    
 
-The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** (They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.)
+The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** (They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.(buttom disabled))
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Deliver_Batch_Retailer.jpg)  
 
 ![Updated_table2](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_updated_table_Deliver_Batch_Retailer.jpg)  
 
-**Retailer Actions:**  
-- Overview Table shows "Shipped" batches ready for delivery
-- "Deliver" action buttons visible for final handoff
-- Transaction completion updates batch state to "Delivered"
-- Retailer address recorded on blockchain
-
-**Expected Outcome:**   
-- ✓ Only Retailer can deliver batches  
-- ✓ State transitions correctly from "Shipped" to "Delivered"   
-- ✓ Retailer address recorded on-chain  
-- ✓ Table reflects state change instantly  
-- ✓ Distributor account cannot deliver (buttom disabled)  
-
 ---  
 
-###  Scenario 4: Invalid Wallet Role  
+###  Scenario 4: Invalid Wallet Role  (Unauthorized Access)
 
-The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. (The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.)
+The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. (The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.)  
+Non-authorized roles cannot perform restricted actions.  
 
 ![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
 
-**Scenario:** Distributor attempts to create a batch  
-
-**Expected Result:**    
-- ✓ "Create Batch" action unavailable for non-Farmers
-- ✓  UI prevents unauthorized action (no transaction sent)  
-- ✓  No state change occurs (Clear role indication in interface)
-- ✓  No gas consumed (prevented at UI layer)    
-
 ---  
 
-###  Scenario 5: Read Non-Existing Batch  
+###  Scenario 5: Read Non-Existing Batch  (Invalid Batch Lookup)
 
-The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. (, ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.)  
+The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. ( ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.)  
+Users receive clear feedback when querying non-existing batches. 
 
 ![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
-
-**Scenario:** User searches for non-Existing batch
-
-**Expected Result:**  
-- ✓ Error message displayed (e.g., "Batch not found")
-- ✓ No invalid data returned
-- ✓ User-friendly error formatting
-- ✓ No gas consumed (read-only call)
 
 ---  
 
 ## Limitations
 
-The proposed blockchain-based supply chain tracking system successfully demonstrates decentralized batch creation, shipment tracking, delivery verification, and role-based access control using Ethereum smart contracts and a React-based user interface. 
+The proposed blockchain-based supply chain tracking system successfully demonstrates decentralized batch creation, shipment tracking, delivery verification, and role-based access control through Ethereum smart contracts and a React-based user interface. However, as a proof-of-concept implementation, the system has several limitations that should be addressed in future iterations.
 
-(However) The project is a proof-of-concept implementation and has several limitations:
+- **Sepolia-only deployment** – The application is currently deployed and tested exclusively on the Ethereum Sepolia Testnet. Consequently, it has not been evaluated under real-world production conditions or on alternative blockchain networks.    
+- **Fixed role assignments** – Supply chain roles (Farmer, Distributor, and Retailer) are hardcoded to specific wallet addresses. The system does not currently support dynamic role assignment, role management, or onboarding of new participants.
+- **Limited supply chain states**  – The current implementation focuses on the core workflow (`Created → Shipped → Delivered`). Additional states such as production, quality inspection, warehousing, customs clearance, and returns are not modeled, limiting the realism and granularity of supply chain tracking.  
+- **No historical event indexing**  – Although transaction data is stored on-chain, the application does not implement dedicated event indexing or historical event visualization. As a result, users cannot easily browse or analyze the complete lifecycle history of a batch.  
+- **No analytics dashboard** – The system provides operational tracking functionality but does not include analytics or reporting capabilities for monitoring supply chain performance, trends, or operational metrics.  
+- **No QR-code integration** – Products cannot currently be identified or tracked through QR-code scanning, which limits ease of use in practical supply chain environments.  
+- **No inventory managemnt** – The application focuses on batch traceability and does not support inventory tracking, stock management, or warehouse operations.  
+- **Prototype-oriented development environment** – Smart contract development and deployment were performed using Remix IDE, which is well suited for rapid prototyping and educational projects. However, production environments typically rely on more advanced frameworks such as Hardhat or Foundry that provide automated testing, deployment pipelines, contract verification, and improved development workflows.  
+- **Legacy frontend tooling (CRA)** – The frontend was developed using Create React App (CRA), which provides a stable development environment but offers slower build times and less optimized performance compared with modern alternatives such as Vite.  
+- **Limited historical event visualization** – While blockchain transactions remain permanently stored on-chain, the application does not currently provide indexed event history, audit-trail views, or advanced lifecycle visualization.   
+- **Single-contract scope** – The application is designed to interact with a single smart contract instance and does not currently support management of multiple supply chains or contract deployments.  
 
-- **Sepolia-only deployment** - (Single-Network Support) – Operates exclusively on Sepolia testnet    
-- **Fixed role assignments** - Roles are hardcoded to specific wallet addresses; no dynamic role assignment
-- **Limited supply chain states** -the current implementation focuses on the core supply chain workflow `Created → Shipped → Delivered` but it does not enclose other supply chain states that could allow a more realistic supply chain modeling,
-improving traceability.
-- **No historical event indexing** - (No Event History Persistence)  Historical batch events are not stored; data only displays during the current session    
-- **No analytics dashboard**
-- **No QR-code integration**
-- **No inventory management**
+-**No Real-Time Notifications** - The application does not currently provide real-time notifications or event subscriptions to automatically alert users when batch states change.  
 
-
-TO BE CHECKED WHETER THESE SHOULD BE ALSO ENCLOSED
-- **Smart contract development and deployment were performed using Remix IDE**, which is suitable for rapid prototyping but lacks advanced development, testing, and deployment capabilities required for large-scale production environments.   
-- Additionally, **the frontend was developed using Create React App**, which provides a stable development environment but offers lower performance and slower build times compared with more modern alternatives.  
-- **UI Web dApp Functional Restrictions** Current Limitations are related to:  
-   - Single-Network Support – Operates exclusively on Sepolia testnet  
-   - Fixed Role Mapping – Roles are hardcoded to specific wallet addresses; no dynamic role assignment  
-   - No Event History Persistence – Historical batch events are not stored; data only displays during the current session  
-   - Limited Search Functionality – Batch lookup only supports exact batch ID matching; no advanced filtering  
-   - No Data Export – Batch history cannot be exported to CSV or PDF formats
-   - No Real-Time Notifications – Users are not automatically notified of batch state changes
-   - Single Contract Management – Cannot manage or track multiple smart contracts simultaneously
+Despite these limitations, the project successfully demonstrates the feasibility of using blockchain technology to provide transparent, immutable, and role-controlled supply chain tracking. The identified limitations also provide a clear roadmap for future enhancements and system expansion.  
 
 ---
 
 ## Future Work 
 
-The system architecture supports extensibility while maintaining core principles. Contributors are encouraged to extend the system with the following enhancements. Future work will focus on improving scalability, usability, and traceability.    
+The proposed architecture was intentionally designed as a modular proof-of-concept that can be extended to support more realistic supply chain requirements. (Contributors are encouraged to extend the system with the following enhancements.) Future work will focus on improving scalability, usability, traceability, and production readiness while preserving the system's decentralized design principles.
 
-Planned improvements include:  
+Planned enhancements include:  
 
-- **Migration from Remix to Hardhat**  for professional smart contract development,   
-- **Migration from CRA to Vite**  for frontend optimization,  
-- **IPFS integration**  technology for product provenance
-- **QR-code traceability**  technology for product provenance
-- **Event indexing via The Graph**  for robust event indexing and historical data persistence
-- **Advanced analytics dashboards**  - Integration with logistics APIs
-- **Layer-2 deployment (Polygon, Arbitrum)**  for multi chain support
-- **IoT sensor integration**   - Real-time temperature and location tracking (for real-time monitoring,)
+- **Layer-2 deployment (Polygon or Arbitrum)** and **multi-network support** to reduce transaction costs, improve scalability, and enable deployment across multiple blockchain environments.    
+- **Dynamic role management** to support administrator-controlled onboarding and management of supply chain participants without modifying the smart contract source code.    
+- **Expanded supply chain lifecycle states** to model additional stages such as production, quality inspection, warehousing, customs clearance, and returns, thereby improving supply chain realism and traceability.     
+- **Event indexing through The Graph** to provide efficient historical event querying, audit trails, and advanced lifecycle visualization.    
+- **Advanced analytics and reporting dashboards** to support operational monitoring, performance metrics, and business intelligence capabilities.  
+- **IPFS integration** for decentralized storage of product documentation, certificates, and provenance records.  
+- **QR-code traceability** to enable rapid product identification and verification throughout the supply chain.  
+- **Inventory management capabilities** to support stock tracking, warehouse management, and expiration monitoring.  
+- **Migration from Remix to Hardhat** to support professional smart contract development workflows, automated testing, deployment scripting, and contract verification.  
+- **Migration from Create React App (CRA) to Vite** to improve frontend performance, reduce build times, and provide a more modern development experience.
+- **Multi-contract support**  to enable management of multiple supply chains and contract instances simultaneously.  
+-  **Real-time notifications** and event subscriptions to automatically inform users of important supply chain events and state transitions.    
+- **IoT sensor integration** to support automated collection of environmental data such as temperature, humidity, and location, enabling real-time monitoring of sensitive goods.   
 
- Additional technical details, implementation considerations, and the complete development roadmap are available in the [GitHub repository](https://github.com/micag2025/Supply_Chain_project)  
-
-TO BE CHECKED WHETER THESE SHOULD BE ALSO ENCLOSED
-- **Multi-Signature Transactions** - Require consensus from multiple parties
-- **Automated Order Processing** - Integration with logistics APIs
-- **Supply Chain Marketplace** - Peer-to-peer trading platform
-- **Predictive Analytics** - ML-based demand forecasting
-- **Sustainability Tracking** - Carbon footprint and environmental impact
- - **expansion of supply chain states** beyond the current Created–Shipped–Delivered workflow,   
- - **inventory and expiration management capabilities**,   
-**Potential Improvements:**
-- Add a backend database (PostgreSQL) for advanced search, filtering, and analytics
-- Implement **WebSocket** connections for real-time notifications
-- Create batch timeline visualization dashboard
-- Enable multi-contract support with contract switching
-- Add data export functionality (CSV, PDF)
-- Implement dynamic role assignment via smart contract
-
-
+Additional technical details, implementation considerations, and the complete development roadmap are available in the accompanying [GitHub repository](https://github.com/micag2025/Supply_Chain_project).
 
 ---
 
