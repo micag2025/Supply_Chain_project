@@ -27,6 +27,8 @@ Created → Shipped → Delivered
 A coffee supply chain scenario (coffee supply chain tracking workflow) was used to validate role-based operations involving farmers, distributors, and retailers. (Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations.?)
 
 The dApp is designed for technical and non-technical users (Developers, Supply Chain Managers, Logistics Companies, etc.)  
+The dApp is intended for both technical and non-technical stakeholders involved in supply chain operations, including developers, supply chain managers, logistics providers, agricultural producers, retailers, and regulatory authorities.
+
 
 ---
 
