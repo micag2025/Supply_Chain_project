@@ -4,121 +4,128 @@
 
 ---  
 
-## Overview
+## Overview (Introduction)
 
-This repository contains the full implementation for the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), (TO BE CHANGED WITH READY TENSOR LINK) published on the [Ready Tensor](https://www.readytensor.ai/) platform.
+This repository contains the full implementation of the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), (TO BE CHANGED WITH READY TENSOR LINK) published on the [Ready Tensor](https://www.readytensor.ai/) platform.
 
-This repository contains a full-stack implementation of a **blockchain-based supply chain tracking system** built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and the **Sepolia Testnet**.    
+Supply chains often rely on centralized systems that can limit transparency, complicate product traceability, and make it difficult to verify the authenticity and provenance of goods. (This project explores how **blockchain technology** can address these challenges by providing immutable transaction records, transparent audit trails, and decentralized trust.)
 
-A blockchain-based supply chain tracking system is built with **Solidity**, **MetaMask**, **React**, **Ethers.js**, and **Sepolia Testnet**. This **decentralized application (dApp)** enables transparent, immutable tracking of products from creation to delivery (from the point of origin to the final destination, and to verify the authenticity of products), leveraging **smart contracts** to enforce role-based access control and maintain a permanent audit trail on the Ethereum blockchain.  
+The application implements a blockchain-based supply chain tracking system on the Ethereum Sepolia Testnet using Solidity smart contracts, MetaMask, ethers.js, and a React-based frontend. The **decentralized application (dApp)** enables authorized users to create, track, and manage product batches through a simplified supply chain lifecycle:
 
-A practical implementation of a full workflow, representing a **Complete Coffee Supply Chain Tracking System**, has been used as 
-Test Scenario to build up the  **CoffeeChain: Farm-to-Retail Product Traceability dApp** that can be used to track batches from farm to retail and further to demonstrate real-world supply chain use cases.  
+**Created → Shipped → Delivered**
+
+A coffee supply chain workflow was used to validate role-based operations involving Farmers, Distributors, and Retailers, demonstrating product traceability, blockchain persistence, and end-to-end lifecycle tracking. The project serves as a proof-of-concept for how blockchain technology can improve transparency and accountability across supply chain operations.
+
+---  
+
+## Features
+
+* **Blockchain-based batch tracking** – Records and tracks product batches across the supply chain using blockchain technology.
+* **Role-based access control** – Restricts actions based on predefined participant roles (Farmer, Distributor, Retailer).
+* **Wallet authentication via MetaMask** – Uses MetaMask wallets for secure user authentication and transaction signing.
+* **Immutable transaction records** – Stores supply chain events on the blockchain, preventing unauthorized modification.
+* **Batch lookup and traceability** – Enables users to retrieve batch information and verify its lifecycle history.
+* **Smart contract state management** – Enforces valid state transitions throughout the supply chain workflow.
+* **Ethereum Sepolia deployment** – Deploys and tests the application on the Ethereum Sepolia Testnet.
+
+---  
+
+## Key Highlights (EVENTUALLY TO BE EXCLUDED)
+
+* **Blockchain-based traceability** – Tracks product batches through an immutable blockchain record.
+* **Role-based access control** – Enforces permissions for Farmers, Distributors, and Retailers.
+* **MetaMask wallet integration** – Enables secure authentication and transaction signing.
+* **Event-driven user interface** – Smart contract events trigger frontend updates.
+* **Real-time batch visibility** – Users can immediately view blockchain state changes after transaction confirmation.
+* **State-managed workflow** – Enforces valid transitions from Created → Shipped → Delivered.
+* **Dual-layer validation** – Combines frontend checks with smart contract validation for improved reliability.
+* **Ethereum-based implementation** – Demonstrates decentralized supply chain tracking using Solidity, ethers.js, and the Sepolia Testnet.
+
+---
+
+## System Overview
+
+The system models a simplified (coffe) supply chain involving:
+
+- **Farmers**  - Creates and originates batches
+- **Distributors** - Ships batches to retailers
+- **Retailers**  - Delivers batches to end customers
+
+Each participant performs role-specific actions that are permanently recorded on the (Ethereum) blockchain, (ensuring transparency and immutability.)
+
+---  
+
+## Architecture
+
+The application consists of:
+
+1. React Frontend
+2. MetaMask Wallet
+3. Ethereum Smart Contract
+4. Ethereum Sepolia Testnet  
+
+``` bash  
+React Frontend
+      ↓
+MetaMask
+      ↓
+ethers.js
+      ↓
+Ethereum Smart Contract
+      ↓
+Sepolia Testnet  
+```   
+
+Detailed architecture documentation is available in:
+
+`docs/architecture.md`
 
 
-### Key Technologies
+---  
 
+## Technology Stack  (Key Technologies)
+
+| Layer            | Technology       |
+| ---------------- | ---------------- |
+| Frontend         | React            |
+| Blockchain       | Ethereum Sepolia |
+| Smart Contract   | Solidity 0.8.x        |
+| Wallet           | MetaMask         |
+| Web3 Library     | ethers.js        |
+| Development Tool | Remix IDE        |
+
+
+OR 
+
+### Blockchain
+
+- Solidity
+- Ethereum Sepolia Testnet
+
+### Frontend
+
+- React
+- ethers.js
+
+### Wallet
+
+- MetaMask
+
+### Development Tools
+
+- Remix IDE
+- Node.js
+
+> TO BE COMBINED BOTH VERSIONS, KEEPING THE TABLE 
+Key Technologies
 - **Smart Contract:** Solidity 0.8.x on Ethereum
 - **Wallet Integration:** MetaMask
 - **Frontend:** React + Ethers.js
 - **Network:** Sepolia Testnet
 - **Test Scenario:** Coffee Supply Chain (Farm-to-Retail)
 
-### System Overview
-
-The **CoffeeChain dApp** demonstrates a complete, real-world supply chain use case with three primary actors:
-
-1. **Farmer** - Creates and originates batches
-2. **Distributor** - Ships batches to retailers
-3. **Retailer** - Delivers batches to end customers
-
-All state changes are permanently recorded on the Ethereum blockchain, ensuring transparency and immutability.
-
 ---
 
-## Key Highlights
-
-- **Real production architecture** - Enterprise-ready dApp structure
-- **Event-driven UI** - BatchCreated event listeners for real-time updates
-- **Instant table updates** - Blockchain events trigger UI changes
-- **Scalable indexing system** - Efficient batch retrieval and state management
-- **Role-based access control** - 3 roles with enforced permissions
-- **Gas-optimized** - Efficient smart contract design for cost reduction
-- **Real-time operations** - Immediate batch visibility and contract interactions
-- **Comprehensive validation** - Frontend and on-chain security layers
-
----
-
-## Architecture  
-
-### System Architecture Diagram
-
-The system is a **decentralized supply chain system, (dApp)** where each role interacts with a **smart contract** through **MetaMask**, and all state changes are permanently recorded on the **Ethereum blockchain**.  
-
-```
-                    ┌──────────────────────────┐
-                    │        USER (UI)         │
-                    │  React Dashboard (Web)   │
-                    │                          │
-                    │  - Connect Wallet        │
-                    │  - Create Batch          │
-                    │  - Read Batch            │
-                    │  - Ship / Deliver        │
-                    └─────────────┬────────────┘
-                                  │
-                                  │ ethers.js
-                                  ▼
-                    ┌──────────────────────────┐
-                    │       MetaMask Wallet    │
-                    │                          │
-                    │ - Account 1 (Farmer)     │
-                    │ - Account 2 (Distributor)│
-                    │ - Account 3 (Retailer)   │
-                    └─────────────┬────────────┘
-                                  │
-                                  │ JSON-RPC
-                                  ▼
-                    ┌──────────────────────────┐
-                    │     Ethereum Network     │
-                    │     (Sepolia Testnet)    │
-                    └─────────────┬────────────┘
-                                  │
-                                  │ Smart Contract Calls
-                                  ▼
-        ┌──────────────────────────────────────────────┐
-        │         SupplyChainBatch Smart Contract      │
-        │                                              │
-        │  - createBatch()                             │
-        │  - shipBatch()                               │
-        │  - deliverBatch()                            │
-        │  - getBatchReadable()                        │
-        │                                              │
-        │  Storage:                                    │
-        │  mapping(batchId → Batch struct)             │
-        └───────────────┬──────────────────────────────┘
-                        │
-                        ▼
-        ┌──────────────────────────────────────────────┐
-        │               Blockchain State               │
-        │                                              │
-        │  Batch #1 → Created → Shipped → Delivered    │
-        │  Batch #2 → Created → ...                    │
-        └──────────────────────────────────────────────┘
-```
-
-### Data Flow
-
-```
-React UI Validation
-        ↓
-MetaMask (User Approval)
-        ↓
-ethers.js (Web3 Library)
-        ↓
-Smart Contract (Role-Based Enforcement)
-        ↓
-Blockchain (State Persistence)
-```
 ---
 
 ## Project Structure
@@ -174,42 +181,12 @@ supply-chain-dapp/
 │
 ├── docs/                            # Additional documentation
 │   └── metamask-setup.md            # MetaMask setup guide
-│   └── testing.md                   # Testinge 
+│   └── testing.md                   # Testing  
+│   └── architecture.md              # System Architecture
+│   └── deployement.md               # How to deploy the Supply Chain smart contract   
 │
 └── LICENSE                          # Project license
 ```
-
-```
-project/
-│
-├── contracts/
-│   └── SupplyChainBatch.sol
-│
-├── frontend/
-│   └── SupplyChainDashboard.jsx
-│
-├── package.json
-└── README.md
-```
-
-**Components:**
-- **Blockchain backend** - Solidity smart contract (`SupplyChainBatch.sol`)
-- **Frontend dashboard** - React UI with Web3 integration
-- **Together** - Form a complete Decentralized Application (DApp)
-
-**Development Tools:**
-- **Remix** - Smart contract development and quick testing
-- **React/Web3 frontend** - User interface that communicates with the deployed contract via ethers.js
-
-### Core Components
-
-| Component | Purpose |
-|-----------|---------|
-| **SupplyChainBatch.sol** | Solidity smart contract with batch lifecycle management |
-| **React Dashboard** | Web3-integrated UI for all supply chain operations |
-| **contract.js** | Ethers.js utilities for blockchain interaction |
-| **MetaMask Integration** | Wallet connection and transaction signing |
-
 ---
 
 ## Getting Started  
@@ -236,30 +213,23 @@ cd Supply_Chain_project
 ```bash
 npm install
 ```
-This installs all required packages: `ethers.js`,` react-dom`, and other dependencies listed in `package.json`.    
+This installs all required packages: `ethers.js`,` react-dom`, and other dependencies listed in `package.json`.   
 
-### Environment Configuration  
+### MetaMask Configuration
 
-Create a `.env` file in the project root (see `.env.example`):
+See:
 
-```bash  
-REACT_APP_CONTRACT= YOUR_DEPLOYED_CONTRACT_ADDRESS
-REACT_APP_NETWORK_NAME=Sepolia  
-```  
+`docs/metamask-setup.md`  
 
-***How to obtain contract address:***
+### Smart Contract Deployment
 
-1. Deploy the smart contract via Remix IDE
-2. Copy contract address from the deployment receipt
-3. Paste into `.env `file    
+The smart contract can be deployed using Remix IDE on the Ethereum Sepolia Testnet.
 
-> **Note:** Use the **contract address** from Remix "Deployed Contracts" panel, NOT farmer/distributor/retailer wallet addresses.
+Detailed deployment instructions are available in:
 
-### Start Application  
+`docs/deployment.md`
 
-### Start the React Development Server  
-
-Launch the React development server:
+### Running the Application  
 
 ```bash  
 npm start
@@ -282,202 +252,18 @@ To create a production build, use npm run build.
 
 Open: http://localhost:3000
 
-FOLLOW PUBLICATION ? 
-
-## Deployment
-Deploy Smart Contract
-Open Remix IDE
-Compile SupplyChainBatch.sol
-Deploy to Sepolia
-Copy:
-Contract Address
-ABI
-Configure Frontend
-
-Update:
-```bash  
-src/abi/SupplyChain.json  
-```  
-
-and  `.env` with deployment information.
-
-
-### Prerequisites  
-
-Ensure the following are installed:  
-
-- **Node.js** : version >=18 [nodejs.org](https://nodejs.org/) |
-- **MetaMask** : browser extension [metamask.io](https://metamask.io/)
-- **Remix IDE** : online at [https://remix.ethereum.org](https://remix.ethereum.org))
-
-### Environment Setup
-
-| Component | Configuration |
-|-----------|---------|
-| **Blockchain Network** | Sepolia Testnet |
-| **Wallet** | MetaMask |
-| **Frontend Framework** | React + Ethers.js |
-| **Smart Contract** | Solidity 0.8.x |
-| **Deployment Tool** | Remix IDE |
-
----
-
-## Step-by-Step Setup 
-
-### STEP 1 — Deploy Smart Contract via Remix
-
-1. **Open Remix IDE**
-   - Navigate to [https://remix.ethereum.org](https://remix.ethereum.org)
-
-2. **Create and Compile Contract**
-   - Create a new file named `SupplyChainBatch.sol`
-   - Paste your smart contract code
-   - Go to **Solidity Compiler** tab
-   - Select compiler version **0.8.x**
-   - Click **Compile SupplyChainBatch.sol**
-
-3. **Deploy to Sepolia Testnet**
-   - Switch to **Deploy & Run Transactions** tab
-   - Select **Environment**: `Injected Provider - MetaMask`
-   - Ensure MetaMask is:
-     - Unlocked  
-     - Connected to **Sepolia Testnet**  
-   - Click **Deploy** button
-   - Approve the transaction in MetaMask
-
-4. **Save Deployment Details**
-   - Copy the **Deployed Contract Address** (e.g., `0xA1b2C3...`)
-   - Go to **Compilation Details**
-   - Copy the entire **ABI** (JSON format)
-   - Save both for the React frontend setup
-
-> **Why Injected Provider - MetaMask?**
-> - Direct connection to your MetaMask wallet
-> - Deploys to live networks (Sepolia, Polygon, etc.)
-> - Generates real, usable contract addresses
-> - Industry best practice for dApp development
-
-**About the ABI:** The ABI (Application Binary Interface) is a JSON specification that defines:
-- All available smart contract functions
-- Function inputs and outputs
-- Gas requirements (state-changing vs. read-only)
-- Enables ethers.js to encode/decode contract calls
-  
----
-
-### STEP 2 — Create React App (CRA)
-
-Run the following commands:
-
-```bash
-npx create-react-app supplychain-ui  
-cd supplychain-ui
-npm install
-npm install ethers
-npm start
-```
 ---  
 
-### STEP 3 — Add Contract ABI  
+## Usage Guide
 
-**Create file:** `src/abi/SupplyChain.json`
-
-```json
-{
-  "abi": [ ...PASTE_ABI_FROM_REMIX_HERE... ]
-}
-```
-
----
-
-###  STEP 4 — Create Contract Service   
-
-**Create file** `src/contract.js` to handle contract interactions
-
-```javascript
-import { ethers } from "ethers";
-import abi from "./abi/SupplyChain.json";
-
-const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
-
-export async function getContract() {
-  if (!window.ethereum) throw new Error("MetaMask not found");
-
-  await window.ethereum.request({ method: "eth_requestAccounts" });
-
-  const provider = new ethers.BrowserProvider(window.ethereum);
-
-  return new ethers.Contract(CONTRACT_ADDRESS, abi, provider);
-}
-```
----  
-
-### STEP 5: Build UI Components  
-
-Replace `src/App.jsx` with your React components. Key components:
-
-- **WalletSection** - Connect/disconnect MetaMask  
-- **CreateBatchSection** - Form for batch creation (Farmer only)  
-- **ReadBatchSection** - Query batch details  
-- **BatchTable** - Display all batches with (Ship/Deliver) action buttom  
-- **RoleBadge** - Show connected user's role  
-
-TO BE ENCLOSED  
-``` javascript
-const CONTRACT_ADDRESS = "YOUR_REMIX_DEPLOYED_CONTRACT_ADDRESS";
-```
----
-
-### STEP 6: Connect MetaMask  
-
-1. Install [MetaMask browser extension](https://metamask.io/)
-2. Create or import wallet
-3. Switch network to **Sepolia Testnet**
-4. See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for detailed step
-
-### MetaMask Prompt
-
-MetaMask will automatically prompt when:  
-
-- ✓ Clicking "Connect Wallet"  
-- ✓ Clicking "Create Batch" (state-changing transaction)  
-- ✓ Clicking "Read Batch" (if provider access is needed)  
-- ✓ Clicking "Ship" button in table  
-- ✓ Clicking "Deliver" button in table  
+1. Connect MetaMask
+2. Create a batch (Farmer)
+3. Ship batch (Distributor)
+4. Deliver batch (Retailer)
+5. Query batch information  
 
 ---  
-
-### Setup Summary  
-
-```
-Step 1: Deploy Contract via Remix
-         ↓
-Step 2: Create React App
-         ↓
-Step 3: Add Contract ABI
-         ↓
-Step 4: Create Contract Service (ethers.js)
-         ↓
-Step 5: Build UI Components
-         ↓
-Step 6: Configure MetaMask & Connect
-         ↓
-✅ Ready to Test!
-```
-
-**Success Checklist**
-
-- ✓ Contract deployed via Remix on Sepolia  
-- ✓ React frontend created and running locally  
-- ✓ ethers.js properly configured with contract address and ABI  
-- ✓ MetaMask connected to React application  
-- ✓ Create batch function working end-to-end  
-- ✓ Read batch function retrieving data  
-- ✓ Ship and Deliver functions updating state  
-
-
----  
-
+ 
 ## Usage  
 
 ### Farmer  
@@ -511,7 +297,7 @@ Three MetaMask accounts simulate the supply chain participants:
 
 Three MetaMask accounts simulate the supply chain participants.
 
-| Role | Account | Purpose | Recommended Testnet ETH* |
+| Role | Account | Purpose | Recommended Testnet Ether (ETH)* |
 |--------|---------|---------|---------|
 | Farmer | Account 1 | Deploy contract and create batches | ~0.05 ETH |
 | Distributor | Account 2 | Execute shipment transactions | ~0.01 ETH |
@@ -588,55 +374,6 @@ Detailed test cases and results are available in `docs/testing.md`.
 All planned test cases passed successfully, confirming correct behavior of the smart contract, frontend application, wallet integration, and role-based workflow management.
 
 Detailed test results are available in `docs/testing.md`.
-
----
- 
-
-```  
-React UI Validation
-        ↓
-MetaMask
-        ↓
-ethers.js
-        ↓
-Smart Contract  
-```  
----  
-
-### End-to-End Scenario: Coffee Supply Chain  
-
-This scenario simulates a complete lifecycle of a batch across the supply chain, demonstrating role-based actions and blockchain state transitions.  
-This scenario demonstrates a complete batch lifecycle:
-
-#### Day 1 - Farmer Creates Batch  
-
-- **Actor:** Farmer logs in Account 1  
-- **Action:** Creates batch
-- **Details:**: ID=1, Name="Coff", Quantity=1000kg  
-- **Result:** Batch state = **Created**  
-- **Timestamp:** 2026-06-04 10:00 UTC
-
-#### Day 2 - Distributor Ships Batch  
-
-- **Actor:** Distributor logs in Account 2
-- **Action:** Clicks Ship buttom
-- **Result** Batch state = **Shipped**
--- **Result:** Distributor address recorded on-chain
-- **Timestamp:** 2026-06-05 14:30 UTC
-
-#### Day 5 - Retailer Delivers Batch  
-
-- **Actor:** Retailer logs in Account 3
-- **Action:** Clicks Deliver buttom
-- **Result** Batch state recorded as **Delivered**
-- **Recorded** Retailer address recorded on-chain
-- **Timestamp:** 2026-06-08 09:15 UTC  
-
-**(Batch Lookup) Verification**  
-- **Lookup** Any user can search batch ID=1
-- **Full lifecycle** Created by Farmer → Shipped by Distributor → Delivered by Retailer
-- **Total Duration:** 8 days
-- **Transparency:** Complete traceability via blockchain immutability
 
 ---
 
@@ -1101,3 +838,406 @@ Special thanks to all contributors, testers, and community members who have:
 
 
 --- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TO BE CHECKED 
+////
+## Architecture  
+
+### System Architecture Diagram
+
+The system is a **decentralized supply chain system, (dApp)** where each role interacts with a **smart contract** through **MetaMask**, and all state changes are permanently recorded on the **Ethereum blockchain**.  
+
+```
+                    ┌──────────────────────────┐
+                    │        USER (UI)         │
+                    │  React Dashboard (Web)   │
+                    │                          │
+                    │  - Connect Wallet        │
+                    │  - Create Batch          │
+                    │  - Read Batch            │
+                    │  - Ship / Deliver        │
+                    └─────────────┬────────────┘
+                                  │
+                                  │ ethers.js
+                                  ▼
+                    ┌──────────────────────────┐
+                    │       MetaMask Wallet    │
+                    │                          │
+                    │ - Account 1 (Farmer)     │
+                    │ - Account 2 (Distributor)│
+                    │ - Account 3 (Retailer)   │
+                    └─────────────┬────────────┘
+                                  │
+                                  │ JSON-RPC
+                                  ▼
+                    ┌──────────────────────────┐
+                    │     Ethereum Network     │
+                    │     (Sepolia Testnet)    │
+                    └─────────────┬────────────┘
+                                  │
+                                  │ Smart Contract Calls
+                                  ▼
+        ┌──────────────────────────────────────────────┐
+        │         SupplyChainBatch Smart Contract      │
+        │                                              │
+        │  - createBatch()                             │
+        │  - shipBatch()                               │
+        │  - deliverBatch()                            │
+        │  - getBatchReadable()                        │
+        │                                              │
+        │  Storage:                                    │
+        │  mapping(batchId → Batch struct)             │
+        └───────────────┬──────────────────────────────┘
+                        │
+                        ▼
+        ┌──────────────────────────────────────────────┐
+        │               Blockchain State               │
+        │                                              │
+        │  Batch #1 → Created → Shipped → Delivered    │
+        │  Batch #2 → Created → ...                    │
+        └──────────────────────────────────────────────┘
+```
+
+### Data Flow
+
+```
+React UI Validation
+        ↓
+MetaMask (User Approval)
+        ↓
+ethers.js (Web3 Library)
+        ↓
+Smart Contract (Role-Based Enforcement)
+        ↓
+Blockchain (State Persistence)
+```
+---
+
+
+
+```
+project/
+│
+├── contracts/
+│   └── SupplyChainBatch.sol
+│
+├── frontend/
+│   └── SupplyChainDashboard.jsx
+│
+├── package.json
+└── README.md
+```
+
+**Components:**
+- **Blockchain backend** - Solidity smart contract (`SupplyChainBatch.sol`)
+- **Frontend dashboard** - React UI with Web3 integration
+- **Together** - Form a complete Decentralized Application (DApp)
+
+**Development Tools:**
+- **Remix** - Smart contract development and quick testing
+- **React/Web3 frontend** - User interface that communicates with the deployed contract via ethers.js
+
+### Core Components
+
+| Component | Purpose |
+|-----------|---------|
+| **SupplyChainBatch.sol** | Solidity smart contract with batch lifecycle management |
+| **React Dashboard** | Web3-integrated UI for all supply chain operations |
+| **contract.js** | Ethers.js utilities for blockchain interaction |
+| **MetaMask Integration** | Wallet connection and transaction signing |
+
+---
+
+## Getting Started  
+
+### Prerequisites  
+
+Ensure the following are installed:  
+
+- **Node.js** (v18+) – [nodejs.org](https://nodejs.org/)
+- **npm** (included with Node.js) – Check: `npm --version`
+- **MetaMask** browser extension – [metamask.io](https://metamask.io/)
+- **Remix IDE** (optional) – [remix.ethereum.org](https://remix.ethereum.org/)
+- **Git** – For cloning repository
+
+### Clone Repository
+
+```bash   
+git clone https://github.com/micag2025/Supply_Chain_project.git
+cd Supply_Chain_project
+```
+
+### Install Dependencies  
+
+```bash
+npm install
+```
+This installs all required packages: `ethers.js`,` react-dom`, and other dependencies listed in `package.json`.    
+
+### Environment Configuration  
+
+Create a `.env` file in the project root (see `.env.example`):
+
+```bash  
+REACT_APP_CONTRACT= YOUR_DEPLOYED_CONTRACT_ADDRESS
+REACT_APP_NETWORK_NAME=Sepolia  
+```  
+
+***How to obtain contract address:***
+
+1. Deploy the smart contract via Remix IDE
+2. Copy contract address from the deployment receipt
+3. Paste into `.env `file    
+
+> **Note:** Use the **contract address** from Remix "Deployed Contracts" panel, NOT farmer/distributor/retailer wallet addresses.
+
+### Start Application  
+
+### Start the React Development Server  
+
+Launch the React development server:
+
+```bash  
+npm start
+```
+The server will start and automatically open your browser.  
+
+### Expected Output  
+
+```
+Compiled successfully!
+
+You can now view supplychain-ui in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://[YOUR_IP]:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+```  
+
+Open: http://localhost:3000
+
+FOLLOW PUBLICATION ? 
+
+## Deployment
+Deploy Smart Contract
+Open Remix IDE
+Compile SupplyChainBatch.sol
+Deploy to Sepolia
+Copy:
+Contract Address
+ABI
+Configure Frontend
+
+Update:
+```bash  
+src/abi/SupplyChain.json  
+```  
+
+and  `.env` with deployment information.
+
+
+### Prerequisites  
+
+Ensure the following are installed:  
+
+- **Node.js** : version >=18 [nodejs.org](https://nodejs.org/) |
+- **MetaMask** : browser extension [metamask.io](https://metamask.io/)
+- **Remix IDE** : online at [https://remix.ethereum.org](https://remix.ethereum.org))
+
+### Environment Setup
+
+| Component | Configuration |
+|-----------|---------|
+| **Blockchain Network** | Sepolia Testnet |
+| **Wallet** | MetaMask |
+| **Frontend Framework** | React + Ethers.js |
+| **Smart Contract** | Solidity 0.8.x |
+| **Deployment Tool** | Remix IDE |
+
+---
+
+## Step-by-Step Setup 
+
+### STEP 1 — Deploy Smart Contract via Remix
+
+1. **Open Remix IDE**
+   - Navigate to [https://remix.ethereum.org](https://remix.ethereum.org)
+
+2. **Create and Compile Contract**
+   - Create a new file named `SupplyChainBatch.sol`
+   - Paste your smart contract code
+   - Go to **Solidity Compiler** tab
+   - Select compiler version **0.8.x**
+   - Click **Compile SupplyChainBatch.sol**
+
+3. **Deploy to Sepolia Testnet**
+   - Switch to **Deploy & Run Transactions** tab
+   - Select **Environment**: `Injected Provider - MetaMask`
+   - Ensure MetaMask is:
+     - Unlocked  
+     - Connected to **Sepolia Testnet**  
+   - Click **Deploy** button
+   - Approve the transaction in MetaMask
+
+4. **Save Deployment Details**
+   - Copy the **Deployed Contract Address** (e.g., `0xA1b2C3...`)
+   - Go to **Compilation Details**
+   - Copy the entire **ABI** (JSON format)
+   - Save both for the React frontend setup
+
+> **Why Injected Provider - MetaMask?**
+> - Direct connection to your MetaMask wallet
+> - Deploys to live networks (Sepolia, Polygon, etc.)
+> - Generates real, usable contract addresses
+> - Industry best practice for dApp development
+
+**About the ABI:** The ABI (Application Binary Interface) is a JSON specification that defines:
+- All available smart contract functions
+- Function inputs and outputs
+- Gas requirements (state-changing vs. read-only)
+- Enables ethers.js to encode/decode contract calls
+  
+---
+
+### STEP 2 — Create React App (CRA)
+
+Run the following commands:
+
+```bash
+npx create-react-app supplychain-ui  
+cd supplychain-ui
+npm install
+npm install ethers
+npm start
+```
+---  
+
+### STEP 3 — Add Contract ABI  
+
+**Create file:** `src/abi/SupplyChain.json`
+
+```json
+{
+  "abi": [ ...PASTE_ABI_FROM_REMIX_HERE... ]
+}
+```
+
+---
+
+###  STEP 4 — Create Contract Service   
+
+**Create file** `src/contract.js` to handle contract interactions
+
+```javascript
+import { ethers } from "ethers";
+import abi from "./abi/SupplyChain.json";
+
+const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
+
+export async function getContract() {
+  if (!window.ethereum) throw new Error("MetaMask not found");
+
+  await window.ethereum.request({ method: "eth_requestAccounts" });
+
+  const provider = new ethers.BrowserProvider(window.ethereum);
+
+  return new ethers.Contract(CONTRACT_ADDRESS, abi, provider);
+}
+```
+---  
+
+### STEP 5: Build UI Components  
+
+Replace `src/App.jsx` with your React components. Key components:
+
+- **WalletSection** - Connect/disconnect MetaMask  
+- **CreateBatchSection** - Form for batch creation (Farmer only)  
+- **ReadBatchSection** - Query batch details  
+- **BatchTable** - Display all batches with (Ship/Deliver) action buttom  
+- **RoleBadge** - Show connected user's role  
+
+TO BE ENCLOSED  
+``` javascript
+const CONTRACT_ADDRESS = "YOUR_REMIX_DEPLOYED_CONTRACT_ADDRESS";
+```
+---
+
+### STEP 6: Connect MetaMask  
+
+1. Install [MetaMask browser extension](https://metamask.io/)
+2. Create or import wallet
+3. Switch network to **Sepolia Testnet**
+4. See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for detailed step
+
+### MetaMask Prompt
+
+MetaMask will automatically prompt when:  
+
+- ✓ Clicking "Connect Wallet"  
+- ✓ Clicking "Create Batch" (state-changing transaction)  
+- ✓ Clicking "Read Batch" (if provider access is needed)  
+- ✓ Clicking "Ship" button in table  
+- ✓ Clicking "Deliver" button in table  
+
+---  
+
+### Setup Summary  
+
+```
+Step 1: Deploy Contract via Remix
+         ↓
+Step 2: Create React App
+         ↓
+Step 3: Add Contract ABI
+         ↓
+Step 4: Create Contract Service (ethers.js)
+         ↓
+Step 5: Build UI Components
+         ↓
+Step 6: Configure MetaMask & Connect
+         ↓
+✅ Ready to Test!
+```
+
+**Success Checklist**
+
+- ✓ Contract deployed via Remix on Sepolia  
+- ✓ React frontend created and running locally  
+- ✓ ethers.js properly configured with contract address and ABI  
+- ✓ MetaMask connected to React application  
+- ✓ Create batch function working end-to-end  
+- ✓ Read batch function retrieving data  
+- ✓ Ship and Deliver functions updating state  
+
+
+---  
+
+
+
+```  
+React UI Validation
+        ↓
+MetaMask
+        ↓
+ethers.js
+        ↓
+Smart Contract  
+```  
+---  
+
