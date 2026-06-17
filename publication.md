@@ -507,14 +507,11 @@ The proposed blockchain-based supply chain tracking system successfully demonstr
 - **Sepolia-only deployment** – The application is currently deployed and tested exclusively on the Ethereum Sepolia Testnet. Consequently, it has not been evaluated under real-world production conditions or on alternative blockchain networks.    
 - **Fixed role assignments** – Supply chain roles (Farmer, Distributor, and Retailer) are hardcoded to specific wallet addresses. The system does not currently support dynamic role assignment, role management, or onboarding of new participants.
 - **Limited supply chain states**  – The current implementation focuses on the core workflow (`Created → Shipped → Delivered`). Additional states such as production, quality inspection, warehousing, customs clearance, and returns are not modeled, limiting the realism and granularity of supply chain tracking.    
-- **Limited historical event indexing and visualization** – While blockchain transactions remain permanently stored on-chain, the application does not currently provide indexed event history, audit-trail views, or advanced lifecycle visualization.
 - **No analytics dashboard** – The system provides operational tracking functionality but does not include analytics or reporting capabilities for monitoring supply chain performance, trends, or operational metrics.  
 - **No QR-code integration** – Products cannot currently be identified or tracked through QR-code scanning, which limits ease of use in practical supply chain environments.  
 - **No inventory managemnt** – The application focuses on batch traceability and does not support inventory tracking, stock management, or warehouse operations.  
 - **Prototype-oriented development environment** – Smart contract development and deployment were performed using Remix IDE, which is well suited for rapid prototyping and educational projects. However, production environments typically rely on more advanced frameworks such as Hardhat or Foundry that provide automated testing, deployment pipelines, contract verification, and improved development workflows.  
 - **Legacy frontend tooling (CRA)** – The frontend was developed using Create React App (CRA), which provides a stable development environment but offers slower build times and less optimized performance compared with modern alternatives such as Vite.      
-- **Single-contract scope** – The application is designed to interact with a single smart contract instance and does not currently support management of multiple supply chains or contract deployments.  
-- **No Real-Time Notifications** - The application does not currently provide real-time notifications or event subscriptions to automatically alert users when batch states change.  
 
 Despite these limitations, the project successfully demonstrates the feasibility of using blockchain technology to provide transparent, immutable, and role-controlled supply chain tracking. The identified limitations also provide a clear roadmap for future enhancements and system expansion.  
 
@@ -531,14 +528,11 @@ Planned enhancements include:
 - **Expanded supply chain lifecycle states** to model additional stages such as production, quality inspection, warehousing, customs clearance, and returns, thereby improving supply chain realism and traceability.     
 - **Event indexing through The Graph** to provide efficient historical event querying, audit trails, and advanced lifecycle visualization.    
 - **Advanced analytics and reporting dashboards** to support operational monitoring, performance metrics, and business intelligence capabilities.  
-- **IPFS integration** for decentralized storage of product documentation, certificates, and provenance records.  
 - **QR-code traceability** to enable rapid product identification and verification throughout the supply chain.  
-- **Inventory management capabilities** to support stock tracking, warehouse management, and expiration monitoring.  
+- **Inventory management capabilities** to support stock tracking, warehouse management, and expiration monitoring.   
+- **IoT sensor integration** to support automated collection of environmental data such as temperature, humidity, and location, enabling real-time monitoring of sensitive goods.
 - **Migration from Remix to Hardhat** to support professional smart contract development workflows, automated testing, deployment scripting, and contract verification.  
-- **Migration from Create React App (CRA) to Vite** to improve frontend performance, reduce build times, and provide a more modern development experience.
-- **Multi-contract support**  to enable management of multiple supply chains and contract instances simultaneously.  
--  **Real-time notifications** and event subscriptions to automatically inform users of important supply chain events and state transitions.    
-- **IoT sensor integration** to support automated collection of environmental data such as temperature, humidity, and location, enabling real-time monitoring of sensitive goods.   
+- **Migration from Create React App (CRA) to Vite** to improve frontend performance, reduce build times, and provide a more modern development experience.  
 
 Additional technical details, implementation considerations, and the complete development roadmap are available in the accompanying [GitHub repository](https://github.com/micag2025/Supply_Chain_project).
 
@@ -573,12 +567,12 @@ Official documentation and resources:
 
 ### Foundational Blockchain  
 
--[Nakamoto (Bitcoin White Paper)](https://bitcoin.org/bitcoin.pdf)  
--[Buterin (Ethereum White Paper)](https://ethereum.org/content/whitepaper/whitepaper-pdf/Ethereum_Whitepaper_-_Buterin_2014.pdf)  
+- [Nakamoto (Bitcoin White Paper)](https://bitcoin.org/bitcoin.pdf)  
+- [Buterin (Ethereum White Paper)](https://ethereum.org/content/whitepaper/whitepaper-pdf/Ethereum_Whitepaper_-_Buterin_2014.pdf)  
 
 ### Supply Chain Blockchain  
 
-[A Systematic Literature Review of Blockchain-Based Applications: Current Status, Classification and Open Issues](https://www.sciencedirect.com/science/article/pii/S0736585318306324)
+- [A Systematic Literature Review of Blockchain-Based Applications: Current Status, Classification and Open Issues](https://www.sciencedirect.com/science/article/pii/S0736585318306324)
 
 ### Blockchain & Web3
 
