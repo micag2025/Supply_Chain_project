@@ -217,17 +217,13 @@ This installs all required packages: `ethers.js`,` react-dom`, and other depende
 
 ### MetaMask Configuration
 
-See:
-
-`docs/metamask-setup.md`  
+See: `docs/metamask-setup.md`  
 
 ### Smart Contract Deployment
 
 The smart contract can be deployed using Remix IDE on the Ethereum Sepolia Testnet.
 
-Detailed deployment instructions are available in:
-
-`docs/deployment.md`
+Detailed deployment instructions are available in `docs/deployment.md`
 
 ### Running the Application  
 
@@ -291,10 +287,6 @@ Testing was performed on the Ethereum Sepolia Testnet.
 
 ### Test Account Setup
 
-Three MetaMask accounts simulate the supply chain participants:
-
-### Test Account Setup
-
 Three MetaMask accounts simulate the supply chain participants.
 
 | Role | Account | Purpose | Recommended Testnet Ether (ETH)* |
@@ -324,25 +316,25 @@ Detailed test cases and results are available in `docs/testing.md`.
 
 #### Functional Testing
 
-- ✓ Batch creation
-- ✓ Batch shipment
-- ✓ Batch delivery
-- ✓ Wallet-based authentication
-- ✓ Blockchain state persistence
+✓ Batch creation
+✓ Batch shipment
+✓ Batch delivery
+✓ Wallet-based authentication
+✓ Blockchain state persistence
 
 #### Security & Validation Testing
 
-- ✓ Role-based access control
-- ✓ Invalid state transition prevention
-- ✓ Duplicate batch prevention
-- ✓ Unauthorized access prevention*
+✓ Role-based access control
+✓ Invalid state transition prevention
+✓ Duplicate batch prevention
+✓ Unauthorized access prevention*
 
 #### End-to-End Workflow Validation
 
-- ✓ Complete batch lifecycle execution
-- ✓ Correct role-based workflow progression
-- ✓ Frontend-to-blockchain synchronization
-- ✓ Batch traceability from creation to delivery
+✓ Complete batch lifecycle execution
+✓ Correct role-based workflow progression
+✓ Frontend-to-blockchain synchronization
+✓ Batch traceability from creation to delivery
 
 \* Unauthorized access prevention was validated by attempting restricted actions from accounts assigned to incorrect roles.
 
@@ -522,250 +514,60 @@ Detailed test results are available in `docs/testing.md`.
 
 ---    
 
-## Limitations & Workarounds  
+## Limitations & Suggested Enhancements
 
-The current implementation demonstrates a functional blockchain-based supply chain tracking system; however, several technical limitations remain due to the project's educational and proof-of-concept scope.  Current limitations include:
+This project successfully demonstrates the core concepts of blockchain-based supply chain tracking. However, as a proof-of-concept implementation, the current version has the following limitations and potential improvement areas:
 
-- Fixed wallet-role mapping  
-- Sepolia-only deployment  
-- Limited supply chain states  
-- No historical event indexing  
-- No analytics dashboard  
+| Limitation | Impact | Suggested Enhancement |
+|------------|---------|----------------------|
+| **Fixed wallet-role mapping** | Roles are hardcoded to specific wallet addresses. | Implement dynamic role assignment and participant management. |
+| **Sepolia-only deployment** | Application operates exclusively on the Ethereum Sepolia Testnet. | Deploy to Layer-2 networks (e.g., Polygon, Arbitrum) or Ethereum Mainnet. |
+| **Limited supply chain states** | Workflow is restricted to `Created → Shipped → Delivered`. | Expand the lifecycle with additional states such as Processed, Packaged, and InTransit. |
+| **No historical event indexing** | Historical events cannot be efficiently queried or visualized. | Integrate The Graph or a similar indexing solution. |
+| **No analytics dashboard** | No operational reporting or performance insights are available. | Add analytics and reporting capabilities. |
 
-### Limitation 1: Remix IDE Constraints
 
-**Current Limitation**
 
-The project was developed and deployed using Remix IDE, which is ideal for rapid prototyping and educational projects but presents several challenges for production environments:
 
-* Limited project management capabilities
-* Manual deployment workflows
-* No automated testing pipeline
-* Limited support for collaborative development
-* No integrated gas analysis or security tooling
 
-**Recommended Workaround: Migrate to Hardhat**
+## Limitations & Suggested Enhancements
 
-```bash
-npm install --save-dev hardhat
-npx hardhat init
-```
+This project successfully demonstrates the core concepts of blockchain-based supply chain tracking; however, it remains a proof-of-concept implementation and includes several limitations that could be addressed in future versions.
 
-**Benefits**
+### Current Limitations
 
-* Local blockchain simulation
-* Automated smart contract testing
-* Gas usage analysis
-* Deployment scripting
-* Contract verification support
-* Improved CI/CD integration
+| Limitation | Impact | Suggested Enhancement |
+|------------|---------|----------------------|
+| **Fixed wallet-role mapping** | Roles are hardcoded to specific wallet addresses, limiting flexibility. | Implement dynamic role assignment and participant management. |
+| **Sepolia-only deployment** | The application operates exclusively on the Ethereum Sepolia Testnet. | Deploy to Layer-2 networks (e.g., Polygon, Arbitrum) or Ethereum Mainnet. |
+| **Limited supply chain states** | The workflow is restricted to `Created → Shipped → Delivered`. | Introduce additional lifecycle states for more realistic supply chain modeling. |
+| **No historical event indexing** | Historical blockchain events cannot be efficiently queried or visualized. | Integrate The Graph or a similar indexing solution. |
+| **No analytics dashboard** | Users cannot analyze operational metrics or supply chain performance. | Add reporting and analytics capabilities. |
 
----
-
-### Limitation 2: Create React App Performance
-
-**Current Limitation**
-
-The frontend currently uses Create React App (CRA), which provides a stable development environment but suffers from:
-
-* Slower startup and build times
-* Larger production bundles
-* Higher memory consumption
-* Older tooling architecture
-
-**Recommended Workaround: Migrate to Vite**
-
-```bash
-npm create vite@latest supplychain-ui -- --template react
-cd supplychain-ui
-npm install
-npm install ethers
-npm run dev
-```
-
-**Benefits**
-
-* Faster development server startup
-* Smaller production bundles
-* Improved developer experience
-* Modern ES module support
-* Better scalability for larger applications
-
----
-
-### Limitation 3: Functional Scope
-
-**Current Limitation**
-
-The current implementation focuses on the core supply chain workflow:
-
-Created → Shipped → Delivered
-
-Additional limitations include:
-
-* Fixed wallet-role mapping
-* Single-network support (Sepolia)
-* Limited historical analytics
-* No QR code verification
-* No inventory management
-* No export or reporting features
-
-**Recommended Workaround**
-
-Future versions should integrate decentralized indexing solutions (The Graph), advanced analytics dashboards, and enhanced supply chain management features.
-
----  
-
-# Future Implementations  
-
-The project architecture was intentionally designed to support future expansion. Planned improvements are grouped into five development phases.
-
-## Phase 1 — Smart Contract Enhancements
-
-### Expanded Supply Chain States
-
-Current workflow:
-
-```text
-Created → Shipped → Delivered
-```
-
-Proposed workflow:
-
-```text
-Created
-   ↓
-Processed
-   ↓
-Packaged
-   ↓
-InTransit
-   ↓
-Shipped
-   ↓
-Delivered
-```
-
-Benefits:
-
-* More realistic supply chain modeling
-* Improved traceability
-* Enhanced inventory management
-* Support for quality-control workflows
-
-### Advanced Access Control
-
-* Dynamic role assignment
-* Multi-signature approvals
-* Temporary permissions
-* Enhanced authorization models
-
----
-
-## Phase 2 — Product Traceability
-
-### QR Code Integration
-
-Enable consumers and auditors to verify product provenance through QR-code scanning.
-
-### IPFS Integration
-
-Store supporting documentation such as:
-
-* Product certificates
-* Images
-* Inspection reports
-* Compliance documentation
-
-Benefits:
-
-* Immutable documentation
-* End-to-end transparency
-* Consumer trust
-
----
-
-## Phase 3 — Inventory & Analytics
-
-### Inventory Management
-
-* Batch expiration tracking
-* Warehouse inventory monitoring
-* Automated expiration alerts
-* Regulatory compliance support
-
-### Analytics Dashboard
-
-* Batch lifecycle metrics
-* Shipment performance analysis
-* Supplier statistics
-* Supply chain KPIs
-
----
-
-## Phase 4 — Production Readiness
-
-### Development Infrastructure
-
-* Migration from Remix to Hardhat  (already mention in the workaround)
-* Automated testing suite
-* Deployment automation
-* Security auditing
-
-### Frontend Modernization
-
-* Migration from CRA to Vite   (already mention in the workaround)
-* Improved performance
-* Better scalability
-
-### Multi-Network Support
-
-* Ethereum Mainnet
-* Polygon
-* Arbitrum
-* Optimism
-
----
-
-## Phase 5 — Enterprise & Ecosystem Integration
-
-### External Integrations
-
-* REST APIs
-* Webhooks
-* ERP systems
-* Logistics providers
-
-### IoT & Real-Time Monitoring
-
-* Temperature sensors
-* Location tracking
-* Environmental monitoring
-
-### Advanced Features
-
-* Predictive analytics
-* Sustainability tracking
-* Carbon footprint analysis
-* DAO governance
-* Multi-organization support
 
 These enhancements would evolve the project from a proof-of-concept decentralized application into a production-grade blockchain supply chain management platform.
 
 Feel free to suggest features by opening an issue or starting a discussion! For bug reports or feature requests, 
  [open an issue](https://github.com/micag2025/Supply_Chain_project/issues).  
 
+---  
 
-Roadmap
-Hardhat migration
-Vite migration
-IPFS integration
-QR-code verification
-The Graph integration
-Layer-2 deployment
-Analytics dashboard
+## Roadmap
 
-> IMP > difference between limitations (have immediate solution) and future work (expand functionality)! 
+Planned enhancements for future releases include:
+
+| Area                           | Enhancement                                 | Goal                                                                                                           |
+| ------------------------------ | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Development Infrastructure** | Migrate from Remix to Hardhat               | Enable automated testing, deployment scripting, and professional smart contract workflows.                     |
+| **Frontend Modernization**     | Migrate from Create React App (CRA) to Vite | Improve build performance and developer experience.                                                            |
+| **Product Traceability**       | IPFS integration                            | Store product certificates, inspection reports, images, and compliance documentation in decentralized storage. |
+| **Product Traceability**       | QR-code verification                        | Allow consumers and auditors to verify product provenance through QR-code scanning.                            |
+| **Event Management**           | The Graph integration                       | Enable efficient querying, indexing, and visualization of historical blockchain events.                        |
+| **Scalability**                | Layer-2 deployment (Polygon/Arbitrum)       | Reduce transaction costs and improve scalability.                                                              |
+| **Analytics & Reporting**      | Analytics dashboard                         | Provide operational insights, performance metrics, and supply chain reporting capabilities.                    |
+
+Future enhancements will focus on improving scalability, traceability, usability, and production readiness while maintaining the system's decentralized architecture.  
+
 ---
 
 ## Contributing
