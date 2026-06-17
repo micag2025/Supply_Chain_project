@@ -32,7 +32,7 @@ The dApp is intended for both technical and non-technical stakeholders (users) i
 
 Supply chains often rely on centralized databases that can suffer from limited transparency, fragmented data ownership, and challenges in auditing product provenance.
 
-[Blockchain technology](D) offers an alternative approach by providing:
+[Blockchain technology](https://ethereum.org/content/whitepaper/whitepaper-pdf/Ethereum_Whitepaper_-_Buterin_2014.pdf) offers an alternative approach by providing:
 
 - Immutable transaction records  ([Nakamoto, 2008](https://bitcoin.org/bitcoin.pdf))
 - Transparent audit trails 
@@ -374,25 +374,25 @@ The following areas were validated:
 
 #### Functional Testing
 
-- ✓ Batch creation
-- ✓ Batch shipment
-- ✓ Batch delivery
-- ✓ Wallet-based authentication
-- ✓ Blockchain state persistence
+✓ Batch creation
+✓ Batch shipment
+✓ Batch delivery
+✓ Wallet-based authentication
+✓ Blockchain state persistence
 
 #### Security & Validation Testing
 
-- ✓ Role-based access control
-- ✓ Invalid state transition prevention
-- ✓ Duplicate batch prevention
-- ✓ Unauthorized access prevention*
+✓ Role-based access control
+✓ Invalid state transition prevention
+✓ Duplicate batch prevention
+✓ Unauthorized access prevention*
 
 #### End-to-End Workflow Validation
 
-- ✓ Complete batch lifecycle execution
-- ✓ Correct role-based workflow progression
-- ✓ Frontend-to-blockchain synchronization
-- ✓ Batch traceability from creation to delivery
+✓ Complete batch lifecycle execution
+✓ Correct role-based workflow progression
+✓ Frontend-to-blockchain synchronization
+✓ Batch traceability from creation to delivery
 
 \* Unauthorized access prevention was validated by attempting restricted actions from accounts assigned to incorrect roles.
 
@@ -425,12 +425,9 @@ The dashboard features a **wallet connection panel** showing the connected accou
 
  ---
 
-### Demonstration Results
+### Scenario 1: Create and Read Batch (Farmer Only)  
 
-The following workflows were validated:
-
-**Scenario 1: Create and Read Batch (Farmer Only)**  
-  Farmer creates a batch and records product information on-chain.
+The following workflow were validated: Farmer creates a batch and records product information on-chain.
 
 The figure shows the **farmer batch creation process**, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. 
 
@@ -438,9 +435,9 @@ The figure shows the **farmer batch creation process**, including validated **ba
 
  ---  
 
-**Scenario 2: Ship Batch Action (Distributor only)**  
+### Scenario 2: Ship Batch Action (Distributor only)  
 
-Distributor updates batch state from: `Created → Shipped`
+The following workflow were validated: Distributor updates batch state from: `Created → Shipped`
 
 The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** (They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.(buttom disabled) )
 
@@ -450,8 +447,9 @@ The figures show the **distributor shipment process**, including **viewing only 
 
 ---  
 
-**Scenario 3: Deliver Batch Action (Retailer only)**  
-   Retailer completes the lifecycle:` Shipped → Delivered`
+### Scenario 3: Deliver Batch Action (Retailer only)  
+
+The following workflow were validated: Retailer completes the lifecycle:` Shipped → Delivered`
 
 The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** (They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.(buttom disabled))
 
@@ -461,9 +459,9 @@ The figures show the **retailer delivery process**, including **viewing “Shipp
 
 ---  
 
-**Scenario 4: Invalid Wallet Role  (Unauthorized Access)**
+### Scenario 4: Invalid Wallet Role  (Unauthorized Access)
 
-Non-authorized roles cannot perform restricted actions.   
+The following workflow were validated: Non-authorized roles cannot perform restricted actions.   
 
 The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. (The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.)  
  
@@ -472,9 +470,9 @@ The figure demonstrates an **access control scenario where a distributor attempt
 
 ---  
 
-**Scenario 5: Read Non-Existing Batch  (Invalid Batch Lookup)**
+### Scenario 5: Read Non-Existing Batch  (Invalid Batch Lookup)
 
-Users receive clear feedback when querying non-existing batches.  
+The following workflow were validated: Users receive clear feedback when querying non-existing batches.  
 
  The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. ( ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.)  
 
@@ -495,12 +493,10 @@ Blockchain transactions are asynchronous and require confirmation before fronten
 
 ### Role Enforcement  
 
-Access control needed validation at both:  
+To provide a better user experience while maintaining security, access control needed validation at both:  
 
 - UI layer  
 - Smart contract layer  
-
-to provide a better user experience while maintaining security.
 
 ---
 
