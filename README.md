@@ -494,29 +494,13 @@ Detailed test results are available in `docs/testing.md`.
 
 This project successfully demonstrates the core concepts of blockchain-based supply chain tracking. However, as a proof-of-concept implementation, the current version has the following limitations and potential improvement areas:
 
-| Limitation | Impact | Suggested Enhancement |
-|------------|---------|----------------------|
-| **Fixed wallet-role mapping** | Roles are hardcoded to specific wallet addresses. | Implement dynamic role assignment and participant management. |
-| **Sepolia-only deployment** | Application operates exclusively on the Ethereum Sepolia Testnet. | Deploy to Layer-2 networks (e.g., Polygon, Arbitrum) or Ethereum Mainnet. |
-| **Limited supply chain states** | Workflow is restricted to `Created → Shipped → Delivered`. | Expand the lifecycle with additional states such as Processed, Packaged, and InTransit. |
-| **No historical event indexing** | Historical events cannot be efficiently queried or visualized. | Integrate The Graph or a similar indexing solution. |
-| **No analytics dashboard** | No operational reporting or performance insights are available. | Add analytics and reporting capabilities. |
-
-
-
-
-
-## Limitations & Suggested Enhancements
-
-This project successfully demonstrates the core concepts of blockchain-based supply chain tracking; however, it remains a proof-of-concept implementation and includes several limitations that could be addressed in future versions.
-
 ### Current Limitations
 
 | Limitation | Impact | Suggested Enhancement |
 |------------|---------|----------------------|
 | **Fixed wallet-role mapping** | Roles are hardcoded to specific wallet addresses, limiting flexibility. | Implement dynamic role assignment and participant management. |
 | **Sepolia-only deployment** | The application operates exclusively on the Ethereum Sepolia Testnet. | Deploy to Layer-2 networks (e.g., Polygon, Arbitrum) or Ethereum Mainnet. |
-| **Limited supply chain states** | The workflow is restricted to `Created → Shipped → Delivered`. | Introduce additional lifecycle states for more realistic supply chain modeling. |
+| **Limited supply chain states** | The workflow is restricted to `Created → Shipped → Delivered`. | Introduce additional lifecycle states for more realistic supply chain modeling (e.g.: Processed, Packaged, and InTransit). |
 | **No historical event indexing** | Historical blockchain events cannot be efficiently queried or visualized. | Integrate The Graph or a similar indexing solution. |
 | **No analytics dashboard** | Users cannot analyze operational metrics or supply chain performance. | Add reporting and analytics capabilities. |
 
