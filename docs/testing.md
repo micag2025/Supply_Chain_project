@@ -2,9 +2,9 @@
 
 ## Overview
 
-Testing was performed on the **Ethereum Sepolia Testnet** to **validate smart contract behavior, frontend functionality, wallet integration, and role-based access control**.
+Testing was performed on the **Ethereum Sepolia Testnet** to validate smart contract behavior, frontend functionality, MetaMask wallet integration, blockchain, and role-based access control.
 
-The goal was to ensure correct execution of all supply chain workflows.
+The objective was to verify that the application correctly implements the complete supply chain lifecycle while enforcing security controls and maintaining blockchain state integrity.
 
 ---
 
@@ -12,7 +12,7 @@ The goal was to ensure correct execution of all supply chain workflows.
 
 | Component      | Value           |
 | -------------- | --------------- |
-| Network        | Sepolia Testnet |
+| Network        | Ethreum Sepolia Testnet |
 | Wallet         | MetaMask        |
 | Frontend       | React           |
 | Smart Contract | Solidity        |
@@ -22,13 +22,13 @@ The goal was to ensure correct execution of all supply chain workflows.
 
 ## Test Accounts
 
-Three MetaMask accounts simulate supply chain participants.
+Three MetaMask accounts were used to simulate supply chain participants (users).
 
 | Role        | Purpose        |
 | ----------- | -------------- |
-| Farmer      | Batch creation |
-| Distributor | Batch shipment |
-| Retailer    | Batch delivery |
+| Farmer      | Create product batches |
+| Distributor |Ship product batches |
+| Retailer    | Deliver product batches|
 
 ---
 
@@ -51,7 +51,7 @@ The functional test suite verifies that the core business requirements of the su
 
 ---
 
-## Security Testing  (Security & Validation Tests)  
+## Security & Validation Tests  
 
 The security and validation test suite evaluates the system's ability to prevent unauthorized actions, invalid state transitions, and incorrect user inputs. These tests verify that access-control rules, frontend validations, and smart contract safeguards work together to maintain data integrity and prevent misuse of the application.    
 
@@ -70,47 +70,119 @@ The security and validation test suite evaluates the system's ability to prevent
 
 ---
 
-## UI Validation Testing  (End-to-End Workflow Validation)  
+## End-to-End Workflow Validation
 
-This scenario validates the complete lifecycle of a product batch across all supply chain participants. The objective is to demonstrate that the React frontend, MetaMask wallet integration, ethers.js communication layer, and Ethereum smart contract operate together seamlessly to support real-world business workflows.    
+This scenario validates the complete lifecycle of a product batch across all supply chain participants. The objective is to demonstrate that the React frontend, MetaMask wallet integration, ethers.js communication layer, and Ethereum smart contract operate together seamlessly to support real-world business workflows.
 
-| Step | Actor | Action | Result |
-|--------|--------|---------|---------|
-| 1 | Farmer | Create batch | Batch state = Created |
-| 2 | Distributor | Ship batch | Batch state = Shipped |
-| 3 | Retailer | Deliver batch | Batch state = Delivered |
-| 4 | User | Lookup batch | Full lifecycle displayed |
+### Coffee Supply Chain Scenario
+
+The following scenario simulates a complete batch lifecycle from creation through delivery.
+
+#### Day 1 – Farmer Creates Batch
+
+| Item      | Value                 |
+| --------- | --------------------- |
+| Actor     | Farmer (Account 1)    |
+| Action    | Create Batch          |
+| Batch ID  | 1                     |
+| Product   | Coffee                |
+| Quantity  | 1000 kg               |
+| Result    | Batch state = Created |
+| Timestamp | 2026-06-04 10:00 UTC  |
+
+#### Day 2 – Distributor Ships Batch
+
+| Item               | Value                                 |
+| ------------------ | ------------------------------------- |
+| Actor              | Distributor (Account 2)               |
+| Action             | Ship Batch                            |
+| Result             | Batch state = Shipped                 |
+| Additional Outcome | Distributor address recorded on-chain |
+| Timestamp          | 2026-06-05 14:30 UTC                  |
+
+#### Day 5 – Retailer Delivers Batch
+
+| Item               | Value                              |
+| ------------------ | ---------------------------------- |
+| Actor              | Retailer (Account 3)               |
+| Action             | Deliver Batch                      |
+| Result             | Batch state = Delivered            |
+| Additional Outcome | Retailer address recorded on-chain |
+| Timestamp          | 2026-06-08 09:15 UTC               |
+
+### Batch Verification
+
+Any user can perform a lookup using **Batch ID = 1**.
+
+| Validation Item              | Result |
+| ---------------------------- | ------ |
+| Batch Created                | ✅      |
+| Batch Shipped                | ✅      |
+| Batch Delivered              | ✅      |
+| Farmer Recorded              | ✅      |
+| Distributor Recorded         | ✅      |
+| Retailer Recorded            | ✅      |
+| Blockchain State Persistence | ✅      |
+| End-to-End Traceability      | ✅      |
+
+### Lifecycle Summary
+
+```text
+Farmer
+   │
+   ▼
+Created
+   │
+   ▼
+Distributor
+   │
+   ▼
+Shipped
+   │
+   ▼
+Retailer
+   │
+   ▼
+Delivered
+```
+
+Outcome:
+
+* Complete supply chain workflow successfully executed.
+* All state transitions recorded on-chain.
+* Participant addresses preserved for auditing purposes.
+* Full batch traceability achieved through blockchain immutability.
 
 ---
 
 ## Test Coverage Summary
 
-| Category           | Status |
-| ------------------ | ------ |
-| Batch Creation     | ✅      |
-| Shipment           | ✅      |
-| Delivery           | ✅      |
-| Lookup             | ✅      |
-| Access Control     | ✅      |
-| Validation         | ✅      |
-| Persistence        | ✅      |
-| Wallet Integration | ✅      |
-| Network Validation | ✅      |
+| Category               | Status |
+| ---------------------- | ------ |
+| Batch Creation         | ✅      |
+| Shipment               | ✅      |
+| Delivery               | ✅      |
+| Lookup                 | ✅      |
+| Access Control         | ✅      |
+| Validation             | ✅      |
+| Blockchain Persistence | ✅      |
+| Wallet Integration     | ✅      |
+| Network Validation     | ✅      |
+| End-to-End Workflow    | ✅      |
 
 ---
 
 ## Results Summary
 
-| Metric | Value/Result |
-|----------|----------|
-| Total Test Cases | 20 |
-| Passed | 20 |
-| Failed | 0 |
-| Success Rate | 100% |
-| Roles Tested | 3 |
-| End-to-End Scenarios | 5 |
-| Networks Tested | Sepolia |
-
+| Metric               | Value           |
+| -------------------- | --------------- |
+| Total Test Cases     | 20              |
+| Passed               | 20              |
+| Failed               | 0               |
+| Success Rate         | 100%            |
+| Roles Tested         | 3               |
+| End-to-End Scenarios | 1               |
+| Network Tested       | Sepolia Testnet |
 
 All planned tests completed successfully.
 
@@ -122,11 +194,11 @@ Current testing does not include:
 
 * Load testing
 * Stress testing
-* Security audits
+* Formal smart contract security audits
 * Mainnet deployment testing
 * Multi-contract testing
 
-These areas are recommended for future work.
+These areas are recommended for future work and production-readiness assessments.
 
 ---
 
@@ -135,9 +207,12 @@ These areas are recommended for future work.
 Testing confirms that the application successfully implements:
 
 * Blockchain-based batch tracking
-* Role-based permissions
-* Wallet authentication
-* State transition validation
+* Role-based access control
+* MetaMask wallet authentication
+* Smart contract state-transition validation
 * Persistent on-chain storage
+* End-to-end supply chain traceability
 
-The proof-of-concept demonstrates reliable operation across all core supply chain workflows.
+The results demonstrate that the proof-of-concept operates reliably across all core supply chain workflows while maintaining data integrity, transparency, and role-based security.
+
+
