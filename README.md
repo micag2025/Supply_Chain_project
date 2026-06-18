@@ -76,59 +76,35 @@ Ethereum Smart Contract
 Sepolia Testnet  
 ```   
 
-Detailed architecture documentation is available in:
-
-`docs/architecture.md`
-
+Detailed architecture documentation is available in `docs/architecture.md`
 
 ---  
 
-## Technology Stack  (Key Technologies)
+## Technology Stack
 
-| Layer            | Technology       |
-| ---------------- | ---------------- |
-| Frontend         | React            |
-| Blockchain       | Ethereum Sepolia |
-| Smart Contract   | Solidity 0.8.x        |
-| Wallet           | MetaMask         |
-| Web3 Library     | ethers.js        |
-| Development Tool | Remix IDE        |
+| Layer              | Technology                           |
+| ------------------ | ------------------------------------ |
+| Frontend           | React                                |
+| Blockchain Network | Ethereum Sepolia Testnet             |
+| Smart Contracts    | Solidity 0.8.x                       |
+| Wallet Integration | MetaMask                             |
+| Web3 Library       | ethers.js                            |
+| Development Tools  | Remix IDE, Node.js                   |
+| Test Scenario      | Coffee Supply Chain (Farm-to-Retail) |
 
+### Key Technologies
 
-OR 
-
-### Blockchain
-
-- Solidity
-- Ethereum Sepolia Testnet
-
-### Frontend
-
-- React
-- ethers.js
-
-### Wallet
-
-- MetaMask
-
-### Development Tools
-
-- Remix IDE
-- Node.js
-
-> TO BE COMBINED BOTH VERSIONS, KEEPING THE TABLE 
-Key Technologies
-- **Smart Contract:** Solidity 0.8.x on Ethereum
-- **Wallet Integration:** MetaMask
-- **Frontend:** React + Ethers.js
-- **Network:** Sepolia Testnet
-- **Test Scenario:** Coffee Supply Chain (Farm-to-Retail)
+* **React** – Frontend framework used to build the decentralized application (dApp) user interface.
+* **Solidity** – Smart contract programming language used to implement supply chain logic.
+* **Ethereum Sepolia Testnet** – Blockchain network used for development and testing.
+* **MetaMask** – Wallet used for authentication and transaction signing.
+* **ethers.js** – JavaScript library used to interact with Ethereum smart contracts.
+* **Remix IDE** – Development environment used for smart contract development and deployment.
+* **Node.js** – Runtime environment used for frontend development and package management.
 
 ---
 
----
-
-## Project Structure
+## Project Structure  
 
 ```
 supply-chain-dapp/
