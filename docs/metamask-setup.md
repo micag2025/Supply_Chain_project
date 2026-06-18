@@ -93,10 +93,29 @@ Briefly, 0.1 ETH is absolutely enough. With 0.1 ETH you can:
 
 | Action          | Cost            |
 | --------------- | --------------- |
-| Deploy contract | ~0.005–0.02 ETH |
+| Deploy contract | ~0.005 ETH |
 | createBatch     | ~0.0005 ETH     |
 | shipBatch       | ~0.0003 ETH     |
 | deliverBatch    | ~0.0003 ETH     |
+
+
+### Test Account Setup
+
+Three MetaMask accounts simulate the supply chain participants.
+
+| Role | Account | Purpose | Recommended Testnet Ether (ETH)* |
+|--------|---------|---------|---------|
+| Farmer | Account 1 | Deploy contract and create batches | ~0.05 ETH |
+| Distributor | Account 2 | Execute shipment transactions | ~0.01 ETH |
+| Retailer | Account 3 | Execute delivery transactions | ~0.01 ETH |
+
+\* These values are approximate amounts used during development and testing on the Sepolia Testnet. Actual gas consumption may vary depending on network conditions, gas prices, and the number of transactions performed.
+
+
+> Get free Sepolia ETH from [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet)
+
+> See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for more details.   
+
 
 **Practical recommendation**
 
