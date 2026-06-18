@@ -24,7 +24,7 @@ The application combines a Solidity smart contract, MetaMask wallet integration,
 
 A coffee supply chain scenario was used to validate role-based operations involving Farmers, Distributors, and Retailers. (Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations.?)
 
-The dApp is intended for both technical and non-technical stakeholders (users) involved in supply chain operations, including developers, supply chain managers, logistics providers, agricultural producers, retailers, and regulatory authorities.
+The dApp is intended for both technical and non-technical stakeholders (users) involved in supply chain operations, including developers, supply chain managers, logistics providers, agricultural producers, retailers, and regulatory authorities.  
 
 ---
 
