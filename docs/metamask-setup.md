@@ -68,7 +68,7 @@ Repeat for all accounts.
 
 ---
 
-## How much ETH do you actually need?
+## How much ETH do you actually need?  TO BE UPDATED
 
 The contract deployment cost depends on:  
 
