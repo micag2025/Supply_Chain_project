@@ -193,7 +193,7 @@ This installs all required packages: `ethers.js`,` react-dom`, and other depende
 
 ### MetaMask Configuration
 
-See: `docs/metamask-setup.md`  
+See: [`docs/metamask-setup.md`](https://github.com/micag2025/Supply_Chain_project/blob/c097d4a37411ba8634f40d4d6304cb9b8c0320ec/docs/metamask-setup.md)
 
 ### Smart Contract Deployment
 
