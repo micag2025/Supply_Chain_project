@@ -39,7 +39,7 @@ Supply chains often rely on centralized databases that can suffer from limited t
 - Decentralized trust  
 - Cryptographic verification  
 
-[Recent research]((https://www.sciencedirect.com/science/article/pii/S0736585318306324)) has also demonstrated the potential of blockchain technology to improve traceability, transparency, and accountability within supply chain management systems
+[Recent research]((https://www.sciencedirect.com/science/article/pii/S0736585318306324) has also demonstrated the potential of blockchain technology to improve traceability, transparency, and accountability within supply chain management systems
 
 This project explores how Ethereum smart contracts can be used to manage product batches across multiple supply chain participants while maintaining a transparent and tamper-resistant history.
 
@@ -381,7 +381,7 @@ The following areas were validated:
 
 ### Test Results
 
-Detailed test cases and execution results are available in the accompanying GitHub repository.
+Detailed test cases and execution results are available in the [accompanying GitHub repository](https://github.com/micag2025/Supply_Chain_project).
 
 | Metric | Value |
 |----------|----------|
