@@ -290,29 +290,29 @@ Testing covered three areas:
 
 Detailed test cases and results are available in `docs/testing.md`.
 
-#### Functional Testing
+#### Functional Testing  
 
-✓ Batch creation
-✓ Batch shipment
-✓ Batch delivery
-✓ Wallet-based authentication
-✓ Blockchain state persistence
+✓ Batch creation  
+✓ Batch shipment  
+✓ Batch delivery  
+✓ Wallet-based authentication  
+✓ Blockchain state persistence  
 
-#### Security & Validation Testing
+#### Security & Validation Testing  
 
-✓ Role-based access control
-✓ Invalid state transition prevention
-✓ Duplicate batch prevention
-✓ Unauthorized access prevention*
+✓ Role-based access control  
+✓ Invalid state transition prevention  
+✓ Duplicate batch prevention  
+✓ Unauthorized access prevention*  
 
-#### End-to-End Workflow Validation
+#### End-to-End Workflow Validation  
 
-✓ Complete batch lifecycle execution
-✓ Correct role-based workflow progression
-✓ Frontend-to-blockchain synchronization
-✓ Batch traceability from creation to delivery
+✓ Complete batch lifecycle execution  
+✓ Correct role-based workflow progression  
+✓ Frontend-to-blockchain synchronization  
+✓ Batch traceability from creation to delivery  
 
-\* Unauthorized access prevention was validated by attempting restricted actions from accounts assigned to incorrect roles.
+\* Unauthorized access prevention was validated by attempting restricted actions from accounts assigned to incorrect roles.  
 
 ### Coverage Summary
 
@@ -414,11 +414,11 @@ Detailed test results are available in `docs/testing.md`.
 
 **Expected Outcome:**  
 
-- ✓ Only Distributor can ship batches  
-- ✓ State transitions correctly     
-- ✓ Distributor address recorded on chain
-- ✓ Table updates in real-time    
-- ✓ Farmer account cannot ship (buttom disabled)    
+✓ Only Distributor can ship batches    
+✓ State transitions correctly       
+✓ Distributor address recorded on chain  
+✓ Table updates in real-time      
+✓ Farmer account cannot ship (buttom disabled)      
 
 ---  
 
@@ -440,11 +440,11 @@ Detailed test results are available in `docs/testing.md`.
 
 **Expected Outcome:**  
 
-- ✓ Only Retailer can deliver batches  
-- ✓ State transitions correctly from "Shipped" to "Delivered"   
-- ✓ Retailer address recorded on-chain  
-- ✓ Table reflects state change instantly  
-- ✓ Distributor account cannot deliver (buttom disabled)  
+✓ Only Retailer can deliver batches    
+✓ State transitions correctly from "Shipped" to "Delivered"     
+✓ Retailer address recorded on-chain    
+✓ Table reflects state change instantly    
+✓ Distributor account cannot deliver (buttom disabled)    
 
 ---  
 
@@ -462,10 +462,10 @@ Detailed test results are available in `docs/testing.md`.
   
 **Expected Result:**  
 
-- ✓ "Create Batch" action unavailable for non-Farmers
-- ✓ UI prevents unauthorized action (no transaction sent)  
-- ✓  No state change occurs (Clear role indication in interface)
-- ✓  No gas consumed (prevented at UI layer)  
+✓ "Create Batch" action unavailable for non-Farmers  
+✓ UI prevents unauthorized action (no transaction sent)    
+✓  No state change occurs (Clear role indication in interface)  
+✓  No gas consumed (prevented at UI layer)    
 
 ---  
 
@@ -483,10 +483,10 @@ Detailed test results are available in `docs/testing.md`.
 
 **Expected Result:**
 
-- ✓ Error message displayed (e.g., "Batch not found")
-- ✓ No invalid data returned
-- ✓ User-friendly error formatting
-- ✓ No gas consumed (read-only call)
+✓ Error message displayed (e.g., "Batch not found")  
+✓ No invalid data returned  
+✓ User-friendly error formatting  
+✓ No gas consumed (read-only call)  
 
 ---    
 
@@ -613,8 +613,6 @@ Special thanks to all contributors, testers, and community members who have:
 - Reported bugs and issues
 - Submitted pull requests
 - Shared knowledge and expertise
-
-
 --- 
 
 
