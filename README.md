@@ -199,7 +199,8 @@ See: `docs/metamask-setup.md`
 
 The smart contract can be deployed using Remix IDE on the Ethereum Sepolia Testnet.
 
-Detailed deployment instructions are available in `docs/deployment.md`
+Detailed deployment instructions are available in [`docs/deployment.md`](
+https://github.com/micag2025/Supply_Chain_project/blob/c097d4a37411ba8634f40d4d6304cb9b8c0320ec/docs/deployment.md)
 
 ### Running the Application  
 
@@ -276,7 +277,7 @@ Three MetaMask accounts simulate the supply chain participants.
 
 > Get free Sepolia ETH from [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet)
 
-> See [MetaMask Setup Guide](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for more details.   
+> See [`doc/MetaMask Setup Guide.md`](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for more details.   
 
 ### Test Coverage
 
@@ -288,7 +289,7 @@ Testing covered three areas:
 - Security & Validation Testing
 - End-to-End Workflow Validation
 
-Detailed test cases and results are available in `docs/testing.md`.
+Detailed test cases and results are available in  [`docs/testing.md`](https://github.com/micag2025/Supply_Chain_project/blob/c097d4a37411ba8634f40d4d6304cb9b8c0320ec/docs/testing.md).
 
 #### Functional Testing  
 
@@ -341,7 +342,7 @@ Detailed test cases and results are available in `docs/testing.md`.
 
 All planned test cases passed successfully, confirming correct behavior of the smart contract, frontend application, wallet integration, and role-based workflow management.
 
-Detailed test results are available in `docs/testing.md`.
+Detailed test results are available in [`docs/testing.md`](https://github.com/micag2025/Supply_Chain_project/blob/c097d4a37411ba8634f40d4d6304cb9b8c0320ec/docs/testing.md).
 
 ---
 
