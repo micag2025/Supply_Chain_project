@@ -291,14 +291,6 @@ To create a production build, use npm run build.
 4. Approve connections in MetaMask popup  
 5. Dashboard loads with role-specific options  
 
-### Testing Full Worflow (TO BE MOVED IN THE TESTING SECTION?)
-
-To test the full workflow, open multiple browser windows/tabs with different MetaMask accounts:
-
-- **Tab 1**: Account 1 = Farmer (create batches)
-- **Tab 2**: Account 2 = Distributor (ship batches)
-- **Tab 3**: Account 3 = Retailer (deliver batches)
-
 ### Dashboard Features  
 
 The dashboard includes the following features:   
@@ -340,26 +332,17 @@ The dashboard includes the following features:
 
 ---  
 
-### Testing Full Worflow
-
-To test the full workflow, open multiple browser windows/tabs with different MetaMask accounts:
-
-- **Tab 1**: Account 1 = Farmer (create batches)
-- **Tab 2**: Account 2 = Distributor (ship batches)
-- **Tab 3**: Account 3 = Retailer (deliver batches)
-
-
 ## Testing & Evaluation
 
-Testing was performed on the Ethereum Sepolia Testnet using MetaMask accounts representing each supply chain participant.
+Testing (the full workflow) was performed on the Ethereum Sepolia Testnet using MetaMask accounts representing each supply chain participant.
 
 ### Test Environment Setup
 
 - **Network:** Ethereum Sepolia Testnet
-- **Test Accounts:** Three MetaMask accounts representing:
-  - Farmer role
-  - Distributor role
-  - Retailer role
+- **Test Accounts:** Three MetaMask accounts (account1, account2 and account 3, respectively) representing:
+  - Farmer role (create batches)
+  - Distributor role (ship batches)
+  - Retailer role (deliver batches)
 - **Tools:** MetaMask, ethers.js, Sepolia Faucet
 
 ### Test Coverage
@@ -374,27 +357,27 @@ The following areas were validated:
 
 #### Functional Testing
 
-✓ Batch creation
-✓ Batch shipment
-✓ Batch delivery
-✓ Wallet-based authentication
-✓ Blockchain state persistence
+✓ Batch creation  
+✓ Batch shipment  
+✓ Batch delivery  
+✓ Wallet-based authentication  
+✓ Blockchain state persistence   
 
-#### Security & Validation Testing
+#### Security & Validation Testing  
 
-✓ Role-based access control
-✓ Invalid state transition prevention
-✓ Duplicate batch prevention
-✓ Unauthorized access prevention*
+✓ Role-based access control  
+✓ Invalid state transition prevention  
+✓ Duplicate batch prevention  
+✓ Unauthorized access prevention*  
 
 #### End-to-End Workflow Validation
 
-✓ Complete batch lifecycle execution
-✓ Correct role-based workflow progression
-✓ Frontend-to-blockchain synchronization
-✓ Batch traceability from creation to delivery
-
-\* Unauthorized access prevention was validated by attempting restricted actions from accounts assigned to incorrect roles.
+✓ Complete batch lifecycle execution  
+✓ Correct role-based workflow progression  
+✓ Frontend-to-blockchain synchronization  
+✓ Batch traceability from creation to delivery  
+  
+\* Unauthorized access prevention was validated by attempting restricted actions from accounts assigned to incorrect roles.  
 
 ### Test Results
 
@@ -427,7 +410,7 @@ The dashboard features a **wallet connection panel** showing the connected accou
 
 ### Scenario 1: Create and Read Batch (Farmer Only)  
 
-The following workflow were validated: Farmer creates a batch and records product information on-chain.
+The `Farmer creates a batch and records product information on-chain` workflow was validated  
 
 The figure shows the **farmer batch creation process**, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. 
 
@@ -437,7 +420,7 @@ The figure shows the **farmer batch creation process**, including validated **ba
 
 ### Scenario 2: Ship Batch Action (Distributor only)  
 
-The following workflow were validated: Distributor updates batch state from: `Created → Shipped`
+The `Distributor updates batch state from: Created → Shipped` workflow was validated  
 
 The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** (They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.(buttom disabled) )
 
@@ -449,7 +432,7 @@ The figures show the **distributor shipment process**, including **viewing only 
 
 ### Scenario 3: Deliver Batch Action (Retailer only)  
 
-The following workflow were validated: Retailer completes the lifecycle:` Shipped → Delivered`
+The `Retailer completes the lifecycle: Shipped → Delivered` workflow was validated.
 
 The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** (They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.(buttom disabled))
 
@@ -461,7 +444,7 @@ The figures show the **retailer delivery process**, including **viewing “Shipp
 
 ### Scenario 4: Invalid Wallet Role  (Unauthorized Access)
 
-The following workflow were validated: Non-authorized roles cannot perform restricted actions.   
+The `Non-authorized roles cannot perform restricted actions`  workflow was validated.   
 
 The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. (The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.)  
  
@@ -472,7 +455,7 @@ The figure demonstrates an **access control scenario where a distributor attempt
 
 ### Scenario 5: Read Non-Existing Batch  (Invalid Batch Lookup)
 
-The following workflow were validated: Users receive clear feedback when querying non-existing batches.  
+The `Users receive clear feedback when querying non-existing batches` workflow was validated.
 
  The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. ( ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.)  
 
