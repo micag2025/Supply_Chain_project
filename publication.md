@@ -39,7 +39,7 @@ Supply chains often rely on centralized databases that can suffer from limited t
 - Decentralized trust  
 - Cryptographic verification  
 
-[Recent research]((https://www.sciencedirect.com/science/article/pii/S0736585318306324) has also demonstrated the potential of blockchain technology to improve traceability, transparency, and accountability within supply chain management systems
+[Recent research](https://www.sciencedirect.com/science/article/pii/S0736585318306324) has also demonstrated the potential of blockchain technology to improve traceability, transparency, and accountability within supply chain management systems
 
 This project explores how Ethereum smart contracts can be used to manage product batches across multiple supply chain participants while maintaining a transparent and tamper-resistant history.
 
@@ -54,7 +54,9 @@ Traditional supply chain systems face several challenges:
 - Centralized control of records  
 - Manual reconciliation between stakeholders  
 
-(Key Features) The goal of this project was to develop a decentralized proof-of-concept that demonstrates:
+## Key Features    
+
+The goal of this project was to develop a decentralized proof-of-concept that demonstrates:  
 
 - Product traceability  
 - Role-based permissions  (e.g. Role-based access control (Farmer, Distributor, Retailer))
@@ -153,61 +155,61 @@ Unauthorized operations are rejected by both the UI and the smart contract.
 
 ### Intended Users
 
-**1. Supply Chain Managers & Logistics Companies**
-- Track products from manufacturing through retail distribution
-- Monitor batch status in real-time across multiple locations
-- Verify authenticity and prevent counterfeiting
-- Ensure compliance with regulatory requirements
+- **Supply Chain Managers & Logistics Companies**  
+  - Track products from manufacturing through retail distribution
+  - Monitor batch status in real-time across multiple locations
+  - Verify authenticity and prevent counterfeiting
+  - Ensure compliance with regulatory requirements
 
-**2. Farmers & Agricultural Producers**
-- Initiate batches with product details (name, quantity, origin)
-- Authenticate their role via connected MetaMask wallet
-- Create immutable records of production
-- Build trust with distributors and retailers
+- **Farmers & Agricultural Producers**  
+  - Initiate batches with product details (name, quantity, origin)  
+  - Authenticate their role via connected MetaMask wallet
+  - Create immutable records of production
+  - Build trust with distributors and retailers
 
-**3. Distributors & Warehousing Providers**
-- Receive batch notifications when created by farmers
-- Update batch status to "Shipped" with transaction confirmation
-- Maintain records of all handled batches
-- Ensure secure handoffs between supply chain stages
+- **Distributors & Warehousing Providers**
+  - Receive batch notifications when created by farmers
+  - Update batch status to "Shipped" with transaction confirmation
+  - Maintain records of all handled batches
+  - Ensure secure handoffs between supply chain stages
 
-**4. Retailers & End-Consumers**
-- Verify product authenticity through batch lookup
-- Access complete product journey from origin to store shelf
-- Make informed purchasing decisions based on traceability
-- Scan batch IDs to view history and certifications
+- **Retailers & End-Consumers**
+  - Verify product authenticity through batch lookup
+  - Access complete product journey from origin to store shelf
+  - Make informed purchasing decisions based on traceability
+  - Scan batch IDs to view history and certifications
 
-**5. Regulatory & Compliance Officers**
-- Audit supply chain transparency
-- Verify adherence to product safety standards
-- Generate reports on batch movements
-- Investigate recalls or quality issues
+- **Regulatory & Compliance Officers**
+  - Audit supply chain transparency
+  - Verify adherence to product safety standards
+  - Generate reports on batch movements
+  - Investigate recalls or quality issues
 
 ### Key Use Cases
 
-**Use Case 1: Preventing Counterfeit Products**
-- Batch creation records cannot be forged (blockchain immutability)
-- Each transaction is cryptographically signed by authorized parties
-- Complete audit trail shows all handlers and timestamps
-- Retailers can verify authenticity before display
+- **Use Case: Preventing Counterfeit Products**
+  - Batch creation records cannot be forged (blockchain immutability)
+  - Each transaction is cryptographically signed by authorized parties
+  - Complete audit trail shows all handlers and timestamps
+  - Retailers can verify authenticity before display
 
-**Use Case 2: Rapid Recall Management**
-- Pinpoint affected batches  
-- Identify retailers who  received products
-- Notify relevant parties through dashboard  
-- Maintain liability records   
+- **Use Case: Rapid Recall Management**
+  - Pinpoint affected batches  
+  - Identify retailers who  received products
+  - Notify relevant parties through dashboard  
+  - Maintain liability records   
 
-**Use Case 3: Supply Chain Optimization**
-- Identify delivery bottlenecks  
-- Analyze time between state transitions
-- Optimize distributor and retailer networks
-- Reduce spoilage for perishable goods  
-
-**Use Case 4: Fair Trade & Ethical Sourcing**
-- Verify certified farm origins
-- Ensure transparent farmer compensation
-- Build consumer confidence
-- Enable premium pricing for certified batches  
+- **Use Case: Supply Chain Optimization**
+  - Identify delivery bottlenecks  
+  - Analyze time between state transitions
+  - Optimize distributor and retailer networks
+  - Reduce spoilage for perishable goods  
+ 
+- **Use Case: Fair Trade & Ethical Sourcing**
+  - Verify certified farm origins
+  - Ensure transparent farmer compensation
+  - Build consumer confidence
+  - Enable premium pricing for certified batches  
 
 ---  
 
@@ -381,7 +383,7 @@ The following areas were validated:
 
 ### Test Results
 
-Detailed test cases and execution results are available in the [accompanying GitHub repository](https://github.com/micag2025/Supply_Chain_project).
+Detailed test cases and execution results are available in the accompanying [GitHub repository](https://github.com/micag2025/Supply_Chain_project).
 
 | Metric | Value |
 |----------|----------|
