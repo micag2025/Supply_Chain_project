@@ -246,17 +246,7 @@ Potential future improvements include:
 
 
 
->IMP to be review the outline following   
-- System Overview
-- Architecture Diagram
-- Component Responsibilities
-- Smart Contract Design
-- Frontend Architecture
-- Wallet Integration
-- Transaction Flow
-- Deployment Architecture
-- Data Flow
-- Security Considerations
+
 
 
 ### Development Architecture  
