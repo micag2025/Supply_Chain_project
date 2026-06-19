@@ -8,7 +8,7 @@
 
 ---
 
-IMP : to be delete client from the fugure since there are only three roles: farmer . distributor . retailetr ? 
+IMP : ?? to be delete customer from the fugure since there are only three roles: farmer . distributor . retailetr ? 
 
 
 ## Tags 
