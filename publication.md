@@ -8,6 +8,9 @@
 
 ---
 
+IMP : to be delete client from the fugure since there are only three roles: farmer . distributor . retailetr ? 
+
+
 ## Tags 
 
 `Blockchain`, `Supply Chain Management`, `Solidity`, `Smart Contract`, `Sepolia`, `React`, `MetaMask`, `Ethereum`, `Decentralized Application (DApp)`, `Web3`, `ethers.js`
