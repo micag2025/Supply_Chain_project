@@ -70,30 +70,68 @@ The goal of this project was to develop a decentralized proof-of-concept that de
 The application consists of four major components:  
 
 ```bash  
+User
+  ↓
 React Frontend
-      ↓
+  ↓
 MetaMask Wallet
-      ↓
+  ↓
 ethers.js
-      ↓
-Ethereum Smart Contract  
+  ↓
+Supply Chain Smart Contract
+  ↓
+Ethereum Sepolia Testnet
 ```  
+OR
+The following Figure illustrates the **high-level architecture** of the proposed blockchain-based supply chain tracking system. Smart contracts are developed and deployed using Remix IDE to the Ethereum Sepolia Testnet. Users interact with the system through a React-based frontend, while MetaMask provides wallet authentication and transaction signing. Communication between the frontend and the blockchain is handled through ethers.js.
+
+```
+                    ┌─────────────────────────┐
+                    │       Remix IDE         │
+                    │  Solidity Smart Contract│
+                    └───────────┬─────────────┘
+                                │ Deploy
+                                ▼
+┌──────────────────────────────────────────────────┐
+│            Ethereum Sepolia Testnet             │
+│        Supply Chain Smart Contract              │
+└───────────────────────▲─────────────────────────┘
+                        │
+                        │ ethers.js
+                        │
+                ┌───────┴────────┐
+                │    MetaMask    │
+                │ Wallet Provider│
+                └───────▲────────┘
+                        │
+                        │ Account Connection
+                        │ Transaction Signing
+                        ▼
+┌──────────────────────────────────────────────────┐
+│                  React Frontend                  │
+│         Supply Chain Tracking Dashboard          │
+└──────────────────────────────────────────────────┘
+
+```  
+
+## Technology Stack
+
+| Layer              | Technology                           |
+| ------------------ | ------------------------------------ |
+| Frontend           | React                                |
+| Blockchain Network | Ethereum Sepolia Testnet             |
+| Smart Contracts    | Solidity 0.8.x                       |
+| Wallet Integration | MetaMask                             |
+| Web3 Library       | ethers.js                            |
+| Development Tools  | Remix IDE, Node.js                   |
+
+The system was implemented using **React** for the frontend interface, **Solidity** for smart contract development, **MetaMask** for wallet-based authentication, and **ethers.js** for blockchain interaction. Smart contracts were developed and deployed through **Remix IDE** to the **Ethereum Sepolia Testnet**.
+
 ---  
 
-## Technology Stack  
+## Reference Test Scenario
 
-| Component        | Technology       |
-| ---------------- | ---------------- |
-| Smart Contract   | Solidity         |
-| Blockchain       | Ethereum Sepolia |
-| Wallet           | MetaMask         |
-| Frontend         | React            |
-| Web3 Library     | ethers.js        |
-| Development Tool | Remix IDE        |
-
----  
-
-## Workflow  
+The application was validated using a **Coffee Supply Chain (Farm-to-Retail) workflow** involving three participants:
 
 ```bash  
 Farmer
@@ -103,7 +141,8 @@ Distributor
 Retailer
   ↓ Deliver
 ```  
-Every state transition is permanently stored on-chain.  
+Every state transition is permanently stored on-chain.    
+This scenario was used to verify batch creation, shipment tracking, delivery confirmation, role-based access control, blockchain persistence, and end-to-end traceability.
 
 ---  
 
@@ -459,7 +498,7 @@ The figure demonstrates an **access control scenario where a distributor attempt
 
 The `Users receive clear feedback when querying non-existing batches` workflow was validated.
 
- The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. ( ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.)  
+The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. ( ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.)  
 
 
 ![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 

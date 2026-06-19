@@ -65,16 +65,57 @@ The application consists of:
 4. Ethereum Sepolia Testnet  
 
 ``` bash  
-React Frontend
-      ↓
-MetaMask
-      ↓
-ethers.js
-      ↓
-Ethereum Smart Contract
-      ↓
-Sepolia Testnet  
+┌─────────────────────────────────────┐
+│            Remix IDE                │
+│     Solidity Smart Contract         │
+└───────────────┬─────────────────────┘
+                │ Deploy
+                ▼
+┌─────────────────────────────────────┐
+│       Ethereum Sepolia Testnet      │
+│      Supply Chain Smart Contract    │
+└───────────────┬─────────────────────┘
+                ▲
+                │ ethers.js
+                │ MetaMask
+┌───────────────┴─────────────────────┐
+│            React Frontend           │
+│      Supply Chain Dashboard         │
+└─────────────────────────────────────┘
 ```   
+OR
+
+The application consists of a React frontend connected to a Solidity smart contract deployed on the Ethereum Sepolia Testnet. MetaMask provides wallet authentication and transaction signing, while ethers.js enables communication between the frontend and the blockchain.  
+
+```
+
+                    ┌─────────────────────────┐
+                    │       Remix IDE         │
+                    │  Solidity Smart Contract│
+                    └───────────┬─────────────┘
+                                │ Deploy
+                                ▼
+┌──────────────────────────────────────────────────┐
+│            Ethereum Sepolia Testnet             │
+│        Supply Chain Smart Contract              │
+└───────────────────────▲─────────────────────────┘
+                        │
+                        │ ethers.js
+                        │
+                ┌───────┴────────┐
+                │    MetaMask    │
+                │ Wallet Provider│
+                └───────▲────────┘
+                        │
+                        │ Account Connection
+                        │ Transaction Signing
+                        ▼
+┌──────────────────────────────────────────────────┐
+│                  React Frontend                  │
+│         Supply Chain Tracking Dashboard          │
+└──────────────────────────────────────────────────┘
+
+```
 
 Detailed architecture documentation is available in `docs/architecture.md`
 
@@ -103,6 +144,28 @@ Detailed architecture documentation is available in `docs/architecture.md`
 * **Node.js** – Runtime environment used for frontend development and package management.
 
 ---
+
+## Reference Test Scenario
+
+The application was validated using a **Coffee Supply Chain (Farm-to-Retail) workflow** involving three participants:
+
+```  
+Farmer
+   ↓
+Distributor
+   ↓
+Retailer  
+```  
+This scenario demonstrates:  
+
+- Batch creation by the farmer  
+- Shipment processing by the distributor  
+- Delivery confirmation by the retailer  
+- Role-based access control  
+- Blockchain state persistence  
+- End-to-end product traceability  
+
+--- 
 
 ## Project Structure  
 
@@ -156,10 +219,10 @@ supply-chain-dapp/
 │   └── Screenshot_updated_table_Ship_Batch_Distributor.jpg
 │
 ├── docs/                            # Additional documentation
-│   └── metamask-setup.md            # MetaMask setup guide
-│   └── testing.md                   # Testing  
-│   └── architecture.md              # System Architecture
-│   └── deployement.md               # How to deploy the Supply Chain smart contract   
+│   └── metamask-setup.md            # MetaMask setup guide (Wallet configuration)
+│   └── testing.md                   # Test cases and validation
+│   └── architecture.md              # Detailed technical architecture
+│   └── deployment.md               # Deployment instructions  
 │
 └── LICENSE                          # Project license
 ```
@@ -688,21 +751,6 @@ Blockchain (State Persistence)
 ```
 ---
 
-
-
-```
-project/
-│
-├── contracts/
-│   └── SupplyChainBatch.sol
-│
-├── frontend/
-│   └── SupplyChainDashboard.jsx
-│
-├── package.json
-└── README.md
-```
-
 **Components:**
 - **Blockchain backend** - Solidity smart contract (`SupplyChainBatch.sol`)
 - **Frontend dashboard** - React UI with Web3 integration
@@ -989,16 +1037,4 @@ Step 6: Configure MetaMask & Connect
 
 ---  
 
-
-
-```  
-React UI Validation
-        ↓
-MetaMask
-        ↓
-ethers.js
-        ↓
-Smart Contract  
-```  
----  
 
