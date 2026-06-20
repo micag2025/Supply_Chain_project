@@ -63,7 +63,69 @@ The goal of this project was to develop a decentralized proof-of-concept that de
 - Blockchain persistence  (e.g. Real-time batch tracking from farmer → distributor → retailer)
 - End-to-end lifecycle tracking   (e,g,  Complete Coffee Supply Chain Tracking workflow test scenario)
 
----
+---  
+
+## Target Users & Use Cases  
+
+### Intended Users
+
+- **Supply Chain Managers & Logistics Companies**  
+  - Track products from manufacturing through retail distribution
+  - Monitor batch status in real-time across multiple locations
+  - Verify authenticity and prevent counterfeiting
+  - Ensure compliance with regulatory requirements
+
+- **Farmers & Agricultural Producers**  
+  - Initiate batches with product details (name, quantity, origin)  
+  - Authenticate their role via connected MetaMask wallet
+  - Create immutable records of production
+  - Build trust with distributors and retailers
+
+- **Distributors & Warehousing Providers**
+  - Receive batch notifications when created by farmers
+  - Update batch status to "Shipped" with transaction confirmation
+  - Maintain records of all handled batches
+  - Ensure secure handoffs between supply chain stages
+
+- **Retailers & End-Consumers**
+  - Verify product authenticity through batch lookup
+  - Access complete product journey from origin to store shelf
+  - Make informed purchasing decisions based on traceability
+  - Scan batch IDs to view history and certifications
+
+- **Regulatory & Compliance Officers**
+  - Audit supply chain transparency
+  - Verify adherence to product safety standards
+  - Generate reports on batch movements
+  - Investigate recalls or quality issues
+
+### Key Use Cases
+
+- **Use Case: Preventing Counterfeit Products**
+  - Batch creation records cannot be forged (blockchain immutability)
+  - Each transaction is cryptographically signed by authorized parties
+  - Complete audit trail shows all handlers and timestamps
+  - Retailers can verify authenticity before display
+
+- **Use Case: Rapid Recall Management**
+  - Pinpoint affected batches  
+  - Identify retailers who  received products
+  - Notify relevant parties through dashboard  
+  - Maintain liability records   
+
+- **Use Case: Supply Chain Optimization**
+  - Identify delivery bottlenecks  
+  - Analyze time between state transitions
+  - Optimize distributor and retailer networks
+  - Reduce spoilage for perishable goods  
+ 
+- **Use Case: Fair Trade & Ethical Sourcing**
+  - Verify certified farm origins
+  - Ensure transparent farmer compensation
+  - Build consumer confidence
+  - Enable premium pricing for certified batches  
+
+---  
 
 ## System Architecture
 
@@ -148,7 +210,9 @@ This scenario was used to verify batch creation, shipment tracking, delivery con
 
 ## Implementation  
 
-### Smart Contract  
+The system is composed of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the Ethereum Sepolia Testnet and a **React-based frontend**. Communication between the frontend and the blockchain is performed through ethers.js using the contract ABI, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.
+
+### Solidity Smart Contract  
 
 The smart contract manages:  
 
@@ -166,7 +230,7 @@ deliverBatch()
 getBatchReadable()  
 ```  
 
-### Frontend
+### React-based frontend
 
 The React dashboard provides:
 
@@ -187,68 +251,6 @@ Three predefined roles were implemented:
 | Retailer    | Deliver batches |
 
 Unauthorized operations are rejected by both the UI and the smart contract.  
-
----  
-
-## Target Users & Use Cases  (paragraph to be moved eventually before paragraph architecture)
-
-### Intended Users
-
-- **Supply Chain Managers & Logistics Companies**  
-  - Track products from manufacturing through retail distribution
-  - Monitor batch status in real-time across multiple locations
-  - Verify authenticity and prevent counterfeiting
-  - Ensure compliance with regulatory requirements
-
-- **Farmers & Agricultural Producers**  
-  - Initiate batches with product details (name, quantity, origin)  
-  - Authenticate their role via connected MetaMask wallet
-  - Create immutable records of production
-  - Build trust with distributors and retailers
-
-- **Distributors & Warehousing Providers**
-  - Receive batch notifications when created by farmers
-  - Update batch status to "Shipped" with transaction confirmation
-  - Maintain records of all handled batches
-  - Ensure secure handoffs between supply chain stages
-
-- **Retailers & End-Consumers**
-  - Verify product authenticity through batch lookup
-  - Access complete product journey from origin to store shelf
-  - Make informed purchasing decisions based on traceability
-  - Scan batch IDs to view history and certifications
-
-- **Regulatory & Compliance Officers**
-  - Audit supply chain transparency
-  - Verify adherence to product safety standards
-  - Generate reports on batch movements
-  - Investigate recalls or quality issues
-
-### Key Use Cases
-
-- **Use Case: Preventing Counterfeit Products**
-  - Batch creation records cannot be forged (blockchain immutability)
-  - Each transaction is cryptographically signed by authorized parties
-  - Complete audit trail shows all handlers and timestamps
-  - Retailers can verify authenticity before display
-
-- **Use Case: Rapid Recall Management**
-  - Pinpoint affected batches  
-  - Identify retailers who  received products
-  - Notify relevant parties through dashboard  
-  - Maintain liability records   
-
-- **Use Case: Supply Chain Optimization**
-  - Identify delivery bottlenecks  
-  - Analyze time between state transitions
-  - Optimize distributor and retailer networks
-  - Reduce spoilage for perishable goods  
- 
-- **Use Case: Fair Trade & Ethical Sourcing**
-  - Verify certified farm origins
-  - Ensure transparent farmer compensation
-  - Build consumer confidence
-  - Enable premium pricing for certified batches  
 
 ---  
 
