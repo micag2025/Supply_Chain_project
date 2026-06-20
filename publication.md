@@ -4,12 +4,9 @@
 
 ---  
 
-![Image_Cover](https://github.com/micag2025/Supply_Chain_project/blob/b226e8ab29790783edfece4c67a021871a6ff032/Image_Cover.png)
+![Cover_Image](https://github.com/micag2025/Supply_Chain_project/blob/9bb2c7d63d9098ad2a07b8514ecee59031d7f12a/Cover_Image.png)
 
----
-
-IMP : ?? to be delete customer from the fugure since there are only three roles: farmer . distributor . retailetr ? 
-
+---    
 
 ## Tags 
 
