@@ -85,7 +85,7 @@ The application consists of:
 ```   
 OR
 
-The application consists of a React frontend connected to a Solidity smart contract deployed on the Ethereum Sepolia Testnet. MetaMask provides wallet authentication and transaction signing, while ethers.js enables communication between the frontend and the blockchain.  
+The application consists of a **React frontend** connected to a **Solidity smart contract** deployed on the **Ethereum Sepolia Testnet**. **MetaMask** provides wallet authentication and transaction signing, while **ethers.js** enables communication between the frontend and the blockchain.  
 
 ```
 
