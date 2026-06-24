@@ -174,7 +174,7 @@ supply-chain-dapp/
 │
 ├── contracts/                  # Solidity smart contract project
 │   │
-│   ├── SupplyChainBatch.sol         # Main supply chain smart contract
+│   ├── SupplyChainBatch.sol    # Core Solidity smart contract 
 │   │
 │   ├── deployment/
 │   │   ├── contract-address.txt     # Deployed contract address (Sepolia)
@@ -227,6 +227,18 @@ supply-chain-dapp/
 └── LICENSE                          # Project license
 ```
 ---
+
+### Core Components
+
+- **SupplyChainBatch.sol** contains the business logic of the application, including batch creation, shipment tracking, delivery confirmation, lifecycle state management, and role-based access control.
+
+- **SupplyChain.json** provides the Application Binary Interface (ABI) generated from the smart contract compilation process and enables communication between the frontend and the deployed contract.
+
+- **contract.js** acts as the blockchain integration layer, using ethers.js to connect the React application to MetaMask and execute smart contract functions.
+
+- **App.js** implements the main user interface, allowing participants to connect their wallet, create batches, update batch status, and perform batch lookups.
+
+---  
 
 ## Getting Started  
 

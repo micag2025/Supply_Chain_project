@@ -144,8 +144,9 @@ Supply Chain Smart Contract
   ↓
 Ethereum Sepolia Testnet
 ```  
-OR
-The following Figure illustrates the **high-level architecture** of the proposed blockchain-based supply chain tracking system. Smart contracts are developed and deployed using Remix IDE to the Ethereum Sepolia Testnet. Users interact with the system through a React-based frontend, while MetaMask provides wallet authentication and transaction signing. Communication between the frontend and the blockchain is handled through ethers.js.
+OR  
+
+The following workflow illustrates the **high-level architecture** of the proposed blockchain-based supply chain tracking system. The system (application) consists of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend** that provides the user interface. Smart contracts are developed and deployed using **Remix IDE**, while **MetaMask** provides wallet authentication and transaction signing. Communication between the frontend and the blockchain is handled through **ethers.js** using the contract's Application Binary Interface (ABI), enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.
 
 ```
                     ┌─────────────────────────┐
@@ -210,7 +211,7 @@ This scenario was used to verify batch creation, shipment tracking, delivery con
 
 ## Implementation  
 
-The system is composed of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the Ethereum Sepolia Testnet and a **React-based frontend**. Communication between the frontend and the blockchain is performed through ethers.js using the contract ABI, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.
+The system is composed of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend**. Communication between the frontend and the blockchain is performed through **ethers.js** using the **contract ABI**, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.
 
 ### Solidity Smart Contract  
 
