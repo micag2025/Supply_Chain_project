@@ -174,14 +174,14 @@ supply-chain-dapp/
 │
 ├── contracts/                  # Solidity smart contract project
 │   │
-│   ├── SupplyChainBatch.sol    # Core Solidity smart contract 
+│   ├── SupplyChainBatch.sol    # Core Solidity smart contract implementing batch lifecycle management and role-based access control
 │   │
 │   ├── deployment/
 │   │   ├── contract-address.txt     # Deployed contract address (Sepolia)
 │   │   └── deployed-contract-info.md # Deployment details and metadata
 │   │
 │   └── abi/
-│       └── SupplyChain.json         # Contract ABI generated from compilation
+│       └── SupplyChain.json         # Smart contract ABI used by the React frontend to interact with the deployed contract
 │
 ├── frontend/                        # React Web3 frontend
 │   │
@@ -194,9 +194,9 @@ supply-chain-dapp/
 │   │   ├── abi/
 │   │   │   └── SupplyChain.json     # ABI used by React frontend
 │   │   │
-│   │   ├── contract.js              # Blockchain connection utilities
+│   │   ├── contract.js              # Blockchain connection utilities (Blockchain interaction layer (ethers.js); handles contract initialization, reads, and transactions)
 │   │   │
-│   │   ├── App.js                   # Main dashboard component
+│   │   ├── App.js                   # Main React dashboard containing wallet connection, batch management, and tracking functionality
 │   │   ├── App.css                  # Dashboard styling
 │   │   ├── index.js                 # React application entry point
 │   │   └── index.css                # Global CSS styles
