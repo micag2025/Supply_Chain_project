@@ -117,7 +117,7 @@ The application consists of a **React frontend** connected to a **Solidity smart
 
 ```
 
-Detailed architecture documentation is available in `docs/architecture.md`
+Detailed architecture documentation is available in [`docs/architecture.md`](https://github.com/micag2025/Supply_Chain_project/blob/9378aebc93fad4020641b314ae1d2d9973e59a4a/docs/architecture.md)
 
 ---  
 
