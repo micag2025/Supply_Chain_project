@@ -268,7 +268,7 @@ This installs all required packages: `ethers.js`,` react-dom`, and other depende
 
 ### MetaMask Configuration
 
-See: [`docs/metamask-setup.md`](https://github.com/micag2025/Supply_Chain_project/blob/c097d4a37411ba8634f40d4d6304cb9b8c0320ec/docs/metamask-setup.md)
+See: [`docs/metamask-setup.md`](https://github.com/micag2025/Supply_Chain_project/blob/833cff834420641da9f2bf814f4985a912f66592/docs/metamask-setup.md)
 
 ### Smart Contract Deployment
 
@@ -352,7 +352,7 @@ Three MetaMask accounts simulate the supply chain participants.
 
 > Get free Sepolia ETH from [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet)
 
-> See [`doc/MetaMask Setup Guide.md`](https://github.com/micag2025/Supply_Chain_project/blob/d97a5d881c09de6ddc8196ada4bce28e5219fa33/docs/metamask-setup.md) for more details.   
+> See [`doc/MetaMask Setup Guide.md`](https://github.com/micag2025/Supply_Chain_project/blob/833cff834420641da9f2bf814f4985a912f66592/docs/metamask-setup.md) for more details.   
 
 ### Test Coverage
 
