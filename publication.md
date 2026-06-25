@@ -16,15 +16,15 @@
 
 ## TL;DR  
 
-This project (publication) presents the design and implementation of a **blockchain-based supply chain tracking system** built on the Ethereum Sepolia testnet (enabling authorized users to create, track, and manage supply chain batches).
+This project (publication) presents the design and implementation of a **blockchain-based supply chain tracking system** built on the Ethereum Sepolia testnet enabling authorized users to create, track, and manage supply chain batches.
 
 The application combines a Solidity smart contract, MetaMask wallet integration, React frontend components, and ethers.js to create **a decentralized application (dApp)** capable of tracking products through a simplified supply chain lifecycle:  
 
 **Created → Shipped → Delivered**   
 
-A coffee supply chain scenario was used to validate role-based operations involving Farmers, Distributors, and Retailers. (Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations.?)
+A coffee supply chain scenario was used to validate role-based operations involving Farmers, Distributors, and Retailers. Testing was conducted on the Ethereum Sepolia Testnet to verify core functionality, access-control mechanisms, and complete supply chain lifecycle operations.
 
-The dApp is intended for both technical and non-technical stakeholders (users) involved in supply chain operations, including developers, supply chain managers, logistics providers, agricultural producers, retailers, and regulatory authorities.  
+The dApp is intended for both technical and non-technical users involved in supply chain operations, including developers, supply chain managers, logistics providers, agricultural producers, retailers, and regulatory authorities.  
 
 ---
 
@@ -59,9 +59,9 @@ Traditional supply chain systems face several challenges:
 The goal of this project was to develop a decentralized proof-of-concept that demonstrates:  
 
 - Product traceability  
-- Role-based permissions  (e.g. Role-based access control (Farmer, Distributor, Retailer))
-- Blockchain persistence  (e.g. Real-time batch tracking from farmer → distributor → retailer)
-- End-to-end lifecycle tracking   (e,g,  Complete Coffee Supply Chain Tracking workflow test scenario)
+- Role-based permissions  (e.g. Role-based access control: Farmer, Distributor, Retailer)
+- Blockchain persistence  (e.g. Real-time batch tracking from Farmer → Distributor → Retailer)
+- End-to-end lifecycle tracking   (e,g, Coffee Supply Chain (Farm-to-Retail) workflow test scenario)
 
 ---  
 
@@ -146,7 +146,7 @@ Ethereum Sepolia Testnet
 ```  
 OR  
 
-The following workflow illustrates the **high-level architecture** of the proposed blockchain-based supply chain tracking system. The system (application) consists of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend** that provides the user interface. Smart contracts are developed and deployed using **Remix IDE**, while **MetaMask** provides wallet authentication and transaction signing. Communication between the frontend and the blockchain is handled through **ethers.js** using the contract's Application Binary Interface (ABI), enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.
+The following workflow illustrates the **high-level architecture** of the proposed blockchain-based supply chain tracking system. The system (application) consists of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend** that provides the user interface. Smart contracts are developed and deployed using **Remix IDE**, while **MetaMask** provides wallet authentication and transaction signing. Communication between the frontend and the blockchain is handled through **ethers.js** using the contract's **Application Binary Interface (ABI)**, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.
 
 ```
                     ┌─────────────────────────┐
@@ -204,12 +204,13 @@ Distributor
 Retailer
   ↓ Deliver
 ```  
-Every state transition is permanently stored on-chain.    
+Every state transition is permanently stored on-chain.   
+
 This scenario was used to verify batch creation, shipment tracking, delivery confirmation, role-based access control, blockchain persistence, and end-to-end traceability.
 
 ---  
 
-## Implementation  
+## Implementation  (ALREADY MENTIONED)
 
 The system is composed of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend**. Communication between the frontend and the blockchain is performed through **ethers.js** using the **contract ABI**, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.
 
