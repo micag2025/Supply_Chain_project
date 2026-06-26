@@ -721,14 +721,14 @@ const receipt = await tx.wait();
 console.log("Confirmed in block:", receipt.blockNumber);
 ```
 
-### Security Best Practices
+### Security Best Practices  
 
-✓ **Never request private keys** - MetaMask handles all signing
-✓ **Validate addresses** - Check address format and known values
-✓ **Use reasonable gas limits** - Prevent user from overpaying
-✓ **Display all tx details** - Let user verify before signing
-✓ **Handle disconnection** - Gracefully handle network/wallet loss
-✓ **Network verification** - Always verify user is on Sepolia testnet
+✓ **Never request private keys** - MetaMask handles all signing  
+✓ **Validate addresses** - Check address format and known values  
+✓ **Use reasonable gas limits** - Prevent user from overpaying  
+✓ **Display all tx details** - Let user verify before signing   
+✓ **Handle disconnection** - Gracefully handle network/wallet loss  
+✓ **Network verification** - Always verify user is on Sepolia testnet  
 
 ---
 
@@ -1496,13 +1496,13 @@ event BatchCreated(
 
 ## Summary
 
-This architecture provides:
+This architecture provides:  
 
-✓ **Transparency**: All supply chain events recorded immutably on blockchain
-✓ **Security**: Role-based access control at smart contract level
-✓ **Usability**: Intuitive React frontend with MetaMask integration
-✓ **Decentralization**: No central point of failure
-✓ **Auditability**: Complete transaction history with event logs
-✓ **Scalability**: Ready for testnet and future mainnet deployment
+✓ **Transparency**: All supply chain events recorded immutably on blockchain  
+✓ **Security**: Role-based access control at smart contract level  
+✓ **Usability**: Intuitive React frontend with MetaMask integration  
+✓ **Decentralization**: No central point of failure  
+✓ **Auditability**: Complete transaction history with event logs  
+✓ **Scalability**: Ready for testnet and future mainnet deployment  
 
-The system successfully demonstrates a production-grade blockchain supply chain application suitable for real-world use cases with proper testing and auditing.
+The system successfully demonstrates a production-grade blockchain supply chain application suitable for real-world use cases with proper testing and auditing.  
