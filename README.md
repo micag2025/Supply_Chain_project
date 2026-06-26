@@ -227,6 +227,8 @@ supply-chain-dapp/
 
 ### Core Components  
 
+The diagram below illustrates how the core components interact from smart contract development to blockchain deployment and user interaction. 
+
 ```
 SupplyChainBatch.sol
         │
