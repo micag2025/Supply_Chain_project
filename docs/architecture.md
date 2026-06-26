@@ -1,23 +1,24 @@
 # System Architecture
 
-## Table of Contents
-
-1. [System Overview](#system-overview)
-2. [Architecture Diagram](#architecture-diagram)
-3. [Component Responsibilities](#component-responsibilities)
-4. [Smart Contract Design](#smart-contract-design)
-5. [Frontend Architecture](#frontend-architecture)
-6. [Wallet Integration](#wallet-integration)
-7. [Transaction Flow](#transaction-flow)
-8. [Deployment Architecture](#deployment-architecture)
-9. [Data Flow](#data-flow)
-10. [Security Considerations](#security-considerations)
-
 ---
 
-## System Overview
+#Overview
 
-The **Blockchain-Based Supply Chain Tracking System** is a decentralized application (dApp) that enables transparent, immutable tracking of products through a simplified supply chain lifecycle using Ethereum smart contracts and modern Web3 technologies.
+(The **Blockchain-Based Supply Chain Tracking System** is a decentralized application (dApp) that enables transparent, immutable tracking of products through a simplified supply chain lifecycle using Ethereum smart contracts and modern Web3 technologies. ) 
+
+The Supply Chain Tracking dApp is a blockchain-based application that enables authorized participants to create, track, ship, and deliver product batches through a decentralized workflow.
+
+The system combines a React frontend, MetaMask wallet authentication, ethers.js blockchain communication, and a Solidity smart contract deployed on the Ethereum Sepolia Testnet.
+
+The architecture is designed as a modular proof-of-concept that demonstrates transparent, immutable, and role-controlled supply chain management.
+
+
+
+
+
+
+
+
 
 ### Key Characteristics
 
