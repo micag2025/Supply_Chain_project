@@ -104,11 +104,11 @@ Responsibilities include:
 
 Current lifecycle:
 
-Created
-   ↓
-Shipped
-   ↓
-Delivered
+Created  
+   ↓  
+Shipped  
+   ↓  
+Delivered  
 
 Only authorized participants can perform valid state transitions.
 
@@ -165,28 +165,28 @@ Benefits include:
 
 The following sequence illustrates a typical batch creation workflow.
 
-User
-  │
-  ▼
-React Frontend
-  │
-  ▼
-Connect Wallet
-  │
-  ▼
-MetaMask
-  │
-  ▼
-Sign Transaction
-  │
-  ▼
-ethers.js
-  │
-  ▼
-Smart Contract
-  │
-  ▼
-Sepolia Testnet
+User  
+  │  
+  ▼  
+React Frontend  
+  │  
+  ▼  
+Connect Wallet  
+  │  
+  ▼  
+MetaMask  
+  │  
+  ▼  
+Sign Transaction  
+  │  
+  ▼  
+ethers.js  
+  │  
+  ▼  
+Smart Contract  
+  │  
+  ▼  
+Sepolia Testnet  
 
 The same process is used for shipment and delivery operations.  
 
