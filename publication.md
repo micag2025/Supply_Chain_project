@@ -455,9 +455,7 @@ The dashboard features a **wallet connection panel** showing the connected accou
 
 ### Scenario 1: Create and Read Batch (Farmer Only)  
 
-The `Farmer creates a batch and records product information on-chain` workflow was validated  
-
-The figure shows the **farmer batch creation process**, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. 
+The `Farmer creates a batch and records product information on-chain` workflow was validated.  The figure shows the **farmer batch creation process**, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. 
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)    
 
@@ -465,9 +463,7 @@ The figure shows the **farmer batch creation process**, including validated **ba
 
 ### Scenario 2: Ship Batch Action (Distributor only)  
 
-The `Distributor updates batch state from: Created → Shipped` workflow was validated  
-
-The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** (They also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions.(buttom disabled) )
+The `Distributor updates batch state from: Created → Shipped` workflow was validated.  The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** . The screenshots also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions (buttom disabled). 
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Ship_Batch_Distributor.jpg)
 
@@ -477,9 +473,7 @@ The figures show the **distributor shipment process**, including **viewing only 
 
 ### Scenario 3: Deliver Batch Action (Retailer only)  
 
-The `Retailer completes the lifecycle: Shipped → Delivered` workflow was validated.
-
-The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** (They also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors.(buttom disabled))
+The `Retailer completes the lifecycle: Shipped → Delivered` workflow was validated. The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** Theese screenshots also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors (buttom disabled).
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Deliver_Batch_Retailer.jpg)  
 
@@ -489,21 +483,15 @@ The figures show the **retailer delivery process**, including **viewing “Shipp
 
 ### Scenario 4: Invalid Wallet Role  (Unauthorized Access)
 
-The `Non-authorized roles cannot perform restricted actions`  workflow was validated.   
-
-The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. (The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.)  
+The `Non-authorized roles cannot perform restricted actions` workflow was validated.  The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. (The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.)  
  
-
 ![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
 
 ---  
 
 ### Scenario 5: Read Non-Existing Batch  (Invalid Batch Lookup)
 
-The `Users receive clear feedback when querying non-existing batches` workflow was validated.
-
-The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. ( ensures no invalid data is returned, and confirms that the read-only operation does not consume gas.)  
-
+The `Users receive clear feedback when querying non-existing batches` workflow was validated.  The figure shows the **behavior when a user searches for a non-existing batch**. It displays a  **clear “Batch not found” error message with user-friendly formatting**. Thus, it ensures no invalid data is returned, and confirms that the read-only operation does not consume gas. 
 
 ![Read Non-Existing Batch](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_read_non_existing_batch.jpg) 
 
@@ -547,9 +535,9 @@ Despite these limitations, the project successfully demonstrates the feasibility
 
 ## Future Work 
 
-The proposed architecture was intentionally designed as a modular proof-of-concept that can be extended to support more realistic supply chain requirements. (Contributors are encouraged to extend the system with the following enhancements.) Future work will focus on improving scalability, usability, traceability, and production readiness while preserving the system's decentralized design principles.
+The proposed architecture was intentionally designed as a modular proof-of-concept that can be extended to support more realistic supply chain requirements. Future work will focus on improving scalability, usability, traceability, and production readiness while preserving the system's decentralized design principles.
 
-Planned enhancements include:  
+Contributors are encouraged to extend the system with the following (planned) enhancements:  
 
 - **Layer-2 deployment (Polygon or Arbitrum)** and **multi-network support** to reduce transaction costs, improve scalability, and enable deployment across multiple blockchain environments.    
 - **Dynamic role management** to support administrator-controlled onboarding and management of supply chain participants without modifying the smart contract source code.    
@@ -663,332 +651,5 @@ This project was built with contributions and inspiration from .................
 
 
 
-FROM HERE CHECK WHETHER THIS HAS BEEN ENCLOSED IN THE DOCS
-- DEPLOYMENT. MD  
-- ARCHTITECTURE.MD  
-- METAMASK-SETUP. MD
-OR 
-README/ GITHUB 
-////////////////////////////////////////
-## Key Highlights  
 
-### Core Capabilities
-
-A **Decentralized Application (DApp)** has been successfully implemented with the following core capabilities:  
-
-| Feature | Capability |
-|---------|-----------|
-| **Connect Wallet** | Seamless MetaMask integration for authentication |
-| **Read Batch Data** | Query blockchain state with `getBatchReadable()` |
-| **Create Batch** | Initialize supply chain batches with `createBatch()` |
-| **Ship Batch** | Update status during distribution with `shipBatch()` |
-| **Deliver Batch** | Finalize delivery with `deliverBatch()` |
-| **Real-time UI** | Dashboard showing batch history and current state |
-
-### Development Architecture  
-  
-The development path follows **Remix → React Web3 frontend** architecture:
-
-- **Remix IDE** – Smart contract development, compilation, and rapid testing environment  
-- **React/Web3 frontend** – User-facing interface powered by ethers.js for blockchain interaction
-  
->_Note_ : Remix and React/Web3 frontend are complementary tools that work together seamlessly in the dApp development workflow.
-
-**Remix IDE- Smart Contract Laboratory**   
-- Write and test Solidity code
-- Compile and validate contracts
-- Deploy to testnets/mainnets
-- Extract ABI for frontend integration  
-
-**React Frontend – User Interface Layer**  
-- Building responsive, interactive UI
-- Responsive, interactive UI components
-- Forms and tables for batch management
-- MetaMask wallet integration
-- Real-time blockchain state display
-
-
-### How Remix IDE and React Connect  
-
-The integration follows a three-step model:
-
-1. **Remix deploys** the smart contract  to the Ethereum blockchain
-2. **Blockchain stores and executes** contract at a specific address
-3. **React frontend connects** by referencing:
-   - **ABI** (Application Binary Interface) – Function signatures and data types
-   - **Contract address** – The location of the deployed contract
-
-```
-Remix IDE (deploys contract)
-         ↓
-Ethereum / Sepolia Blockchain
-         ↑
-React Frontend (connects via ABI + address)
-```
----  
-
-## Complete Workflow  
-
-### Step 1: Smart Contract Deployment (Remix)
-
-The user can:
-- Write Solidity smart contract code
-- Compile the contract to check for syntax errors
-- Deploy to Sepolia testnet via Remix IDE
-- Copy the contract address from deployment receipt
-- Copy the ABI from Remix interface
-- Save both values for React integration
-
-### Step 2: React Frontend Setup  
-
-The user can:
-- Create new React application
-- Install ethers.js library: `npm install ethers`
-- Create configuration file with ABI and contract address
-- Implement MetaMask connection logic
-- Build UI components for supply chain actions
-- Connect form handlers to smart contract functions
-
-### Architecture Diagram
-
-```
-┌─────────────────────────────────────────┐
-│           Remix IDE                     │
-│      Solidity Smart Contract            │
-└────────────┬────────────────────────────┘
-             │
-             ▼ Deploy
-┌─────────────────────────────────────────┐
-│        Sepolia Testnet                  │
-│     Smart Contract (Address)            │
-└────────────┬────────────────────────────┘
-             ▲
-             │ ethers.js
-┌────────────┴────────────────────────────┐
-│         React App                       │
-│     Frontend UI / Dashboard             │
-└─────────────────────────────────────────┘
-```  
-
----
-
-## Core Capabilities  
-
-Testing demonstrates that the following features have been **verified and production-ready**:
-
-✓ **Contract Logic Validation**
-  - All smart contract functions execute correctly
-  - State transitions follow expected sequences
-  - Event emissions trigger as designed
-
-✓ **Role-Based Access Control**
-  - Farmer role: create batches only
-  - Distributor role: ship batches only 
-  - Retailer role: deliver batches only
-  - Unauthorized actions rejected by contract
-
-✓ **Dashboard Functionality**
-  - Real-time UI components rendering  
-  - Wallet connection and account detection
-  - Role determination based on connected address
-
-✓ **Batch History & Tracking**
-  - Automatic history table updates  
-  - All batches displayed with current state
-  - Historical state transitions visible  
-
-✓ **Blockchain Integration**
-  - Seamless blockchain-to-UI synchronization
-  - Transaction receipts validated
-  - State persistence verified on-chain
-
----
-
-
----
-
-## Architecture  
-
-### High-Level System Design  
-
-The system is a **decentralized supply chain platform** where authorized participants (users) interact with an immutable smart contract through **MetaMask wallet integration**. All state changes are recorded immutably on the blockchain.
-
-```
-                    ┌──────────────────────────┐
-                    │        USER (UI)         │
-                    │  React Dashboard (Web)   │
-                    │                          │
-                    │  - Connect Wallet        │
-                    │  - Create Batch          │
-                    │  - Read Batch            │
-                    │  - Ship / Deliver        │
-                    └─────────────┬────────────┘
-                                  │
-                                  │ ethers.js
-                                  ▼
-                    ┌──────────────────────────┐
-                    │       MetaMask Wallet    │
-                    │                          │
-                    │ - Account 1 (Farmer)     │
-                    │ - Account 2 (Distributor)│
-                    │ - Account 3 (Retailer)   │
-                    └─────────────┬────────────┘
-                                  │
-                                  │ JSON-RPC
-                                  ▼
-                    ┌──────────────────────────┐
-                    │     Ethereum Network     │
-                    │     (Sepolia Testnet)    │
-                    └─────────────┬────────────┘
-                                  │
-                                  │ Smart Contract Calls
-                                  ▼
-        ┌──────────────────────────────────────────────┐
-        │         SupplyChainBatch Smart Contract      │
-        │                                              │
-        │  - createBatch()                             │
-        │  - shipBatch()                               │
-        │  - deliverBatch()                            │
-        │  - getBatchReadable()                        │
-        │                                              │
-        │  Storage:                                    │
-        │  mapping(batchId → Batch struct)             │
-        └───────────────┬──────────────────────────────┘
-                        │
-                        ▼
-        ┌──────────────────────────────────────────────┐
-        │               Blockchain State               │
-        │                                              │
-        │  Batch #1 → Created → Shipped → Delivered    │
-        │  Batch #2 → Created → ...                    │
-        └──────────────────────────────────────────────┘
-```
-
----
-
-### Deployment & Runtime Workflows    
-
-The **Decentralized Application (DApp)** works with two distinct workflows:
-
-#### Deployment Workflow (One-Time Setup)
-
-This workflow is executed **once** during initial setup (~5-10 minutes):
-
-```
-Solidity smart contract code
-   ↓
-Remix IDE (compile & test)
-   ↓
-Deploy to Sepolia testnet
-   ↓
-Obtain contract address & ABI
-   ↓
-Configure React application
-   ↓
-Launch frontend on localhost
-```
-
-**Important Note:** Remix IDE stores only temporary UI session state. The smart contract is **permanently stored on Sepolia blockchain**.
-
-**Best Practice:** Create a `deployment.txt` file containing:
-```
-Network: Sepolia
-Contract Address: 0x....
-ABI: [...]
-```
-
-See [contract-address.txt](https://github.com/micag2025/Supply_Chain_project/blob/1f8fa8e832f894f4a14ac4ede755ec79347d2d93/contracts/deployment/contract-address.txt)
-
-
-
-### Runtime User Workflow (Repeated Usage)
-
-This workflow is executed **repeatedly** when users interact with dApp (~10-30 seconds per transaction):
-
-```
-User opens dApp in browser
-   ↓
-MetaMask wallet connection prompt
-   ↓
-User selects account (Farmer/Distributor/Retailer)
-   ↓
-React frontend detects role from account address
-   ↓
-Dashboard loads with role-specific options
-   ↓
-User performs action (create/ship/deliver batch)
-   ↓
-React UI calls ethers.js function
-   ↓
-ethers.js constructs transaction object
-   ↓
-MetaMask signs transaction with user's private key
-   ↓
-Signed transaction sent to Sepolia RPC endpoint
-   ↓
-Smart contract executes function logic
-   ↓
-Blockchain state updates
-  ↓
-Event emitted (BatchCreated/Shipped/Delivered)
-   ↓
-React listens to event and updates UI
-   ↓
-User sees confirmation message and updated table
-```
----  
-
-**Request-Response Flow:**
-
-| Step | Actor | Action |
-|------|-------|--------|
-| 1 | User | Enter Batch ID |
-| 2 | React | Send Request |
-| 3 | Smart Contract | Query Blockchain |
-| 4 | Blockchain | Return Data |
-| 5 | React | Display UI |
-
----
-
-## Design Principles  
-
-The SupplyChain dApp was designed around the following six core principles:
-
-### 1. Immutability & Transparency
-- All supply chain events recorded permanently on blockchain
-- No data can be altered or deleted once committed
-- Complete audit trail visible to all authorized parties
-- Cryptographic proof of each transaction
-
-### 2. Role-Based Access Control
-- Each participant has a specific, predefined role (Farmer, Distributor, Retailer)
-- Smart contract enforces that only authorized roles can perform specific actions
-- Prevents unauthorized state transitions
-- Decentralized verification without centralized authority
-
-### 3. User-Centric Interface
-- Intuitive dashboard showing only relevant actions for the user's role
-- Real-time synchronization with blockchain state
-- Clear visual indicators of batch status and history
-- Error messages guide users toward valid actions
-
-### 4. Blockchain Minimalism
-- Smart contract stores only essential data (batch ID, name, quantity, state, addresses)
-- Off-chain computation handled by React frontend
-- Reduces gas costs and network congestion
-- Separates concerns: contract = state, UI = presentation
-
-### 5. Testnet-First Development
-- Development and testing on Sepolia testnet (not mainnet)
-- Free testnet ETH via faucets eliminates deployment barriers
-- MetaMask integration enables one-click wallet switching
-- Allows rapid iteration without financial risk
-
-### 6. Web3 Best Practices
-- ethers.js library provides secure, modern blockchain interaction
-- MetaMask as industry-standard wallet provider
-- No private keys stored in React application
-- User controls all transaction signing via wallet
- 
----
 
