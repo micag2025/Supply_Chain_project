@@ -8,9 +8,9 @@
 
 This repository contains the full implementation of the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), (TO BE CHANGED WITH READY TENSOR LINK) published on the [Ready Tensor](https://www.readytensor.ai/) platform.
 
-Supply chains often rely on centralized systems that can limit transparency, complicate product traceability, and make it difficult to verify the authenticity and provenance of goods. (This project explores how **blockchain technology** can address these challenges by providing immutable transaction records, transparent audit trails, and decentralized trust.)
+Supply chains often rely on centralized systems that can limit transparency, complicate product traceability, and make it difficult to verify the authenticity and provenance of goods. This project explores how **blockchain technology** can address these challenges by providing immutable transaction records, transparent audit trails, and decentralized trust.
 
-The application implements a blockchain-based supply chain tracking system on the Ethereum Sepolia Testnet using Solidity smart contracts, MetaMask, ethers.js, and a React-based frontend. The **decentralized application (dApp)** enables authorized users to create, track, and manage product batches through a simplified supply chain lifecycle:
+The application implements a blockchain-based supply chain tracking system on the **Ethereum Sepolia Testnet** using **Solidity smart contracts**, **MetaMask**, **ethers.js**, and a **React-based frontend**. The **decentralized application (dApp)** enables authorized users to create, track, and manage product batches through a simplified supply chain lifecycle:
 
 **Created → Shipped → Delivered**
 
@@ -18,7 +18,7 @@ A coffee supply chain workflow was used to validate role-based operations involv
 
 ---  
 
-## Features
+## Features (Key Highlights)
 
 * **Blockchain-based batch tracking** – Records and tracks product batches across the supply chain using blockchain technology.
 * **Role-based access control** – Restricts actions based on predefined participant roles (Farmer, Distributor, Retailer).
@@ -28,30 +28,17 @@ A coffee supply chain workflow was used to validate role-based operations involv
 * **Smart contract state management** – Enforces valid state transitions throughout the supply chain workflow.
 * **Ethereum Sepolia deployment** – Deploys and tests the application on the Ethereum Sepolia Testnet.
 
----  
-
-## Key Highlights (EVENTUALLY TO BE EXCLUDED)
-
-* **Blockchain-based traceability** – Tracks product batches through an immutable blockchain record.
-* **Role-based access control** – Enforces permissions for Farmers, Distributors, and Retailers.
-* **MetaMask wallet integration** – Enables secure authentication and transaction signing.
-* **Event-driven user interface** – Smart contract events trigger frontend updates.
-* **Real-time batch visibility** – Users can immediately view blockchain state changes after transaction confirmation.
-* **State-managed workflow** – Enforces valid transitions from Created → Shipped → Delivered.
-* **Dual-layer validation** – Combines frontend checks with smart contract validation for improved reliability.
-* **Ethereum-based implementation** – Demonstrates decentralized supply chain tracking using Solidity, ethers.js, and the Sepolia Testnet.
-
 ---
 
 ## System Overview
 
-The system models a simplified (coffe) supply chain involving:
+The system models a simplified coffe supply chain involving:
 
 - **Farmers**  - Creates and originates batches
 - **Distributors** - Ships batches to retailers
 - **Retailers**  - Delivers batches to end customers
 
-Each participant performs role-specific actions that are permanently recorded on the (Ethereum) blockchain, (ensuring transparency and immutability.)
+Each participant performs role-specific actions that are permanently recorded on the (Ethereum) blockchain, ensuring transparency and immutability.
 
 ---  
 
@@ -232,9 +219,9 @@ supply-chain-dapp/
 
 - **SupplyChainBatch.sol** contains the business logic of the application, including batch creation, shipment tracking, delivery confirmation, lifecycle state management, and role-based access control.
 
-- **SupplyChain.json** provides the Application Binary Interface (ABI) generated from the smart contract compilation process and enables communication between the frontend and the deployed contract.
+- **SupplyChain.json** provides the `Application Binary Interface (ABI)` generated from the smart contract compilation process and enables communication between the frontend and the deployed contract.
 
-- **contract.js** acts as the blockchain integration layer, using ethers.js to connect the React application to MetaMask and execute smart contract functions.
+- **contract.js** acts as the blockchain integration layer, using `ethers.js` to connect the React application to MetaMask and execute smart contract functions.
 
 - **App.js** implements the main user interface, allowing participants to connect their wallet, create batches, update batch status, and perform batch lookups.
 
