@@ -2,15 +2,218 @@
 
 ---
 
-#Overview
+## Overview  
 
-(The **Blockchain-Based Supply Chain Tracking System** is a decentralized application (dApp) that enables transparent, immutable tracking of products through a simplified supply chain lifecycle using Ethereum smart contracts and modern Web3 technologies. ) 
+The **Supply Chain Tracking dApp** is a blockchain-based application that enables authorized users to create, track, ship, and deliver product batches through a decentralized workflow.
 
-The Supply Chain Tracking dApp is a blockchain-based application that enables authorized participants to create, track, ship, and deliver product batches through a decentralized workflow.
+The system combines a **React frontend**, **MetaMask wallet authentication**, **ethers.js** blockchain communication, and a **Solidity smart contract** deployed on the **Ethereum Sepolia Testnet**.
 
-The system combines a React frontend, MetaMask wallet authentication, ethers.js blockchain communication, and a Solidity smart contract deployed on the Ethereum Sepolia Testnet.
+The architecture is designed as a modular proof-of-concept that demonstrates transparent, immutable, and role-controlled supply chain management.  
 
-The architecture is designed as a modular proof-of-concept that demonstrates transparent, immutable, and role-controlled supply chain management.
+```
+
+                    ┌─────────────────────────┐
+                    │       Remix IDE         │
+                    │  Solidity Smart Contract│
+                    └───────────┬─────────────┘
+                                │ Deploy
+                                ▼
+┌──────────────────────────────────────────────────┐
+│            Ethereum Sepolia Testnet             │
+│        Supply Chain Smart Contract              │
+└───────────────────────▲─────────────────────────┘
+                        │
+                        │ ethers.js
+                        │
+                ┌───────┴────────┐
+                │    MetaMask    │
+                │ Wallet Provider│
+                └───────▲────────┘
+                        │
+                        │ Account Connection
+                        │ Transaction Signing
+                        ▼
+┌──────────────────────────────────────────────────┐
+│                  React Frontend                  │
+│         Supply Chain Tracking Dashboard          │
+└──────────────────────────────────────────────────┘
+
+```  
+
+---
+
+## Architecture Components
+
+### React Frontend  
+
+The frontend provides the user interface used to interact with the supply chain system.
+
+Responsibilities include:  
+
+- Wallet connection management  
+- Batch creation forms  (Farmer)
+- Batch shipment and delivery actions (Distributor and Retailer, respectively) 
+- Batch lookup and traceability  
+- Transaction status display (table) 
+- Role-based dashboard rendering      
+
+---
+
+### MetaMask Wallet
+
+MetaMask serves as the authentication and transaction-signing layer.  
+
+Responsibilities include:  
+
+- User identity verification  
+- Wallet account management  (Store private keys (client-side only), manage multiple accounts)
+- Transaction approval  (Sign transactions with user's private key before submission)
+- Blockchain network selection  (Allow user to select Sepolia testnet)
+- Gas fee confirmation  
+
+The application determines user permissions based on the connected wallet address. Thus, application cannot access private keys and further all transaction approval requires explicit user action  
+
+---  
+
+### ethers.js
+
+`ethers.js` acts as the communication layer between the React frontend and the deployed smart contract.
+
+Responsibilities include:  
+
+- Reading blockchain data  
+- Sending transactions  
+- Querying smart contract state  
+- Listening to contract events  
+- Handling transaction confirmations  
+- ABI Encoding (Encode function calls according to contract ABI)  
+
+---  
+
+### Smart Contract (Solidity)
+
+The Solidity smart contract contains the core business logic of the application.
+
+Responsibilities include:  
+
+- Batch lifecycle management  (Ensure only authorized roles can execute specific functions )
+- State transition validation  (Verify batch status transitions are legal (Created → Shipped → Delivered))  
+- Role-based access control  (Store and enforce role assignments for addresses)
+- Blockchain state persistence  
+- Event emission  (Emit events for off-chain listeners (frontend, indexers, analytics))
+
+Current lifecycle:
+
+Created
+   ↓
+Shipped
+   ↓
+Delivered
+
+Only authorized participants can perform valid state transitions.
+
+ADDITIONAL > **Core Data Structures**:  (example)
+```solidity
+struct Batch {
+    uint256 id;
+    address creator;
+    uint256 timestamp;
+    string productInfo;
+    BatState state;
+    address currentHandler;
+}
+
+enum BatchState { Created, Shipped, Delivered }
+```
+
+solidity code that has been used
+```
+// --- State Management / State Enum ---
+    // State of the batch: Created, Shipped, Delivered
+    enum State { Created, Shipped, Delivered }
+
+
+    // --- Batch Structure ---
+    struct Batch {
+        uint id;
+        string name;
+        uint quantity;
+        State state;
+        address farmer;
+        address distributor;
+        address retailer;
+        uint createdAt;
+        uint shippedAt;
+        uint deliveredAt;
+    }
+``` 
+
+### Ethereum Sepolia Testnet
+
+The Sepolia Testnet provides the blockchain infrastructure used for development and testing.
+
+Benefits include:
+
+- Real Ethereum environment  
+- Free test ETH  
+- Public transaction verification  
+- Safe testing without financial risk  
+
+---  
+
+## Component Interaction Flow  
+
+The following sequence illustrates a typical batch creation workflow.
+
+User
+  │
+  ▼
+React Frontend
+  │
+  ▼
+Connect Wallet
+  │
+  ▼
+MetaMask
+  │
+  ▼
+Sign Transaction
+  │
+  ▼
+ethers.js
+  │
+  ▼
+Smart Contract
+  │
+  ▼
+Sepolia Testnet
+
+The same process is used for shipment and delivery operations.  
+
+---  
+
+## Smart Contract Design  
+
+### Batch Structure
+
+Each batch contains:    
+
+| Field       | Description      |
+| ----------- | --------------- |
+| Batch ID     | Unique identifier  |
+| Product Name| Product description    |
+| Quantity   | Product quantity|
+| Current State   | Created, Shipped, Delivered|
+| Farmer Address  | Batch creator|
+| Distributor Address   | Shipment handler|
+| Retailer Address   | Delivery handler|
+
+
+
+
+
+
+---
 
 
 
@@ -20,6 +223,7 @@ The architecture is designed as a modular proof-of-concept that demonstrates tra
 
 
 
+//////////////////////////////////////////////////
 ### Key Characteristics
 
 - **Decentralized**: No central authority; all state transitions recorded on-chain
