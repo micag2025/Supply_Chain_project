@@ -32,13 +32,13 @@ A coffee supply chain workflow involving Farmers, Distributors, and Retailers wa
 
 ## System Overview
 
-The system models a simplified coffe supply chain involving:
+The application models a simplified coffee supply chain in which product batches are tracked through three authorized participants:
 
-- **Farmers**  - Create and originate product batches
-- **Distributors** - Ship batches to retailers
-- **Retailers**  - Deliver batches to end customers
+- **Farmer** – Creates and originates product batches.
+- **Distributor** – Ships batches through the supply chain.
+- **Retailer** – Confirms product delivery.
 
-Each participant performs role-specific actions that are permanently recorded on the (Ethereum) blockchain, ensuring transparency and immutability.
+Each operation is recorded on the Ethereum blockchain, providing transparent, immutable, and verifiable product traceability through the complete supply chain lifecycle. 
 
 ---  
 
@@ -144,22 +144,21 @@ Detailed architecture documentation is available in [`docs/architecture.md`](htt
 
 ## Reference Test Scenario
 
-The application was validated using a **Coffee Supply Chain (Farm-to-Retail) workflow** involving three participants:
+To validate the application, a representative coffee supply chain workflow was executed on the Ethereum Sepolia Testnet using three MetaMask accounts representing the Farmer, Distributor, and Retailer roles.
 
-```  
+```text
 Farmer
    ↓
 Distributor
    ↓
-Retailer  
+Retailer
 ```  
-This scenario demonstrates:  
 
-- Batch creation by the farmer  
-- Shipment processing by the distributor  
-- Delivery confirmation by the retailer  
-- Role-based access control  
-- Blockchain state persistence  
+The scenario verified:
+
+- Successful batch creation, shipment, and delivery  
+- Correct enforcement of role-based permissions  
+- Blockchain state persistence across transactions  
 - End-to-end product traceability  
 
 --- 
@@ -321,6 +320,7 @@ To create a production build, use npm run build.
 Open: http://localhost:3000
 
 ---  
+
 ## Usage  
 
 1. Connect MetaMask  
