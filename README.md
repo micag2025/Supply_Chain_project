@@ -12,9 +12,9 @@ Supply chains often rely on centralized systems that can limit transparency, com
 
 The application implements a blockchain-based supply chain tracking system on the **Ethereum Sepolia Testnet** using **Solidity smart contracts**, **MetaMask**, **ethers.js**, and a **React-based frontend**. The **decentralized application (dApp)** enables authorized users to create, track, and manage product batches through a simplified supply chain lifecycle:
 
-**Created → Shipped → Delivered**
+**Created → Shipped → Delivered**  
 
-A coffee supply chain workflow was used to validate role-based operations involving Farmers, Distributors, and Retailers, demonstrating product traceability, blockchain persistence, and end-to-end lifecycle tracking. The project serves as a proof-of-concept for how blockchain technology can improve transparency and accountability across supply chain operations.
+A coffee supply chain workflow involving Farmers, Distributors, and Retailers was used to validate role-based operations, blockchain persistence, and end-to-end product traceability. Although implemented as a proof of concept, the project demonstrates how blockchain technology can improve transparency, accountability, and trust across decentralized supply chain operations.
 
 ---  
 
@@ -34,9 +34,9 @@ A coffee supply chain workflow was used to validate role-based operations involv
 
 The system models a simplified coffe supply chain involving:
 
-- **Farmers**  - Creates and originates batches
-- **Distributors** - Ships batches to retailers
-- **Retailers**  - Delivers batches to end customers
+- **Farmers**  - Create and originate product batches
+- **Distributors** - Ship batches to retailers
+- **Retailers**  - Deliver batches to end customers
 
 Each participant performs role-specific actions that are permanently recorded on the (Ethereum) blockchain, ensuring transparency and immutability.
 
@@ -120,6 +120,16 @@ Detailed architecture documentation is available in [`docs/architecture.md`](htt
 | Development Tools  | Remix IDE, Node.js                   |
 | Test Scenario      | Coffee Supply Chain (Farm-to-Retail) |
 
+| Layer          | Technology         | Purpose                     |
+| -------------- | ------------------ | --------------------------- |
+| Frontend       | React              | User interface              |
+| Smart Contract | Solidity           | Business logic              |
+| Blockchain     | Ethereum Sepolia   | Decentralized storage       |
+| Wallet         | MetaMask           | Authentication              |
+| Web3           | ethers.js          | Smart contract interaction  |
+| Development    | Remix IDE, Node.js | Development and build tools |
+
+
 ### Key Technologies
 
 * **React** – Frontend framework used to build the decentralized application (dApp) user interface.
@@ -179,9 +189,9 @@ supply-chain-dapp/
 │   ├── src/
 │   │   │
 │   │   ├── abi/
-│   │   │   └── SupplyChain.json     # ABI used by React frontend
+│   │   │   └── SupplyChain.json     # Smart contract ABI
 │   │   │
-│   │   ├── contract.js              # Blockchain connection utilities (Blockchain interaction layer (ethers.js); handles contract initialization, reads, and transactions)
+│   │   ├── contract.js              # Blockchain interaction layer using ethers.js
 │   │   │
 │   │   ├── App.js                   # Main React dashboard containing wallet connection, batch management, and tracking functionality
 │   │   ├── App.css                  # Dashboard styling
@@ -215,7 +225,27 @@ supply-chain-dapp/
 ```
 ---
 
-### Core Components
+### Core Components  
+
+```
+SupplyChainBatch.sol
+        │
+        ▼ Compile
+SupplyChain.json (ABI)
+        │
+        ▼
+contract.js
+        │
+        ▼
+React Dashboard
+        │
+        ▼
+MetaMask
+        │
+        ▼
+Ethereum Sepolia
+```
+
 
 - **SupplyChainBatch.sol** contains the business logic of the application, including batch creation, shipment tracking, delivery confirmation, lifecycle state management, and role-based access control.
 
@@ -244,6 +274,7 @@ Ensure the following are installed:
 ```bash   
 git clone https://github.com/micag2025/Supply_Chain_project.git
 cd Supply_Chain_project
+cd frontend   TO BE CHECKED
 ```
 
 ### Install Dependencies  
@@ -288,38 +319,23 @@ To create a production build, use npm run build.
 Open: http://localhost:3000
 
 ---  
-
-## Usage Guide
-
-1. Connect MetaMask
-2. Create a batch (Farmer)
-3. Ship batch (Distributor)
-4. Deliver batch (Retailer)
-5. Query batch information  
-
----  
- 
 ## Usage  
 
-### Farmer  
-- Create batches
-- View batch information  
-
-### Distributor    
-- Ship batches  
-
-### Retailer  
-- Deliver batches    
-
-### Batch Lookup  
-
-Any user can:  
-- Search by batch ID  
-- View lifecycle status  
-- Verify product history  
-
----
-
+1. Connect MetaMask  
+2. Farmer    
+   - Create batches (a batch)    
+   - View batch information     
+3. Distributor    
+   - Ship batches
+4. Retailer
+   - Deliver batches 
+5. Batch Lookup   
+  - Search by batch ID    
+  - View lifecycle status    
+  - Verify product history    
+  
+---  
+ 
 ## Testing 
 
 Testing was performed on the Ethereum Sepolia Testnet.
@@ -339,7 +355,7 @@ Three MetaMask accounts simulate the supply chain participants.
 
 > Get free Sepolia ETH from [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet)
 
-> See [`doc/MetaMask Setup Guide.md`](https://github.com/micag2025/Supply_Chain_project/blob/833cff834420641da9f2bf814f4985a912f66592/docs/metamask-setup.md) for more details.   
+> See [`docs/MetaMask Setup Guide.md`](https://github.com/micag2025/Supply_Chain_project/blob/833cff834420641da9f2bf814f4985a912f66592/docs/metamask-setup.md) for more details.   
 
 ### Test Coverage
 
@@ -377,7 +393,7 @@ Detailed test cases and results are available in  [`docs/testing.md`](https://gi
 
 \* Unauthorized access prevention was validated by attempting restricted actions from accounts assigned to incorrect roles.  
 
-### Coverage Summary
+### Test Coverage Summary  
 
 | Category | Status |
 |----------|----------|
@@ -408,7 +424,7 @@ Detailed test results are available in [`docs/testing.md`](https://github.com/mi
 
 ---
 
-## UI Walkthrough (& Examples Usage UI)  
+## User Interface (UI) Walkthrough
 
 ### Application Interface Overview
 
@@ -422,7 +438,9 @@ Detailed test results are available in [`docs/testing.md`](https://github.com/mi
 - **Batch History Table** - Complete batch list with status and action buttons
 - **Status Indicators** - Real-time batch state display
 
- ---
+ ---  
+ 
+The following scenarios demonstrate the primary application workflows and illustrate how different supply chain participants interact with the blockchain through the React-based user interface.  
 
 ### Scenario 1: Create and Read Batch (Farmer Only)
 
@@ -481,7 +499,7 @@ Detailed test results are available in [`docs/testing.md`](https://github.com/mi
 ✓ State transitions correctly       
 ✓ Distributor address recorded on chain  
 ✓ Table updates in real-time      
-✓ Farmer account cannot ship (buttom disabled)      
+✓ Farmer account cannot ship (button disabled)      
 
 ---  
 
@@ -507,7 +525,7 @@ Detailed test results are available in [`docs/testing.md`](https://github.com/mi
 ✓ State transitions correctly from "Shipped" to "Delivered"     
 ✓ Retailer address recorded on-chain    
 ✓ Table reflects state change instantly    
-✓ Distributor account cannot deliver (buttom disabled)    
+✓ Distributor account cannot deliver (button disabled)    
 
 ---  
 
@@ -557,8 +575,6 @@ Detailed test results are available in [`docs/testing.md`](https://github.com/mi
 
 This project successfully demonstrates the core concepts of blockchain-based supply chain tracking. However, as a proof-of-concept implementation, the current version has the following limitations and potential improvement areas:
 
-### Current Limitations
-
 | Limitation | Impact | Suggested Enhancement |
 |------------|---------|----------------------|
 | **Fixed wallet-role mapping** | Roles are hardcoded to specific wallet addresses, limiting flexibility. | Implement dynamic role assignment and participant management. |
@@ -568,7 +584,9 @@ This project successfully demonstrates the core concepts of blockchain-based sup
 | **No analytics dashboard** | Users cannot analyze operational metrics or supply chain performance. | Add reporting and analytics capabilities. |
 
 
-These enhancements would evolve the project from a proof-of-concept decentralized application into a production-grade blockchain supply chain management platform.
+These enhancements would evolve the project from a proof-of-concept decentralized application into a production-grade blockchain supply chain management platform.  
+
+These limitations reflect the educational and proof-of-concept nature of the project and provide a clear roadmap for future enhancements.
 
 Feel free to suggest features by opening an issue or starting a discussion! For bug reports or feature requests, 
  [open an issue](https://github.com/micag2025/Supply_Chain_project/issues).  
