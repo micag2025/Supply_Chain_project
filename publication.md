@@ -61,7 +61,7 @@ The goal of this project was to develop a decentralized proof-of-concept that de
 - Product traceability  
 - Role-based permissions  (e.g. Role-based access control: Farmer, Distributor, Retailer)
 - Blockchain persistence  (e.g. Real-time batch tracking from Farmer → Distributor → Retailer)
-- End-to-end lifecycle tracking   (e,g, Coffee Supply Chain (Farm-to-Retail) workflow test scenario)
+- End-to-end lifecycle tracking   (e.g. Coffee Supply Chain (Farm-to-Retail) workflow test scenario)
 
 ---  
 
@@ -109,7 +109,7 @@ The goal of this project was to develop a decentralized proof-of-concept that de
 
 - **Use Case: Rapid Recall Management**
   - Pinpoint affected batches  
-  - Identify retailers who  received products
+  - Identify retailers who received products
   - Notify relevant parties through dashboard  
   - Maintain liability records   
 
@@ -127,26 +127,11 @@ The goal of this project was to develop a decentralized proof-of-concept that de
 
 ---  
 
-## System Architecture
+## System Architecture  
 
-The application consists of four major components:  
+The following workflow (diagram) illustrates the **high-level architecture** of the proposed blockchain-based supply chain tracking system.   
 
-```bash  
-User
-  ↓
-React Frontend
-  ↓
-MetaMask Wallet
-  ↓
-ethers.js
-  ↓
-Supply Chain Smart Contract
-  ↓
-Ethereum Sepolia Testnet
-```  
-OR  
-
-The following workflow illustrates the **high-level architecture** of the proposed blockchain-based supply chain tracking system. The system (application) consists of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend** that provides the user interface. Smart contracts are developed and deployed using **Remix IDE**, while **MetaMask** provides wallet authentication and transaction signing. Communication between the frontend and the blockchain is handled through **ethers.js** using the contract's **Application Binary Interface (ABI)**, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.
+The system (application) consists of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend** that provides the user interface. Smart contracts are developed and deployed using **Remix IDE**, while **MetaMask** provides wallet authentication and transaction signing. Communication between the frontend and the blockchain is handled through **ethers.js** using the contract's **Application Binary Interface (ABI)**, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.  
 
 ```
                     ┌─────────────────────────┐
@@ -188,6 +173,17 @@ The following workflow illustrates the **high-level architecture** of the propos
 | Web3 Library       | ethers.js                            |
 | Development Tools  | Remix IDE, Node.js                   |
 
+
+| Layer          | Technology       | Purpose                    |
+| -------------- | ---------------- | -------------------------- |
+| Frontend       | React            | User interface             |
+| Smart Contract | Solidity         | Business logic             |
+| Blockchain     | Ethereum Sepolia | Decentralized storage      |
+| Wallet         | MetaMask         | Authentication             |
+| Web3           | ethers.js        | Contract interaction       |
+| Development    | Remix IDE        | Smart contract development |
+
+
 The system was implemented using **React** for the frontend interface, **Solidity** for smart contract development, **MetaMask** for wallet-based authentication, and **ethers.js** for blockchain interaction. Smart contracts were developed and deployed through **Remix IDE** to the **Ethereum Sepolia Testnet**.
 
 ---  
@@ -210,11 +206,13 @@ This scenario was used to verify batch creation, shipment tracking, delivery con
 
 ---  
 
-## Implementation  (ALREADY MENTIONED)
+## Implementation
 
-The system is composed of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend**. Communication between the frontend and the blockchain is performed through **ethers.js** using the **contract ABI**, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.
+The implementation consists of four principal components.  
 
 ### Solidity Smart Contract  
+
+The core business logic is implemented in the `SupplyChainBatch.sol` smart contract, which manages product batches, enforces role-based access control, validates lifecycle state transitions, and stores batch information on the Ethereum blockchain.
 
 The smart contract manages:  
 
@@ -232,7 +230,9 @@ deliverBatch()
 getBatchReadable()  
 ```  
 
-### React-based frontend
+### React-based frontend  
+
+The React-based frontend provides a user-friendly dashboard that allows participants to connect their MetaMask wallet, create product batches, update shipment status, deliver products, and retrieve batch information from the blockchain.
 
 The React dashboard provides:
 
@@ -242,7 +242,11 @@ The React dashboard provides:
 - Batch lookup
 - Batch history visualization  
 
-### Access Control
+### Wallet Authentication  
+
+MetaMask provides decentralized authentication by linking application permissions to Ethereum wallet addresses. Users must approve all state-changing transactions through MetaMask before they are submitted to the blockchain, ensuring that only authorized participants can perform supply chain operations.  
+
+### Role-Based Access Control
 
 Three predefined roles were implemented:
 
@@ -252,7 +256,7 @@ Three predefined roles were implemented:
 | Distributor | Ship batches    |
 | Retailer    | Deliver batches |
 
-Unauthorized operations are rejected by both the UI and the smart contract.  
+Both the frontend and the smart contract validate user roles to prevent unauthorized operations and maintain data integrity throughout the supply chain lifecycle.
 
 ---  
 
@@ -328,7 +332,7 @@ Note that the development build is not optimized.
 To create a production build, use npm run build.
 ```
 
-### Connet Wallet
+### Connect Wallet  
 
 1. Navigate to `http://localhost:3000` (opens automatically)
 2. MetaMask prompts for wallet connection  
@@ -378,6 +382,8 @@ The dashboard includes the following features:
 ---  
 
 ## Testing & Evaluation
+
+The testing strategy combined functional verification, security validation, and end-to-end workflow testing to ensure both technical correctness and realistic supply chain execution.
 
 Testing (the full workflow) was performed on the Ethereum Sepolia Testnet using MetaMask accounts representing each supply chain participant.
 
@@ -443,7 +449,7 @@ These results demonstrate that the proposed blockchain-based supply chain system
 
 ---
 
-## Examples Usage UI  (UI Examples)
+## Examples Usage UI  (Examples User Interface)  
 
 ### (UI Web DApp) Main Interface  
 
@@ -463,7 +469,7 @@ The `Farmer creates a batch and records product information on-chain` workflow w
 
 ### Scenario 2: Ship Batch Action (Distributor only)  
 
-The `Distributor updates batch state from: Created → Shipped` workflow was validated.  The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** . The screenshots also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions (buttom disabled). 
+The `Distributor updates batch state from: Created → Shipped` workflow was validated.  The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** . The screenshots also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions (button disabled). 
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Ship_Batch_Distributor.jpg)
 
@@ -473,7 +479,7 @@ The `Distributor updates batch state from: Created → Shipped` workflow was val
 
 ### Scenario 3: Deliver Batch Action (Retailer only)  
 
-The `Retailer completes the lifecycle: Shipped → Delivered` workflow was validated. The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** Theese screenshots also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors (buttom disabled).
+The `Retailer completes the lifecycle: Shipped → Delivered` workflow was validated. The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** These screenshots also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors (button disabled).
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Deliver_Batch_Retailer.jpg)  
 
@@ -497,7 +503,7 @@ The `Users receive clear feedback when querying non-existing batches` workflow w
 
 ---  
 
-## Challenges Encountered    
+## Challenges Encountered    Implementation Challenges
 
 ### Wallet Synchronization  
 
@@ -525,7 +531,7 @@ The proposed blockchain-based supply chain tracking system successfully demonstr
 - **Limited supply chain states**  – The current implementation focuses on the core workflow (`Created → Shipped → Delivered`). Additional states such as production, quality inspection, warehousing, customs clearance, and returns are not modeled, limiting the realism and granularity of supply chain tracking.    
 - **No analytics dashboard** – The system provides operational tracking functionality but does not include analytics or reporting capabilities for monitoring supply chain performance, trends, or operational metrics.  
 - **No QR-code integration** – Products cannot currently be identified or tracked through QR-code scanning, which limits ease of use in practical supply chain environments.  
-- **No inventory managemnt** – The application focuses on batch traceability and does not support inventory tracking, stock management, or warehouse operations.  
+- **No inventory management** – The application focuses on batch traceability and does not support inventory tracking, stock management, or warehouse operations.  
 - **Prototype-oriented development environment** – Smart contract development and deployment were performed using Remix IDE, which is well suited for rapid prototyping and educational projects. However, production environments typically rely on more advanced frameworks such as Hardhat or Foundry that provide automated testing, deployment pipelines, contract verification, and improved development workflows.  
 - **Legacy frontend tooling (CRA)** – The frontend was developed using Create React App (CRA), which provides a stable development environment but offers slower build times and less optimized performance compared with modern alternatives such as Vite.      
 
@@ -556,9 +562,7 @@ Additional technical details, implementation considerations, and the complete de
 
 ## Conclusion
 
-This project demonstrates how blockchain technology can improve supply chain transparency through immutable product tracking and decentralized verification.
-
-The implementation successfully validates core supply chain operations while providing a foundation for future enhancements such as analytics, decentralized storage, and multi-chain deployment.
+This project demonstrates the feasibility of using blockchain technology to implement a decentralized supply chain tracking system that combines smart contracts, wallet-based authentication, and a React frontend. The proposed apporach successfully validates product traceability, role-based access control, and immutable lifecycle tracking on the Ethereum Sepolia Testnet. Although implemented as a proof of concept, the modular architecture provides a solid foundation for future enhancements, including advanced analytics, decentralized storage, multi-network deployment, and real-world supply chain integration.
 
 ---
 
@@ -581,13 +585,10 @@ git checkout -b feat/your-feature
 
 Official documentation and resources:  
 
-### Foundational Blockchain  
+### Academic References
 
 - [Nakamoto (Bitcoin White Paper)](https://bitcoin.org/bitcoin.pdf)  
-- [Buterin (Ethereum White Paper)](https://ethereum.org/content/whitepaper/whitepaper-pdf/Ethereum_Whitepaper_-_Buterin_2014.pdf)  
-
-### Supply Chain Blockchain  
-
+- [Buterin (Ethereum White Paper)](https://ethereum.org/content/whitepaper/whitepaper-pdf/Ethereum_Whitepaper_-_Buterin_2014.pdf)    
 - [A Systematic Literature Review of Blockchain-Based Applications: Current Status, Classification and Open Issues](https://www.sciencedirect.com/science/article/pii/S0736585318306324)
 
 ### Blockchain & Web3
