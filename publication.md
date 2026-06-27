@@ -462,7 +462,7 @@ The `Farmer creates a batch and records product information on-chain` workflow w
 
 ### Scenario 2: Ship Batch Action (Distributor only)  
 
-The `Distributor updates batch state from: Created → Shipped` workflow was validated.  The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped.”** . The screenshots also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions (button disabled). 
+The `Distributor updates batch state from: Created → Shipped` workflow was validated.  The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped”** . The screenshots also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions (button disabled). 
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Ship_Batch_Distributor.jpg)
 
@@ -482,7 +482,7 @@ The `Retailer completes the lifecycle: Shipped → Delivered` workflow was valid
 
 ### Scenario 4: Invalid Wallet Role  (Unauthorized Access)
 
-The `Non-authorized roles cannot perform restricted actions` workflow was validated.  The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. (The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.)  
+The `Non-authorized roles cannot perform restricted actions` workflow was validated. The figure demonstrates an **access control scenario where a distributor attempts to create a batch**. It shows that the **“Create Batch” action is unavailable for non-farmer roles**, preventing unauthorized actions. The interface clearly indicates role restrictions, and no gas is consumed since the action is blocked at the UI level.  
  
 ![Invalid Wallet Role](https://github.com/micag2025/Supply_Chain_project/blob/01155a7bb9d825bc91c683d5670fc76d14fa4bff/Screenshots_UI/Screenshot_invalid_wallet_role.jpeg)  
 
@@ -496,7 +496,7 @@ The `Users receive clear feedback when querying non-existing batches` workflow w
 
 ---  
 
-## Challenges Encountered    Implementation Challenges
+## Challenges Encountered    (Implementation Challenges)
 
 ### Wallet Synchronization  
 
@@ -629,21 +629,3 @@ michelaagostini73@gmail.com
 This project was built with contributions and inspiration from ...........................who have reviewed, tested, and improved this project. Special thanks to all developers and supply chain professionals who provided feedback during development and testing phases.
 
 --- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
