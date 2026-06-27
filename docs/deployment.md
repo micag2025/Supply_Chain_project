@@ -101,7 +101,6 @@ REACT_APP_CONTRACT_ADDRESS=<DEPLOYED_CONTRACT_ADDRESS>
 
 REACT_APP_NETWORK_NAME=Sepolia
 ```
-
 ---
 
 ## Step 4: Add ABI
@@ -172,13 +171,7 @@ All checklist items should be completed before proceeding to testing.
 
 ---
 
-## Recommended Production Improvements
+## Next Steps
 
-For future production deployments:
+Once the application has been successfully deployed and verified, you can continue with the following documentation [Project README](../README.md)
 
-* Migrate to Hardhat
-* Automate deployments
-* Add CI/CD pipelines
-* Add contract verification
-* Add security audits
-* Add environment separation
