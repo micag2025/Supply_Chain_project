@@ -164,24 +164,15 @@ The system (application) consists of a **Solidity smart contract** (`SupplyChain
 
 ## Technology Stack
 
-| Layer              | Technology                           |
-| ------------------ | ------------------------------------ |
-| Frontend           | React                                |
-| Blockchain Network | Ethereum Sepolia Testnet             |
-| Smart Contracts    | Solidity 0.8.x                       |
-| Wallet Integration | MetaMask                             |
-| Web3 Library       | ethers.js                            |
-| Development Tools  | Remix IDE, Node.js                   |
-
-
-| Layer          | Technology       | Purpose                    |
-| -------------- | ---------------- | -------------------------- |
-| Frontend       | React            | User interface             |
-| Smart Contract | Solidity         | Business logic             |
-| Blockchain     | Ethereum Sepolia | Decentralized storage      |
-| Wallet         | MetaMask         | Authentication             |
-| Web3           | ethers.js        | Contract interaction       |
-| Development    | Remix IDE        | Smart contract development |
+| Layer                       | Technology               | Purpose                                                                                  |
+| --------------------------- | ------------------------ | ---------------------------------------------------------------------------------------- |
+| **Frontend**                | React                    | Builds the decentralized application (dApp) user interface.                              |
+| **Smart Contract**          | Solidity 0.8.x           | Implements batch management, lifecycle state transitions, and role-based access control. |
+| **Blockchain Network**      | Ethereum Sepolia Testnet | Executes smart contracts and stores immutable transaction records.                       |
+| **Wallet Integration**      | MetaMask                 | Authenticates users and signs blockchain transactions.                                   |
+| **Web3 Library**            | ethers.js                | Enables communication between the frontend and the deployed smart contract via the ABI.  |
+| **Development Environment** | Remix IDE                | Develops, compiles, tests, and deploys smart contracts.                                  |
+| **Runtime Environment**     | Node.js                  | Manages project dependencies and runs the React development environment.                 |
 
 
 The system was implemented using **React** for the frontend interface, **Solidity** for smart contract development, **MetaMask** for wallet-based authentication, and **ethers.js** for blockchain interaction. Smart contracts were developed and deployed through **Remix IDE** to the **Ethereum Sepolia Testnet**.
@@ -449,7 +440,7 @@ These results demonstrate that the proposed blockchain-based supply chain system
 
 ---
 
-## Examples Usage UI  (Examples User Interface)  
+## Examples User Interface (UI)  
 
 ### (UI Web DApp) Main Interface  
 
@@ -458,6 +449,8 @@ The dashboard features a **wallet connection panel** showing the connected accou
  ![Interface UI](https://github.com/micag2025/Supply_Chain_project/blob/c5307e39eb7c51ea98d939242a2308f948819f76/Screenshots_UI/Screenshot_UI_interface.jpeg)  
 
  ---
+
+The following scenarios demonstrate the primary application workflows and illustrate how different supply chain participants interact with the blockchain through the React-based user interface.  
 
 ### Scenario 1: Create and Read Batch (Farmer Only)  
 

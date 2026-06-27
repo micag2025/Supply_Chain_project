@@ -120,15 +120,6 @@ Detailed architecture documentation is available in [`docs/architecture.md`](htt
 | Development Tools  | Remix IDE, Node.js                   |
 | Test Scenario      | Coffee Supply Chain (Farm-to-Retail) |
 
-| Layer          | Technology         | Purpose                     |
-| -------------- | ------------------ | --------------------------- |
-| Frontend       | React              | User interface              |
-| Smart Contract | Solidity           | Business logic              |
-| Blockchain     | Ethereum Sepolia   | Decentralized storage       |
-| Wallet         | MetaMask           | Authentication              |
-| Web3           | ethers.js          | Smart contract interaction  |
-| Development    | Remix IDE, Node.js | Development and build tools |
-
 
 ### Key Technologies
 
