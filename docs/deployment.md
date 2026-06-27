@@ -173,5 +173,6 @@ All checklist items should be completed before proceeding to testing.
 
 ## Next Steps
 
-Once the application has been successfully deployed and verified, you can continue with the following documentation [Project README](../README.md)
+Once the application has been successfully deployed and verified, you can continue with the following documentation [Project README](https://github.com/micag2025/Supply_Chain_project/blob/fa666fa9055789a4a4e7277988008d4d4f1e399f/README.md).   
+For planned enhancements and long-term improvements, refer to the **Roadmap** section in the project README and the **Future Work** section of the accompanying publication.
 
