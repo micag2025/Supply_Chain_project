@@ -278,7 +278,7 @@ This installs all required packages: `ethers.js`,` react-dom`, and other depende
 
 ### MetaMask Configuration
 
-See: [`docs/metamask-setup.md`](https://github.com/micag2025/Supply_Chain_project/blob/833cff834420641da9f2bf814f4985a912f66592/docs/metamask-setup.md)
+Detailed instructions how to configure MetaMask, connecting to the Ethereum Sepolia Testnet can be found in [`docs/metamask-setup.md`](https://github.com/micag2025/Supply_Chain_project/blob/833cff834420641da9f2bf814f4985a912f66592/docs/metamask-setup.md)
 
 ### Smart Contract Deployment
 
