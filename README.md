@@ -18,7 +18,7 @@ A coffee supply chain workflow involving Farmers, Distributors, and Retailers wa
 
 ---  
 
-## Features (Key Highlights)
+## Key Highlights
 
 * **Blockchain-based batch tracking** – Records and tracks product batches across the supply chain using blockchain technology.
 * **Role-based access control** – Restricts actions based on predefined participant roles (Farmer, Distributor, Retailer).
@@ -161,7 +161,7 @@ supply-chain-dapp/
 │
 ├── contracts/                  # Solidity smart contract project
 │   │
-│   ├── SupplyChainBatch.sol    # Core Solidity smart contract implementing batch lifecycle management and role-based access control
+│   ├── SupplyChainBatch.sol    # Core Solidity smart contract implementing batch lifecycle and role-based access control
 │   │
 │   ├── deployment/
 │   │   ├── contract-address.txt     # Deployed contract address (Sepolia)
@@ -183,7 +183,7 @@ supply-chain-dapp/
 │   │   │
 │   │   ├── contract.js              # Blockchain interaction layer using ethers.js
 │   │   │
-│   │   ├── App.js                   # Main React dashboard containing wallet connection, batch management, and tracking functionality
+│   │   ├── App.js                   # React dashboard containing wallet connection, batch management, and tracking functionality
 │   │   ├── App.css                  # Dashboard styling
 │   │   ├── index.js                 # React application entry point
 │   │   └── index.css                # Global CSS styles
@@ -209,7 +209,7 @@ supply-chain-dapp/
 │   └── metamask-setup.md            # MetaMask setup guide (Wallet configuration)
 │   └── testing.md                   # Test cases and validation
 │   └── architecture.md              # Detailed technical architecture
-│   └── deployment.md               # Deployment instructions  
+│   └── deployment.md                # Deployment instructions  
 │
 └── LICENSE                          # Project license
 ```
@@ -322,10 +322,10 @@ Open: http://localhost:3000
    - Ship batches
 4. Retailer
    - Deliver batches 
-5. Batch Lookup   
-  - Search by batch ID    
-  - View lifecycle status    
-  - Verify product history    
+5. Batch Lookup     
+   - Search by batch ID    
+   - View lifecycle status    
+   - Verify product history    
   
 ---  
  
