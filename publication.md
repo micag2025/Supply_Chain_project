@@ -16,9 +16,9 @@
 
 ## TL;DR  
 
-This project (publication) presents the design and implementation of a **blockchain-based supply chain tracking system** built on the Ethereum Sepolia testnet enabling authorized users to create, track, and manage supply chain batches.
+This publication presents the design and implementation of a **blockchain-based supply chain tracking system** built on the Ethereum Sepolia testnet enabling authorized users to create, track, and manage supply chain batches.
 
-The application combines a Solidity smart contract, MetaMask wallet integration, React frontend components, and ethers.js to create **a decentralized application (dApp)** capable of tracking products through a simplified supply chain lifecycle:  
+The application combines a **Solidity smart contract**, **MetaMask wallet** integration, **React frontend** components, and **ethers.js** to create **a decentralized application (dApp)** capable of tracking products through a simplified supply chain lifecycle:  
 
 **Created → Shipped → Delivered**   
 
@@ -30,11 +30,11 @@ The dApp is intended for both technical and non-technical users involved in supp
 
 ## Introduction
 
-Supply chains often rely on centralized databases that can suffer from limited transparency, fragmented data ownership, and challenges in auditing product provenance.
+Supply chains often rely on centralized databases that can suffer from limited transparency, fragmented data ownership, and challenges in auditing product provenance.  
 
-[Blockchain technology](https://ethereum.org/content/whitepaper/whitepaper-pdf/Ethereum_Whitepaper_-_Buterin_2014.pdf) offers an alternative approach by providing:
+Blockchain technology ([Nakamoto, 2008](https://bitcoin.org/bitcoin.pdf), [Buterin, 2014](https://ethereum.org/content/whitepaper/whitepaper-pdf/Ethereum_Whitepaper_-_Buterin_2014.pdf)) offers an alternative approach by providing:
 
-- Immutable transaction records  ([Nakamoto, 2008](https://bitcoin.org/bitcoin.pdf))
+- Immutable transaction records  
 - Transparent audit trails 
 - Decentralized trust  
 - Cryptographic verification  
@@ -117,8 +117,7 @@ The goal of this project was to develop a decentralized proof-of-concept that de
   - Identify delivery bottlenecks  
   - Analyze time between state transitions
   - Optimize distributor and retailer networks
-  - Reduce spoilage for perishable goods  
- 
+
 - **Use Case: Fair Trade & Ethical Sourcing**
   - Verify certified farm origins
   - Ensure transparent farmer compensation
@@ -129,17 +128,17 @@ The goal of this project was to develop a decentralized proof-of-concept that de
 
 ## System Architecture  
 
-The following workflow (diagram) illustrates the **high-level architecture** of the proposed blockchain-based supply chain tracking system.   
+The following workflow illustrates the **high-level architecture** of the proposed blockchain-based supply chain tracking system.   
 
-The system (application) consists of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend** that provides the user interface. Smart contracts are developed and deployed using **Remix IDE**, while **MetaMask** provides wallet authentication and transaction signing. Communication between the frontend and the blockchain is handled through **ethers.js** using the contract's **Application Binary Interface (ABI)**, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.  
+The application consists of a **Solidity smart contract** (`SupplyChainBatch.sol`) deployed on the **Ethereum Sepolia Testnet** and a **React-based frontend** that provides the user interface. Smart contracts are developed and deployed using **Remix IDE**, while **MetaMask** provides wallet authentication and transaction signing. Communication between the frontend and the blockchain is handled through **ethers.js** using the contract's **Application Binary Interface (ABI)**, enabling authorized users to create, track, ship, and deliver product batches through a web-based dashboard.  
 
 ```
-                    ┌─────────────────────────┐
-                    │       Remix IDE         │
-                    │  Solidity Smart Contract│
-                    └───────────┬─────────────┘
-                                │ Deploy
-                                ▼
+            ┌─────────────────────────┐
+            │       Remix IDE         │
+            │  Solidity Smart Contract│
+            └───────────┬─────────────┘
+                        │ Deploy
+                        ▼
 ┌──────────────────────────────────────────────────┐
 │            Ethereum Sepolia Testnet             │
 │        Supply Chain Smart Contract              │
@@ -327,7 +326,7 @@ To create a production build, use npm run build.
 
 1. Navigate to `http://localhost:3000` (opens automatically)
 2. MetaMask prompts for wallet connection  
-3. Select account representing your role (Farmer, Distributor, or Retailer)  
+3. Select account representing one of the three roles (Farmer, Distributor, or Retailer)  
 4. Approve connections in MetaMask popup  
 5. Dashboard loads with role-specific options  
 
