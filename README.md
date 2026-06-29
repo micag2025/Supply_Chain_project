@@ -634,6 +634,7 @@ If you encounter bugs, have questions, or want to request a new feature, please 
 ## Acknowledgements
 
 Special thanks to all contributors, testers, and community members who have tested the application thoroughly, provided valuable feedback and suggestions and 
-shared knowledge and expertise
+shared knowledge and expertise  
+
 --- 
 
