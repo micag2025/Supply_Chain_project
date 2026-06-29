@@ -253,8 +253,7 @@ Detailed instructions how to configure MetaMask, connecting to the Ethereum Sepo
 
 ### Smart Contract Deployment
 
-The smart contract can be deployed using Remix IDE on the Ethereum Sepolia Testnet.  Detailed deployment instructions are available in [`docs/deployment.md`](
-https://github.com/micag2025/Supply_Chain_project/blob/c097d4a37411ba8634f40d4d6304cb9b8c0320ec/docs/deployment.md)
+The smart contract can be deployed using Remix IDE on the Ethereum Sepolia Testnet.  Detailed deployment instructions are available in [`docs/deployment.md`](https://github.com/micag2025/Supply_Chain_project/blob/d7ea180978e4704420fe84f780268fc1e57ccc9d/docs/deployment.md)
 
 ### Running the Application  
 
