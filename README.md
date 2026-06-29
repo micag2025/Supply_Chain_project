@@ -229,7 +229,7 @@ Ensure the following are installed:
 - **Node.js** (v18+) – [nodejs.org](https://nodejs.org/)
 - **npm** (included with Node.js) – Check: `npm --version`
 - **MetaMask** browser extension – [metamask.io](https://metamask.io/)
-- **Remix IDE** (optional) – [remix.ethereum.org](https://remix.ethereum.org/)
+- **Remix IDE** – [remix.ethereum.org](https://remix.ethereum.org/)
 - **Git** – For cloning repository
 
 ### Clone Repository
