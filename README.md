@@ -75,13 +75,12 @@ OR
 The application consists of a **React frontend** connected to a **Solidity smart contract** deployed on the **Ethereum Sepolia Testnet**. **MetaMask** provides wallet authentication and transaction signing, while **ethers.js** enables communication between the frontend and the blockchain.  
 
 ```
-
-                    ┌─────────────────────────┐
-                    │       Remix IDE         │
-                    │  Solidity Smart Contract│
-                    └───────────┬─────────────┘
-                                │ Deploy
-                                ▼
+            ┌─────────────────────────┐
+            │       Remix IDE         │
+            │  Solidity Smart Contract│
+            └───────────┬─────────────┘
+                        │ Deploy
+                        ▼
 ┌──────────────────────────────────────────────────┐
 │            Ethereum Sepolia Testnet             │
 │        Supply Chain Smart Contract              │
@@ -102,7 +101,7 @@ The application consists of a **React frontend** connected to a **Solidity smart
 │         Supply Chain Tracking Dashboard          │
 └──────────────────────────────────────────────────┘
 
-```
+```    
 
 Detailed architecture documentation is available in [`docs/architecture.md`](https://github.com/micag2025/Supply_Chain_project/blob/9378aebc93fad4020641b314ae1d2d9973e59a4a/docs/architecture.md)
 
