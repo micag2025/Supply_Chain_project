@@ -44,34 +44,6 @@ Each operation is recorded on the Ethereum blockchain, providing transparent, im
 
 ## Architecture
 
-The application consists of:
-
-1. React Frontend
-2. MetaMask Wallet
-3. Ethereum Smart Contract
-4. Ethereum Sepolia Testnet  
-
-``` bash  
-┌─────────────────────────────────────┐
-│            Remix IDE                │
-│     Solidity Smart Contract         │
-└───────────────┬─────────────────────┘
-                │ Deploy
-                ▼
-┌─────────────────────────────────────┐
-│       Ethereum Sepolia Testnet      │
-│      Supply Chain Smart Contract    │
-└───────────────┬─────────────────────┘
-                ▲
-                │ ethers.js
-                │ MetaMask
-┌───────────────┴─────────────────────┐
-│            React Frontend           │
-│      Supply Chain Dashboard         │
-└─────────────────────────────────────┘
-```   
-OR
-
 The application consists of a **React frontend** connected to a **Solidity smart contract** deployed on the **Ethereum Sepolia Testnet**. **MetaMask** provides wallet authentication and transaction signing, while **ethers.js** enables communication between the frontend and the blockchain.  
 
 ```
@@ -281,9 +253,7 @@ Detailed instructions how to configure MetaMask, connecting to the Ethereum Sepo
 
 ### Smart Contract Deployment
 
-The smart contract can be deployed using Remix IDE on the Ethereum Sepolia Testnet.
-
-Detailed deployment instructions are available in [`docs/deployment.md`](
+The smart contract can be deployed using Remix IDE on the Ethereum Sepolia Testnet.  Detailed deployment instructions are available in [`docs/deployment.md`](
 https://github.com/micag2025/Supply_Chain_project/blob/c097d4a37411ba8634f40d4d6304cb9b8c0320ec/docs/deployment.md)
 
 ### Running the Application  
