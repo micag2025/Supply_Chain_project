@@ -506,8 +506,8 @@ The following scenarios demonstrate the primary application workflows and illust
 **Expected Result:**  
 
 ✓ "Create Batch" action unavailable for non-Farmers  
-✓ UI prevents unauthorized action (no transaction sent)    
-✓  No state change occurs (Clear role indication in interface)  
+✓ UI prevents unauthorized action, thus no transaction sent    
+✓  No state change occurs    
 ✓  No gas consumed (prevented at UI layer)    
 
 ---  
@@ -633,30 +633,7 @@ If you encounter bugs, have questions, or want to request a new feature, please 
 
 ## Acknowledgements
 
-Special thanks to all contributors, testers, and community members who have:
-
-- Tested the application thoroughly
-- Provided valuable feedback and suggestions
-- Reported bugs and issues
-- Submitted pull requests
-- Shared knowledge and expertise
+Special thanks to all contributors, testers, and community members who have tested the application thoroughly, provided valuable feedback and suggestions and 
+shared knowledge and expertise
 --- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----  
-
 
