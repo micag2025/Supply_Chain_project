@@ -246,6 +246,8 @@ Three predefined roles were implemented:
 | Distributor | Ship batches    |
 | Retailer    | Deliver batches |
 
+> **Note:** To interact with the blockchain, each account related to each role, requires a small amount of Sepolia ETH to pay transaction fees.  
+
 Both the frontend and the smart contract validate user roles to prevent unauthorized operations and maintain data integrity throughout the supply chain lifecycle.
 
 ---  
@@ -375,12 +377,12 @@ The dashboard includes the following features:
 
 The testing strategy combined functional verification, security validation, and end-to-end workflow testing to ensure both technical correctness and realistic supply chain execution.
 
-Testing (the full workflow) was performed on the Ethereum Sepolia Testnet using MetaMask accounts representing each supply chain participant.
+Testing the full workflow was performed on the Ethereum Sepolia Testnet using MetaMask accounts representing each supply chain participant.
 
 ### Test Environment Setup
 
 - **Network:** Ethereum Sepolia Testnet
-- **Test Accounts:** Three MetaMask accounts (account1, account2 and account 3, respectively) representing:
+- **Test Accounts:** Three MetaMask accounts (account 1, account 2 and account 3, respectively) representing:
   - Farmer role (create batches)
   - Distributor role (ship batches)
   - Retailer role (deliver batches)
@@ -435,13 +437,13 @@ Detailed test cases and execution results are available in the accompanying [Git
 
 All test cases passed successfully, confirming correct behavior of the smart contract, frontend application, wallet integration, and role-based workflow management across the entire supply chain lifecycle.  
 
-These results demonstrate that the proposed blockchain-based supply chain system can reliably enforce role-based operations while maintaining transparent and persistent product traceability throughout the supply chain lifecycle.
+These results demonstrate that the **proposed blockchain-based supply chain system can reliably enforce role-based operations** while maintaining transparent and persistent product traceability throughout the supply chain lifecycle.
 
 ---
 
 ## Examples User Interface (UI)  
 
-### (UI Web DApp) Main Interface  
+### Main Interface    
 
 The dashboard features a **wallet connection panel** showing the connected account and role, a **batch management section** with create and lookup forms, and a **real-time overview table** displaying all batches. 
 
@@ -453,7 +455,7 @@ The following scenarios demonstrate the primary application workflows and illust
 
 ### Scenario 1: Create and Read Batch (Farmer Only)  
 
-The `Farmer creates a batch and records product information on-chain` workflow was validated.  The figure shows the **farmer batch creation process**, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. 
+The `Farmer creates a batch and records product information on-chain` workflow was validated.  The figure shows the **Farmer batch creation process**, including validated **batch creation**, **instant display in the overview table**, **blockchain confirmation**, and **batch lookup with full details**. 
 
  ![Create_Read_Batch](https://github.com/micag2025/Supply_Chain_project/blob/5b7356a58d8418363b106ee8e3c8eb3929b2de38/Screenshots_UI/Screenshot_Create_and_ReadBatch.jpeg)    
 
@@ -461,7 +463,7 @@ The `Farmer creates a batch and records product information on-chain` workflow w
 
 ### Scenario 2: Ship Batch Action (Distributor only)  
 
-The `Distributor updates batch state from: Created → Shipped` workflow was validated.  The figures show the **distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped”** . The screenshots also confirm that the distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions (button disabled). 
+The `Distributor updates batch state from: Created → Shipped` workflow was validated.  The figures show the **Distributor shipment process**, including **viewing only “Created” batches**, using the **“Ship” action**, and **updating batch status to “Shipped”** . The screenshots also confirm that the Distributor address is recorded on-chain, updates appear in real time, and farmers cannot perform shipping actions (button disabled). 
 
 ![Distributor](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Ship_Batch_Distributor.jpg)
 
@@ -471,7 +473,7 @@ The `Distributor updates batch state from: Created → Shipped` workflow was val
 
 ### Scenario 3: Deliver Batch Action (Retailer only)  
 
-The `Retailer completes the lifecycle: Shipped → Delivered` workflow was validated. The figures show the **retailer delivery process**, including **viewing “Shipped” batches**, using **the “Deliver” action**, and **updating the state to “Delivered.”** These screenshots also confirm on-chain recording of the retailer address, real-time updates, and restricted access for distributors (button disabled).
+The `Retailer completes the lifecycle: Shipped → Delivered` workflow was validated. The figures show the **Retailer delivery process**, including **viewing “Shipped” batches**, using the **“Deliver” action**, and **updating the state to “Delivered.”** These screenshots also confirm on-chain recording of the Retailer address, real-time updates, and restricted access for Distributors (button disabled).
 
 ![Retailer](https://github.com/micag2025/Supply_Chain_project/blob/4e9f1697cf557d27f0200f633f694183e32dc0ce/Screenshots_UI/Screenshot_Deliver_Batch_Retailer.jpg)  
 
@@ -523,7 +525,7 @@ The proposed blockchain-based supply chain tracking system successfully demonstr
 - **Limited supply chain states**  – The current implementation focuses on the core workflow (`Created → Shipped → Delivered`). Additional states such as production, quality inspection, warehousing, customs clearance, and returns are not modeled, limiting the realism and granularity of supply chain tracking.    
 - **No analytics dashboard** – The system provides operational tracking functionality but does not include analytics or reporting capabilities for monitoring supply chain performance, trends, or operational metrics.  
 - **No QR-code integration** – Products cannot currently be identified or tracked through QR-code scanning, which limits ease of use in practical supply chain environments.  
-- **No inventory management** – The application focuses on batch traceability and does not support inventory tracking, stock management, or warehouse operations.  
+- **No inventory management** – The application focuses on batch traceability and does not support inventory tracking, or stock management operations.  
 - **Prototype-oriented development environment** – Smart contract development and deployment were performed using Remix IDE, which is well suited for rapid prototyping and educational projects. However, production environments typically rely on more advanced frameworks such as Hardhat or Foundry that provide automated testing, deployment pipelines, contract verification, and improved development workflows.  
 - **Legacy frontend tooling (CRA)** – The frontend was developed using Create React App (CRA), which provides a stable development environment but offers slower build times and less optimized performance compared with modern alternatives such as Vite.      
 
@@ -535,7 +537,7 @@ Despite these limitations, the project successfully demonstrates the feasibility
 
 The proposed architecture was intentionally designed as a modular proof-of-concept that can be extended to support more realistic supply chain requirements. Future work will focus on improving scalability, usability, traceability, and production readiness while preserving the system's decentralized design principles.
 
-Contributors are encouraged to extend the system with the following (planned) enhancements:  
+Contributors are encouraged to extend the system with the following enhancements:  
 
 - **Layer-2 deployment (Polygon or Arbitrum)** and **multi-network support** to reduce transaction costs, improve scalability, and enable deployment across multiple blockchain environments.    
 - **Dynamic role management** to support administrator-controlled onboarding and management of supply chain participants without modifying the smart contract source code.    
@@ -554,7 +556,7 @@ Additional technical details, implementation considerations, and the complete de
 
 ## Conclusion
 
-This project demonstrates the feasibility of using blockchain technology to implement a decentralized supply chain tracking system that combines smart contracts, wallet-based authentication, and a React frontend. The proposed apporach successfully validates product traceability, role-based access control, and immutable lifecycle tracking on the Ethereum Sepolia Testnet. Although implemented as a proof of concept, the modular architecture provides a solid foundation for future enhancements, including advanced analytics, decentralized storage, multi-network deployment, and real-world supply chain integration.
+This project demonstrates the **feasibility of using blockchain technology to implement a decentralized supply chain tracking system** that combines smart contracts, wallet-based authentication, and a React frontend. The proposed apporach **successfully validates product traceability, role-based access control, and immutable lifecycle tracking on the Ethereum Sepolia Testnet**. Although implemented as a proof of concept, the modular architecture provides a solid foundation for future enhancements, including advanced analytics, decentralized storage, multi-network deployment, and real-world supply chain integration.
 
 ---
 
@@ -613,7 +615,7 @@ Official documentation and resources:
 
 ## License
 
-This project is licensed under the **MIT License**. See the [LICENSE](https://github.com/micag2025/Supply_Chain_project/blob/main/LICENSE) file for details.
+This project is licensed under the [**MIT License**](https://github.com/micag2025/Supply_Chain_project/blob/main/LICENSE) 
 
 ---
 
