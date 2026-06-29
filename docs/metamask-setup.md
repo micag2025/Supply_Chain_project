@@ -158,6 +158,14 @@ Ensure that the displayed role matches the currently selected MetaMask account.
 ### Incorrect Role Detected  
 
 - Confirm that the correct MetaMask account is selected.  
-- Disconnect and reconnect the wallet if needed.  
+- Disconnect and reconnect the wallet if needed.
+
+---  
+
+## Next Steps   
+
+Once the application has been successfully deployed and verified, you can continue with the following documentation [Project README](ENCLOSE LINK)   
+
+---  
 
 
