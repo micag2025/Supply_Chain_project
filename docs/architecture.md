@@ -11,13 +11,12 @@ The system combines a **React frontend**, **MetaMask wallet authentication**, **
 The architecture is designed as a modular proof-of-concept that demonstrates transparent, immutable, and role-controlled supply chain management.  
 
 ```
-
-                    ┌─────────────────────────┐
-                    │       Remix IDE         │
-                    │  Solidity Smart Contract│
-                    └───────────┬─────────────┘
-                                │ Deploy
-                                ▼
+            ┌─────────────────────────┐
+            │       Remix IDE         │
+            │  Solidity Smart Contract│
+            └───────────┬─────────────┘
+                        │ Deploy
+                        ▼
 ┌──────────────────────────────────────────────────┐
 │            Ethereum Sepolia Testnet             │
 │        Supply Chain Smart Contract              │
@@ -38,7 +37,7 @@ The architecture is designed as a modular proof-of-concept that demonstrates tra
 │         Supply Chain Tracking Dashboard          │
 └──────────────────────────────────────────────────┘
 
-```  
+```    
 
 ---
 
