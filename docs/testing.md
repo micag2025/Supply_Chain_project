@@ -2,7 +2,7 @@
 
 ## Overview
 
-Testing was performed on the **Ethereum Sepolia Testnet** to validate smart contract behavior, frontend functionality, MetaMask wallet integration, blockchain, and role-based access control.
+Testing was performed on the **Ethereum Sepolia Testnet** to validate the smart contract, React frontend, MetaMask integration, and complete supply chain workflows.
 
 The objective was to **verify that the application correctly implements the complete supply chain lifecycle** while enforcing security controls and maintaining blockchain state integrity.
 
@@ -10,13 +10,13 @@ The objective was to **verify that the application correctly implements the comp
 
 ## Test Environment
 
-| Component      | Value           |
-| -------------- | --------------- |
-| Network        | Ethreum Sepolia Testnet |
-| Wallet         | MetaMask        |
-| Frontend       | React           |
-| Smart Contract | Solidity        |
-| Web3 Library   | ethers.js       |
+| Component      | Value                    |
+| -------------- | ------------------------ |
+| Network        | Ethereum Sepolia Testnet |
+| Wallet         | MetaMask                 |
+| Smart Contract | Solidity 0.8.x           |
+| Frontend       | React                    |
+| Web3 Library   | ethers.js                |
 
 ---
 
@@ -88,7 +88,6 @@ The following scenario simulates a complete batch lifecycle from creation throug
 | Product   | Coffee                |
 | Quantity  | 1000 kg               |
 | Result    | Batch state = Created |
-| Timestamp | 2026-06-04 10:00 UTC  |
 
 #### Day 2 – Distributor Ships Batch
 
@@ -98,7 +97,6 @@ The following scenario simulates a complete batch lifecycle from creation throug
 | Action             | Ship Batch                            |
 | Result             | Batch state = Shipped                 |
 | Additional Outcome | Distributor address recorded on-chain |
-| Timestamp          | 2026-06-05 14:30 UTC                  |
 
 #### Day 5 – Retailer Delivers Batch
 
@@ -108,7 +106,6 @@ The following scenario simulates a complete batch lifecycle from creation throug
 | Action             | Deliver Batch                      |
 | Result             | Batch state = Delivered            |
 | Additional Outcome | Retailer address recorded on-chain |
-| Timestamp          | 2026-06-08 09:15 UTC               |
 
 ### Batch Verification
 
@@ -172,7 +169,7 @@ Outcome:
 
 ---
 
-## Results Summary
+## Test Results Summary  
 
 | Metric               | Value           |
 | -------------------- | --------------- |
@@ -188,37 +185,17 @@ All planned tests completed successfully.
 
 ---
 
-## Known Limitations
-
-Current testing does not include:
-
-* Load testing
-* Stress testing
-* Formal smart contract security audits
-* Mainnet deployment testing
-* Multi-contract testing
-
-These areas are recommended for future work and production-readiness assessments.
-
----
-
-## Conclusion
-
-Testing confirms that the application successfully implements:
-
-* Blockchain-based batch tracking
-* Role-based access control
-* MetaMask wallet authentication
-* Smart contract state-transition validation
-* Persistent on-chain storage
-* End-to-end supply chain traceability
-
-The results demonstrate that the proof-of-concept operates reliably across all core supply chain workflows while maintaining data integrity, transparency, and role-based security.
-
----  
-
 ## Next Steps  
 
-Once the application has been successfully deployed and verified, you can continue with the following documentation [Project README](ENCLOSE LINK)
+Once the application has been successfully tested, you can continue with the following documentation [Project README](ENCLOSE LINK)
 
+--- 
 
+## Related Documentation
+
+For additional information, refer to:
+
+- [Project README](../README.md)
+- [System Architecture](architecture.md)
+- [Deployment Guide](deployment.md)
+- [MetaMask Setup Guide](metamask-setup.md)
