@@ -164,7 +164,7 @@ Ensure that the displayed role matches the currently selected MetaMask account.
 
 ## Next Steps   
 
-Once the application has been successfully deployed and verified, you can continue with the following documentation [Project README](ENCLOSE LINK)   
+Once MetaMask has been configured, you can continue with the following documentation [Project README](ENCLOSE LINK)   
 
 ---  
 
