@@ -76,6 +76,7 @@ The `SupplyChainBatch.sol` contract defines:
 
 ## Component Interaction  
 
+```  
 React Frontend
       │
       ▼
@@ -89,7 +90,7 @@ SupplyChainBatch.sol
       │
       ▼
 Ethereum Sepolia Testnet
-
+```  
 ---
 
 ## Related Documentation
