@@ -1714,8 +1714,6 @@ The system successfully demonstrates a production-grade blockchain supply chain 
 
 ---  
 
---- 
-
 ## Related Documentation
 
 For additional information, refer to:
