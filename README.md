@@ -210,7 +210,7 @@ Ethereum Sepolia
 ```
 
 
-- **SupplyChainBatch.sol** contains the business logic of the application, including batch creation (`createBatch()`), shipment tracking (`shipBatch()`), delivery confirmation (`deliverBatch()`), lifecycle state management (`getBatchReadable()`), and role-based access control.  
+- **SupplyChainBatch.sol** contains the core business logic of the application. It implements product batch creation (`createBatch()`), shipment tracking (`shipBatch()`), delivery confirmation (`deliverBatch()`), lifecycle state management through the `State` enumeration, role-based access control using Solidity modifiers, lifecycle timestamp recording, and blockchain event emission. Read-only helper functions (`getStateText()` and `getBatchReadable()`) provide user-friendly access to on-chain batch information for the React frontend.  
 
 - **SupplyChain.json** provides the `Application Binary Interface (ABI)` generated from the smart contract compilation process and enables communication between the frontend and the deployed contract.
 
