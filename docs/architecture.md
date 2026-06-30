@@ -10,6 +10,36 @@ The system combines a **React frontend**, **MetaMask wallet authentication**, **
 
 The architecture is designed as a modular proof-of-concept that demonstrates transparent, immutable, and role-controlled supply chain management.  
 
+---
+
+### Reference Use Case: Coffee Supply Chain
+
+The system was validated using a **Farm-to-Retail workflow**:
+
+```
+Farmer (Creator)
+    ↓
+    ├─ Creates coffee batches
+    ├─ Records origin and details
+    └─ Manages initial state
+    
+Distributor (Transporter)
+    ↓
+    ├─ Ships approved batches
+    ├─ Records transit state
+    └─ Ensures chain continuity
+    
+Retailer (Final Handler)
+    ↓
+    ├─ Receives and delivers batches
+    ├─ Records final destination
+    └─ Completes supply chain cycle
+```
+
+---  
+
+## High-Level Architecture  
+
 ```
             ┌─────────────────────────┐
             │       Remix IDE         │
@@ -65,9 +95,9 @@ MetaMask serves as the authentication and transaction-signing layer.
 Responsibilities include:  
 
 - User identity verification  
-- Wallet account management  (Store private keys (client-side only), manage multiple accounts)
-- Transaction approval  (Sign transactions with user's private key before submission)
-- Blockchain network selection  (Allow user to select Sepolia testnet)
+- Wallet account management  (e.g.: store private keys, manage multiple accounts)
+- Transaction approval  (e.g.: sign transactions with user's private key before submission)
+- Blockchain network selection (e.g..: allow user to select Sepolia testnet)
 - Gas fee confirmation  
 
 The application determines user permissions based on the connected wallet address. Thus, application cannot access private keys and further all transaction approval requires explicit user action  
@@ -85,7 +115,7 @@ Responsibilities include:
 - Querying smart contract state  
 - Listening to contract events  
 - Handling transaction confirmations  
-- ABI Encoding (Encode function calls according to contract ABI)  
+- ABI Encoding   
 
 ---  
 
@@ -95,13 +125,13 @@ The Solidity smart contract contains the core business logic of the application.
 
 Responsibilities include:  
 
-- Batch lifecycle management  (Ensure only authorized roles can execute specific functions )
-- State transition validation  (Verify batch status transitions are legal (Created → Shipped → Delivered))  
-- Role-based access control  (Store and enforce role assignments for addresses)
-- Blockchain state persistence  
-- Event emission  (Emit events for off-chain listeners (frontend, indexers, analytics))
+- **Batch lifecycle management** : ensure only authorized roles can execute specific functions  
+- **State transition validation** : verify batch status transitions (`Created → Shipped → Delivered`) are legal 
+- **Role-based access control**: store and enforce role assignments for addresses
+- **Blockchain state persistence**  
+- **Event emission**  
 
-Current lifecycle:
+The current lifecycle is the following:
 
 Created  
    ↓  
@@ -111,29 +141,13 @@ Delivered
 
 Only authorized participants can perform valid state transitions.
 
-ADDITIONAL > **Core Data Structures**:  (example)
+#### Core Data Structures   
+
 ```solidity
+
+enum State { Created, Shipped, Delivered }
+
 struct Batch {
-    uint256 id;
-    address creator;
-    uint256 timestamp;
-    string productInfo;
-    BatState state;
-    address currentHandler;
-}
-
-enum BatchState { Created, Shipped, Delivered }
-```
-
-solidity code that has been used
-```
-// --- State Management / State Enum ---
-    // State of the batch: Created, Shipped, Delivered
-    enum State { Created, Shipped, Delivered }
-
-
-    // --- Batch Structure ---
-    struct Batch {
         uint id;
         string name;
         uint quantity;
@@ -145,7 +159,9 @@ solidity code that has been used
         uint shippedAt;
         uint deliveredAt;
     }
-``` 
+```
+
+---  
 
 ### Ethereum Sepolia Testnet
 
@@ -162,30 +178,32 @@ Benefits include:
 
 ## Component Interaction Flow  
 
-The following sequence illustrates a typical batch creation workflow.
+The following sequence illustrates a **typical batch creation workflow**.
 
-User  
-  │  
-  ▼  
-React Frontend  
-  │  
-  ▼  
-Connect Wallet  
-  │  
-  ▼  
-MetaMask  
-  │  
-  ▼  
-Sign Transaction  
-  │  
-  ▼  
-ethers.js  
-  │  
-  ▼  
-Smart Contract  
-  │  
-  ▼  
-Sepolia Testnet  
+```text
+User
+  │
+  ▼
+React Frontend
+  │
+  ▼
+Connect Wallet
+  │
+  ▼
+MetaMask
+  │
+  ▼
+Sign Transaction
+  │
+  ▼
+ethers.js
+  │
+  ▼
+Smart Contract
+  │
+  ▼
+Sepolia Testnet
+```
 
 The same process is used for shipment and delivery operations.  
 
@@ -207,12 +225,187 @@ Each batch contains:
 | Distributor Address   | Shipment handler|
 | Retailer Address   | Delivery handler|
 
+---
 
+### State Management
 
+The smart contract enforces valid lifecycle transitions.
 
+| Current State       | Allow Next State      |
+| ----------- | --------------- |
+| Created     | Shipped  |
+| Shipped | Delivered   |
+| Delivered   | None|
 
+> _Note_ : Invalid transitions are automatically rejected.
+
+---  
+
+### Access Control Model
+
+Role-based permissions are enforced through wallet address verification.  
+
+| Role       | Permissions      |
+| ----------- | --------------- |
+| Farmer     | Create batches  |
+| Distributor | Ship batches   |
+| Retailer   | Deliver batches |
+
+> _Note_ : Unauthorized operations are rejected by the smart contract.
+
+---  
+
+## Data Flow
+
+### Batch Creation
+
+```text
+Farmer
+   │
+   ▼
+Create Batch
+   │
+   ▼
+MetaMask Confirmation
+   │
+   ▼
+Blockchain Transaction
+   │
+   ▼
+Batch Stored On-Chain
+```
+
+### Batch Shipment
+
+```text
+Distributor
+   │
+   ▼
+Ship Batch
+   │
+   ▼
+MetaMask Confirmation
+   │
+   ▼
+State = Shipped
+```
+
+### Batch Delivery
+
+```text
+Retailer
+   │
+   ▼
+Deliver Batch
+   │
+   ▼
+MetaMask Confirmation
+   │
+   ▼
+State = Delivered
+```
 
 ---
+
+## Security Considerations  (TO BE ENCLOSED ?)
+
+The application implements multiple layers of validation.
+
+### Frontend Validation
+
+* Required field validation
+* Wallet connection checks
+* Role verification
+* Network validation
+* User feedback and error handling
+
+### Smart Contract Validation
+
+* Role-based access control
+* Duplicate batch prevention
+* Invalid state transition prevention
+* Transaction authorization checks
+
+### Blockchain Security
+
+* Cryptographically signed transactions
+* Immutable transaction history
+* Decentralized state storage
+* Public auditability
+
+---
+
+## Deployment Architecture
+
+### Development Environment
+
+| Component                  | Technology |
+| -------------------------- | ---------- |
+| Smart Contract Development | Remix IDE  |
+| Frontend Development       | React      |
+| Package Management         | Node.js    |
+| Wallet Integration         | MetaMask   |
+| Blockchain Communication   | ethers.js  |
+
+
+### Deployment Target
+
+| Component       | Target                         |
+| --------------- | ------------------------------ |
+| Smart Contract  | Ethereum Sepolia Testnet       |
+| Frontend        | Localhost / Static Web Hosting |
+| Wallet Provider | MetaMask                       |
+
+---
+
+## Current Limitations  (TO BE ENCLOSED ? )
+
+The current architecture is intentionally simplified as a proof-of-concept.
+
+Current limitations include:
+
+* Sepolia-only deployment
+* Fixed wallet-role assignments
+* Limited lifecycle states
+* No event indexing layer
+* No analytics dashboard
+* No QR-code integration
+* No inventory management
+
+These limitations are discussed in more detail in the publication and project roadmap.
+
+---
+
+## Future Architecture Enhancements (TO BE ENCLOSED ?) 
+
+Planned improvements include:
+
+* Hardhat migration
+* Vite migration
+* Dynamic role management
+* Expanded lifecycle states
+* IPFS integration
+* QR-code traceability
+* The Graph integration
+* Analytics dashboards
+* Inventory management
+* Layer-2 deployment (Polygon / Arbitrum)
+* Multi-network support
+* Real-time notifications
+* IoT sensor integration
+
+---
+
+## Related Documentation
+
+* `README.md`
+* `docs/deployment.md`
+* `docs/testing.md`
+* `docs/metamask-setup.md`
+
+For implementation validation and test results, see `docs/testing.md`.
+
+
 
 
 
@@ -1682,43 +1875,4 @@ event BatchCreated(
 - [ ] Network failure recovery
 
 ---
-
-### Production Security Recommendations
-
-1. **Code Audit**: Have smart contract audited by third party
-2. **Bug Bounty**: Consider bug bounty program before mainnet
-3. **Monitoring**: Set up alerts for unusual contract activity
-4. **Upgradability**: Consider proxy pattern for future updates
-5. **Rate Limiting**: Implement rate limits on frontend
-6. **HTTPS Only**: Ensure application served over HTTPS
-7. **Content Security Policy**: Implement strict CSP headers
-8. **Regular Updates**: Keep dependencies (React, ethers.js) updated
-9. **Private Key Management**: Use hardware wallet for deployment key
-10. **Documentation**: Maintain security documentation for team
-
----
-
-## Summary
-
-This architecture provides:  
-
-✓ **Transparency**: All supply chain events recorded immutably on blockchain  
-✓ **Security**: Role-based access control at smart contract level  
-✓ **Usability**: Intuitive React frontend with MetaMask integration  
-✓ **Decentralization**: No central point of failure  
-✓ **Auditability**: Complete transaction history with event logs  
-✓ **Scalability**: Ready for testnet and future mainnet deployment  
-
-The system successfully demonstrates a production-grade blockchain supply chain application suitable for real-world use cases with proper testing and auditing.    
-
----  
-
-## Related Documentation
-
-For additional information, refer to:
-
-- [Project README](../README.md)
-- [Deployment Guide](deployment.md)
-- [MetaMask Setup Guide](metamask-setup.md)
-- [Testing](testing.md)
 
