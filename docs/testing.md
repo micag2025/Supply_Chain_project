@@ -78,7 +78,7 @@ This scenario **validates the complete lifecycle of a product batch across all s
 
 The following scenario simulates a complete batch lifecycle from creation through delivery.
 
-#### Day 1 – Farmer Creates Batch
+#### Step 1 – Farmer Creates Batch
 
 | Item      | Value                 |
 | --------- | --------------------- |
@@ -89,7 +89,7 @@ The following scenario simulates a complete batch lifecycle from creation throug
 | Quantity  | 1000 kg               |
 | Result    | Batch state = Created |
 
-#### Day 2 – Distributor Ships Batch
+#### Step 2 – Distributor Ships Batch
 
 | Item               | Value                                 |
 | ------------------ | ------------------------------------- |
@@ -98,7 +98,7 @@ The following scenario simulates a complete batch lifecycle from creation throug
 | Result             | Batch state = Shipped                 |
 | Additional Outcome | Distributor address recorded on-chain |
 
-#### Day 5 – Retailer Delivers Batch
+#### Step 3 – Retailer Delivers Batch
 
 | Item               | Value                              |
 | ------------------ | ---------------------------------- |
@@ -106,6 +106,8 @@ The following scenario simulates a complete batch lifecycle from creation throug
 | Action             | Deliver Batch                      |
 | Result             | Batch state = Delivered            |
 | Additional Outcome | Retailer address recorded on-chain |
+
+---
 
 ### Batch Verification
 
