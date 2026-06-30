@@ -218,6 +218,7 @@ Ethereum Sepolia
 
 - **App.js** implements the main user interface, allowing participants to connect their wallet, create batches, update batch status, and perform batch lookups.
 
+> _Note_: The smart contract, **SupplyChainBatch.sol**, also records lifecycle timestamps (`createdAt`, `shippedAt`, and `deliveredAt`) for each batch. Although these values are permanently stored on the Ethereum blockchain, the current React dashboard focuses on the core supply chain workflow and does not yet display them. This provides a foundation for future audit-trail and historical timeline features.
 ---  
 
 ## Getting Started  
