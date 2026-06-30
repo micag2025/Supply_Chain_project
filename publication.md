@@ -225,7 +225,7 @@ getBatchReadable()
 getStateText()
 ```  
 
->_Note_: Lifecycle Auditing: Besides maintaining the batch state and participant addresses, the smart contract records **lifecycle timestamps** (createdAt, shippedAt, and deliveredAt) to support auditability and product traceability. While these values are permanently stored on-chain, they are not currently exposed through the React user interface, leaving scope for future visualization enhancements.  
+>_Note_: Lifecycle Auditing: Besides maintaining the batch state and participant addresses, the smart contract records **lifecycle timestamps** (`createdAt`, `shippedAt`, and `deliveredAt`) to support auditability and product traceability. While these values are permanently stored on-chain, they are not currently exposed through the React user interface, leaving scope for future visualization enhancements.  
 
 ### React-based frontend  
 
