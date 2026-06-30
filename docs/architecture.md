@@ -1710,4 +1710,18 @@ This architecture provides:
 ✓ **Auditability**: Complete transaction history with event logs  
 ✓ **Scalability**: Ready for testnet and future mainnet deployment  
 
-The system successfully demonstrates a production-grade blockchain supply chain application suitable for real-world use cases with proper testing and auditing.  
+The system successfully demonstrates a production-grade blockchain supply chain application suitable for real-world use cases with proper testing and auditing.    
+
+---  
+
+--- 
+
+## Related Documentation
+
+For additional information, refer to:
+
+- [Project README](../README.md)
+- [Deployment Guide](deployment.md)
+- [MetaMask Setup Guide](metamask-setup.md)
+- [Testing](testing.md)
+
