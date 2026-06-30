@@ -210,7 +210,7 @@ Ethereum Sepolia
 ```
 
 
-- **SupplyChainBatch.sol** contains the business logic of the application, including batch creation, shipment tracking, delivery confirmation, lifecycle state management, and role-based access control.
+- **SupplyChainBatch.sol** contains the business logic of the application, including batch creation (`createBatch()`), shipment tracking (`shipBatch()`), delivery confirmation (`deliverBatch()`), lifecycle state management (`getBatchReadable()`), and role-based access control.  
 
 - **SupplyChain.json** provides the `Application Binary Interface (ABI)` generated from the smart contract compilation process and enables communication between the frontend and the deployed contract.
 
