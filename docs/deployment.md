@@ -174,5 +174,19 @@ All checklist items should be completed before proceeding to testing.
 ## Next Steps
 
 Once the application has been successfully deployed and verified, you can continue with the following documentation [Project README](LINK TO BE ENCLOSED).   
-For planned enhancements and long-term improvements, refer to the **Roadmap** section in the project README and the **Future Work** section of the accompanying publication.
+For planned enhancements and long-term improvements, refer to the **Roadmap** section in the project README and the **Future Work** section of the accompanying publication.  
+
+---  
+
+--- 
+
+## Related Documentation
+
+For additional information, refer to:
+
+- [Project README](../README.md)
+- [System Architecture](architecture.md)
+- [Testing](testing.md)
+- [MetaMask Setup Guide](metamask-setup.md)
+
 
