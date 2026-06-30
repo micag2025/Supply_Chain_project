@@ -111,7 +111,7 @@ The following scenario simulates a complete batch lifecycle from creation throug
 
 ### Batch Verification
 
-Any user can perform a lookup using **Batch ID = 1**.
+Any user can perform a lookup using for instance  **Batch ID = 1** from the above example showing the complete batch lifecycle from creation through delivery.
 
 | Validation Item              | Result |
 | ---------------------------- | ------ |
