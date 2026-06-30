@@ -196,29 +196,36 @@ This scenario was used to verify batch creation, shipment tracking, delivery con
 
 ---  
 
-## Implementation
+## Implementation  
 
 The implementation consists of four principal components.  
 
 ### Solidity Smart Contract  
 
-The core business logic is implemented in the `SupplyChainBatch.sol` smart contract, which manages product batches, enforces role-based access control, validates lifecycle state transitions, and stores batch information on the Ethereum blockchain.
+The core business logic is implemented in the SupplyChainBatch.sol smart contract, which manages product batches, enforces role-based access control, validates lifecycle state transitions, records lifecycle timestamps, emits blockchain events, and stores batch information on the Ethereum blockchain.  
 
-The smart contract manages:  
+The smart contract provides the following capabilities:
 
-- Batch creation  
-- Shipment tracking  
-- Delivery confirmation  
-- Role enforcement  
+- **Batch creation** and initialization  
+- **Shipment tracking** and state updates  
+- **Delivery confirmation**  
+- **Role-based access control** using Solidity modifiers  
+- **Lifecycle state management** (`Created → Shipped → Delivered`)  
+- **Lifecycle timestamp recording** (`createdAt`, `shippedAt`, `deliveredAt`)  
+- **Blockchain event emission** for batch creation, shipment, and delivery  
+- **Read-only helper functions** for retrieving batch information    
 
-Core functions include:  
+The principal public functions are:  
 
 ```solidity  
 createBatch()
 shipBatch()
 deliverBatch()
-getBatchReadable()  
+getBatchReadable()
+getStateText()
 ```  
+
+>_Note_: Lifecycle Auditing: Besides maintaining the batch state and participant addresses, the smart contract records **lifecycle timestamps** (createdAt, shippedAt, and deliveredAt) to support auditability and product traceability. While these values are permanently stored on-chain, they are not currently exposed through the React user interface, leaving scope for future visualization enhancements.  
 
 ### React-based frontend  
 
