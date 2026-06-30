@@ -4,7 +4,7 @@
 
 Testing was performed on the **Ethereum Sepolia Testnet** to validate smart contract behavior, frontend functionality, MetaMask wallet integration, blockchain, and role-based access control.
 
-The objective was to verify that the application correctly implements the complete supply chain lifecycle while enforcing security controls and maintaining blockchain state integrity.
+The objective was to **verify that the application correctly implements the complete supply chain lifecycle** while enforcing security controls and maintaining blockchain state integrity.
 
 ---
 
@@ -32,9 +32,9 @@ Three MetaMask accounts were used to simulate supply chain participants (users).
 
 ---
 
-## Functional Testing  (Functional Test Matrix)  
+## Functional Testing    
 
-The functional test suite verifies that the core business requirements of the supply chain dApp operate correctly under normal conditions. These tests focus on the expected behavior of the smart contract, frontend dashboard, and blockchain interactions, ensuring that authorized users can successfully create, track, ship, and deliver batches throughout the supply chain lifecycle.    
+The functional test suite **verifies that the core business requirements of the supply chain dApp operate correctly under normal conditions**. These tests focus on the expected behavior of the smart contract, frontend dashboard, and blockchain interactions, ensuring that authorized users can successfully create, track, ship, and deliver batches throughout the supply chain lifecycle.    
 
 | Test ID | Test Case | Description | Expected Result | Status |
 |----------|------------|-------------|-----------------|---------|
@@ -53,7 +53,7 @@ The functional test suite verifies that the core business requirements of the su
 
 ## Security & Validation Tests  
 
-The security and validation test suite evaluates the system's ability to prevent unauthorized actions, invalid state transitions, and incorrect user inputs. These tests verify that access-control rules, frontend validations, and smart contract safeguards work together to maintain data integrity and prevent misuse of the application.    
+The security and validation test suite **evaluates the system's ability to prevent unauthorized actions, invalid state transitions, and incorrect user inputs**. These tests verify that access-control rules, frontend validations, and smart contract safeguards work together to maintain data integrity and prevent misuse of the application.    
 
 | Test ID | Test Case | Expected Result | Status |
 |----------|------------|-----------------|---------|
@@ -72,7 +72,7 @@ The security and validation test suite evaluates the system's ability to prevent
 
 ## End-to-End Workflow Validation
 
-This scenario validates the complete lifecycle of a product batch across all supply chain participants. The objective is to demonstrate that the React frontend, MetaMask wallet integration, ethers.js communication layer, and Ethereum smart contract operate together seamlessly to support real-world business workflows.
+This scenario **validates the complete lifecycle of a product batch across all supply chain participants**. The objective is to demonstrate that the React frontend, MetaMask wallet integration, ethers.js communication layer, and Ethereum smart contract operate together seamlessly to support real-world business workflows.
 
 ### Coffee Supply Chain Scenario
 
@@ -214,5 +214,11 @@ Testing confirms that the application successfully implements:
 * End-to-end supply chain traceability
 
 The results demonstrate that the proof-of-concept operates reliably across all core supply chain workflows while maintaining data integrity, transparency, and role-based security.
+
+---  
+
+## Next Steps  
+
+Once the application has been successfully deployed and verified, you can continue with the following documentation [Project README](ENCLOSE LINK)
 
 
