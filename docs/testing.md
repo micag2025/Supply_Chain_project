@@ -145,7 +145,7 @@ Retailer
 Delivered
 ```
 
-Outcome:
+**Outcome**:
 
 * Complete supply chain workflow successfully executed.
 * All state transitions recorded on-chain.
