@@ -202,7 +202,7 @@ The implementation consists of four principal components.
 
 ### Solidity Smart Contract  
 
-The core business logic is implemented in the SupplyChainBatch.sol smart contract, which manages product batches, enforces role-based access control, validates lifecycle state transitions, records lifecycle timestamps, emits blockchain events, and stores batch information on the Ethereum blockchain.  
+The core business logic is implemented in the `SupplyChainBatch.sol` smart contract, which manages product batches, enforces role-based access control, validates lifecycle state transitions, records lifecycle timestamps, emits blockchain events, and stores batch information on the Ethereum blockchain.  
 
 The smart contract provides the following capabilities:
 
@@ -504,7 +504,7 @@ The `Users receive clear feedback when querying non-existing batches` workflow w
 
 ---  
 
-## Challenges Encountered    (Implementation Challenges)
+## Challenges Encountered  
 
 ### Wallet Synchronization  
 
@@ -634,6 +634,6 @@ michelaagostini73@gmail.com
 
 ## Acknowledgements  
 
-This project was built with contributions and inspiration from ...........................who have reviewed, tested, and improved this project. Special thanks to all developers and supply chain professionals who provided feedback during development and testing phases.
+This project was built with contributions and inspiration from the developers (supply chain professionals) who enrolled in the Blockchain Traininig, organised by [Cieffe](https://www.ci-effe.net/). Special thanks to the trainer (supply chain professional), Giacomo Scettri, who provided feedback during development and testing phases.
 
 --- 
