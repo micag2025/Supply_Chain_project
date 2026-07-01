@@ -75,7 +75,7 @@ The application consists of a **React frontend** connected to a **Solidity smart
 
 ```    
 
-Detailed architecture documentation is available in [`docs/architecture.md`](https://github.com/micag2025/Supply_Chain_project/blob/9378aebc93fad4020641b314ae1d2d9973e59a4a/docs/architecture.md)
+Detailed architecture documentation is available in [`docs/architecture.md`](https://github.com/micag2025/Supply_Chain_project/blob/1592a8a9f82a538f07fed0e8fee0ff1ddfc60032/docs/architecture.md)
 
 ---  
 
@@ -250,11 +250,11 @@ This installs all required packages: `ethers.js`,` react-dom`, and other depende
 
 ### MetaMask Configuration
 
-Detailed instructions how to configure MetaMask, connecting to the Ethereum Sepolia Testnet can be found in [`docs/metamask-setup.md`](https://github.com/micag2025/Supply_Chain_project/blob/833cff834420641da9f2bf814f4985a912f66592/docs/metamask-setup.md)
+Detailed instructions how to configure MetaMask, connecting to the Ethereum Sepolia Testnet can be found in [`docs/metamask-setup.md`](https://github.com/micag2025/Supply_Chain_project/blob/1592a8a9f82a538f07fed0e8fee0ff1ddfc60032/docs/metamask-setup.md)
 
 ### Smart Contract Deployment
 
-The smart contract can be deployed using Remix IDE on the Ethereum Sepolia Testnet.  Detailed deployment instructions are available in [`docs/deployment.md`](https://github.com/micag2025/Supply_Chain_project/blob/d7ea180978e4704420fe84f780268fc1e57ccc9d/docs/deployment.md)
+The smart contract can be deployed using Remix IDE on the Ethereum Sepolia Testnet.  Detailed deployment instructions are available in [`docs/deployment.md`](https://github.com/micag2025/Supply_Chain_project/blob/1592a8a9f82a538f07fed0e8fee0ff1ddfc60032/docs/deployment.md)
 
 ### Running the Application  
 
@@ -317,7 +317,7 @@ Three MetaMask accounts simulate the supply chain participants.
 
 > Get free Sepolia ETH from [Google Cloud Web3 Faucet](https://cloud.google.com/application/web3/faucet)
 
-> See [`docs/MetaMask Setup Guide.md`](https://github.com/micag2025/Supply_Chain_project/blob/833cff834420641da9f2bf814f4985a912f66592/docs/metamask-setup.md) for more details.   
+> See [`docs/MetaMask Setup Guide.md`](https://github.com/micag2025/Supply_Chain_project/blob/1592a8a9f82a538f07fed0e8fee0ff1ddfc60032/docs/metamask-setup.md) for more details.   
 
 ### Test Coverage
 
@@ -329,7 +329,7 @@ Testing covered three areas:
 - Security & Validation Testing
 - End-to-End Workflow Validation
 
-Detailed test cases and results are available in  [`docs/testing.md`](https://github.com/micag2025/Supply_Chain_project/blob/c097d4a37411ba8634f40d4d6304cb9b8c0320ec/docs/testing.md).
+Detailed test cases and results are available in  [`docs/testing.md`](https://github.com/micag2025/Supply_Chain_project/blob/1592a8a9f82a538f07fed0e8fee0ff1ddfc60032/docs/testing.md).
 
 #### Functional Testing  
 
@@ -382,7 +382,7 @@ Detailed test cases and results are available in  [`docs/testing.md`](https://gi
 
 All planned test cases passed successfully, confirming correct behavior of the smart contract, frontend application, wallet integration, and role-based workflow management.
 
-Detailed test results are available in [`docs/testing.md`](https://github.com/micag2025/Supply_Chain_project/blob/c097d4a37411ba8634f40d4d6304cb9b8c0320ec/docs/testing.md).
+Detailed test results are available in [`docs/testing.md`](https://github.com/micag2025/Supply_Chain_project/blob/1592a8a9f82a538f07fed0e8fee0ff1ddfc60032/docs/testing.md).
 
 ---
 
