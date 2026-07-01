@@ -238,7 +238,6 @@ Ensure the following are installed:
 ```bash   
 git clone https://github.com/micag2025/Supply_Chain_project.git
 cd Supply_Chain_project
-cd frontend   TO BE CHECKED
 ```
 
 ### Install Dependencies  
