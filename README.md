@@ -6,7 +6,7 @@
 
 ## Overview  
 
-This repository contains the full implementation of the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://github.com/micag2025/Supply_Chain_project/blob/82ee14f3f60f2c903befe6c108a32edf3032f0e6/publication.md), (TO BE CHANGED WITH READY TENSOR LINK) published on the [Ready Tensor](https://www.readytensor.ai/) platform.
+This repository contains the full implementation of the [publication **Blockchain-Based Supply Chain Tracking System: Design and Implementation of a Decentralized Supply Chain dApp**](https://app.readytensor.ai/publications/create/QuETAHw4czgP/documentation), published on the [Ready Tensor](https://www.readytensor.ai/) platform.
 
 Supply chains often rely on centralized systems that can limit transparency, complicate product traceability, and make it difficult to verify the authenticity and provenance of goods. This project explores how **blockchain technology** can address these challenges by providing immutable transaction records, transparent audit trails, and decentralized trust.
 
