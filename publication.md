@@ -289,7 +289,7 @@ This installs all required packages: `ethers.js`,` react-dom`, and other depende
 
 ### Environment Configuration  
 
-Create a `.env` file in the project root (see `.env.example`):
+Create a `.env` file in the project root (see `src/.env.example`):
 
 ```bash  
 REACT_APP_CONTRACT= YOUR_DEPLOYED_CONTRACT_ADDRESS
