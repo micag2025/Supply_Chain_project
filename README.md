@@ -136,7 +136,6 @@ supply-chain-dapp/
 │   │
 │   ├── deployment/
 │   │   ├── contract-address.txt     # Deployed contract address (Sepolia)
-│   │   └── deployed-contract-info.md # Deployment details and metadata
 │   │
 │   └── abi/
 │       └── SupplyChain.json         # Smart contract ABI used by the React frontend to interact with the deployed contract
@@ -176,11 +175,12 @@ supply-chain-dapp/
 │   ├── Screenshot_updated_table_Deliver_Batch_Retailer.jpg
 │   └── Screenshot_updated_table_Ship_Batch_Distributor.jpg
 │
-├── docs/                            # Additional documentation
-│   └── metamask-setup.md            # MetaMask setup guide (Wallet configuration)
-│   └── testing.md                   # Test cases and validation
-│   └── architecture.md              # Detailed technical architecture
+├── docs/                            # Additional documentation  
+│   └── metamask-setup.md            # MetaMask setup guide   
+│   └── testing.md                   # Test cases and validation  
+│   └── architecture.md              # System architecture    
 │   └── deployment.md                # Deployment instructions  
+│   └── deployed-contract-info.md    # Deployed contract address, ABI, accounts, and test data  
 │
 └── LICENSE                          # Project license
 ```
