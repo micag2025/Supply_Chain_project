@@ -191,7 +191,7 @@ All planned tests completed successfully.
 
 For additional information, refer to:
 
-- [Project README](../README.md)
-- [System Architecture](architecture.md)
-- [Deployment Guide](deployment.md)
-- [MetaMask Setup Guide](metamask-setup.md)
+- `README.md`
+- `architecture.md`
+- `deployment.md`
+- `metamask-setup.md`  

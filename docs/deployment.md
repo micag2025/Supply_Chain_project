@@ -171,7 +171,7 @@ For system architecture, testing procedures, and project usage, refer to the doc
 
 ## Related Documentation
 
-- [Project README](../README.md)
-- [System Architecture](architecture.md)
-- [Testing](testing.md)
-- [MetaMask Setup Guide](metamask-setup.md)
+- `README.md`
+- `architecture.md`
+- `testing.md`
+- `metamask-setup.md`

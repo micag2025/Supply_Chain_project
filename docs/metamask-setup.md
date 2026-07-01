@@ -172,10 +172,10 @@ Once MetaMask has been configured, you can continue with the following documenta
 
 For additional information, refer to:
 
-- [Project README](../README.md)
-- [System Architecture](architecture.md)
-- [Deployment Guide](deployment.md)
-- [Testing](testing.md)
+- `README.md`
+- `architecture.md`
+- `deployment.md`
+- `testing.md`
 
 --- 
 
