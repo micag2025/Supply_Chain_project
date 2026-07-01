@@ -632,6 +632,7 @@ If you encounter bugs, have questions, or want to request a new feature, please 
 
 ## Acknowledgements
 
-This project was built with contributions and inspiration from the developers (supply chain professionals) who enrolled in the Sviluppatore Blockchain Traininig, organised by [Cieffe](https://www.ci-effe.net/) with the support of  [Trentino Lavoro](https://www.agenzialavoro.tn.it/). Special thanks to the trainer, Giacomo Scettri, who provided feedback during development and testing phases.
+This project was built with contributions and inspiration from the developers who enrolled in the Sviluppatore Blockchain Traininig, organised by [Cieffe](https://www.ci-effe.net/) with the support of  [Trentino Lavoro](https://www.agenzialavoro.tn.it/). Special thanks to the trainer, Giacomo Scettri, who provided feedback during development and testing phases.
+
 --- 
 
