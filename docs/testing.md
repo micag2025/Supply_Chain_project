@@ -85,7 +85,7 @@ The following scenario simulates a complete batch lifecycle from creation throug
 | Actor     | Farmer (Account 1)    |
 | Action    | Create Batch          |
 | Batch ID  | 1                     |
-| Product   | Coffee                |
+| Product   | Coff                |
 | Quantity  | 1000 kg               |
 | Result    | Batch state = Created |
 
@@ -186,12 +186,6 @@ Delivered
 All planned tests completed successfully.
 
 ---
-
-## Next Steps  
-
-Once the application has been successfully tested, you can continue with the following documentation [Project README](ENCLOSE LINK)
-
---- 
 
 ## Related Documentation
 
